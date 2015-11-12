@@ -1,0 +1,729 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B54FA7E81BF46AE60018B682 /* iWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7E71BF46AE60018B682 /* iWorkTests.m */; };
+		B54FA7F31BF46AE60018B682 /* iWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7F21BF46AE60018B682 /* iWorkUITests.m */; };
+		B54FA8111BF46FCD0018B682 /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54FA8011BF46FCD0018B682 /* Icon.xcassets */; };
+		B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA8041BF46FCD0018B682 /* AppDelegate.m */; };
+		B54FA8131BF46FCD0018B682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54FA8091BF46FCD0018B682 /* Main.storyboard */; };
+		B54FA8141BF46FCD0018B682 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA80B1BF46FCD0018B682 /* MainViewController.m */; };
+		B54FA8161BF46FCD0018B682 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54FA80F1BF46FCD0018B682 /* LaunchScreen.storyboard */; };
+		B54FA8171BF46FCD0018B682 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA8101BF46FCD0018B682 /* main.m */; };
+		B54FA82F1BF49DF90018B682 /* Launch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54FA82E1BF49DF90018B682 /* Launch.xcassets */; };
+		B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA8431BF4A7D50018B682 /* UIColor+WGThemeColors.m */; };
+		B54FA8471BF4A88D0018B682 /* UIFont+WGThemeFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA8461BF4A88D0018B682 /* UIFont+WGThemeFonts.m */; };
+		B54FA84C1BF4A98B0018B682 /* WGBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA84B1BF4A98B0018B682 /* WGBaseRequest.m */; };
+		B54FA84F1BF4A9EB0018B682 /* WGBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA84E1BF4A9EB0018B682 /* WGBaseModel.m */; };
+		B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA8511BF4B1960018B682 /* WGURLConfig.m */; };
+		B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA85A1BF4C48D0018B682 /* WGProgressHUD.m */; };
+		B54FA85F1BF4CBDB0018B682 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA85E1BF4CBDB0018B682 /* UIViewAdditions.m */; };
+		C9574CD80D7E2DD5DF0801F2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79307E628B9946F4BD75B390 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B54FA7E41BF46AE60018B682 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B54FA7C21BF46AE60018B682 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B54FA7C91BF46AE60018B682;
+			remoteInfo = iWork;
+		};
+		B54FA7EF1BF46AE60018B682 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B54FA7C21BF46AE60018B682 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B54FA7C91BF46AE60018B682;
+			remoteInfo = iWork;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20964DE1405676E81AD62B05 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		79307E628B9946F4BD75B390 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54FA7CA1BF46AE60018B682 /* iWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54FA7E31BF46AE60018B682 /* iWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54FA7E71BF46AE60018B682 /* iWorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iWorkTests.m; sourceTree = "<group>"; };
+		B54FA7E91BF46AE60018B682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B54FA7EE1BF46AE60018B682 /* iWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54FA7F21BF46AE60018B682 /* iWorkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iWorkUITests.m; sourceTree = "<group>"; };
+		B54FA7F41BF46AE60018B682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B54FA8011BF46FCD0018B682 /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
+		B54FA8031BF46FCD0018B682 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B54FA8041BF46FCD0018B682 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B54FA8091BF46FCD0018B682 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B54FA80A1BF46FCD0018B682 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B54FA80B1BF46FCD0018B682 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B54FA80E1BF46FCD0018B682 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B54FA80F1BF46FCD0018B682 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B54FA8101BF46FCD0018B682 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B54FA82E1BF49DF90018B682 /* Launch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Launch.xcassets; sourceTree = "<group>"; };
+		B54FA8421BF4A7D50018B682 /* UIColor+WGThemeColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+WGThemeColors.h"; sourceTree = "<group>"; };
+		B54FA8431BF4A7D50018B682 /* UIColor+WGThemeColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WGThemeColors.m"; sourceTree = "<group>"; };
+		B54FA8451BF4A88D0018B682 /* UIFont+WGThemeFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+WGThemeFonts.h"; sourceTree = "<group>"; };
+		B54FA8461BF4A88D0018B682 /* UIFont+WGThemeFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+WGThemeFonts.m"; sourceTree = "<group>"; };
+		B54FA84A1BF4A98B0018B682 /* WGBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBaseRequest.h; sourceTree = "<group>"; };
+		B54FA84B1BF4A98B0018B682 /* WGBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBaseRequest.m; sourceTree = "<group>"; };
+		B54FA84D1BF4A9EB0018B682 /* WGBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBaseModel.h; sourceTree = "<group>"; };
+		B54FA84E1BF4A9EB0018B682 /* WGBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBaseModel.m; sourceTree = "<group>"; };
+		B54FA8501BF4B1960018B682 /* WGURLConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGURLConfig.h; sourceTree = "<group>"; };
+		B54FA8511BF4B1960018B682 /* WGURLConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGURLConfig.m; sourceTree = "<group>"; };
+		B54FA8531BF4B5000018B682 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B54FA8551BF4B5090018B682 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B54FA8591BF4C48D0018B682 /* WGProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGProgressHUD.h; sourceTree = "<group>"; };
+		B54FA85A1BF4C48D0018B682 /* WGProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGProgressHUD.m; sourceTree = "<group>"; };
+		B54FA85D1BF4CBDB0018B682 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		B54FA85E1BF4CBDB0018B682 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		E9D6A9E99C33B8C557D1EA48 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B54FA7C71BF46AE60018B682 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9574CD80D7E2DD5DF0801F2 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B54FA7E01BF46AE60018B682 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B54FA7EB1BF46AE60018B682 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4EFF774DFEDFA065ED1B22B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20964DE1405676E81AD62B05 /* Pods.debug.xcconfig */,
+				E9D6A9E99C33B8C557D1EA48 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7559BE26D07CE8419A9C9542 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA8551BF4B5090018B682 /* UIKit.framework */,
+				B54FA8531BF4B5000018B682 /* Foundation.framework */,
+				79307E628B9946F4BD75B390 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B54FA7C11BF46AE60018B682 = {
+			isa = PBXGroup;
+			children = (
+				B54FA7CC1BF46AE60018B682 /* iWork */,
+				B54FA7E61BF46AE60018B682 /* iWorkTests */,
+				B54FA7F11BF46AE60018B682 /* iWorkUITests */,
+				B54FA7CB1BF46AE60018B682 /* Products */,
+				4EFF774DFEDFA065ED1B22B7 /* Pods */,
+				7559BE26D07CE8419A9C9542 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B54FA7CB1BF46AE60018B682 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA7CA1BF46AE60018B682 /* iWork.app */,
+				B54FA7E31BF46AE60018B682 /* iWorkTests.xctest */,
+				B54FA7EE1BF46AE60018B682 /* iWorkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B54FA7CC1BF46AE60018B682 /* iWork */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA8181BF470180018B682 /* OtherFrameworks */,
+				B54FA8001BF46FCD0018B682 /* Resources */,
+				B54FA8021BF46FCD0018B682 /* Sources */,
+				B54FA80D1BF46FCD0018B682 /* Supporting Files */,
+			);
+			path = iWork;
+			sourceTree = "<group>";
+		};
+		B54FA7E61BF46AE60018B682 /* iWorkTests */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA7E71BF46AE60018B682 /* iWorkTests.m */,
+				B54FA7E91BF46AE60018B682 /* Info.plist */,
+			);
+			path = iWorkTests;
+			sourceTree = "<group>";
+		};
+		B54FA7F11BF46AE60018B682 /* iWorkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA7F21BF46AE60018B682 /* iWorkUITests.m */,
+				B54FA7F41BF46AE60018B682 /* Info.plist */,
+			);
+			path = iWorkUITests;
+			sourceTree = "<group>";
+		};
+		B54FA8001BF46FCD0018B682 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA8011BF46FCD0018B682 /* Icon.xcassets */,
+				B54FA82E1BF49DF90018B682 /* Launch.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B54FA8021BF46FCD0018B682 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA8031BF46FCD0018B682 /* AppDelegate.h */,
+				B54FA8041BF46FCD0018B682 /* AppDelegate.m */,
+				B54FA8051BF46FCD0018B682 /* Model */,
+				B54FA8061BF46FCD0018B682 /* Networking */,
+				B54FA8071BF46FCD0018B682 /* UI */,
+				B54FA80C1BF46FCD0018B682 /* Utils */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B54FA8051BF46FCD0018B682 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA8491BF4A9120018B682 /* BaseModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B54FA8061BF46FCD0018B682 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA8481BF4A9090018B682 /* BaseRequest */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B54FA8071BF46FCD0018B682 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA8411BF4A2C90018B682 /* Appearance */,
+				B54FA8081BF46FCD0018B682 /* Main */,
+				B54FA8571BF4C4480018B682 /* Widgets */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B54FA8081BF46FCD0018B682 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA8091BF46FCD0018B682 /* Main.storyboard */,
+				B54FA80A1BF46FCD0018B682 /* MainViewController.h */,
+				B54FA80B1BF46FCD0018B682 /* MainViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B54FA80C1BF46FCD0018B682 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B54FA80D1BF46FCD0018B682 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA80E1BF46FCD0018B682 /* Info.plist */,
+				B54FA80F1BF46FCD0018B682 /* LaunchScreen.storyboard */,
+				B54FA8101BF46FCD0018B682 /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B54FA8181BF470180018B682 /* OtherFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OtherFrameworks;
+			sourceTree = "<group>";
+		};
+		B54FA8411BF4A2C90018B682 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA8421BF4A7D50018B682 /* UIColor+WGThemeColors.h */,
+				B54FA8431BF4A7D50018B682 /* UIColor+WGThemeColors.m */,
+				B54FA8451BF4A88D0018B682 /* UIFont+WGThemeFonts.h */,
+				B54FA8461BF4A88D0018B682 /* UIFont+WGThemeFonts.m */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
+		B54FA8481BF4A9090018B682 /* BaseRequest */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA84A1BF4A98B0018B682 /* WGBaseRequest.h */,
+				B54FA84B1BF4A98B0018B682 /* WGBaseRequest.m */,
+				B54FA8501BF4B1960018B682 /* WGURLConfig.h */,
+				B54FA8511BF4B1960018B682 /* WGURLConfig.m */,
+			);
+			path = BaseRequest;
+			sourceTree = "<group>";
+		};
+		B54FA8491BF4A9120018B682 /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA84D1BF4A9EB0018B682 /* WGBaseModel.h */,
+				B54FA84E1BF4A9EB0018B682 /* WGBaseModel.m */,
+			);
+			path = BaseModel;
+			sourceTree = "<group>";
+		};
+		B54FA8571BF4C4480018B682 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA85C1BF4CBDB0018B682 /* ViewAdditions */,
+				B54FA8581BF4C4480018B682 /* ProgressHUD */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		B54FA8581BF4C4480018B682 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA8591BF4C48D0018B682 /* WGProgressHUD.h */,
+				B54FA85A1BF4C48D0018B682 /* WGProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		B54FA85C1BF4CBDB0018B682 /* ViewAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				B54FA85D1BF4CBDB0018B682 /* UIViewAdditions.h */,
+				B54FA85E1BF4CBDB0018B682 /* UIViewAdditions.m */,
+			);
+			path = ViewAdditions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B54FA7C91BF46AE60018B682 /* iWork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B54FA7F71BF46AE60018B682 /* Build configuration list for PBXNativeTarget "iWork" */;
+			buildPhases = (
+				EF94B3653BB1DA885C383E7B /* Check Pods Manifest.lock */,
+				B54FA7C61BF46AE60018B682 /* Sources */,
+				B54FA7C71BF46AE60018B682 /* Frameworks */,
+				B54FA7C81BF46AE60018B682 /* Resources */,
+				56DE0913C08649A0446A30F0 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iWork;
+			productName = iWork;
+			productReference = B54FA7CA1BF46AE60018B682 /* iWork.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B54FA7E21BF46AE60018B682 /* iWorkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B54FA7FA1BF46AE60018B682 /* Build configuration list for PBXNativeTarget "iWorkTests" */;
+			buildPhases = (
+				B54FA7DF1BF46AE60018B682 /* Sources */,
+				B54FA7E01BF46AE60018B682 /* Frameworks */,
+				B54FA7E11BF46AE60018B682 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B54FA7E51BF46AE60018B682 /* PBXTargetDependency */,
+			);
+			name = iWorkTests;
+			productName = iWorkTests;
+			productReference = B54FA7E31BF46AE60018B682 /* iWorkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B54FA7ED1BF46AE60018B682 /* iWorkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B54FA7FD1BF46AE60018B682 /* Build configuration list for PBXNativeTarget "iWorkUITests" */;
+			buildPhases = (
+				B54FA7EA1BF46AE60018B682 /* Sources */,
+				B54FA7EB1BF46AE60018B682 /* Frameworks */,
+				B54FA7EC1BF46AE60018B682 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B54FA7F01BF46AE60018B682 /* PBXTargetDependency */,
+			);
+			name = iWorkUITests;
+			productName = iWorkUITests;
+			productReference = B54FA7EE1BF46AE60018B682 /* iWorkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B54FA7C21BF46AE60018B682 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WG;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = impetusconsulting;
+				TargetAttributes = {
+					B54FA7C91BF46AE60018B682 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					B54FA7E21BF46AE60018B682 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = B54FA7C91BF46AE60018B682;
+					};
+					B54FA7ED1BF46AE60018B682 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = B54FA7C91BF46AE60018B682;
+					};
+				};
+			};
+			buildConfigurationList = B54FA7C51BF46AE60018B682 /* Build configuration list for PBXProject "iWork" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B54FA7C11BF46AE60018B682;
+			productRefGroup = B54FA7CB1BF46AE60018B682 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B54FA7C91BF46AE60018B682 /* iWork */,
+				B54FA7E21BF46AE60018B682 /* iWorkTests */,
+				B54FA7ED1BF46AE60018B682 /* iWorkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B54FA7C81BF46AE60018B682 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54FA8131BF46FCD0018B682 /* Main.storyboard in Resources */,
+				B54FA8161BF46FCD0018B682 /* LaunchScreen.storyboard in Resources */,
+				B54FA82F1BF49DF90018B682 /* Launch.xcassets in Resources */,
+				B54FA8111BF46FCD0018B682 /* Icon.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B54FA7E11BF46AE60018B682 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B54FA7EC1BF46AE60018B682 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56DE0913C08649A0446A30F0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF94B3653BB1DA885C383E7B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B54FA7C61BF46AE60018B682 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
+				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,
+				B54FA8171BF46FCD0018B682 /* main.m in Sources */,
+				B54FA8471BF4A88D0018B682 /* UIFont+WGThemeFonts.m in Sources */,
+				B54FA84F1BF4A9EB0018B682 /* WGBaseModel.m in Sources */,
+				B54FA84C1BF4A98B0018B682 /* WGBaseRequest.m in Sources */,
+				B54FA85F1BF4CBDB0018B682 /* UIViewAdditions.m in Sources */,
+				B54FA8141BF46FCD0018B682 /* MainViewController.m in Sources */,
+				B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */,
+				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B54FA7DF1BF46AE60018B682 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54FA7E81BF46AE60018B682 /* iWorkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B54FA7EA1BF46AE60018B682 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54FA7F31BF46AE60018B682 /* iWorkUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B54FA7E51BF46AE60018B682 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B54FA7C91BF46AE60018B682 /* iWork */;
+			targetProxy = B54FA7E41BF46AE60018B682 /* PBXContainerItemProxy */;
+		};
+		B54FA7F01BF46AE60018B682 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B54FA7C91BF46AE60018B682 /* iWork */;
+			targetProxy = B54FA7EF1BF46AE60018B682 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B54FA7F51BF46AE60018B682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B54FA7F61BF46AE60018B682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B54FA7F81BF46AE60018B682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20964DE1405676E81AD62B05 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/iWork/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = impetusconsulting.iWork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B54FA7F91BF46AE60018B682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9D6A9E99C33B8C557D1EA48 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/iWork/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = impetusconsulting.iWork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B54FA7FB1BF46AE60018B682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iWorkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = impetusconsulting.iWorkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iWork.app/iWork";
+			};
+			name = Debug;
+		};
+		B54FA7FC1BF46AE60018B682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iWorkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = impetusconsulting.iWorkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iWork.app/iWork";
+			};
+			name = Release;
+		};
+		B54FA7FE1BF46AE60018B682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = iWorkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = impetusconsulting.iWorkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = iWork;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		B54FA7FF1BF46AE60018B682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = iWorkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = impetusconsulting.iWorkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = iWork;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B54FA7C51BF46AE60018B682 /* Build configuration list for PBXProject "iWork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54FA7F51BF46AE60018B682 /* Debug */,
+				B54FA7F61BF46AE60018B682 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B54FA7F71BF46AE60018B682 /* Build configuration list for PBXNativeTarget "iWork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54FA7F81BF46AE60018B682 /* Debug */,
+				B54FA7F91BF46AE60018B682 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B54FA7FA1BF46AE60018B682 /* Build configuration list for PBXNativeTarget "iWorkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54FA7FB1BF46AE60018B682 /* Debug */,
+				B54FA7FC1BF46AE60018B682 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B54FA7FD1BF46AE60018B682 /* Build configuration list for PBXNativeTarget "iWorkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54FA7FE1BF46AE60018B682 /* Debug */,
+				B54FA7FF1BF46AE60018B682 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B54FA7C21BF46AE60018B682 /* Project object */;
+}
