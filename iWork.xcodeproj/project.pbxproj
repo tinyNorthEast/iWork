@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5055BEE1BF9CF33001736AD /* WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055BED1BF9CF33001736AD /* WGPager.m */; };
+		B5055BF11BF9CFD3001736AD /* UIScrollView+Pager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055BF01BF9CFD3001736AD /* UIScrollView+Pager.m */; };
+		B5055BF41BF9FB5B001736AD /* WGValidJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055BF31BF9FB5B001736AD /* WGValidJudge.m */; };
+		B5055C021BFA02ED001736AD /* WGTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055C011BFA02ED001736AD /* WGTools.m */; };
+		B5055C051BFA052D001736AD /* WGNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055C041BFA052D001736AD /* WGNetworkHelper.m */; };
 		B54FA7E81BF46AE60018B682 /* iWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7E71BF46AE60018B682 /* iWorkTests.m */; };
 		B54FA7F31BF46AE60018B682 /* iWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7F21BF46AE60018B682 /* iWorkUITests.m */; };
 		B54FA8111BF46FCD0018B682 /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54FA8011BF46FCD0018B682 /* Icon.xcassets */; };
@@ -46,6 +51,16 @@
 /* Begin PBXFileReference section */
 		20964DE1405676E81AD62B05 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		79307E628B9946F4BD75B390 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5055BEC1BF9CF33001736AD /* WGPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPager.h; sourceTree = "<group>"; };
+		B5055BED1BF9CF33001736AD /* WGPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPager.m; sourceTree = "<group>"; };
+		B5055BEF1BF9CFD3001736AD /* UIScrollView+Pager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Pager.h"; sourceTree = "<group>"; };
+		B5055BF01BF9CFD3001736AD /* UIScrollView+Pager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Pager.m"; sourceTree = "<group>"; };
+		B5055BF21BF9FB5B001736AD /* WGValidJudge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGValidJudge.h; sourceTree = "<group>"; };
+		B5055BF31BF9FB5B001736AD /* WGValidJudge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGValidJudge.m; sourceTree = "<group>"; };
+		B5055C001BFA02ED001736AD /* WGTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTools.h; sourceTree = "<group>"; };
+		B5055C011BFA02ED001736AD /* WGTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTools.m; sourceTree = "<group>"; };
+		B5055C031BFA052D001736AD /* WGNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNetworkHelper.h; sourceTree = "<group>"; };
+		B5055C041BFA052D001736AD /* WGNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNetworkHelper.m; sourceTree = "<group>"; };
 		B54FA7CA1BF46AE60018B682 /* iWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54FA7E31BF46AE60018B682 /* iWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54FA7E71BF46AE60018B682 /* iWorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iWorkTests.m; sourceTree = "<group>"; };
@@ -125,6 +140,19 @@
 				79307E628B9946F4BD75B390 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5055BEB1BF9CE22001736AD /* Pager */ = {
+			isa = PBXGroup;
+			children = (
+				B5055BEC1BF9CF33001736AD /* WGPager.h */,
+				B5055BED1BF9CF33001736AD /* WGPager.m */,
+				B5055C031BFA052D001736AD /* WGNetworkHelper.h */,
+				B5055C041BFA052D001736AD /* WGNetworkHelper.m */,
+				B5055BEF1BF9CFD3001736AD /* UIScrollView+Pager.h */,
+				B5055BF01BF9CFD3001736AD /* UIScrollView+Pager.m */,
+			);
+			path = Pager;
 			sourceTree = "<group>";
 		};
 		B54FA7C11BF46AE60018B682 = {
@@ -239,6 +267,10 @@
 		B54FA80C1BF46FCD0018B682 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B5055BF21BF9FB5B001736AD /* WGValidJudge.h */,
+				B5055BF31BF9FB5B001736AD /* WGValidJudge.m */,
+				B5055C001BFA02ED001736AD /* WGTools.h */,
+				B5055C011BFA02ED001736AD /* WGTools.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -296,6 +328,7 @@
 			children = (
 				B54FA85C1BF4CBDB0018B682 /* ViewAdditions */,
 				B54FA8581BF4C4480018B682 /* ProgressHUD */,
+				B5055BEB1BF9CE22001736AD /* Pager */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -488,11 +521,16 @@
 				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
 				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,
 				B54FA8171BF46FCD0018B682 /* main.m in Sources */,
+				B5055BEE1BF9CF33001736AD /* WGPager.m in Sources */,
+				B5055BF41BF9FB5B001736AD /* WGValidJudge.m in Sources */,
 				B54FA8471BF4A88D0018B682 /* UIFont+WGThemeFonts.m in Sources */,
 				B54FA84F1BF4A9EB0018B682 /* WGBaseModel.m in Sources */,
 				B54FA84C1BF4A98B0018B682 /* WGBaseRequest.m in Sources */,
 				B54FA85F1BF4CBDB0018B682 /* UIViewAdditions.m in Sources */,
 				B54FA8141BF46FCD0018B682 /* MainViewController.m in Sources */,
+				B5055BF11BF9CFD3001736AD /* UIScrollView+Pager.m in Sources */,
+				B5055C021BFA02ED001736AD /* WGTools.m in Sources */,
+				B5055C051BFA052D001736AD /* WGNetworkHelper.m in Sources */,
 				B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */,
 				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,
 			);
