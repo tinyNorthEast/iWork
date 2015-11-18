@@ -7,4 +7,6 @@ pod 'JSONModel','~>0.13.0'
 pod 'SDWebImage', '~> 3.7.1'
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'libextobjc', '~> 0.4.1'
+pod 'MJRefresh', '~> 2.4.9'
 pod 'Masonry'
+

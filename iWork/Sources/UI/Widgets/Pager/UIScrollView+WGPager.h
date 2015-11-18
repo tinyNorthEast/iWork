@@ -1,8 +1,8 @@
 //
-//  UIScrollView+Pager.h
+//  UIScrollView+WGPager.h
 //  iWork
 //
-//  Created by Adele on 11/16/15.
+//  Created by Adele on 11/18/15.
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
@@ -22,7 +22,7 @@
 
 @end
 
-@interface UIScrollView (Pager)
+@interface UIScrollView (WGPager)
 
 @property (nonatomic, strong, readonly) WGPager *wg_pager;
 
