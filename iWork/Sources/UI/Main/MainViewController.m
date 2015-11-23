@@ -24,4 +24,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - IBAction
+- (IBAction)signAciton:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+    UIViewController *vc = [sb instantiateInitialViewController];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
+
+
 @end

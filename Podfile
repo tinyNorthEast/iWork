@@ -9,4 +9,4 @@ pod 'MBProgressHUD', '~> 0.9.1'
 pod 'libextobjc', '~> 0.4.1'
 pod 'MJRefresh', '~> 2.4.9'
 pod 'Masonry'
-
+pod 'Qiniu', '~> 7.0'
