@@ -11,6 +11,8 @@
 #import "WGCommon.h"
 #import "APService.h"
 #import <ShareSDK/ShareSDK.h>
+#import "WXApi.h"
+#import <SMS_SDK/SMSSDK.h>
 
 @interface AppDelegate ()
 
@@ -49,30 +51,32 @@
         }
     [APService setupWithOption:launchOptions];
     
-
-    //ShareSDK
-//    [ShareSDK registerApp:kShareSDK_appkey];
-//    [ShareSDK connectSMS];
-//    [ShareSDK connectWeChatWithAppId:kWeChat_appKey
-//                           wechatCls:[WXApi class]];
-//    [ShareSDK importWeChatClass:[WXApi class]];
-//    
-//    [ShareSDK connectWeChatSessionWithAppId: kWeChat_appKey wechatCls:[WXApi class]];
-//    [[ShareSDK connectWeChatTimelineWithAppId:kWeChat_appKey wechatCls:[WXApi class]];
-//    
-//    [ShareSDK connectSinaWeiboWithAppKey:kSinaWeibo_appkey appSecret:kSinaWeibo_secret redirectUri:kSinaWeibo_url];
     
-    [ShareSDK registerApp:kShareSDK_appKey activePlatforms:@[@(SSDKPlatformTypeSinaWeibo),@(SSDKPlatformTypeTencentWeibo)] onImport:nil onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
-        switch (platformType) {
-            case SSDKPlatformTypeSinaWeibo:
-                [appInfo SSDKSetupSinaWeiboByAppKey:kSinaWeibo_appkey appSecret:kSinaWeibo_secret redirectUri:kSinaWeibo_url authType:SSDKAuthTypeBoth];
-                break;
-                
-            default:
-                [appInfo SSDKSetupWeChatByAppId:kWeChat_appKey appSecret:kWeChat_secret];
-                break;
-        }
-    }];
+      //ShareSDK
+    [ShareSDK registerApp:kShareSDK_appKey];
+
+    [ShareSDK connectWeChatWithAppId:kWeChat_appKey
+                           appSecret:kWeChat_secret
+                           wechatCls:[WXApi class]];
+    [ShareSDK connectSinaWeiboWithAppKey:kSinaWeibo_appkey
+                               appSecret:kSinaWeibo_secret
+                             redirectUri:kSinaWeibo_url];
+    
+    
+//    [ShareSDK registerApp:kShareSDK_appKey activePlatforms:@[@(SSDKPlatformTypeSinaWeibo),@(SSDKPlatformTypeTencentWeibo)] onImport:nil onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+//        switch (platformType) {
+//            case SSDKPlatformTypeSinaWeibo:
+//                [appInfo SSDKSetupSinaWeiboByAppKey:kSinaWeibo_appkey appSecret:kSinaWeibo_secret redirectUri:kSinaWeibo_url authType:SSDKAuthTypeBoth];
+//                break;
+//                
+//            default:
+//                [appInfo SSDKSetupWeChatByAppId:kWeChat_appKey appSecret:kWeChat_secret];
+//                break;	
+//        }
+//    }];
+    
+    //SMS_SDK
+    [SMSSDK registerApp:kSMSSDK_appkey withSecret:kSMSSDK_secret];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -116,6 +120,12 @@
     // IOS 7 Support Required
     [APService handleRemoteNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNewData);
+}
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [ShareSDK handleOpenURL:url wxDelegate:self];
+}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return [ShareSDK handleOpenURL:url sourceApplication:sourceApplication annotation:annotation wxDelegate:self];
 }
 
 @end

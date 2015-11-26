@@ -21,6 +21,7 @@ static NSInteger timeInterval = 1.5;
     return HUD;
 }
 + (void)defaultLoadingOnView:(UIView *)view{
+    [self dismissOnView:view];
     MBProgressHUD *HUD = [self initHUDonView:view];
     
     [view addSubview:HUD];
@@ -29,6 +30,7 @@ static NSInteger timeInterval = 1.5;
 }
 
 + (void)loadMessage:(NSString *)message onView:(UIView *)view{
+    [self dismissOnView:view];
     MBProgressHUD *HUD = [self initHUDonView:view];
     
     [view addSubview:HUD];
@@ -37,6 +39,7 @@ static NSInteger timeInterval = 1.5;
 }
 
 + (void)customImage:(UIImage *)image message:(NSString *)message onView:(UIView *)view{
+    [self dismissOnView:view];
     MBProgressHUD *HUD = [self initHUDonView:view];
     
     [view addSubview:HUD];
@@ -47,6 +50,7 @@ static NSInteger timeInterval = 1.5;
 }
 
 + (void)autoDisappearWithMessage:(NSString *)message onView:(UIView *)view{
+    [self dismissOnView:view];
     MBProgressHUD *HUD = [self initHUDonView:view];
     
     [view addSubview:HUD];

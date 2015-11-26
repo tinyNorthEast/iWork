@@ -8,7 +8,16 @@
 
 #import "WGSignInViewController.h"
 
-@interface WGSignInViewController ()
+#import "WGValidJudge.h"
+#import "WGProgressHUD.h"
+
+NSString *PhoneTextFieldWarning = @"请填写用户名";
+NSString *PasswordTextFieldWarning = @"请填写密码";
+
+@interface WGSignInViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *sign_inButton;
 
 @end
 
@@ -30,6 +39,21 @@
         
     }];
 }
+- (IBAction)sign_upAction:(id)sender {
+//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+//    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@""];
+//    [self.navigationController pushViewController:vc animated:YES];
+    if (![WGValidJudge isValidString:self.phoneTextField.text]) {
+        [WGProgressHUD autoDisappearWithMessage:PhoneTextFieldWarning onView:self.view];
+    }else if(![WGValidJudge isValidString:self.passwordTextField.text]){
+        [WGProgressHUD autoDisappearWithMessage:PasswordTextFieldWarning onView:self.view];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }
+}
+
 
 /*
 #pragma mark - Navigation

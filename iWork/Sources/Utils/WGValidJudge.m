@@ -10,6 +10,14 @@
 
 @implementation WGValidJudge
 
++ (BOOL)isValidCGFloat:(CGFloat)afloat{
+    return (afloat>0)?YES:NO;
+}
+
++ (BOOL)isValidInteger:(NSInteger)integer{
+    return (integer>0)?YES:NO;
+}
+
 + (BOOL)isValidString:(NSString *)aString{
     if ([aString isKindOfClass:[NSString class]] && [aString length] > 0){
         return YES;

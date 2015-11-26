@@ -10,4 +10,8 @@
 
 @interface UIColor (WGThemeColors)
 
++ (instancetype)wg_themeRedColor;
+
++ (instancetype)wg_themeColorFromSelectorString:(NSString *)string;
+
 @end

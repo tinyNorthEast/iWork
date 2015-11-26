@@ -8,7 +8,17 @@
 
 #import "WGSignUpViewController.h"
 
+#import "extobjc.h"
+#import <SMS_SDK/SMSSDK.h>
+
+#import "WGProgressHUD.h"
+#import "WGCountDownButton.h"
+
 @interface WGSignUpViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+@property (weak, nonatomic) IBOutlet UITextField *codeTextField;
+@property (weak, nonatomic) IBOutlet WGCountDownButton *getCodeButton;
+@property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 
 @end
 
@@ -22,6 +32,46 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - IBACtion
+- (IBAction)backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)getCodeAction:(id)sender {
+    if (self.getCodeButton.isCountDowning) {
+        return;
+    }
+    
+    [WGProgressHUD loadMessage:@"正在发送验证码..." onView:self.view];
+    @weakify(self);
+    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.phoneTextField.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
+        @strongify(self);
+        if (!error) {
+            [self.getCodeButton startCountDownTimer];
+            [WGProgressHUD autoDisappearWithMessage:@"验证码发送成功" onView:self.view];
+        }else{
+            [self.getCodeButton stopCountDownTimer];
+            [WGProgressHUD autoDisappearWithMessage:@"验证码发送失败" onView:self.view];
+        }
+        
+    }];
+}
+- (IBAction)confirmAction:(id)sender {
+    
+//    [WGProgressHUD loadMessage:@"正在验证..." onView:self.view];
+//    @weakify(self);
+//    [SMSSDK commitVerificationCode:self.codeTextField.text phoneNumber:self.phoneTextField.text zone:@"86" result:^(NSError *error) {
+//        @strongify(self);
+//        if (!error) {
+    
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+            UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpUserInfoViewController"];
+            [self.navigationController pushViewController:vc animated:YES];
+//        }else{
+//            [WGProgressHUD autoDisappearWithMessage:@"请重新检查输入结果" onView:self.view];
+//        }
+//    }];
 }
 
 /*

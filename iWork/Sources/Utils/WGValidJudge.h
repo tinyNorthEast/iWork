@@ -6,9 +6,13 @@
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface WGValidJudge : NSObject
+
++ (BOOL)isValidCGFloat:(CGFloat)afloat;
+
++ (BOOL)isValidInteger:(NSInteger)integer;
 
 + (BOOL)isValidString:(NSString *)aString;
 
