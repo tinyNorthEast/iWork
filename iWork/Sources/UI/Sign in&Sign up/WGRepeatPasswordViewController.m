@@ -8,6 +8,8 @@
 
 #import "WGRepeatPasswordViewController.h"
 
+#import "WGSignUpRequest.h"
+
 @interface WGRepeatPasswordViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -38,8 +40,15 @@
     [self back];
 }
 - (IBAction)doneAction:(id)sender {
+    WGSignUpRequest *request = [[WGSignUpRequest alloc] initWithInfo:nil];
+    [request requestWithSuccess:^(WGBaseModel *model, NSURLSessionTask *task) {
+        
+    } failure:^(NSError *error, NSURLSessionTask *task) {
+        
+    }];
     
-    [self back];
+    
+//    [self back];
 }
 
 

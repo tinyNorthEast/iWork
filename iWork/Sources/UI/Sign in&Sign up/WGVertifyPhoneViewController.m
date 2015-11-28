@@ -6,7 +6,7 @@
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
-#import "WGSignUpViewController.h"
+#import "WGVertifyPhoneViewController.h"
 
 #import "extobjc.h"
 #import <SMS_SDK/SMSSDK.h>
@@ -14,7 +14,7 @@
 #import "WGProgressHUD.h"
 #import "WGCountDownButton.h"
 
-@interface WGSignUpViewController ()
+@interface WGVertifyPhoneViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
 @property (weak, nonatomic) IBOutlet WGCountDownButton *getCodeButton;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation WGSignUpViewController
+@implementation WGVertifyPhoneViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,20 +54,25 @@
             [self.getCodeButton stopCountDownTimer];
             [WGProgressHUD autoDisappearWithMessage:@"验证码发送失败" onView:self.view];
         }
-        
     }];
 }
 - (IBAction)confirmAction:(id)sender {
-    
 //    [WGProgressHUD loadMessage:@"正在验证..." onView:self.view];
 //    @weakify(self);
 //    [SMSSDK commitVerificationCode:self.codeTextField.text phoneNumber:self.phoneTextField.text zone:@"86" result:^(NSError *error) {
 //        @strongify(self);
 //        if (!error) {
     
-            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
-            UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpUserInfoViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
+            if (self.vertifyView == WGVertifyView_SignUp) {
+                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+                UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpUserInfoViewController"];
+                [self.navigationController pushViewController:vc animated:YES];
+            }else{
+                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+                UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGRepeatPasswordViewController"];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+   
 //        }else{
 //            [WGProgressHUD autoDisappearWithMessage:@"请重新检查输入结果" onView:self.view];
 //        }

@@ -8,7 +8,7 @@
 
 #import "WGSignUpUserInfoViewController.h"
 
-@interface WGSignUpUserInfoViewController ()
+@interface WGSignUpUserInfoViewController ()<UIActionSheetDelegate>
 
 @end
 
@@ -24,7 +24,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+#pragma mark - IBACtion
+- (IBAction)addPhotoAction:(id)sender {
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"请选择图片来源" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"拍照" otherButtonTitles:@"从手机相册选择",nil];
+    [as showInView:self.view];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -32,6 +37,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

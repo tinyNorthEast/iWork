@@ -54,16 +54,20 @@
 }
 
 - (NSString *)pathName{
-    return @"";
+    return nil;
 }
 
 - (WGHTTPRequestMethod)requestMethod{
     return WGHTTPRequestMethodGET;
 }
-
 - (AFHTTPSessionManager *)manager{
+    
     if (!_manager) {
         _manager = [AFHTTPSessionManager manager];
+        _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+//        _manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        _manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+        _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects: @"text/html",@"text/plain",nil];
     }
     return _manager;
 }

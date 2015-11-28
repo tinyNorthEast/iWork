@@ -8,4 +8,4 @@
 
 #import "WGURLConfig.h"
 
-NSString *const API_BASE_URL = @"";
+NSString *const API_BASE_URL = @"http://123.56.125.133:8082/headhunting_api";

@@ -8,8 +8,12 @@
 
 #import "WGSignInViewController.h"
 
+#import <extobjc.h>
+
 #import "WGValidJudge.h"
 #import "WGProgressHUD.h"
+#import "WGSignInRequest.h"
+#import "WGVertifyPhoneViewController.h"
 
 NSString *PhoneTextFieldWarning = @"请填写用户名";
 NSString *PasswordTextFieldWarning = @"请填写密码";
@@ -34,35 +38,43 @@ NSString *PasswordTextFieldWarning = @"请填写密码";
 }
 
 #pragma mark - IBACtion
-- (IBAction)backAction:(id)sender {
+- (void)back{
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
 }
+- (IBAction)backAction:(id)sender {
+    [self back];
+}
 - (IBAction)sign_upAction:(id)sender {
-//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
-//    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@""];
-//    [self.navigationController pushViewController:vc animated:YES];
     if (![WGValidJudge isValidString:self.phoneTextField.text]) {
         [WGProgressHUD autoDisappearWithMessage:PhoneTextFieldWarning onView:self.view];
     }else if(![WGValidJudge isValidString:self.passwordTextField.text]){
         [WGProgressHUD autoDisappearWithMessage:PasswordTextFieldWarning onView:self.view];
     }else{
-        [self dismissViewControllerAnimated:YES completion:^{
+        WGSignInRequest *request = [[WGSignInRequest alloc] initWithPhone:self.phoneTextField.text password:self.passwordTextField.text];
+        
+        @weakify(self);
+        [request requestWithSuccess:^(WGBaseModel *model, NSURLSessionTask *task) {
+            @strongify(self);
+            [self back];
+            
+        } failure:^(NSError *error, NSURLSessionTask *task) {
             
         }];
     }
 }
 
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    WGVertifyPhoneViewController *vc = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:@"SignUp"]) {
+        vc.vertifyView = WGVertifyView_SignUp;
+    }else{
+        vc.vertifyView = WGVertifyView_GetPassword;
+    }
 }
-*/
 
 @end
