@@ -55,11 +55,9 @@ NSString *PasswordTextFieldWarning = @"请填写密码";
         WGSignInRequest *request = [[WGSignInRequest alloc] initWithPhone:self.phoneTextField.text password:self.passwordTextField.text];
         
         @weakify(self);
-        [request requestWithSuccess:^(WGBaseModel *model, NSURLSessionTask *task) {
-            @strongify(self);
-            [self back];
+        [request requestWithSuccess:^(WGBaseModel *model, NSError *error) {
             
-        } failure:^(NSError *error, NSURLSessionTask *task) {
+        } failure:^(WGBaseModel *model, NSError *error) {
             
         }];
     }

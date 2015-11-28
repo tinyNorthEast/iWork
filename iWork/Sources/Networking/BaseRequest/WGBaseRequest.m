@@ -19,9 +19,8 @@
 
 @property (nonatomic, copy) RequestFailed requestFailed;
 
-@property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
 
-@property (nonatomic, strong) NSURLSessionTask *task;
 
 @end
 
@@ -60,32 +59,28 @@
 - (WGHTTPRequestMethod)requestMethod{
     return WGHTTPRequestMethodGET;
 }
-- (AFHTTPSessionManager *)manager{
-    
+- (AFHTTPRequestOperationManager *)manager{
     if (!_manager) {
-        _manager = [AFHTTPSessionManager manager];
-        _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-//        _manager.responseSerializer = [AFJSONResponseSerializer serializer];
-        _manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
-        _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects: @"text/html",@"text/plain",nil];
+        _manager = [AFHTTPRequestOperationManager manager];
+        _manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html",nil];
     }
     return _manager;
 }
 
 - (void)cancel{
-    [self.task cancel];
+    [self.manager.operationQueue cancelAllOperations];
     
     self.requestSuccess = nil;
     self.requestFailed = nil;
-    self.task = nil;
 }
 
 - (void)cancelAllOperations{
     [self.manager.operationQueue cancelAllOperations];
 }
 
-- (void)requestWithSuccess:(void(^)(WGBaseModel *model, NSURLSessionTask *task))success
-                   failure:(void(^)(NSError *error, NSURLSessionTask *task))failure{
+- (void)requestWithSuccess:(void(^)(WGBaseModel *model, NSError *error))success
+                   failure:(void(^)(WGBaseModel *model, NSError *error))failure{
     self.requestSuccess = success;
     self.requestFailed = failure;
     
@@ -114,26 +109,26 @@
 }
 - (void)request{
     if (self.requestMethod == WGHTTPRequestMethodGET) {
-        self.task = [self.manager GET:[self buildRequestUrl] parameters:self.getParams success:^(NSURLSessionDataTask *task, id responseObject) {
+       [self.manager GET:[self buildRequestUrl] parameters:self.getParams success:^(AFHTTPRequestOperation *operation, id responseObject)  {
             WGBaseModel *model = [self responseModelWithData:responseObject];
             if (self.requestSuccess) {
-                _requestSuccess(model,task);
+                _requestSuccess(model,nil);
             }
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             if (self.requestFailed) {
-                _requestFailed(error,task);
+                _requestFailed(nil,error);
             }
             
         }];
     }else{
-        self.task = [self.manager POST:[self buildRequestUrl] parameters:self.postParams success:^(NSURLSessionDataTask *task, id responseObject) {
+        [self.manager POST:[self buildRequestUrl] parameters:self.getParams success:^(AFHTTPRequestOperation *operation, id responseObject)  {
             WGBaseModel *model = [self responseModelWithData:responseObject];
             if (self.requestSuccess) {
-                _requestSuccess(model,task);
+                _requestSuccess(model,nil);
             }
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             if (self.requestFailed) {
-                _requestFailed(error,task);
+                _requestFailed(nil,error);
             }
         }];
     }

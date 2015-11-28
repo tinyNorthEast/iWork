@@ -41,9 +41,10 @@
 }
 - (IBAction)doneAction:(id)sender {
     WGSignUpRequest *request = [[WGSignUpRequest alloc] initWithInfo:nil];
-    [request requestWithSuccess:^(WGBaseModel *model, NSURLSessionTask *task) {
+    
+    [request requestWithSuccess:^(WGBaseModel *model, NSError *error) {
         
-    } failure:^(NSError *error, NSURLSessionTask *task) {
+    } failure:^(WGBaseModel *model, NSError *error) {
         
     }];
     
