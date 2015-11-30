@@ -11,10 +11,13 @@
 #import "extobjc.h"
 #import <SMS_SDK/SMSSDK.h>
 
+#import "WGValidJudge.h"
 #import "WGProgressHUD.h"
 #import "WGCountDownButton.h"
+#import "NSMutableDictionary+WGExtension.h"
+#import "WGSignUpUserInfoViewController.h"
 
-@interface WGVertifyPhoneViewController ()
+@interface WGVertifyPhoneViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
 @property (weak, nonatomic) IBOutlet WGCountDownButton *getCodeButton;
@@ -39,54 +42,75 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)getCodeAction:(id)sender {
+    if ([WGValidJudge isValidPhoneNum:self.phoneTextField.text]) {
+        
+    }
+    if (![WGValidJudge isValidString:self.phoneTextField.text]) {
+        [WGProgressHUD disappearFailureMessage:@"请填写电话号码" onView:self.view];
+        return;
+    }
     if (self.getCodeButton.isCountDowning) {
         return;
     }
-    
     [WGProgressHUD loadMessage:@"正在发送验证码..." onView:self.view];
     @weakify(self);
     [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.phoneTextField.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
         @strongify(self);
         if (!error) {
             [self.getCodeButton startCountDownTimer];
-            [WGProgressHUD autoDisappearWithMessage:@"验证码发送成功" onView:self.view];
+            [WGProgressHUD disappearSuccessMessage:@"验证码发送成功" onView:self.view];
         }else{
             [self.getCodeButton stopCountDownTimer];
-            [WGProgressHUD autoDisappearWithMessage:@"验证码发送失败" onView:self.view];
+            [WGProgressHUD disappearFailureMessage:@"验证码发送失败" onView:self.view];
         }
     }];
 }
 - (IBAction)confirmAction:(id)sender {
-//    [WGProgressHUD loadMessage:@"正在验证..." onView:self.view];
-//    @weakify(self);
-//    [SMSSDK commitVerificationCode:self.codeTextField.text phoneNumber:self.phoneTextField.text zone:@"86" result:^(NSError *error) {
-//        @strongify(self);
-//        if (!error) {
-    
+    if (![WGValidJudge isValidString:self.phoneTextField.text]) {
+        [WGProgressHUD disappearFailureMessage:@"请先填写电话号码" onView:self.view];
+        return;
+    }
+    if(![WGValidJudge isValidPhoneNum:self.phoneTextField.text]){
+        [WGProgressHUD disappearFailureMessage:@"请填写正确的电话号码" onView:self.view];
+        return;
+    }
+    if (![WGValidJudge isValidString:self.codeTextField.text]) {
+        [WGProgressHUD disappearFailureMessage:@"请先填写验证码" onView:self.view];
+        return;
+    }
+    [WGProgressHUD loadMessage:@"正在验证..." onView:self.view];
+    @weakify(self);
+    [SMSSDK commitVerificationCode:self.codeTextField.text phoneNumber:self.phoneTextField.text zone:@"86" result:^(NSError *error) {
+        @strongify(self);
+        if (!error) {
             if (self.vertifyView == WGVertifyView_SignUp) {
                 UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
-                UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpUserInfoViewController"];
+                WGSignUpUserInfoViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpUserInfoViewController"];
+                [vc.userInfoDict safeSetValue:self.phoneTextField.text forKey:@"phone"];
                 [self.navigationController pushViewController:vc animated:YES];
             }else{
                 UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
                 UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGRepeatPasswordViewController"];
                 [self.navigationController pushViewController:vc animated:YES];
             }
-   
-//        }else{
-//            [WGProgressHUD autoDisappearWithMessage:@"请重新检查输入结果" onView:self.view];
-//        }
-//    }];
+        }else{
+            [WGProgressHUD disappearFailureMessage:@"请重新检查输入结果" onView:self.view];
+        }
+    }];
 }
+#pragma mark - UITextFieldDelegate
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if (textField.tag == 1) {
+        if (textField.text.length>=11) {
+            return NO;
+        }
+    }else{
+        if (textField.text.length>=4) {
+            return NO;
+        }
+    }
+    return YES;
 }
-*/
 
 @end

@@ -10,13 +10,15 @@
 
 #import <extobjc.h>
 
+#import "SignHeader.h"
 #import "WGValidJudge.h"
 #import "WGProgressHUD.h"
 #import "WGSignInRequest.h"
 #import "WGVertifyPhoneViewController.h"
 
-NSString *PhoneTextFieldWarning = @"请填写用户名";
-NSString *PasswordTextFieldWarning = @"请填写密码";
+NSString *PhoneNoneWarning = @"请填写用户名";
+NSString *PhoneWrongWarning = @"请填写正确的电话号码";
+NSString *PasswordNoneWarning = @"请填写密码";
 
 @interface WGSignInViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
@@ -29,12 +31,17 @@ NSString *PasswordTextFieldWarning = @"请填写密码";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldChange:) name:UITextFieldTextDidChangeNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc{
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - IBACtion
@@ -48,24 +55,47 @@ NSString *PasswordTextFieldWarning = @"请填写密码";
 }
 - (IBAction)sign_upAction:(id)sender {
     if (![WGValidJudge isValidString:self.phoneTextField.text]) {
-        [WGProgressHUD autoDisappearWithMessage:PhoneTextFieldWarning onView:self.view];
+        [WGProgressHUD disappearFailureMessage:PhoneNoneWarning onView:self.view];
+    }else if(![WGValidJudge isValidPhoneNum:self.phoneTextField.text]){
+        [WGProgressHUD disappearFailureMessage:PhoneWrongWarning onView:self.view];
     }else if(![WGValidJudge isValidString:self.passwordTextField.text]){
-        [WGProgressHUD autoDisappearWithMessage:PasswordTextFieldWarning onView:self.view];
+        [WGProgressHUD disappearFailureMessage:PasswordNoneWarning onView:self.view];
     }else{
         WGSignInRequest *request = [[WGSignInRequest alloc] initWithPhone:self.phoneTextField.text password:self.passwordTextField.text];
         
         @weakify(self);
         [request requestWithSuccess:^(WGBaseModel *model, NSError *error) {
-            
+            @strongify(self);
+            [self back];
         } failure:^(WGBaseModel *model, NSError *error) {
             
         }];
     }
 }
 
-#pragma mark - Navigation
+#pragma mark - NSNotification
+//- (void)textFieldChange:(NSNotification *)notification{
+//    if (self.phoneTextField.text.length == 11 && self.passwordTextField.text.length>MINPASSWORDLEGTH){
+//        [self.sign_inButton setEnabled:YES];
+//    }
+//}
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+#pragma mark - UITextFieldDelegate
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if (textField.tag == 1) {
+        if (textField.text.length>=11) {
+            return NO;
+        }
+    }else{
+        if (textField.text.length>=kMAX_PASSWORD_LEGTH) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+#pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     WGVertifyPhoneViewController *vc = [segue destinationViewController];
     if ([segue.identifier isEqualToString:@"SignUp"]) {

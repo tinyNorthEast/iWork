@@ -74,8 +74,6 @@
                                     NSLog(@"分享失败,错误码:%ld,错误描述:%@", (long)[error errorCode], [error errorDescription]);
                                 }
                             }];
-    
 }
-
 
 @end

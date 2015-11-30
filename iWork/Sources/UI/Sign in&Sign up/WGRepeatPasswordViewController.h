@@ -10,4 +10,6 @@
 
 @interface WGRepeatPasswordViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableDictionary *signUpInfoDict;
+
 @end

@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWork/Sources/Networking/BaseRequest/WGBaseRequest.m"
-            timestampString = "470388514.123203"
+            timestampString = "470498335.345943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "-request"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "-requestWithSuccess:failure:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,77 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWork/Sources/Networking/BaseRequest/WGBaseRequest.m"
-            timestampString = "470388514.123203"
+            filePath = "iWork/Sources/UI/Sign in&amp;Sign up/WGVertifyPhoneViewController.m"
+            timestampString = "470559671.757756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "-request"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iWork/Sources/UI/Sign in&amp;Sign up/WGSignInViewController.m"
-            timestampString = "470388517.170828"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "-sign_upAction:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[WGSignInViewController sign_upAction:]_block_invoke"
-                  moduleName = "iWork"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adele/study/Private/iWork/iWork/Sources/UI/Sign%20in&amp;Sign%20up/WGSignInViewController.m"
-                  timestampString = "470391999.291867"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "83">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[WGSignInViewController sign_upAction:]_block_invoke_2"
-                  moduleName = "iWork"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adele/study/Private/iWork/iWork/Sources/UI/Sign%20in&amp;Sign%20up/WGSignInViewController.m"
-                  timestampString = "470391999.292099"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "75">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iWork/Sources/UI/Sign in&amp;Sign up/WGSignInViewController.m"
-            timestampString = "470388520.911828"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "-sign_upAction:"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-getCodeAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

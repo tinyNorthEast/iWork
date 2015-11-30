@@ -20,4 +20,6 @@
 
 + (BOOL)isValidDictionary:(NSDictionary *)aDictionary;
 
++ (BOOL)isValidPhoneNum:(NSString *)phoneNum;
+
 @end

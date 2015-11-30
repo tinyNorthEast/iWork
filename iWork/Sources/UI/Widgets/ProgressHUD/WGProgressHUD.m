@@ -49,11 +49,25 @@ static NSInteger timeInterval = 1.5;
     [HUD show:YES];
 }
 
-+ (void)autoDisappearWithMessage:(NSString *)message onView:(UIView *)view{
++ (void)disappearSuccessMessage:(NSString *)message onView:(UIView *)view{
     [self dismissOnView:view];
     MBProgressHUD *HUD = [self initHUDonView:view];
     
     [view addSubview:HUD];
+    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hud_success"]];
+    HUD.mode = MBProgressHUDModeCustomView;
+    HUD.labelText = message;
+    [HUD show:YES];
+    [HUD hide:YES afterDelay:timeInterval];
+}
+
++ (void)disappearFailureMessage:(NSString *)message onView:(UIView *)view{
+    [self dismissOnView:view];
+    MBProgressHUD *HUD = [self initHUDonView:view];
+    
+    [view addSubview:HUD];
+    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hud_failed"]];
+    HUD.mode = MBProgressHUDModeCustomView;
     HUD.labelText = message;
     [HUD show:YES];
     [HUD hide:YES afterDelay:timeInterval];

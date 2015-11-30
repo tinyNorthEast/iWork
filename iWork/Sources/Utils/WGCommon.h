@@ -21,4 +21,5 @@ NSString *kSinaWeibo_url = @"http://www.iworkgroup.cn";
 NSString *kSMSSDK_appkey = @"ca43c1285a88";
 NSString *kSMSSDK_secret = @"26a4be0b1c162cc43389a8bdf7f19680";
 
+
 #endif /* WGCommon_h */

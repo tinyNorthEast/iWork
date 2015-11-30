@@ -1,18 +1,19 @@
 //
-//  WGSignInRequest.m
+//  WGResetPasswordRequest.m
 //  iWork
 //
-//  Created by Adele on 11/27/15.
+//  Created by Adele on 11/30/15.
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
-#import "WGSignInRequest.h"
+#import "WGResetPasswordRequest.h"
 
 #import "NSMutableDictionary+WGExtension.h"
 #import "NSString+WGMD5.h"
 #import "WGBaseModel.h"
 
-@implementation WGSignInRequest
+
+@implementation WGResetPasswordRequest
 
 - (instancetype)initWithPhone:(NSString *)phone password:(NSString *)password
 {
@@ -29,7 +30,7 @@
 }
 
 - (NSString *)pathName{
-    return @"api/v1/user/login.action";
+    return @"";
 }
 
 - (WGHTTPRequestMethod)requestMethod{
@@ -39,5 +40,6 @@
 - (WGBaseModel *)responseModelWithData:(id)data{
     return [[WGBaseModel alloc] initWithDictionary:data error:nil];
 }
+
 
 @end

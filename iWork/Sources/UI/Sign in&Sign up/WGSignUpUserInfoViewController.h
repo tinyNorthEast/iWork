@@ -10,4 +10,6 @@
 
 @interface WGSignUpUserInfoViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableDictionary *userInfoDict;
+
 @end

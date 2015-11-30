@@ -10,6 +10,9 @@
 		B5055BEE1BF9CF33001736AD /* WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055BED1BF9CF33001736AD /* WGPager.m */; };
 		B5055BF41BF9FB5B001736AD /* WGValidJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055BF31BF9FB5B001736AD /* WGValidJudge.m */; };
 		B5055C021BFA02ED001736AD /* WGTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055C011BFA02ED001736AD /* WGTools.m */; };
+		B5066A051C0C23CE00D87E56 /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5066A041C0C23CE00D87E56 /* PopoverView.m */; };
+		B5066A081C0C44AB00D87E56 /* WGResetPasswordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5066A071C0C44AB00D87E56 /* WGResetPasswordRequest.m */; };
+		B520B2D11C0B3D5C00CFD6CD /* NSString+WGMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */; };
 		B52AD9781BFB21E0006540B3 /* WGNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AD9771BFB21E0006540B3 /* WGNetworkHelper.m */; };
 		B54FA7E81BF46AE60018B682 /* iWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7E71BF46AE60018B682 /* iWorkTests.m */; };
 		B54FA7F31BF46AE60018B682 /* iWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7F21BF46AE60018B682 /* iWorkUITests.m */; };
@@ -76,6 +79,7 @@
 		B5E907BF1C083E6C003AB736 /* WGSignInRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907BE1C083E6C003AB736 /* WGSignInRequest.m */; };
 		B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907C11C083F83003AB736 /* NSMutableDictionary+WGExtension.m */; };
 		B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907C41C096C96003AB736 /* WGSignUpRequest.m */; };
+		B5E907C71C09A292003AB736 /* Widget.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E907C61C09A292003AB736 /* Widget.xcassets */; };
 		B5EA30311C03875B0003FB3A /* WGSignUpPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA30301C03875B0003FB3A /* WGSignUpPasswordViewController.m */; };
 		B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA30331C044FA20003FB3A /* WGRepeatPasswordViewController.m */; };
 		C9574CD80D7E2DD5DF0801F2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79307E628B9946F4BD75B390 /* libPods.a */; };
@@ -107,6 +111,12 @@
 		B5055BF31BF9FB5B001736AD /* WGValidJudge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGValidJudge.m; sourceTree = "<group>"; };
 		B5055C001BFA02ED001736AD /* WGTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTools.h; sourceTree = "<group>"; };
 		B5055C011BFA02ED001736AD /* WGTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTools.m; sourceTree = "<group>"; };
+		B5066A031C0C23CE00D87E56 /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
+		B5066A041C0C23CE00D87E56 /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
+		B5066A061C0C44AB00D87E56 /* WGResetPasswordRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGResetPasswordRequest.h; sourceTree = "<group>"; };
+		B5066A071C0C44AB00D87E56 /* WGResetPasswordRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGResetPasswordRequest.m; sourceTree = "<group>"; };
+		B520B2CF1C0B3D5C00CFD6CD /* NSString+WGMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WGMD5.h"; sourceTree = "<group>"; };
+		B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WGMD5.m"; sourceTree = "<group>"; };
 		B52AD9761BFB21E0006540B3 /* WGNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNetworkHelper.h; sourceTree = "<group>"; };
 		B52AD9771BFB21E0006540B3 /* WGNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNetworkHelper.m; sourceTree = "<group>"; };
 		B54FA7CA1BF46AE60018B682 /* iWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,10 +229,12 @@
 		B5E907C11C083F83003AB736 /* NSMutableDictionary+WGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+WGExtension.m"; sourceTree = "<group>"; };
 		B5E907C31C096C96003AB736 /* WGSignUpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpRequest.h; sourceTree = "<group>"; };
 		B5E907C41C096C96003AB736 /* WGSignUpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignUpRequest.m; sourceTree = "<group>"; };
+		B5E907C61C09A292003AB736 /* Widget.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Widget.xcassets; sourceTree = "<group>"; };
 		B5EA302F1C03875B0003FB3A /* WGSignUpPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpPasswordViewController.h; sourceTree = "<group>"; };
 		B5EA30301C03875B0003FB3A /* WGSignUpPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignUpPasswordViewController.m; sourceTree = "<group>"; };
 		B5EA30321C044FA20003FB3A /* WGRepeatPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGRepeatPasswordViewController.h; sourceTree = "<group>"; };
 		B5EA30331C044FA20003FB3A /* WGRepeatPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGRepeatPasswordViewController.m; sourceTree = "<group>"; };
+		B5EFD2361C0C060E0099365F /* SignHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignHeader.h; sourceTree = "<group>"; };
 		E9D6A9E99C33B8C557D1EA48 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -325,6 +337,15 @@
 			path = Pager;
 			sourceTree = "<group>";
 		};
+		B5066A021C0C23CE00D87E56 /* PopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				B5066A031C0C23CE00D87E56 /* PopoverView.h */,
+				B5066A041C0C23CE00D87E56 /* PopoverView.m */,
+			);
+			path = PopoverView;
+			sourceTree = "<group>";
+		};
 		B54FA7C11BF46AE60018B682 = {
 			isa = PBXGroup;
 			children = (
@@ -379,10 +400,11 @@
 		B54FA8001BF46FCD0018B682 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B54FA8011BF46FCD0018B682 /* Icon.xcassets */,
 				B54FA82E1BF49DF90018B682 /* Launch.xcassets */,
+				B54FA8011BF46FCD0018B682 /* Icon.xcassets */,
 				B5E6011D1C030ED700265307 /* Sign.xcassets */,
 				B5E6011F1C03179F00265307 /* Navigation.xcassets */,
+				B5E907C61C09A292003AB736 /* Widget.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -451,6 +473,8 @@
 				B52AD9771BFB21E0006540B3 /* WGNetworkHelper.m */,
 				B5E907C01C083F83003AB736 /* NSMutableDictionary+WGExtension.h */,
 				B5E907C11C083F83003AB736 /* NSMutableDictionary+WGExtension.m */,
+				B520B2CF1C0B3D5C00CFD6CD /* NSString+WGMD5.h */,
+				B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -512,6 +536,7 @@
 		B54FA8571BF4C4480018B682 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				B5066A021C0C23CE00D87E56 /* PopoverView */,
 				B54FA85C1BF4CBDB0018B682 /* ViewAdditions */,
 				B54FA8581BF4C4480018B682 /* ProgressHUD */,
 				B5055BEB1BF9CE22001736AD /* Pager */,
@@ -632,12 +657,13 @@
 				B55D11FC1C06F7100035C6B4 /* WGSignUpUserInfoViewController.m */,
 				B55D11FE1C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.h */,
 				B55D11FF1C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.m */,
-				B5EA302F1C03875B0003FB3A /* WGSignUpPasswordViewController.h */,
-				B5EA30301C03875B0003FB3A /* WGSignUpPasswordViewController.m */,
 				B5EA30321C044FA20003FB3A /* WGRepeatPasswordViewController.h */,
 				B5EA30331C044FA20003FB3A /* WGRepeatPasswordViewController.m */,
 				B5E600431BFED23F00265307 /* WGResetPasswordViewController.h */,
 				B5E600441BFED23F00265307 /* WGResetPasswordViewController.m */,
+				B5EA302F1C03875B0003FB3A /* WGSignUpPasswordViewController.h */,
+				B5EA30301C03875B0003FB3A /* WGSignUpPasswordViewController.m */,
+				B5EFD2361C0C060E0099365F /* SignHeader.h */,
 			);
 			path = "Sign in&Sign up";
 			sourceTree = "<group>";
@@ -677,6 +703,8 @@
 				B5E907BE1C083E6C003AB736 /* WGSignInRequest.m */,
 				B5E907C31C096C96003AB736 /* WGSignUpRequest.h */,
 				B5E907C41C096C96003AB736 /* WGSignUpRequest.m */,
+				B5066A061C0C44AB00D87E56 /* WGResetPasswordRequest.h */,
+				B5066A071C0C44AB00D87E56 /* WGResetPasswordRequest.m */,
 			);
 			path = "Sign in&Sign up";
 			sourceTree = "<group>";
@@ -804,6 +832,7 @@
 				B5E600C61C00245400265307 /* SMS_SDKLocalizable.strings in Resources */,
 				B55D12341C070EAA0035C6B4 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				B54FA82F1BF49DF90018B682 /* Launch.xcassets in Resources */,
+				B5E907C71C09A292003AB736 /* Widget.xcassets in Resources */,
 				B5E600661BFF0BAE00265307 /* PushConfig.plist in Resources */,
 				B5E6011E1C030ED700265307 /* Sign.xcassets in Resources */,
 				B55D12021C0702BD0035C6B4 /* Sign.storyboard in Resources */,
@@ -867,6 +896,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5066A051C0C23CE00D87E56 /* PopoverView.m in Sources */,
 				B5E907BF1C083E6C003AB736 /* WGSignInRequest.m in Sources */,
 				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
 				B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */,
@@ -886,6 +916,7 @@
 				B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */,
 				B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */,
 				B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */,
+				B5066A081C0C44AB00D87E56 /* WGResetPasswordRequest.m in Sources */,
 				B5E6011C1C03005B00265307 /* WGCustomIBSupports.m in Sources */,
 				B54FA84C1BF4A98B0018B682 /* WGBaseRequest.m in Sources */,
 				B54FA85F1BF4CBDB0018B682 /* UIViewAdditions.m in Sources */,
@@ -893,6 +924,7 @@
 				B5055C021BFA02ED001736AD /* WGTools.m in Sources */,
 				B52AD9781BFB21E0006540B3 /* WGNetworkHelper.m in Sources */,
 				B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */,
+				B520B2D11C0B3D5C00CFD6CD /* NSString+WGMD5.m in Sources */,
 				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

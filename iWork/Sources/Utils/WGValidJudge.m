@@ -42,4 +42,12 @@
     }
 }
 
++ (BOOL)isValidPhoneNum:(NSString *)phoneNum{
+    if ([self isValidString:phoneNum]&&phoneNum.length==11) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
 @end

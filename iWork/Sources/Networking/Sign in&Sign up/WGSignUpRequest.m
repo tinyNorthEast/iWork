@@ -30,16 +30,18 @@
 - (instancetype)initWithInfo:(NSDictionary *)infoDict{
     self = [super init];
     if (self) {
-        [self.postParams safeSetValue:@"张三" forKey:@"zh_name"];
-        [self.postParams safeSetValue:@"18000000778" forKey:@"phone"];
-        [self.postParams safeSetValue:@"123456" forKey:@"password"];
-        [self.postParams safeSetValue:@"jack_gxy@126.com" forKey:@"mail"];
-        [self.postParams safeSetValue:@"IT" forKey:@"position"];
-        [self.postParams safeSetValue:@"1" forKey:@"experience"];
-        [self.postParams safeSetValue:@"102" forKey:@"role_code"];
+//        [self.postParams safeSetValue:@"张三" forKey:@"zh_name"];
+//        [self.postParams safeSetValue:@"18000000778" forKey:@"phone"];
+//        [self.postParams safeSetValue:@"123456" forKey:@"password"];
+//        [self.postParams safeSetValue:@"jack_gxy@126.com" forKey:@"mail"];
+//        [self.postParams safeSetValue:@"IT" forKey:@"position"];
+//        [self.postParams safeSetValue:@"1" forKey:@"experience"];
+//        [self.postParams safeSetValue:@"102" forKey:@"role_code"];
+//        
+//        [self.postParams safeSetValue:@"2" forKey:@"client"];
+//        [self.postParams safeSetValue:@"123456" forKey:@"eq_num"];
         
-        [self.postParams safeSetValue:@"2" forKey:@"client"];
-        [self.postParams safeSetValue:@"123456" forKey:@"eq_num"];
+        self.postParams = [infoDict mutableCopy];
     
         return self;
     }

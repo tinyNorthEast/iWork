@@ -16,7 +16,9 @@
 
 + (void)customImage:(UIImage *)image message:(NSString *)message onView:(UIView *)view;
 
-+ (void)autoDisappearWithMessage:(NSString *)message onView:(UIView *)view;
++ (void)disappearSuccessMessage:(NSString *)message onView:(UIView *)view;
+
++ (void)disappearFailureMessage:(NSString *)message onView:(UIView *)view;
 
 + (void)dismissOnView:(UIView *)view;
 
