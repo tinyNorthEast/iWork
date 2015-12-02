@@ -16,6 +16,7 @@
 #import "WGCountDownButton.h"
 #import "NSMutableDictionary+WGExtension.h"
 #import "WGSignUpUserInfoViewController.h"
+#import "WGRepeatPasswordViewController.h"
 
 @interface WGVertifyPhoneViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
@@ -90,7 +91,9 @@
                 [self.navigationController pushViewController:vc animated:YES];
             }else{
                 UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
-                UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGRepeatPasswordViewController"];
+                WGRepeatPasswordViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGRepeatPasswordViewController"];
+                vc.viewFounction = WGViewFounction_ResetPassword;
+                vc.phoneStr = self.phoneTextField.text;
                 [self.navigationController pushViewController:vc animated:YES];
             }
         }else{

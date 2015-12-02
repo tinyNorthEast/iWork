@@ -8,11 +8,14 @@
 
 #import "WGRepeatPasswordViewController.h"
 
+#import <extobjc.h>
+
 #import "WGProgressHUD.h"
 #import "WGValidJudge.h"
-#import "NSMutableDictionary+WGExtension.h"
 #import "WGSignUpRequest.h"
+#import "NSMutableDictionary+WGExtension.h"
 #import "NSString+WGMD5.h"
+#import "WGResetPasswordRequest.h"
 
 @interface WGRepeatPasswordViewController ()<UITextFieldDelegate>
 
@@ -62,28 +65,28 @@
         return;
     }
     
-    [self.signUpInfoDict safeSetValue:[[NSString stringDecodingByMD5:self.passwordTextField.text] lowercaseString] forKey:@"password"];
-    
-    WGSignUpRequest *request = [[WGSignUpRequest alloc] initWithInfo:self.signUpInfoDict];
-    
-    [request requestWithSuccess:^(WGBaseModel *model, NSError *error) {
+    if (self.viewFounction == WGViewFounction_SignUp) {
+        [self.signUpInfoDict safeSetValue:[[NSString stringDecodingByMD5:self.passwordTextField.text] lowercaseString] forKey:@"password"];
         
-    } failure:^(WGBaseModel *model, NSError *error) {
+        @weakify(self);
+        WGSignUpRequest *request = [[WGSignUpRequest alloc] initWithInfo:self.signUpInfoDict];
         
-    }];
-    
-//    [self back];
+        [request requestWithSuccess:^(WGBaseModel *model, NSError *error) {
+            @strongify(self);
+            [self back];
+        } failure:^(WGBaseModel *model, NSError *error) {
+            
+        }];
+    }else{
+        @weakify(self);
+        WGResetPasswordRequest *request = [[WGResetPasswordRequest alloc] initWithPhone:self.phoneStr password:self.passwordTextField.text];
+        [request requestWithSuccess:^(WGBaseModel *model, NSError *error) {
+            @strongify(self);
+            [self back];
+        } failure:^(WGBaseModel *model, NSError *error) {
+            
+        }];
+    }
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

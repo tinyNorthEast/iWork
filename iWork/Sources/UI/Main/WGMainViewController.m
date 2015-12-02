@@ -6,16 +6,16 @@
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "WGMainViewController.h"
 
 
 #import <ShareSDK/ShareSDK.h>
 
-@interface MainViewController ()
+@interface WGMainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
-@implementation MainViewController
+@implementation WGMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -75,5 +75,8 @@
                                 }
                             }];
 }
+
+#pragma mark - UITableViewDataSource
+#pragma mark - UITableViewDelegate
 
 @end

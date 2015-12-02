@@ -121,6 +121,7 @@
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
     WGRepeatPasswordViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGRepeatPasswordViewController"];
+    vc.viewFounction = WGViewFounction_SignUp;
     vc.signUpInfoDict = self.workInfoDict;
     [self.navigationController pushViewController:vc animated:YES];
 }
