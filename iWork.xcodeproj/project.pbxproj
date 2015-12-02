@@ -87,6 +87,8 @@
 		B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */; };
 		B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D3B1C0EF3E600B35AB6 /* WGGlobal.m */; };
 		B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D401C0EF57C00B35AB6 /* WGDataAccess.m */; };
+		B5FB3D451C0EFB5500B35AB6 /* WGDataPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D441C0EFB5500B35AB6 /* WGDataPickerView.m */; };
+		B5FB3D481C0EFBA800B35AB6 /* WGToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D471C0EFBA800B35AB6 /* WGToolBarView.m */; };
 		C9574CD80D7E2DD5DF0801F2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79307E628B9946F4BD75B390 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -250,6 +252,10 @@
 		B5FB3D3E1C0EF48700B35AB6 /* SynthesizeSingletonForArc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingletonForArc.h; sourceTree = "<group>"; };
 		B5FB3D3F1C0EF57C00B35AB6 /* WGDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDataAccess.h; sourceTree = "<group>"; };
 		B5FB3D401C0EF57C00B35AB6 /* WGDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDataAccess.m; sourceTree = "<group>"; };
+		B5FB3D431C0EFB5500B35AB6 /* WGDataPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDataPickerView.h; sourceTree = "<group>"; };
+		B5FB3D441C0EFB5500B35AB6 /* WGDataPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDataPickerView.m; sourceTree = "<group>"; };
+		B5FB3D461C0EFBA800B35AB6 /* WGToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGToolBarView.h; sourceTree = "<group>"; };
+		B5FB3D471C0EFBA800B35AB6 /* WGToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGToolBarView.m; sourceTree = "<group>"; };
 		E9D6A9E99C33B8C557D1EA48 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -566,6 +572,7 @@
 		B54FA8571BF4C4480018B682 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				B5FB3D421C0EFB2600B35AB6 /* PickerView */,
 				B5066A021C0C23CE00D87E56 /* PopoverView */,
 				B54FA85C1BF4CBDB0018B682 /* ViewAdditions */,
 				B54FA8581BF4C4480018B682 /* ProgressHUD */,
@@ -755,6 +762,17 @@
 				B5FB3D401C0EF57C00B35AB6 /* WGDataAccess.m */,
 			);
 			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		B5FB3D421C0EFB2600B35AB6 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				B5FB3D461C0EFBA800B35AB6 /* WGToolBarView.h */,
+				B5FB3D471C0EFBA800B35AB6 /* WGToolBarView.m */,
+				B5FB3D431C0EFB5500B35AB6 /* WGDataPickerView.h */,
+				B5FB3D441C0EFB5500B35AB6 /* WGDataPickerView.m */,
+			);
+			path = PickerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -955,6 +973,7 @@
 				B5055BF41BF9FB5B001736AD /* WGValidJudge.m in Sources */,
 				B55D11FD1C06F7100035C6B4 /* WGSignUpUserInfoViewController.m in Sources */,
 				B54FA8471BF4A88D0018B682 /* UIFont+WGThemeFonts.m in Sources */,
+				B5FB3D451C0EFB5500B35AB6 /* WGDataPickerView.m in Sources */,
 				B54FA84F1BF4A9EB0018B682 /* WGBaseModel.m in Sources */,
 				B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */,
 				B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */,
@@ -963,6 +982,7 @@
 				B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */,
 				B5066A081C0C44AB00D87E56 /* WGResetPasswordRequest.m in Sources */,
 				B5E6011C1C03005B00265307 /* WGCustomIBSupports.m in Sources */,
+				B5FB3D481C0EFBA800B35AB6 /* WGToolBarView.m in Sources */,
 				B54FA84C1BF4A98B0018B682 /* WGBaseRequest.m in Sources */,
 				B54FA85F1BF4CBDB0018B682 /* UIViewAdditions.m in Sources */,
 				B54FA8141BF46FCD0018B682 /* WGMainViewController.m in Sources */,
