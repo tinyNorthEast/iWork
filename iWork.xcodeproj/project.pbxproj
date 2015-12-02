@@ -84,6 +84,7 @@
 		B5E907C71C09A292003AB736 /* Widget.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E907C61C09A292003AB736 /* Widget.xcassets */; };
 		B5EA30311C03875B0003FB3A /* WGSignUpPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA30301C03875B0003FB3A /* WGSignUpPasswordViewController.m */; };
 		B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA30331C044FA20003FB3A /* WGRepeatPasswordViewController.m */; };
+		B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */; };
 		C9574CD80D7E2DD5DF0801F2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79307E628B9946F4BD75B390 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -240,6 +241,8 @@
 		B5EA30321C044FA20003FB3A /* WGRepeatPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGRepeatPasswordViewController.h; sourceTree = "<group>"; };
 		B5EA30331C044FA20003FB3A /* WGRepeatPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGRepeatPasswordViewController.m; sourceTree = "<group>"; };
 		B5EFD2361C0C060E0099365F /* SignHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignHeader.h; sourceTree = "<group>"; };
+		B5FB3D371C0EDC8A00B35AB6 /* WGQNTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGQNTokenRequest.h; sourceTree = "<group>"; };
+		B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGQNTokenRequest.m; sourceTree = "<group>"; };
 		E9D6A9E99C33B8C557D1EA48 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -721,6 +724,8 @@
 				B5E907C41C096C96003AB736 /* WGSignUpRequest.m */,
 				B5066A061C0C44AB00D87E56 /* WGResetPasswordRequest.h */,
 				B5066A071C0C44AB00D87E56 /* WGResetPasswordRequest.m */,
+				B5FB3D371C0EDC8A00B35AB6 /* WGQNTokenRequest.h */,
+				B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */,
 			);
 			path = "Sign in&Sign up";
 			sourceTree = "<group>";
@@ -933,6 +938,7 @@
 				B54FA84F1BF4A9EB0018B682 /* WGBaseModel.m in Sources */,
 				B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */,
 				B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */,
+				B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */,
 				B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */,
 				B5066A081C0C44AB00D87E56 /* WGResetPasswordRequest.m in Sources */,
 				B5E6011C1C03005B00265307 /* WGCustomIBSupports.m in Sources */,

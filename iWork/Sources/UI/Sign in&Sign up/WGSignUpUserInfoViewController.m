@@ -8,12 +8,16 @@
 
 #import "WGSignUpUserInfoViewController.h"
 
+#import <extobjc.h>
+#import <QiniuSDK.h>
+
 #import "WGValidJudge.h"
 #import "WGProgressHUD.h"
 #import "NSMutableDictionary+WGExtension.h"
 #import "WGSignUpWorkInfoViewController.h"
+#import "WGQNTokenRequest.h"
 
-@interface WGSignUpUserInfoViewController ()<UIActionSheetDelegate>
+@interface WGSignUpUserInfoViewController ()<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *enNameTextField;
@@ -43,8 +47,14 @@
 }
 
 #pragma mark - IBACtion
+
+- (void)back{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
 - (IBAction)addPhotoAction:(id)sender {
-    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"请选择图片来源" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"拍照" otherButtonTitles:@"从手机相册选择",nil];
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从手机相册选择",nil];
     [as showInView:self.view];
 }
 - (IBAction)nextAction:(id)sender {
@@ -65,13 +75,113 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-#pragma mark - Navigation
+#pragma mark - Request
+- (void)getUplodImageToken{
+    WGQNTokenRequest *request = [[WGQNTokenRequest alloc] init];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [request requestWithSuccess:^(WGBaseModel *model, NSError *error) {
+        
+        NSString *token = @"从服务端SDK获取";
+        QNUploadManager *upManager = [[QNUploadManager alloc] init];
+        NSData *data = [@"Hello, World!" dataUsingEncoding : NSUTF8StringEncoding];
+        [upManager putData:data key:@"hello" token:token
+                  complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+                      NSLog(@"%@", info);
+                      NSLog(@"%@", resp);
+                  } option:nil];
+        
+    } failure:^(WGBaseModel *model, NSError *error) {
+        
+    }];
+}
+- (void)uploadImageToQU:(NSString *)token{
+    
 }
 
+#pragma mark - UIActionSheetDelegate
+- (void)callCamera{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:picker animated:YES completion:^{
+            
+        }];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Opps" message:@"你没有摄像头" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+- (void)callPhotoLibary{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:^{
+        
+    }];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        [self callCamera];
+    }else{
+        [self callPhotoLibary];
+    }
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)size
+{
+    UIGraphicsBeginImageContext(size);
+    [img drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return scaledImage;
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    //得到图片
+    UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage * editedimage = [info objectForKey:UIImagePickerControllerEditedImage];
+    NSURL *url      = [info objectForKey:UIImagePickerControllerReferenceURL];
+    UIImage *newImg = [self scaleToSize:editedimage size:CGSizeMake(500, 500)];
+    NSString *imgName = [url pathExtension];
+    
+    if( ![WGValidJudge isValidString:imgName] )
+    {
+        imgName = @"png";
+    }
+    
+    NSString *paths     = [NSString stringWithFormat:@"%@/Documents/TakePhoto/photo.%@", NSHomeDirectory(),imgName];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if(![fileManager fileExistsAtPath:paths]){
+        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+        NSString *directryPath = [path stringByAppendingPathComponent:@"TakePhoto"];
+        [fileManager createDirectoryAtPath:directryPath withIntermediateDirectories:YES attributes:nil error:nil];
+        NSString *filePath = [directryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"photo.%@",imgName]];
+        [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+    }
+    
+    [UIImagePNGRepresentation(newImg) writeToFile:paths  atomically:YES];
+    
+    if(picker.sourceType == UIImagePickerControllerSourceTypeCamera )
+    {
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    }
+    NSURL *imgURL;
+    if( newImg )
+    {
+        imgURL = [NSURL fileURLWithPath:paths];
+        
+    }
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self getUplodImageToken];
+    }];
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self back];
+}
 
 @end
