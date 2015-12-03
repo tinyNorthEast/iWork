@@ -11,6 +11,7 @@
 #import "NSMutableDictionary+WGExtension.h"
 #import "NSString+WGMD5.h"
 #import "WGBaseModel.h"
+#import "UIDevice+WGIdentifier.h"
 
 @implementation WGSignInRequest
 
@@ -22,7 +23,7 @@
         [self.postParams safeSetValue:[[NSString stringDecodingByMD5:password] lowercaseString] forKey:@"password"];
         
         [self.postParams safeSetValue:@"2" forKey:@"client"];
-        [self.postParams safeSetValue:@"123456" forKey:@"eq_num"];
+        [self.postParams safeSetValue:[[UIDevice currentDevice] UniqueGlobalDeviceIdentifier] forKey:@"eq_num"];
         return self;
     }
     return nil;

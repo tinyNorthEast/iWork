@@ -90,6 +90,8 @@
 		B5FB3D4C1C0FEDBF00B35AB6 /* WGMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D4B1C0FEDBF00B35AB6 /* WGMainCell.m */; };
 		B5FB3D511C1034A500B35AB6 /* WGHunterListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D501C1034A500B35AB6 /* WGHunterListModel.m */; };
 		B5FB3D541C10499A00B35AB6 /* WGSignInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D531C10499A00B35AB6 /* WGSignInModel.m */; };
+		B5FB3D571C1071CC00B35AB6 /* UIDevice+WGIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D561C1071CC00B35AB6 /* UIDevice+WGIdentifier.m */; };
+		B5FB3D5A1C10745300B35AB6 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D591C10745300B35AB6 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C9574CD80D7E2DD5DF0801F2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79307E628B9946F4BD75B390 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -259,6 +261,10 @@
 		B5FB3D501C1034A500B35AB6 /* WGHunterListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHunterListModel.m; sourceTree = "<group>"; };
 		B5FB3D521C10499A00B35AB6 /* WGSignInModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInModel.h; sourceTree = "<group>"; };
 		B5FB3D531C10499A00B35AB6 /* WGSignInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInModel.m; sourceTree = "<group>"; };
+		B5FB3D551C1071CC00B35AB6 /* UIDevice+WGIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+WGIdentifier.h"; sourceTree = "<group>"; };
+		B5FB3D561C1071CC00B35AB6 /* UIDevice+WGIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+WGIdentifier.m"; sourceTree = "<group>"; };
+		B5FB3D581C10745300B35AB6 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		B5FB3D591C10745300B35AB6 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		E9D6A9E99C33B8C557D1EA48 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -516,6 +522,10 @@
 				B5E907C11C083F83003AB736 /* NSMutableDictionary+WGExtension.m */,
 				B520B2CF1C0B3D5C00CFD6CD /* NSString+WGMD5.h */,
 				B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */,
+				B5FB3D551C1071CC00B35AB6 /* UIDevice+WGIdentifier.h */,
+				B5FB3D561C1071CC00B35AB6 /* UIDevice+WGIdentifier.m */,
+				B5FB3D581C10745300B35AB6 /* OpenUDID.h */,
+				B5FB3D591C10745300B35AB6 /* OpenUDID.m */,
 				B5FB3D3E1C0EF48700B35AB6 /* SynthesizeSingletonForArc.h */,
 			);
 			path = Utils;
@@ -991,10 +1001,12 @@
 				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
 				B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */,
 				B5FB3D511C1034A500B35AB6 /* WGHunterListModel.m in Sources */,
+				B5FB3D5A1C10745300B35AB6 /* OpenUDID.m in Sources */,
 				B55D12001C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.m in Sources */,
 				B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */,
 				B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */,
 				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,
+				B5FB3D571C1071CC00B35AB6 /* UIDevice+WGIdentifier.m in Sources */,
 				B5066A141C0C8EBD00D87E56 /* WGMenuBar.m in Sources */,
 				B5E600421BFECF8800265307 /* WGVertifyPhoneViewController.m in Sources */,
 				B54FA8171BF46FCD0018B682 /* main.m in Sources */,

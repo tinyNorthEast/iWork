@@ -10,6 +10,7 @@
 
 #import "NSMutableDictionary+WGExtension.h"
 #import "WGBaseModel.h"
+#import "UIDevice+WGIdentifier.h"
 
 @implementation WGSignUpRequest
 
@@ -38,8 +39,8 @@
 //        [self.postParams safeSetValue:@"1" forKey:@"experience"];
 //        [self.postParams safeSetValue:@"102" forKey:@"role_code"];
 //        
-//        [self.postParams safeSetValue:@"2" forKey:@"client"];
-//        [self.postParams safeSetValue:@"123456" forKey:@"eq_num"];
+        [self.postParams safeSetValue:@"2" forKey:@"client"];
+        [self.postParams safeSetValue:[[UIDevice currentDevice] UniqueGlobalDeviceIdentifier] forKey:@"eq_num"];
         
         self.postParams = [infoDict mutableCopy];
     

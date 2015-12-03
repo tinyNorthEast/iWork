@@ -16,6 +16,7 @@
 
 + (void)userDefaultsSetString:(NSString *)string forKey:(NSString *)key{
     [[NSUserDefaults standardUserDefaults] setObject:string forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

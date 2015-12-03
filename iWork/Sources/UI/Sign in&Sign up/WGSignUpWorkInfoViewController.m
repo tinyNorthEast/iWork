@@ -8,16 +8,20 @@
 
 #import "WGSignUpWorkInfoViewController.h"
 
+#import <extobjc.h>
+
 #import "WGValidJudge.h"
 #import "WGProgressHUD.h"
 #import "UIViewAdditions.h"
+#import "WGDataPickerView.h"
 #import "NSMutableDictionary+WGExtension.h"
-#import "PopoverView.h"
 #import "WGRepeatPasswordViewController.h"
 
 @interface WGSignUpWorkInfoViewController ()<UIGestureRecognizerDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *infoView;
+
+@property (strong, nonatomic) WGDataPickerView *picker;
 
 @property (weak, nonatomic) IBOutlet UITextField *positionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *experienceTextFiled;
@@ -45,17 +49,30 @@
     return _workInfoDict;
 }
 
+- (WGDataPickerView *)picker{
+    if (!_picker) {
+        _picker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
+        _picker.autoHidden = YES;
+        [_picker setSelectIndex:0];
+        [_picker showInView:self.view];
+    }
+    return _picker;
+}
+
 #pragma mark - IBACtion
 - (IBAction)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)popExperienceView:(id)sender {
-    CGPoint point = CGPointMake(self.experienceTextFiled.left + self.experienceTextFiled.width/2, self.experienceTextFiled.top + self.experienceTextFiled.height*3);
-    NSArray *titles = @[@"3年以下", @"3-5年", @"5-10年",@"10年以上"];
-    PopoverView *pop = [[PopoverView alloc] initWithPoint:point titles:titles images:nil];
-    pop.selectRowAtIndex = ^(NSInteger index){
+
+    self.picker.dataArray = @[@"3年以下", @"3-5年", @"5-10年",@"10年以上"];
+    self.picker.barTitle = @"工作经验";
+    
+    @weakify(self);
+    [self.picker showSelectDate:^(NSInteger selectRow) {
+        @strongify(self);
         NSInteger exID = 0;
-        switch (index) {
+        switch (selectRow) {
             case 0:
                 exID = 1;
                 break;
@@ -72,19 +89,24 @@
                 exID = 4;
                 break;
         }
-        self.experienceTextFiled.text = titles[index];
-        [_workInfoDict safeSetValue:@(exID) forKey:@"experience"];
-    };
-    [pop show];
+        
+        self.experienceTextFiled.text = self.picker.dataArray[selectRow];
+        [self.workInfoDict safeSetValue:@(exID) forKey:@"experience"];
+        
+    } cancel:^{
+        
+    }];
 }
 - (IBAction)popRoleView:(id)sender {
-
-    CGPoint point = CGPointMake(self.roleTextField.left + self.roleTextField.width/2, self.roleTextField.top + self.roleTextField.height*4);
-    NSArray *titles = @[@"猎头顾问", @"企业HR", @"候选人"];
-    PopoverView *pop = [[PopoverView alloc] initWithPoint:point titles:titles images:nil];
-    pop.selectRowAtIndex = ^(NSInteger index){
+    
+    self.picker.dataArray = @[@"猎头顾问", @"企业HR", @"候选人"];
+    self.picker.barTitle = @"工作经验";
+    
+    @weakify(self);
+    [self.picker showSelectDate:^(NSInteger selectRow) {
+        @strongify(self);
         NSInteger roleID = 0;
-        switch (index) {
+        switch (selectRow) {
             case 0:
                 roleID = 100;
                 break;
@@ -97,10 +119,12 @@
                 roleID = 102;
                 break;
         }
-        self.roleTextField.text = titles[index];
-        [_workInfoDict safeSetValue:@(roleID) forKey:@"role_code"];
-    };
-    [pop show];
+        self.roleTextField.text = self.picker.dataArray[selectRow];
+        [self.workInfoDict safeSetValue:@(roleID) forKey:@"role_code"];
+        
+    } cancel:^{
+        
+    }];
 }
 
 - (IBAction)nextAction:(id)sender {
