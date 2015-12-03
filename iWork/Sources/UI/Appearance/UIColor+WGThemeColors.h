@@ -10,7 +10,23 @@
 
 @interface UIColor (WGThemeColors)
 
-+ (instancetype)wg_themeRedColor;
++ (instancetype)wg_themeBlackColor;
+
++ (instancetype)wg_themeDarkGrayColor;
+
++ (instancetype)wg_themeGrayColor;
+
++ (instancetype)wg_themeLightGrayColor;
+
++ (instancetype)wg_themeDarkWhiteColor;
+
++ (instancetype)wg_themeWhiteColor;
+
++ (instancetype)wg_themeCyanColor;
+
++ (instancetype)wg_themeGreenColor;
+
++ (instancetype)wg_themeYellowColor;
 
 + (instancetype)wg_themeColorFromSelectorString:(NSString *)string;
 

@@ -13,8 +13,39 @@
 
 @implementation UIColor (WGThemeColors)
 
-+ (instancetype)wg_themeRedColor{
-    return [UIColor colorWithHex:0xF16B50];
++ (instancetype)wg_themeBlackColor{
+    return [UIColor colorWithHex:0x333333];
+}
++ (instancetype)wg_themeDarkGrayColor{
+    return [UIColor colorWithHex:0x666666];
+}
+
++ (instancetype)wg_themeGrayColor{
+    return [UIColor colorWithHex:0x999999];
+}
+
++ (instancetype)wg_themeLightGrayColor{
+    return [UIColor colorWithHex:0xAAAAAA];
+}
+
++ (instancetype)wg_themeDarkWhiteColor{
+    return [UIColor colorWithHex:0xF3F3F3];
+}
+
++ (instancetype)wg_themeWhiteColor{
+    return [UIColor colorWithHex:0xFFFFFF];
+}
+
++ (instancetype)wg_themeCyanColor{
+    return [UIColor colorWithHex:0x11AAAA];
+}
+
++ (instancetype)wg_themeGreenColor{
+    return [UIColor colorWithHex:0x66BB22];
+}
+
++ (instancetype)wg_themeYellowColor{
+    return [UIColor colorWithHex:0xDAA116];
 }
 + (instancetype)wg_themeColorFromSelectorString:(NSString *)string{
     if (![WGValidJudge isValidString:string]) {
