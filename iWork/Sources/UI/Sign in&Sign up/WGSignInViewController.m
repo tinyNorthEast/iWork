@@ -14,6 +14,7 @@
 #import "WGValidJudge.h"
 #import "WGProgressHUD.h"
 #import "WGSignInRequest.h"
+#import "WGSignInModel.h"
 #import "WGVertifyPhoneViewController.h"
 
 NSString *PhoneNoneWarning = @"请填写用户名";
@@ -32,7 +33,7 @@ NSString *PasswordNoneWarning = @"请填写密码";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldChange:) name:UITextFieldTextDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldBeginEditing:) name:UITextFieldTextDidBeginEditingNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,7 +42,7 @@ NSString *PasswordNoneWarning = @"请填写密码";
 }
 
 - (void)dealloc{
-//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - IBACtion
@@ -64,23 +65,29 @@ NSString *PasswordNoneWarning = @"请填写密码";
         WGSignInRequest *request = [[WGSignInRequest alloc] initWithPhone:self.phoneTextField.text password:self.passwordTextField.text];
         
         @weakify(self);
-        [request requestWithSuccess:^(WGBaseModel *model, NSError *error) {
+        [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
             @strongify(self);
-            [self back];
-        } failure:^(WGBaseModel *model, NSError *error) {
+            WGSignInModel *model = (WGSignInModel *)baseModel;
+            if ([model isValid]) {
+                [self back];
+            }else{
+                [WGProgressHUD disappearFailureMessage:model.message onView:self.view];
+            }
+        } failure:^(WGBaseModel *baseModel, NSError *error) {
             
         }];
     }
 }
 
 #pragma mark - NSNotification
-//- (void)textFieldChange:(NSNotification *)notification{
-//    if (self.phoneTextField.text.length == 11 && self.passwordTextField.text.length>MINPASSWORDLEGTH){
-//        [self.sign_inButton setEnabled:YES];
-//    }
-//}
+- (void)textFieldBeginEditing:(NSNotification *)notification{
+    if (self.phoneTextField.text.length >= 11 && self.passwordTextField.text.length>kMIN_PASSWORD_LEGTH){
+        [self.sign_inButton setEnabled:YES];
+    }
+}
 
 #pragma mark - UITextFieldDelegate
+
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     if (textField.tag == 1) {

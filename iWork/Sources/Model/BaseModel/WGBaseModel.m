@@ -8,6 +8,8 @@
 
 #import "WGBaseModel.h"
 
+#import "WGValidJudge.h"
+
 @implementation WGBaseModel
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError *__autoreleasing *)err{
@@ -23,6 +25,17 @@
     } modelToJSONBlock:^NSString *(NSString *keyName) {
         return keyName;
     }];
+}
+
+- (NSString<Optional> *)message{
+    if (_message != nil && [WGValidJudge isValidString:_message]) {
+        return _message;
+    }
+    return @"";
+}
+
+- (BOOL)isValid{
+    return (_infoCode != nil && self.infoCode.integerValue == 0);
 }
 
 @end

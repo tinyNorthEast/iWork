@@ -71,19 +71,19 @@
         @weakify(self);
         WGSignUpRequest *request = [[WGSignUpRequest alloc] initWithInfo:self.signUpInfoDict];
         
-        [request requestWithSuccess:^(WGBaseModel *model, NSError *error) {
+        [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
             @strongify(self);
             [self back];
-        } failure:^(WGBaseModel *model, NSError *error) {
+        } failure:^(WGBaseModel *baseModel, NSError *error) {
             
         }];
     }else{
         @weakify(self);
         WGResetPasswordRequest *request = [[WGResetPasswordRequest alloc] initWithPhone:self.phoneStr password:self.passwordTextField.text];
-        [request requestWithSuccess:^(WGBaseModel *model, NSError *error) {
+        [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
             @strongify(self);
             [self back];
-        } failure:^(WGBaseModel *model, NSError *error) {
+        } failure:^(WGBaseModel *baseModel, NSError *error) {
             
         }];
     }

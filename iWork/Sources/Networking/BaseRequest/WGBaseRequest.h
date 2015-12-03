@@ -14,8 +14,8 @@ typedef NS_ENUM(NSUInteger, WGHTTPRequestMethod){
     WGHTTPRequestMethodGET = 0,
     WGHTTPRequestMethodPOST
 };
-typedef void (^RequestSuccess)(WGBaseModel *model, NSError *error);
-typedef void (^RequestFailed)(WGBaseModel *model, NSError *error);
+typedef void (^RequestSuccess)(WGBaseModel *baseModel, NSError *error);
+typedef void (^RequestFailed)(WGBaseModel *baseModel, NSError *error);
 
 @interface WGBaseRequest : NSObject
 
@@ -30,8 +30,8 @@ typedef void (^RequestFailed)(WGBaseModel *model, NSError *error);
 
 - (void)cancel;
 
-- (void)requestWithSuccess:(void(^)(WGBaseModel *model, NSError *error))success
-                   failure:(void(^)(WGBaseModel *model, NSError *error))failure;
+- (void)requestWithSuccess:(void(^)(WGBaseModel *baseModel, NSError *error))success
+                   failure:(void(^)(WGBaseModel *baseModel, NSError *error))failure;
 
 - (WGBaseModel *)responseModelWithData:(id)data;
 

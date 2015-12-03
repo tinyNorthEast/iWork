@@ -79,7 +79,7 @@
 - (void)getUplodImageToken{
     WGQNTokenRequest *request = [[WGQNTokenRequest alloc] init];
 
-    [request requestWithSuccess:^(WGBaseModel *model, NSError *error) {
+    [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         
         NSString *token = @"从服务端SDK获取";
         QNUploadManager *upManager = [[QNUploadManager alloc] init];
@@ -90,7 +90,7 @@
                       NSLog(@"%@", resp);
                   } option:nil];
         
-    } failure:^(WGBaseModel *model, NSError *error) {
+    } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];
 }

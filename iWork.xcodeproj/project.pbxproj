@@ -53,7 +53,6 @@
 		B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D0E7FB1C046EB000358351 /* WGCountDownButton.m */; };
 		B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E6003E1BFECBCD00265307 /* WGSignInViewController.m */; };
 		B5E600421BFECF8800265307 /* WGVertifyPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E600411BFECF8800265307 /* WGVertifyPhoneViewController.m */; };
-		B5E600451BFED23F00265307 /* WGResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E600441BFED23F00265307 /* WGResetPasswordViewController.m */; };
 		B5E600541BFF065000265307 /* libPushSDK-1.8.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E600531BFF065000265307 /* libPushSDK-1.8.8.a */; };
 		B5E600561BFF06D800265307 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E600551BFF06D800265307 /* CFNetwork.framework */; };
 		B5E600581BFF06E500265307 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E600571BFF06E500265307 /* CoreFoundation.framework */; };
@@ -82,13 +81,15 @@
 		B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907C11C083F83003AB736 /* NSMutableDictionary+WGExtension.m */; };
 		B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907C41C096C96003AB736 /* WGSignUpRequest.m */; };
 		B5E907C71C09A292003AB736 /* Widget.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E907C61C09A292003AB736 /* Widget.xcassets */; };
-		B5EA30311C03875B0003FB3A /* WGSignUpPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA30301C03875B0003FB3A /* WGSignUpPasswordViewController.m */; };
 		B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA30331C044FA20003FB3A /* WGRepeatPasswordViewController.m */; };
 		B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */; };
 		B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D3B1C0EF3E600B35AB6 /* WGGlobal.m */; };
 		B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D401C0EF57C00B35AB6 /* WGDataAccess.m */; };
 		B5FB3D451C0EFB5500B35AB6 /* WGDataPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D441C0EFB5500B35AB6 /* WGDataPickerView.m */; };
 		B5FB3D481C0EFBA800B35AB6 /* WGToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D471C0EFBA800B35AB6 /* WGToolBarView.m */; };
+		B5FB3D4C1C0FEDBF00B35AB6 /* WGMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D4B1C0FEDBF00B35AB6 /* WGMainCell.m */; };
+		B5FB3D511C1034A500B35AB6 /* WGHunterListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D501C1034A500B35AB6 /* WGHunterListModel.m */; };
+		B5FB3D541C10499A00B35AB6 /* WGSignInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D531C10499A00B35AB6 /* WGSignInModel.m */; };
 		C9574CD80D7E2DD5DF0801F2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79307E628B9946F4BD75B390 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -205,8 +206,6 @@
 		B5E6003E1BFECBCD00265307 /* WGSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInViewController.m; sourceTree = "<group>"; };
 		B5E600401BFECF8800265307 /* WGVertifyPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGVertifyPhoneViewController.h; sourceTree = "<group>"; };
 		B5E600411BFECF8800265307 /* WGVertifyPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGVertifyPhoneViewController.m; sourceTree = "<group>"; };
-		B5E600431BFED23F00265307 /* WGResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGResetPasswordViewController.h; sourceTree = "<group>"; };
-		B5E600441BFED23F00265307 /* WGResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGResetPasswordViewController.m; sourceTree = "<group>"; };
 		B5E600521BFF065000265307 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
 		B5E600531BFF065000265307 /* libPushSDK-1.8.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPushSDK-1.8.8.a"; sourceTree = "<group>"; };
 		B5E600551BFF06D800265307 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -240,8 +239,6 @@
 		B5E907C31C096C96003AB736 /* WGSignUpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpRequest.h; sourceTree = "<group>"; };
 		B5E907C41C096C96003AB736 /* WGSignUpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignUpRequest.m; sourceTree = "<group>"; };
 		B5E907C61C09A292003AB736 /* Widget.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Widget.xcassets; sourceTree = "<group>"; };
-		B5EA302F1C03875B0003FB3A /* WGSignUpPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpPasswordViewController.h; sourceTree = "<group>"; };
-		B5EA30301C03875B0003FB3A /* WGSignUpPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignUpPasswordViewController.m; sourceTree = "<group>"; };
 		B5EA30321C044FA20003FB3A /* WGRepeatPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGRepeatPasswordViewController.h; sourceTree = "<group>"; };
 		B5EA30331C044FA20003FB3A /* WGRepeatPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGRepeatPasswordViewController.m; sourceTree = "<group>"; };
 		B5EFD2361C0C060E0099365F /* SignHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignHeader.h; sourceTree = "<group>"; };
@@ -256,6 +253,12 @@
 		B5FB3D441C0EFB5500B35AB6 /* WGDataPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDataPickerView.m; sourceTree = "<group>"; };
 		B5FB3D461C0EFBA800B35AB6 /* WGToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGToolBarView.h; sourceTree = "<group>"; };
 		B5FB3D471C0EFBA800B35AB6 /* WGToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGToolBarView.m; sourceTree = "<group>"; };
+		B5FB3D4A1C0FEDBF00B35AB6 /* WGMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMainCell.h; sourceTree = "<group>"; };
+		B5FB3D4B1C0FEDBF00B35AB6 /* WGMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMainCell.m; sourceTree = "<group>"; };
+		B5FB3D4F1C1034A500B35AB6 /* WGHunterListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHunterListModel.h; sourceTree = "<group>"; };
+		B5FB3D501C1034A500B35AB6 /* WGHunterListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHunterListModel.m; sourceTree = "<group>"; };
+		B5FB3D521C10499A00B35AB6 /* WGSignInModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInModel.h; sourceTree = "<group>"; };
+		B5FB3D531C10499A00B35AB6 /* WGSignInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInModel.m; sourceTree = "<group>"; };
 		E9D6A9E99C33B8C557D1EA48 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -456,9 +459,10 @@
 		B54FA8051BF46FCD0018B682 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B5FB3D3D1C0EF41C00B35AB6 /* DataAccess */,
+				B5FB3D4E1C10344A00B35AB6 /* Main */,
 				B5E907BC1C082BDE003AB736 /* Sign in&Sign up */,
 				B54FA8491BF4A9120018B682 /* BaseModel */,
+				B5FB3D3D1C0EF41C00B35AB6 /* DataAccess */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -466,6 +470,7 @@
 		B54FA8061BF46FCD0018B682 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				B5FB3D4D1C10335900B35AB6 /* Main */,
 				B5E907BB1C082BCE003AB736 /* Sign in&Sign up */,
 				B54FA8481BF4A9090018B682 /* BaseRequest */,
 			);
@@ -487,9 +492,10 @@
 			isa = PBXGroup;
 			children = (
 				B5066A111C0C8E7E00D87E56 /* MainMenuBar */,
-				B54FA8091BF46FCD0018B682 /* Main.storyboard */,
+				B5FB3D491C0FED8600B35AB6 /* MainCell */,
 				B54FA80A1BF46FCD0018B682 /* WGMainViewController.h */,
 				B54FA80B1BF46FCD0018B682 /* WGMainViewController.m */,
+				B54FA8091BF46FCD0018B682 /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -685,7 +691,6 @@
 			isa = PBXGroup;
 			children = (
 				B5D0E7F91C046E7C00358351 /* CountDownButton */,
-				B55D12011C0702BD0035C6B4 /* Sign.storyboard */,
 				B5E6003D1BFECBCD00265307 /* WGSignInViewController.h */,
 				B5E6003E1BFECBCD00265307 /* WGSignInViewController.m */,
 				B5E600401BFECF8800265307 /* WGVertifyPhoneViewController.h */,
@@ -696,11 +701,8 @@
 				B55D11FF1C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.m */,
 				B5EA30321C044FA20003FB3A /* WGRepeatPasswordViewController.h */,
 				B5EA30331C044FA20003FB3A /* WGRepeatPasswordViewController.m */,
-				B5E600431BFED23F00265307 /* WGResetPasswordViewController.h */,
-				B5E600441BFED23F00265307 /* WGResetPasswordViewController.m */,
-				B5EA302F1C03875B0003FB3A /* WGSignUpPasswordViewController.h */,
-				B5EA30301C03875B0003FB3A /* WGSignUpPasswordViewController.m */,
 				B5EFD2361C0C060E0099365F /* SignHeader.h */,
+				B55D12011C0702BD0035C6B4 /* Sign.storyboard */,
 			);
 			path = "Sign in&Sign up";
 			sourceTree = "<group>";
@@ -751,6 +753,8 @@
 		B5E907BC1C082BDE003AB736 /* Sign in&Sign up */ = {
 			isa = PBXGroup;
 			children = (
+				B5FB3D521C10499A00B35AB6 /* WGSignInModel.h */,
+				B5FB3D531C10499A00B35AB6 /* WGSignInModel.m */,
 			);
 			path = "Sign in&Sign up";
 			sourceTree = "<group>";
@@ -773,6 +777,31 @@
 				B5FB3D441C0EFB5500B35AB6 /* WGDataPickerView.m */,
 			);
 			path = PickerView;
+			sourceTree = "<group>";
+		};
+		B5FB3D491C0FED8600B35AB6 /* MainCell */ = {
+			isa = PBXGroup;
+			children = (
+				B5FB3D4A1C0FEDBF00B35AB6 /* WGMainCell.h */,
+				B5FB3D4B1C0FEDBF00B35AB6 /* WGMainCell.m */,
+			);
+			path = MainCell;
+			sourceTree = "<group>";
+		};
+		B5FB3D4D1C10335900B35AB6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B5FB3D4E1C10344A00B35AB6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B5FB3D4F1C1034A500B35AB6 /* WGHunterListModel.h */,
+				B5FB3D501C1034A500B35AB6 /* WGHunterListModel.m */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -958,19 +987,20 @@
 			files = (
 				B5066A051C0C23CE00D87E56 /* PopoverView.m in Sources */,
 				B5E907BF1C083E6C003AB736 /* WGSignInRequest.m in Sources */,
+				B5FB3D4C1C0FEDBF00B35AB6 /* WGMainCell.m in Sources */,
 				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
 				B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */,
+				B5FB3D511C1034A500B35AB6 /* WGHunterListModel.m in Sources */,
 				B55D12001C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.m in Sources */,
 				B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */,
 				B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */,
 				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,
-				B5E600451BFED23F00265307 /* WGResetPasswordViewController.m in Sources */,
-				B5EA30311C03875B0003FB3A /* WGSignUpPasswordViewController.m in Sources */,
 				B5066A141C0C8EBD00D87E56 /* WGMenuBar.m in Sources */,
 				B5E600421BFECF8800265307 /* WGVertifyPhoneViewController.m in Sources */,
 				B54FA8171BF46FCD0018B682 /* main.m in Sources */,
 				B5055BEE1BF9CF33001736AD /* WGPager.m in Sources */,
 				B5055BF41BF9FB5B001736AD /* WGValidJudge.m in Sources */,
+				B5FB3D541C10499A00B35AB6 /* WGSignInModel.m in Sources */,
 				B55D11FD1C06F7100035C6B4 /* WGSignUpUserInfoViewController.m in Sources */,
 				B54FA8471BF4A88D0018B682 /* UIFont+WGThemeFonts.m in Sources */,
 				B5FB3D451C0EFB5500B35AB6 /* WGDataPickerView.m in Sources */,

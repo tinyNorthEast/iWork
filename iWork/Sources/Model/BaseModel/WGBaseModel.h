@@ -10,6 +10,10 @@
 
 @interface WGBaseModel : JSONModel
 
+@property (nonatomic, strong) NSNumber<Optional> *infoCode;
 
+@property (nonatomic, copy) NSString<Optional> *message;
+
+- (BOOL)isValid;
 
 @end

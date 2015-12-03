@@ -8,10 +8,18 @@
 
 #import "WGMainViewController.h"
 
+#import <extobjc.h>
+#import <XXNibBridge.h>
 
-#import <ShareSDK/ShareSDK.h>
+#import "WGMainCell.h"
+#import "UIScrollView+WGPager.h"
+
 
 @interface WGMainViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic, strong) NSMutableArray  *hunters;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -19,7 +27,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self.tableView registerNib:[WGMainCell xx_nib] forCellReuseIdentifier:[WGMainCell xx_nibID]];
+    
+    [self.tableView.wg_pager addPullDownRefreshHandler:^(WGPager *pager) {
+        
+    }];
+    [self.tableView.wg_pager addLoadMoreHandler:^(WGPager *pager) {
+        
+    }];
+    [self.tableView.wg_pager triggerRefresh];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,48 +52,22 @@
         
     }];
 }
-
-- (IBAction)shareAction:(id)sender {
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK" ofType:@"png"];
-    
-    //构造分享内容
-    id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
-                                       defaultContent:@"测试一下"
-                                                image:[ShareSDK imageWithPath:imagePath]
-                                                title:@"ShareSDK"
-                                                  url:@"http://www.mob.com"
-                                          description:@"这是一条测试信息"
-                                            mediaType:SSPublishContentMediaTypeNews];
-    //创建弹出菜单容器
-    id<ISSContainer> container = [ShareSDK container];
-    [container setIPhoneContainerWithViewController:self];
-    
-    NSArray *shareList = [ShareSDK getShareListWithType:
-                          ShareTypeWeixiSession,
-                          ShareTypeWeixiTimeline,
-                          ShareTypeSinaWeibo,
-                          nil];
-    //弹出分享菜单
-    [ShareSDK showShareActionSheet:container
-                         shareList:shareList
-                           content:publishContent
-                     statusBarTips:YES
-                       authOptions:nil
-                      shareOptions:nil
-                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                                
-                                if (state == SSResponseStateSuccess)
-                                {
-                                    NSLog(@"分享成功");
-                                }
-                                else if (state == SSResponseStateFail)
-                                {
-                                    NSLog(@"分享失败,错误码:%ld,错误描述:%@", (long)[error errorCode], [error errorDescription]);
-                                }
-                            }];
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.hunters.count;
 }
 
-#pragma mark - UITableViewDataSource
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    WGMainCell *cell = [tableView dequeueReusableCellWithIdentifier:[WGMainCell xx_nibID] forIndexPath:indexPath];
+    [self configureCell:cell forIndexPath:indexPath];
+    return cell;
+}
+- (void)configureCell:(WGMainCell *)cell forIndexPath:(NSIndexPath *)indexPath{
+//    NSDictionary *dic = self.hunters[indexPath.row];
+//    cell.hunters =
+}
+
 #pragma mark - UITableViewDelegate
+
 
 @end

@@ -79,8 +79,8 @@
     [self.manager.operationQueue cancelAllOperations];
 }
 
-- (void)requestWithSuccess:(void(^)(WGBaseModel *model, NSError *error))success
-                   failure:(void(^)(WGBaseModel *model, NSError *error))failure{
+- (void)requestWithSuccess:(void(^)(WGBaseModel *baseModel, NSError *error))success
+                   failure:(void(^)(WGBaseModel *baseModel, NSError *error))failure{
     self.requestSuccess = success;
     self.requestFailed = failure;
     
