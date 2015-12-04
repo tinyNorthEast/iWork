@@ -31,22 +31,12 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="wg_bgCornerRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sign_upAction:" destination="tbf-70-gZT" eventType="touchUpInside" id="RNu-2q-ZgT"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3W-1J-ZZy">
-                                <rect key="frame" x="130" y="440" width="60" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="E2L-wV-5KN"/>
-                                    <constraint firstAttribute="width" constant="60" id="rdb-Rz-SNt"/>
-                                </constraints>
-                                <state key="normal" title="随便逛逛">
-                                    <color key="titleColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mz8-3C-d21">
                                 <rect key="frame" x="20" y="317" width="60" height="30"/>
@@ -58,7 +48,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kY-Vd-esq">
-                                <rect key="frame" x="152" y="406" width="16" height="21"/>
+                                <rect key="frame" x="152" y="444" width="16" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="0mc-DF-0Nd"/>
                                     <constraint firstAttribute="width" constant="16" id="977-D4-ZjD"/>
@@ -141,7 +131,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ui2-et-ovg">
-                                <rect key="frame" x="130" y="368" width="60" height="30"/>
+                                <rect key="frame" x="62" y="440" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="X9N-hU-gsF"/>
                                     <constraint firstAttribute="width" constant="60" id="sOX-Kw-9aa"/>
@@ -171,21 +161,31 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3W-1J-ZZy">
+                                <rect key="frame" x="196" y="440" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E2L-wV-5KN"/>
+                                    <constraint firstAttribute="width" constant="60" id="rdb-Rz-SNt"/>
+                                </constraints>
+                                <state key="normal" title="随便逛逛">
+                                    <color key="titleColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9q5-k5-mPN" firstAttribute="top" secondItem="U6a-UD-0Xb" secondAttribute="bottom" id="Apm-JB-hEe"/>
                             <constraint firstItem="MX8-HS-qLy" firstAttribute="top" secondItem="n3W-1J-ZZy" secondAttribute="bottom" constant="98" id="JWg-bu-bwk"/>
-                            <constraint firstItem="n3W-1J-ZZy" firstAttribute="centerX" secondItem="x2k-5u-IwR" secondAttribute="centerX" id="Loj-e0-y2b"/>
-                            <constraint firstItem="n3W-1J-ZZy" firstAttribute="top" secondItem="6kY-Vd-esq" secondAttribute="bottom" constant="13" id="Q9j-p1-vG9"/>
+                            <constraint firstItem="n3W-1J-ZZy" firstAttribute="centerX" secondItem="x2k-5u-IwR" secondAttribute="centerX" constant="66" id="Loj-e0-y2b"/>
+                            <constraint firstItem="n3W-1J-ZZy" firstAttribute="top" secondItem="6kY-Vd-esq" secondAttribute="bottom" constant="-25" id="Q9j-p1-vG9"/>
                             <constraint firstItem="6kY-Vd-esq" firstAttribute="centerX" secondItem="x2k-5u-IwR" secondAttribute="centerX" id="Qqo-BD-Grv"/>
                             <constraint firstItem="9q5-k5-mPN" firstAttribute="leading" secondItem="x2k-5u-IwR" secondAttribute="leading" id="RN7-Nd-EvU"/>
                             <constraint firstItem="ca8-KM-LTH" firstAttribute="top" secondItem="V2F-5c-fnW" secondAttribute="bottom" constant="59" id="TAa-N7-DLw"/>
                             <constraint firstItem="ca8-KM-LTH" firstAttribute="leading" secondItem="x2k-5u-IwR" secondAttribute="leading" constant="20" id="TD8-nG-ZlB"/>
-                            <constraint firstItem="ui2-et-ovg" firstAttribute="centerX" secondItem="x2k-5u-IwR" secondAttribute="centerX" id="cCx-ju-y0e"/>
+                            <constraint firstItem="ui2-et-ovg" firstAttribute="centerX" secondItem="x2k-5u-IwR" secondAttribute="centerX" constant="-68" id="cCx-ju-y0e"/>
                             <constraint firstAttribute="trailing" secondItem="ca8-KM-LTH" secondAttribute="trailing" constant="20" id="iEX-Rl-kvK"/>
                             <constraint firstAttribute="trailing" secondItem="V2F-5c-fnW" secondAttribute="trailing" constant="20" id="iW3-Cb-ODx"/>
-                            <constraint firstItem="6kY-Vd-esq" firstAttribute="top" secondItem="ui2-et-ovg" secondAttribute="bottom" constant="8" id="jvO-F1-Z3x"/>
+                            <constraint firstItem="6kY-Vd-esq" firstAttribute="top" secondItem="ui2-et-ovg" secondAttribute="bottom" constant="-26" id="jvO-F1-Z3x"/>
                             <constraint firstItem="V2F-5c-fnW" firstAttribute="top" secondItem="9q5-k5-mPN" secondAttribute="bottom" constant="36" id="kdt-Tq-Ole"/>
                             <constraint firstItem="V2F-5c-fnW" firstAttribute="leading" secondItem="x2k-5u-IwR" secondAttribute="leading" constant="20" id="tda-fJ-GJw"/>
                         </constraints>
@@ -332,7 +332,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="wg_bgCornerRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -416,7 +416,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="wg_bgCornerRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -656,7 +656,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="wg_bgCornerRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -669,7 +669,6 @@
                     <navigationItem key="navigationItem" id="wXz-wv-si1"/>
                     <connections>
                         <outlet property="experienceTextFiled" destination="fPI-MI-2dw" id="iuH-jf-6xX"/>
-                        <outlet property="infoView" destination="OTn-nV-PfX" id="h5H-yW-8Fd"/>
                         <outlet property="positionTextField" destination="Pcs-WS-qzb" id="Knu-l8-GTp"/>
                         <outlet property="roleTextField" destination="fnT-eG-up1" id="acg-Iw-OqF"/>
                     </connections>
@@ -715,7 +714,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="wg_bgCornerRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
