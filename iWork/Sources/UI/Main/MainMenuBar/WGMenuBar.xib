@@ -22,6 +22,9 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="scrollBar" destination="LoI-9r-82S" id="4ur-09-Isn"/>
+            </connections>
             <point key="canvasLocation" x="-131" y="34"/>
         </view>
     </objects>

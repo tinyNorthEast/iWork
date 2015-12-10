@@ -17,9 +17,7 @@
 #import "NSMutableDictionary+WGExtension.h"
 #import "WGRepeatPasswordViewController.h"
 
-@interface WGSignUpWorkInfoViewController ()<UIGestureRecognizerDelegate,UITextFieldDelegate>
-
-@property (weak, nonatomic) IBOutlet UIView *infoView;
+@interface WGSignUpWorkInfoViewController ()<UITextFieldDelegate>
 
 @property (strong, nonatomic) WGDataPickerView *picker;
 
@@ -64,10 +62,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)popExperienceView:(id)sender {
+    _picker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
+    _picker.autoHidden = YES;
+    [_picker setSelectIndex:0];
 
     self.picker.dataArray = @[@"3年以下", @"3-5年", @"5-10年",@"10年以上"];
     self.picker.barTitle = @"工作经验";
-    
+
     @weakify(self);
     [self.picker showSelectDate:^(NSInteger selectRow) {
         @strongify(self);
@@ -96,6 +97,8 @@
     } cancel:^{
         
     }];
+    
+    [_picker showInView:self.view];
 }
 - (IBAction)popRoleView:(id)sender {
     

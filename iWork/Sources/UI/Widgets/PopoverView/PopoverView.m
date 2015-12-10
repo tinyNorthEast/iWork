@@ -67,9 +67,15 @@
     
     frame.size.height = [self.titleArray count] * ROW_HEIGHT + SPACE + kArrowHeight;
     
+    
+    
     for (NSString *title in self.titleArray) {
-        CGFloat width =  [title sizeWithFont:TITLE_FONT constrainedToSize:CGSizeMake(300, 100) lineBreakMode:NSLineBreakByCharWrapping].width;
-        frame.size.width = MAX(width, frame.size.width);
+        CGRect textRect = [title boundingRectWithSize:CGSizeMake(300, 100)
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:nil
+                                             context:nil];
+        
+        frame.size.width = MAX(textRect.size.width, frame.size.width);
     }
     
     if ([self.titleArray count] == [self.imageArray count]) {

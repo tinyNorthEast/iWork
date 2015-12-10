@@ -12,6 +12,8 @@
 
 #import "UIViewAdditions.h"
 #import "WGToolBarView.h"
+#import "UIColor+WGThemeColors.h"
+#import "UIFont+WGThemeFonts.h"
 
 @interface WGDataPickerView()<UIPickerViewDataSource,UIPickerViewDelegate>
 
@@ -74,7 +76,7 @@
 {
     [self addSubview:self.toolBarView];
     
-//    _datePicker = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.toolBarView.bottom, SCREEN_WIDTH, 250)];
+    _datePicker = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.toolBarView.bottom, self.screenFrame.size.width, 250)];
     
     _datePicker.dataSource = self;
     _datePicker.delegate = self;
@@ -86,7 +88,7 @@
 
 - (WGToolBarView *)toolBarView{
     if (!_toolBarView) {
-//        _toolBarView = [[WGToolBarView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+        _toolBarView = [[WGToolBarView alloc] initWithFrame:CGRectMake(0, 0, self.screenFrame.size.width, 50)];
         
         @weakify(self);
         _toolBarView.cancelBlock = ^{
@@ -145,16 +147,16 @@
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
-//    [[pickerView.subviews objectAtIndex:1] setBackgroundColor:[UIColor kColorGray5]];
-//    [[pickerView.subviews objectAtIndex:2] setBackgroundColor:[UIColor kColorGray5]];
+    [[pickerView.subviews objectAtIndex:1] setBackgroundColor:[UIColor wg_themeLightGrayColor]];
+    [[pickerView.subviews objectAtIndex:2] setBackgroundColor:[UIColor wg_themeLightGrayColor]];
     
     UILabel *retval = (id)view;
     if (!retval) {
         retval= [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)];
     }
     retval.textAlignment = NSTextAlignmentCenter;
-//    retval.font = [UIFont kFontSizeMedium];
-//    retval.textColor = [UIColor kColorGray];
+    retval.font = [UIFont kFontSize14];
+    retval.textColor = [UIColor wg_themeGrayColor];
     retval.text = self.dataArray[row];
     retval.backgroundColor = [UIColor clearColor];
     

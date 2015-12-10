@@ -11,15 +11,13 @@
 #import <extobjc.h>
 #import <XXNibBridge.h>
 
-#import "WGMainCell.h"
-#import "UIScrollView+WGPager.h"
+#import "WGMenuBar.h"
+#import "WGMainScrollView.h"
 
+@interface WGMainViewController ()
 
-@interface WGMainViewController ()<UITableViewDataSource,UITableViewDelegate>
-
-@property (nonatomic, strong) NSMutableArray  *hunters;
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet WGMenuBar *menuBar;
+@property (weak, nonatomic) IBOutlet WGMainScrollView *mainScrollView;
 
 @end
 
@@ -28,15 +26,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerNib:[WGMainCell xx_nib] forCellReuseIdentifier:[WGMainCell xx_nibID]];
+    [self initView];
+}
+
+- (void)initView{
+    NSArray *barItems = @[@"实时",@"娱乐",@"经济",@"科技"];
     
-    [self.tableView.wg_pager addPullDownRefreshHandler:^(WGPager *pager) {
-        
-    }];
-    [self.tableView.wg_pager addLoadMoreHandler:^(WGPager *pager) {
-        
-    }];
-    [self.tableView.wg_pager triggerRefresh];
+    [self.menuBar initMenuItems:barItems];
+    [self.mainScrollView initWithViews:barItems];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,29 +42,22 @@
 }
 
 #pragma mark - IBAction
-- (IBAction)signAciton:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+- (IBAction)chooseCityAction:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"City" bundle:nil];
     UIViewController *vc = [sb instantiateInitialViewController];
     [self presentViewController:vc animated:YES completion:^{
         
     }];
 }
-#pragma mark - UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.hunters.count;
-}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    WGMainCell *cell = [tableView dequeueReusableCellWithIdentifier:[WGMainCell xx_nibID] forIndexPath:indexPath];
-    [self configureCell:cell forIndexPath:indexPath];
-    return cell;
+- (IBAction)signAciton:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+    UIViewController *vc = [sb instantiateInitialViewController];
+//    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpWorkInfoViewController"];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
 }
-- (void)configureCell:(WGMainCell *)cell forIndexPath:(NSIndexPath *)indexPath{
-//    NSDictionary *dic = self.hunters[indexPath.row];
-//    cell.hunters =
-}
-
-#pragma mark - UITableViewDelegate
 
 
 @end

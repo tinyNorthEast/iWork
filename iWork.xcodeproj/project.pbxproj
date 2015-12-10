@@ -14,6 +14,10 @@
 		B5066A081C0C44AB00D87E56 /* WGResetPasswordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5066A071C0C44AB00D87E56 /* WGResetPasswordRequest.m */; };
 		B5066A141C0C8EBD00D87E56 /* WGMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B5066A131C0C8EBD00D87E56 /* WGMenuBar.m */; };
 		B5066A161C0C8EDA00D87E56 /* WGMenuBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5066A151C0C8EDA00D87E56 /* WGMenuBar.xib */; };
+		B50C5BFE1C11471F0043C26B /* WGCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C5BFD1C11471F0043C26B /* WGCityModel.m */; };
+		B50C5C021C1159190043C26B /* WGCityListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C5C011C1159190043C26B /* WGCityListRequest.m */; };
+		B50C5C061C1159690043C26B /* WGCityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C5C051C1159690043C26B /* WGCityListViewController.m */; };
+		B50C5C081C1159F90043C26B /* City.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50C5C071C1159F90043C26B /* City.storyboard */; };
 		B520B2D11C0B3D5C00CFD6CD /* NSString+WGMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */; };
 		B52AD9781BFB21E0006540B3 /* WGNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AD9771BFB21E0006540B3 /* WGNetworkHelper.m */; };
 		B54FA7E81BF46AE60018B682 /* iWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7E71BF46AE60018B682 /* iWorkTests.m */; };
@@ -77,6 +81,9 @@
 		B5E6011C1C03005B00265307 /* WGCustomIBSupports.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E6011B1C03005B00265307 /* WGCustomIBSupports.m */; };
 		B5E6011E1C030ED700265307 /* Sign.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E6011D1C030ED700265307 /* Sign.xcassets */; };
 		B5E601201C03179F00265307 /* Navigation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E6011F1C03179F00265307 /* Navigation.xcassets */; };
+		B5E7E1A01C19279400BA545E /* WGMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E7E19F1C19279400BA545E /* WGMainCell.xib */; };
+		B5E7E1A31C1927F400BA545E /* WGMainTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E7E1A21C1927F400BA545E /* WGMainTableView.m */; };
+		B5E7E1A71C19598100BA545E /* WGMainScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E7E1A61C19598100BA545E /* WGMainScrollView.m */; };
 		B5E907BF1C083E6C003AB736 /* WGSignInRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907BE1C083E6C003AB736 /* WGSignInRequest.m */; };
 		B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907C11C083F83003AB736 /* NSMutableDictionary+WGExtension.m */; };
 		B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907C41C096C96003AB736 /* WGSignUpRequest.m */; };
@@ -128,6 +135,13 @@
 		B5066A121C0C8EBD00D87E56 /* WGMenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMenuBar.h; sourceTree = "<group>"; };
 		B5066A131C0C8EBD00D87E56 /* WGMenuBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMenuBar.m; sourceTree = "<group>"; };
 		B5066A151C0C8EDA00D87E56 /* WGMenuBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGMenuBar.xib; sourceTree = "<group>"; };
+		B50C5BFC1C11471F0043C26B /* WGCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCityModel.h; sourceTree = "<group>"; };
+		B50C5BFD1C11471F0043C26B /* WGCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCityModel.m; sourceTree = "<group>"; };
+		B50C5C001C1159190043C26B /* WGCityListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCityListRequest.h; sourceTree = "<group>"; };
+		B50C5C011C1159190043C26B /* WGCityListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCityListRequest.m; sourceTree = "<group>"; };
+		B50C5C041C1159690043C26B /* WGCityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCityListViewController.h; sourceTree = "<group>"; };
+		B50C5C051C1159690043C26B /* WGCityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCityListViewController.m; sourceTree = "<group>"; };
+		B50C5C071C1159F90043C26B /* City.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = City.storyboard; sourceTree = "<group>"; };
 		B520B2CF1C0B3D5C00CFD6CD /* NSString+WGMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WGMD5.h"; sourceTree = "<group>"; };
 		B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WGMD5.m"; sourceTree = "<group>"; };
 		B52AD9761BFB21E0006540B3 /* WGNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNetworkHelper.h; sourceTree = "<group>"; };
@@ -234,6 +248,11 @@
 		B5E6011B1C03005B00265307 /* WGCustomIBSupports.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCustomIBSupports.m; sourceTree = "<group>"; };
 		B5E6011D1C030ED700265307 /* Sign.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sign.xcassets; sourceTree = "<group>"; };
 		B5E6011F1C03179F00265307 /* Navigation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Navigation.xcassets; sourceTree = "<group>"; };
+		B5E7E19F1C19279400BA545E /* WGMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGMainCell.xib; sourceTree = "<group>"; };
+		B5E7E1A11C1927F400BA545E /* WGMainTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMainTableView.h; sourceTree = "<group>"; };
+		B5E7E1A21C1927F400BA545E /* WGMainTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMainTableView.m; sourceTree = "<group>"; };
+		B5E7E1A51C19598100BA545E /* WGMainScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMainScrollView.h; sourceTree = "<group>"; };
+		B5E7E1A61C19598100BA545E /* WGMainScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMainScrollView.m; sourceTree = "<group>"; };
 		B5E907BD1C083E6C003AB736 /* WGSignInRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInRequest.h; sourceTree = "<group>"; };
 		B5E907BE1C083E6C003AB736 /* WGSignInRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInRequest.m; sourceTree = "<group>"; };
 		B5E907C01C083F83003AB736 /* NSMutableDictionary+WGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+WGExtension.h"; sourceTree = "<group>"; };
@@ -386,6 +405,34 @@
 			path = MainMenuBar;
 			sourceTree = "<group>";
 		};
+		B50C5BFB1C1147060043C26B /* City */ = {
+			isa = PBXGroup;
+			children = (
+				B50C5BFC1C11471F0043C26B /* WGCityModel.h */,
+				B50C5BFD1C11471F0043C26B /* WGCityModel.m */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		B50C5BFF1C11474C0043C26B /* City */ = {
+			isa = PBXGroup;
+			children = (
+				B50C5C001C1159190043C26B /* WGCityListRequest.h */,
+				B50C5C011C1159190043C26B /* WGCityListRequest.m */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		B50C5C031C11594D0043C26B /* City */ = {
+			isa = PBXGroup;
+			children = (
+				B50C5C041C1159690043C26B /* WGCityListViewController.h */,
+				B50C5C051C1159690043C26B /* WGCityListViewController.m */,
+				B50C5C071C1159F90043C26B /* City.storyboard */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
 		B54FA7C11BF46AE60018B682 = {
 			isa = PBXGroup;
 			children = (
@@ -466,6 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				B5FB3D4E1C10344A00B35AB6 /* Main */,
+				B50C5BFB1C1147060043C26B /* City */,
 				B5E907BC1C082BDE003AB736 /* Sign in&Sign up */,
 				B54FA8491BF4A9120018B682 /* BaseModel */,
 				B5FB3D3D1C0EF41C00B35AB6 /* DataAccess */,
@@ -477,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				B5FB3D4D1C10335900B35AB6 /* Main */,
+				B50C5BFF1C11474C0043C26B /* City */,
 				B5E907BB1C082BCE003AB736 /* Sign in&Sign up */,
 				B54FA8481BF4A9090018B682 /* BaseRequest */,
 			);
@@ -486,6 +535,7 @@
 		B54FA8071BF46FCD0018B682 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B50C5C031C11594D0043C26B /* City */,
 				B5B94F7A1BFDB2BE00EBCBD3 /* Sign in&Sign up */,
 				B54FA8081BF46FCD0018B682 /* Main */,
 				B54FA8411BF4A2C90018B682 /* Appearance */,
@@ -498,6 +548,8 @@
 			isa = PBXGroup;
 			children = (
 				B5066A111C0C8E7E00D87E56 /* MainMenuBar */,
+				B5E7E1A41C19592500BA545E /* MainScrollView */,
+				B5E7E19E1C19276E00BA545E /* MainTableView */,
 				B5FB3D491C0FED8600B35AB6 /* MainCell */,
 				B54FA80A1BF46FCD0018B682 /* WGMainViewController.h */,
 				B54FA80B1BF46FCD0018B682 /* WGMainViewController.m */,
@@ -745,6 +797,24 @@
 			path = SMS_SDK;
 			sourceTree = "<group>";
 		};
+		B5E7E19E1C19276E00BA545E /* MainTableView */ = {
+			isa = PBXGroup;
+			children = (
+				B5E7E1A11C1927F400BA545E /* WGMainTableView.h */,
+				B5E7E1A21C1927F400BA545E /* WGMainTableView.m */,
+			);
+			path = MainTableView;
+			sourceTree = "<group>";
+		};
+		B5E7E1A41C19592500BA545E /* MainScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				B5E7E1A51C19598100BA545E /* WGMainScrollView.h */,
+				B5E7E1A61C19598100BA545E /* WGMainScrollView.m */,
+			);
+			path = MainScrollView;
+			sourceTree = "<group>";
+		};
 		B5E907BB1C082BCE003AB736 /* Sign in&Sign up */ = {
 			isa = PBXGroup;
 			children = (
@@ -794,6 +864,7 @@
 			children = (
 				B5FB3D4A1C0FEDBF00B35AB6 /* WGMainCell.h */,
 				B5FB3D4B1C0FEDBF00B35AB6 /* WGMainCell.m */,
+				B5E7E19F1C19279400BA545E /* WGMainCell.xib */,
 			);
 			path = MainCell;
 			sourceTree = "<group>";
@@ -924,6 +995,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B54FA8131BF46FCD0018B682 /* Main.storyboard in Resources */,
+				B5E7E1A01C19279400BA545E /* WGMainCell.xib in Resources */,
 				B55D122E1C070EAA0035C6B4 /* Resource.bundle in Resources */,
 				B54FA8161BF46FCD0018B682 /* LaunchScreen.storyboard in Resources */,
 				B55D122C1C070EAA0035C6B4 /* ShareSDKLocalizable.strings in Resources */,
@@ -938,6 +1010,7 @@
 				B54FA8111BF46FCD0018B682 /* Icon.xcassets in Resources */,
 				B5E601201C03179F00265307 /* Navigation.xcassets in Resources */,
 				B55D12311C070EAA0035C6B4 /* WeiboSDK.bundle in Resources */,
+				B50C5C081C1159F90043C26B /* City.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,14 +1068,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50C5C021C1159190043C26B /* WGCityListRequest.m in Sources */,
 				B5066A051C0C23CE00D87E56 /* PopoverView.m in Sources */,
 				B5E907BF1C083E6C003AB736 /* WGSignInRequest.m in Sources */,
+				B50C5C061C1159690043C26B /* WGCityListViewController.m in Sources */,
 				B5FB3D4C1C0FEDBF00B35AB6 /* WGMainCell.m in Sources */,
 				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
+				B5E7E1A71C19598100BA545E /* WGMainScrollView.m in Sources */,
 				B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */,
 				B5FB3D511C1034A500B35AB6 /* WGHunterListModel.m in Sources */,
 				B5FB3D5A1C10745300B35AB6 /* OpenUDID.m in Sources */,
 				B55D12001C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.m in Sources */,
+				B50C5BFE1C11471F0043C26B /* WGCityModel.m in Sources */,
 				B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */,
 				B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */,
 				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,
@@ -1024,6 +1101,7 @@
 				B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */,
 				B5066A081C0C44AB00D87E56 /* WGResetPasswordRequest.m in Sources */,
 				B5E6011C1C03005B00265307 /* WGCustomIBSupports.m in Sources */,
+				B5E7E1A31C1927F400BA545E /* WGMainTableView.m in Sources */,
 				B5FB3D481C0EFBA800B35AB6 /* WGToolBarView.m in Sources */,
 				B54FA84C1BF4A98B0018B682 /* WGBaseRequest.m in Sources */,
 				B54FA85F1BF4CBDB0018B682 /* UIViewAdditions.m in Sources */,
@@ -1193,8 +1271,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iWork/OtherFrameworks/JPush",
-					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/extends/SinaWeiboSDK",
-					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/extends/WeChatSDK",
 					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/Extend/WeChatSDK",
 				);
@@ -1224,8 +1300,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iWork/OtherFrameworks/JPush",
-					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/extends/SinaWeiboSDK",
-					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/extends/WeChatSDK",
 					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/Extend/WeChatSDK",
 				);

@@ -171,7 +171,7 @@
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     }
     NSURL *imgURL;
-    if( newImg )
+    if(newImg)
     {
         imgURL = [NSURL fileURLWithPath:paths];
         

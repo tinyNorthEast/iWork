@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol WGMenuBarDelegate <NSObject>
+
+- (void)clickMenuButtonAtIndex:(NSInteger)index;
+
+@end
+
 @interface WGMenuBar : UIView
+
+- (void)initMenuItems:(NSArray *)items;
 
 @end
