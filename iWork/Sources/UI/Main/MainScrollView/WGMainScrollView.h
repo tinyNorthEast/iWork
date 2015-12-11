@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SynthesizeSingletonForArc.h"
+
 @interface WGMainScrollView : UIScrollView
+
+ARC_SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(WGMainScrollView)
 
 - (void)initWithViews:(NSArray *)items;
 

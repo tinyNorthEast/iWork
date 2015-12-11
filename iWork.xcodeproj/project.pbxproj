@@ -84,6 +84,8 @@
 		B5E7E1A01C19279400BA545E /* WGMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E7E19F1C19279400BA545E /* WGMainCell.xib */; };
 		B5E7E1A31C1927F400BA545E /* WGMainTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E7E1A21C1927F400BA545E /* WGMainTableView.m */; };
 		B5E7E1A71C19598100BA545E /* WGMainScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E7E1A61C19598100BA545E /* WGMainScrollView.m */; };
+		B5E7E1AA1C1993DA00BA545E /* WGHunterListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E7E1A91C1993DA00BA545E /* WGHunterListRequest.m */; };
+		B5E7E1AE1C19A5E700BA545E /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E7E1AD1C19A5E700BA545E /* Main.xcassets */; };
 		B5E907BF1C083E6C003AB736 /* WGSignInRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907BE1C083E6C003AB736 /* WGSignInRequest.m */; };
 		B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907C11C083F83003AB736 /* NSMutableDictionary+WGExtension.m */; };
 		B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907C41C096C96003AB736 /* WGSignUpRequest.m */; };
@@ -253,6 +255,9 @@
 		B5E7E1A21C1927F400BA545E /* WGMainTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMainTableView.m; sourceTree = "<group>"; };
 		B5E7E1A51C19598100BA545E /* WGMainScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMainScrollView.h; sourceTree = "<group>"; };
 		B5E7E1A61C19598100BA545E /* WGMainScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMainScrollView.m; sourceTree = "<group>"; };
+		B5E7E1A81C1993DA00BA545E /* WGHunterListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHunterListRequest.h; sourceTree = "<group>"; };
+		B5E7E1A91C1993DA00BA545E /* WGHunterListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHunterListRequest.m; sourceTree = "<group>"; };
+		B5E7E1AD1C19A5E700BA545E /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
 		B5E907BD1C083E6C003AB736 /* WGSignInRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInRequest.h; sourceTree = "<group>"; };
 		B5E907BE1C083E6C003AB736 /* WGSignInRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInRequest.m; sourceTree = "<group>"; };
 		B5E907C01C083F83003AB736 /* NSMutableDictionary+WGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+WGExtension.h"; sourceTree = "<group>"; };
@@ -492,6 +497,7 @@
 				B5E6011D1C030ED700265307 /* Sign.xcassets */,
 				B5E6011F1C03179F00265307 /* Navigation.xcassets */,
 				B5E907C61C09A292003AB736 /* Widget.xcassets */,
+				B5E7E1AD1C19A5E700BA545E /* Main.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -872,6 +878,8 @@
 		B5FB3D4D1C10335900B35AB6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B5E7E1A81C1993DA00BA545E /* WGHunterListRequest.h */,
+				B5E7E1A91C1993DA00BA545E /* WGHunterListRequest.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -998,6 +1006,7 @@
 				B5E7E1A01C19279400BA545E /* WGMainCell.xib in Resources */,
 				B55D122E1C070EAA0035C6B4 /* Resource.bundle in Resources */,
 				B54FA8161BF46FCD0018B682 /* LaunchScreen.storyboard in Resources */,
+				B5E7E1AE1C19A5E700BA545E /* Main.xcassets in Resources */,
 				B55D122C1C070EAA0035C6B4 /* ShareSDKLocalizable.strings in Resources */,
 				B5E600C61C00245400265307 /* SMS_SDKLocalizable.strings in Resources */,
 				B55D12341C070EAA0035C6B4 /* ShareSDKFlatShareViewUI.bundle in Resources */,
@@ -1100,6 +1109,7 @@
 				B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */,
 				B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */,
 				B5066A081C0C44AB00D87E56 /* WGResetPasswordRequest.m in Sources */,
+				B5E7E1AA1C1993DA00BA545E /* WGHunterListRequest.m in Sources */,
 				B5E6011C1C03005B00265307 /* WGCustomIBSupports.m in Sources */,
 				B5E7E1A31C1927F400BA545E /* WGMainTableView.m in Sources */,
 				B5FB3D481C0EFBA800B35AB6 /* WGToolBarView.m in Sources */,

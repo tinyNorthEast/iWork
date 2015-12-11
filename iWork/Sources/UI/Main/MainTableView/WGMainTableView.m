@@ -36,6 +36,7 @@
         self.dataSource = self;
         self.delegate = self;
         
+        self.rowHeight = 166;
         [self registerNib:[WGMainCell xx_nib] forCellReuseIdentifier:[WGMainCell xx_nibID]];
     
         [self.wg_pager addPullDownRefreshHandler:^(WGPager *pager) {
@@ -51,7 +52,7 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.hunters.count;
+    return 2;//self.hunters.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

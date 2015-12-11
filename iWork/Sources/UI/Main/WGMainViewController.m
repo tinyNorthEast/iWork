@@ -17,7 +17,6 @@
 @interface WGMainViewController ()
 
 @property (weak, nonatomic) IBOutlet WGMenuBar *menuBar;
-@property (weak, nonatomic) IBOutlet WGMainScrollView *mainScrollView;
 
 @end
 
@@ -33,7 +32,7 @@
     NSArray *barItems = @[@"实时",@"娱乐",@"经济",@"科技"];
     
     [self.menuBar initMenuItems:barItems];
-    [self.mainScrollView initWithViews:barItems];
+    [[WGMainScrollView sharedInstance] initWithViews:barItems];
 }
 
 - (void)didReceiveMemoryWarning {

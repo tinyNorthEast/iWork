@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class WGCityModel;
+
 @interface WGCityListViewController : UIViewController
+
+@property (nonatomic, copy) void (^selectCity)(WGCityModel *city);
 
 @end

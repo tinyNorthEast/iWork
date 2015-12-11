@@ -8,12 +8,18 @@
 
 #import "WGMainCell.h"
 
+#import <XXNibBridge.h>
+
 #import "WGHunterListModel.h"
+
+@interface WGMainCell()<XXNibBridge>
+
+@end
 
 @implementation WGMainCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [super awakeFromNib];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

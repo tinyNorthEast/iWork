@@ -10,4 +10,7 @@
 
 @interface WGCityModel : WGBaseModel
 
+@property (nonatomic,copy)NSString<Optional> *city_name;
+@property (nonatomic,copy)NSString<Optional> *city_id;
+
 @end

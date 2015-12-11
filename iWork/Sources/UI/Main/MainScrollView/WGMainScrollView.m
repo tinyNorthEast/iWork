@@ -17,6 +17,8 @@
 
 @implementation WGMainScrollView
 
+ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGMainScrollView)
+
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
@@ -27,7 +29,7 @@
 
 - (void)initWithViews:(NSArray *)itmes{
     for (int i = 0; i < itmes.count; i++) {
-        WGMainTableView *vCustomTableView = [[WGMainTableView alloc] initWithFrame:CGRectMake(320 * i, 0, 320, self.frame.size.height)];
+        WGMainTableView *vCustomTableView = [[WGMainTableView alloc] initWithFrame:CGRectMake(self.width * i, 0, self.width, self.frame.size.height)];
         [self addSubview:vCustomTableView];
         
         //为table添加嵌套HeadderView

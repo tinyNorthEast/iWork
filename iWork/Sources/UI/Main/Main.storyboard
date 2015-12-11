@@ -20,29 +20,34 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1WP-yc-HGd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkx-7M-rpX">
-                                        <rect key="frame" x="276" y="36" width="30" height="30"/>
-                                        <state key="normal" title="登录"/>
-                                        <connections>
-                                            <action selector="signAciton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uQQ-0s-RsQ"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7L-jb-ZNT">
                                         <rect key="frame" x="0.0" y="28" width="72" height="44"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_city" translatesAutoresizingMaskIntoConstraints="NO" id="cMD-Px-DZm">
+                                                <rect key="frame" x="50" y="24" width="14" height="7"/>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0v-4n-bvJ">
-                                                <rect key="frame" x="16" y="7" width="30" height="30"/>
-                                                <state key="normal" title="城市"/>
+                                                <rect key="frame" x="8" y="10" width="41" height="30"/>
+                                                <state key="normal" title="北京">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="chooseCityAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x6n-mx-mlg"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMD-Px-DZm">
-                                                <rect key="frame" x="52" y="12" width="20" height="20"/>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5vm-ex-5KE">
+                                        <rect key="frame" x="112" y="40" width="96" height="20"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkx-7M-rpX">
+                                        <rect key="frame" x="286" y="35" width="26" height="30"/>
+                                        <state key="normal" image="main_user"/>
+                                        <connections>
+                                            <action selector="signAciton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uQQ-0s-RsQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -58,7 +63,6 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="mainScrollView" destination="DD7-u5-vFq" id="QRc-my-CAD"/>
                         <outlet property="menuBar" destination="V4G-Ad-K7p" id="Jak-xm-fjD"/>
                     </connections>
                 </viewController>
@@ -67,4 +71,9 @@
             <point key="canvasLocation" x="89" y="220"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="main_city" width="14" height="7"/>
+        <image name="main_logo" width="96" height="20"/>
+        <image name="main_user" width="26" height="30"/>
+    </resources>
 </document>
