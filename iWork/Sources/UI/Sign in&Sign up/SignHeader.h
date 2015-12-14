@@ -9,8 +9,9 @@
 #ifndef SignHeader_h
 #define SignHeader_h
 
-NSUInteger kMIN_PASSWORD_LEGTH = 6;
-NSUInteger kMAX_PASSWORD_LEGTH = 16;
+#define kMIN_PASSWORD_LEGTH  6
+#define kMAX_PASSWORD_LEGTH  16
 
+#define kUSERTOKEN_KEY       @"userToken"
 
 #endif /* SignHeader_h */

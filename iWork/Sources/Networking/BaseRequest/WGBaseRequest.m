@@ -121,7 +121,7 @@
             
         }];
     }else{
-        [self.manager POST:[self buildRequestUrl] parameters:self.getParams success:^(AFHTTPRequestOperation *operation, id responseObject)  {
+        [self.manager POST:[self buildRequestUrl] parameters:self.postParams success:^(AFHTTPRequestOperation *operation, id responseObject)  {
             WGBaseModel *model = [self responseModelWithData:responseObject];
             if (self.requestSuccess) {
                 _requestSuccess(model,nil);

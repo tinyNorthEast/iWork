@@ -93,6 +93,7 @@
 		B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E907C41C096C96003AB736 /* WGSignUpRequest.m */; };
 		B5E907C71C09A292003AB736 /* Widget.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E907C61C09A292003AB736 /* Widget.xcassets */; };
 		B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA30331C044FA20003FB3A /* WGRepeatPasswordViewController.m */; };
+		B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */; };
 		B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */; };
 		B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D3B1C0EF3E600B35AB6 /* WGGlobal.m */; };
 		B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D401C0EF57C00B35AB6 /* WGDataAccess.m */; };
@@ -273,6 +274,8 @@
 		B5EA30321C044FA20003FB3A /* WGRepeatPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGRepeatPasswordViewController.h; sourceTree = "<group>"; };
 		B5EA30331C044FA20003FB3A /* WGRepeatPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGRepeatPasswordViewController.m; sourceTree = "<group>"; };
 		B5EFD2361C0C060E0099365F /* SignHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignHeader.h; sourceTree = "<group>"; };
+		B5F4B1F71C1E997000CD44A3 /* WGSignInRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInRequestModel.h; sourceTree = "<group>"; };
+		B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInRequestModel.m; sourceTree = "<group>"; };
 		B5FB3D371C0EDC8A00B35AB6 /* WGQNTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGQNTokenRequest.h; sourceTree = "<group>"; };
 		B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGQNTokenRequest.m; sourceTree = "<group>"; };
 		B5FB3D3A1C0EF3E600B35AB6 /* WGGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGlobal.h; sourceTree = "<group>"; };
@@ -546,6 +549,10 @@
 		B54FA8071BF46FCD0018B682 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B5F4B1F31C1E8F1E00CD44A3 /* BBS */,
+				B5F4B1F41C1E8F1E00CD44A3 /* Detail */,
+				B5F4B1F51C1E8F1E00CD44A3 /* Setting */,
+				B5F4B1F61C1E8F1E00CD44A3 /* User */,
 				B50C5C031C11594D0043C26B /* City */,
 				B5B94F7A1BFDB2BE00EBCBD3 /* Sign in&Sign up */,
 				B54FA8081BF46FCD0018B682 /* Main */,
@@ -857,8 +864,38 @@
 			children = (
 				B5FB3D521C10499A00B35AB6 /* WGSignInModel.h */,
 				B5FB3D531C10499A00B35AB6 /* WGSignInModel.m */,
+				B5F4B1F71C1E997000CD44A3 /* WGSignInRequestModel.h */,
+				B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */,
 			);
 			path = "Sign in&Sign up";
+			sourceTree = "<group>";
+		};
+		B5F4B1F31C1E8F1E00CD44A3 /* BBS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BBS;
+			sourceTree = "<group>";
+		};
+		B5F4B1F41C1E8F1E00CD44A3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B5F4B1F51C1E8F1E00CD44A3 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		B5F4B1F61C1E8F1E00CD44A3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		B5FB3D3D1C0EF41C00B35AB6 /* DataAccess */ = {
@@ -1134,6 +1171,7 @@
 				B54FA84C1BF4A98B0018B682 /* WGBaseRequest.m in Sources */,
 				B54FA85F1BF4CBDB0018B682 /* UIViewAdditions.m in Sources */,
 				B54FA8141BF46FCD0018B682 /* WGMainViewController.m in Sources */,
+				B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */,
 				B5055C021BFA02ED001736AD /* WGTools.m in Sources */,
 				B52AD9781BFB21E0006540B3 /* WGNetworkHelper.m in Sources */,
 				B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */,

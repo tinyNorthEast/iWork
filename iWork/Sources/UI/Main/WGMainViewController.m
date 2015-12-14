@@ -13,6 +13,8 @@
 
 #import "WGMenuBar.h"
 #import "WGMainScrollView.h"
+#import "SignHeader.h"
+#import "WGDataAccess.h"
 
 @interface WGMainViewController ()
 
@@ -27,9 +29,7 @@
 }
 
 - (void)initView{
-   
-    
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +47,11 @@
 }
 
 - (IBAction)signAciton:(id)sender {
+    if ([WGDataAccess userDefaultsStringForKey:kUSERTOKEN_KEY].length) {
+        
+    }
+    
+    
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
     UIViewController *vc = [sb instantiateInitialViewController];
 //    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpWorkInfoViewController"];

@@ -10,4 +10,7 @@
 
 @interface WGSignInModel : WGBaseModel
 
+@property (nonatomic, strong) NSString<Optional> *token;
+@property (nonatomic, strong) NSString<Optional> *zh_name;
+
 @end

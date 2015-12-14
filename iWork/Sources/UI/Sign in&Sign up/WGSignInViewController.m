@@ -14,8 +14,10 @@
 #import "WGValidJudge.h"
 #import "WGProgressHUD.h"
 #import "WGSignInRequest.h"
+#import "WGSignInRequestModel.h"
 #import "WGSignInModel.h"
 #import "WGVertifyPhoneViewController.h"
+#import "WGDataAccess.h"
 
 NSString *PhoneNoneWarning = @"请填写用户名";
 NSString *PhoneWrongWarning = @"请填写正确的电话号码";
@@ -67,8 +69,10 @@ NSString *PasswordNoneWarning = @"请填写密码";
         @weakify(self);
         [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
             @strongify(self);
-            WGSignInModel *model = (WGSignInModel *)baseModel;
-            if ([model isValid]) {
+            WGSignInRequestModel *model = (WGSignInRequestModel *)baseModel;
+            if (model.infoCode.integerValue==0) {
+                WGSignInModel *signInModel = model.data;
+                [WGDataAccess userDefaultsSetString:signInModel.token forKey:kUSERTOKEN_KEY];
                 [self back];
             }else{
                 [WGProgressHUD disappearFailureMessage:model.message onView:self.view];

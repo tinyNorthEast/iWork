@@ -10,8 +10,10 @@
 
 #import "NSMutableDictionary+WGExtension.h"
 #import "NSString+WGMD5.h"
-#import "WGBaseModel.h"
 #import "UIDevice+WGIdentifier.h"
+
+#import "WGBaseModel.h"
+#import "WGSignInRequestModel.h"
 
 @implementation WGSignInRequest
 
@@ -20,10 +22,12 @@
     self = [super init];
     if (self) {
         [self.postParams safeSetValue:phone forKey:@"phone"];
-        [self.postParams safeSetValue:[[NSString stringDecodingByMD5:password] lowercaseString] forKey:@"password"];
+//        [self.postParams safeSetValue:[[NSString stringDecodingByMD5:password] lowercaseString] forKey:@"password"];
+        [self.postParams safeSetValue:password forKey:@"password"];
         
         [self.postParams safeSetValue:@"2" forKey:@"client"];
         [self.postParams safeSetValue:[[UIDevice currentDevice] UniqueGlobalDeviceIdentifier] forKey:@"eq_num"];
+        [self.postParams safeSetValue:@"1.0" forKey:@"version"];
         return self;
     }
     return nil;
@@ -38,7 +42,7 @@
 }
 
 - (WGBaseModel *)responseModelWithData:(id)data{
-    return [[WGBaseModel alloc] initWithDictionary:data error:nil];
+    return [[WGSignInRequestModel alloc] initWithDictionary:data error:nil];
 }
 
 @end
