@@ -47,18 +47,17 @@
 }
 
 - (IBAction)signAciton:(id)sender {
+    UIStoryboard *sb = nil;
     if ([WGDataAccess userDefaultsStringForKey:kUSERTOKEN_KEY].length) {
+        sb = [UIStoryboard storyboardWithName:@"User" bundle:nil];
         
+    }else{
+        sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
     }
-    
-    
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
     UIViewController *vc = [sb instantiateInitialViewController];
-//    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpWorkInfoViewController"];
     [self presentViewController:vc animated:YES completion:^{
         
     }];
 }
-
 
 @end

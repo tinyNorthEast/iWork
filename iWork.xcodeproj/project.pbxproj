@@ -20,6 +20,10 @@
 		B50C5C081C1159F90043C26B /* City.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50C5C071C1159F90043C26B /* City.storyboard */; };
 		B520B2D11C0B3D5C00CFD6CD /* NSString+WGMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */; };
 		B52AD9781BFB21E0006540B3 /* WGNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AD9771BFB21E0006540B3 /* WGNetworkHelper.m */; };
+		B53874F51C1EA997002FB222 /* WGUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53874F41C1EA997002FB222 /* WGUserInfoViewController.m */; };
+		B53874F71C1EA9B8002FB222 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53874F61C1EA9B8002FB222 /* User.storyboard */; };
+		B53874FA1C1EAA1A002FB222 /* WGSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53874F91C1EAA1A002FB222 /* WGSettingViewController.m */; };
+		B53874FC1C1EAA28002FB222 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53874FB1C1EAA28002FB222 /* Setting.storyboard */; };
 		B54FA7E81BF46AE60018B682 /* iWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7E71BF46AE60018B682 /* iWorkTests.m */; };
 		B54FA7F31BF46AE60018B682 /* iWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7F21BF46AE60018B682 /* iWorkUITests.m */; };
 		B54FA8111BF46FCD0018B682 /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54FA8011BF46FCD0018B682 /* Icon.xcassets */; };
@@ -151,6 +155,12 @@
 		B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WGMD5.m"; sourceTree = "<group>"; };
 		B52AD9761BFB21E0006540B3 /* WGNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNetworkHelper.h; sourceTree = "<group>"; };
 		B52AD9771BFB21E0006540B3 /* WGNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNetworkHelper.m; sourceTree = "<group>"; };
+		B53874F31C1EA997002FB222 /* WGUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGUserInfoViewController.h; sourceTree = "<group>"; };
+		B53874F41C1EA997002FB222 /* WGUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGUserInfoViewController.m; sourceTree = "<group>"; };
+		B53874F61C1EA9B8002FB222 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		B53874F81C1EAA1A002FB222 /* WGSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSettingViewController.h; sourceTree = "<group>"; };
+		B53874F91C1EAA1A002FB222 /* WGSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSettingViewController.m; sourceTree = "<group>"; };
+		B53874FB1C1EAA28002FB222 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		B54FA7CA1BF46AE60018B682 /* iWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54FA7E31BF46AE60018B682 /* iWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54FA7E71BF46AE60018B682 /* iWorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iWorkTests.m; sourceTree = "<group>"; };
@@ -887,6 +897,9 @@
 		B5F4B1F51C1E8F1E00CD44A3 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				B53874F81C1EAA1A002FB222 /* WGSettingViewController.h */,
+				B53874F91C1EAA1A002FB222 /* WGSettingViewController.m */,
+				B53874FB1C1EAA28002FB222 /* Setting.storyboard */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -894,6 +907,9 @@
 		B5F4B1F61C1E8F1E00CD44A3 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				B53874F31C1EA997002FB222 /* WGUserInfoViewController.h */,
+				B53874F41C1EA997002FB222 /* WGUserInfoViewController.m */,
+				B53874F61C1EA9B8002FB222 /* User.storyboard */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1056,6 +1072,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B54FA8131BF46FCD0018B682 /* Main.storyboard in Resources */,
+				B53874F71C1EA9B8002FB222 /* User.storyboard in Resources */,
+				B53874FC1C1EAA28002FB222 /* Setting.storyboard in Resources */,
 				B5E7E1A01C19279400BA545E /* WGMainCell.xib in Resources */,
 				B55D122E1C070EAA0035C6B4 /* Resource.bundle in Resources */,
 				B54FA8161BF46FCD0018B682 /* LaunchScreen.storyboard in Resources */,
@@ -1176,6 +1194,8 @@
 				B52AD9781BFB21E0006540B3 /* WGNetworkHelper.m in Sources */,
 				B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */,
 				B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */,
+				B53874F51C1EA997002FB222 /* WGUserInfoViewController.m in Sources */,
+				B53874FA1C1EAA1A002FB222 /* WGSettingViewController.m in Sources */,
 				B520B2D11C0B3D5C00CFD6CD /* NSString+WGMD5.m in Sources */,
 				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,
 			);
