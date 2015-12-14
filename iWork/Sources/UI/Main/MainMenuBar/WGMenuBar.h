@@ -16,6 +16,10 @@
 
 @interface WGMenuBar : UIView
 
+@property (nonatomic,assign) id <WGMenuBarDelegate> delegate;
+
 - (void)initMenuItems:(NSArray *)items;
+
+-(void)changeButtonStateAtIndex:(NSInteger)aIndex;
 
 @end

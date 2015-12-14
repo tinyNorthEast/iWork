@@ -22,13 +22,11 @@
 #define BUTTONSELECTEDID (scrollViewSelectedChannelID - 100)
 
 @interface WGMenuBar()<XXNibBridge>{
-    UIImageView *shadowImageView;
-    NSInteger userSelectedChannelID;
-    NSInteger scrollViewSelectedChannelID; 
+    float                 mTotalWidth;
 }
 
-@property(nonatomic,retain)NSMutableArray *buttonOriginXArray;
-@property(nonatomic,retain)NSMutableArray *buttonWithArray;
+@property (nonatomic, strong) NSMutableArray   *mButtonArray;
+@property (nonatomic, strong) NSMutableArray   *mItemInfoArray;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollBar;
 @end
@@ -38,106 +36,98 @@
 - (void)awakeFromNib{
     [super awakeFromNib];
     
-    userSelectedChannelID = 100;
-    scrollViewSelectedChannelID = 100;
+    
 }
-
+- (NSMutableArray *)mButtonArray{
+    if (!_mButtonArray) {
+        _mButtonArray = [NSMutableArray array];
+    }
+    return _mButtonArray;
+}
+- (NSMutableArray *)mItemInfoArray{
+    if (!_mItemInfoArray) {
+        _mItemInfoArray = [NSMutableArray array];
+    }
+    return _mItemInfoArray;
+}
 - (void)initMenuItems:(NSArray *)items{
-    float xPos = 5.0;
-    for (int i = 0; i < items.count; i++) {
+    int i = 0;
+    float menuWidth = 0.0;
+    for (NSString *title in items) {
         
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        NSString *title = [items objectAtIndex:i];
+        UIButton *vButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        [button setTag:i+100];
         if (i == 0) {
-            button.selected = YES;
+            [vButton setSelected:YES];
         }
-        [button setTitle:title forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:20.0];
-        [button setTitleColor:[UIColor wg_themeWhiteColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor wg_themeCyanColor]
-                     forState:UIControlStateSelected];
-        [button addTarget:self action:@selector(selectMenu:) forControlEvents:UIControlEventTouchUpInside];
+//        [vButton setBackgroundImage:[UIImage imageNamed:vNormalImageStr] forState:UIControlStateNormal];
+//        [vButton setBackgroundImage:[UIImage imageNamed:vHeligtImageStr] forState:UIControlStateSelected];
+        [vButton setTitle:title forState:UIControlStateNormal];
+        [vButton setTitleColor:[UIColor wg_themeWhiteColor] forState:UIControlStateNormal];
+        [vButton setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        [vButton setTag:i];
+        [vButton addTarget:self action:@selector(selectMenu:) forControlEvents:UIControlEventTouchUpInside];
         
+        int vButtonWidth = self.scrollBar.width/5;
+        [vButton setFrame:CGRectMake(menuWidth, 0, vButtonWidth, self.height)];
+        [self.scrollBar addSubview:vButton];
+        [self.mButtonArray addObject:vButton];
         
-        int buttonWidth = self.scrollBar.width/items.count;
-        
-//        int buttonWidth = 0;
-//        if (items.count <= BUTTONGAP) {
-//
-//        }else{
-//            
-//        }
-//        int buttonWidth = [title sizeWithFont:button.titleLabel.font
-//                            constrainedToSize:CGSizeMake(150, 30)
-//                                lineBreakMode:NSLineBreakByClipping].width;
-        
-        button.frame = CGRectMake(xPos, 9, buttonWidth+BUTTONGAP, 30);
-        
-        [_buttonOriginXArray addObject:@(xPos)];
-        
-        xPos += buttonWidth+BUTTONGAP;
-        
-        [_buttonWithArray addObject:@(button.frame.size.width)];
-        
-        [self.scrollBar addSubview:button];
+        menuWidth += vButtonWidth;
+        i++;
     }
     
-    self.scrollBar.contentSize = CGSizeMake(xPos, 44);
+    [self.scrollBar setContentSize:CGSizeMake(menuWidth, self.frame.size.height)];
     
-    shadowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(BUTTONGAP, 0, [[_buttonWithArray objectAtIndex:0] floatValue], 44)];
-    [shadowImageView setImage:[UIImage imageNamed:@"red_line_and_shadow.png"]];
-    [self addSubview:shadowImageView];
-    
+    // 保存menu总长度，如果小于self.view.width则不需要移动，方便点击button时移动位置的判断
+//    mTotalWidth = menuWidth;
 }
 
 - (void)selectMenu:(UIButton *)sender{
-    [self adjustScrollViewContentX:sender];
-    
-    //如果更换按钮
-    if (sender.tag != userSelectedChannelID) {
-        //取之前的按钮
-        UIButton *lastButton = (UIButton *)[self viewWithTag:userSelectedChannelID];
-        lastButton.selected = NO;
-        //赋值按钮ID
-        userSelectedChannelID = sender.tag;
-    }
-    
-    //按钮选中状态
-    if (!sender.selected) {
-        sender.selected = YES;
-        
-        [UIView animateWithDuration:0.25 animations:^{
-            
-            [shadowImageView setFrame:CGRectMake(sender.frame.origin.x, 0, [[_buttonWithArray objectAtIndex:BUTTONID] floatValue], 44)];
-            
-        } completion:^(BOOL finished) {
-            if (finished) {
-                //设置新闻页出现
-                [[WGMainScrollView sharedInstance] setContentOffset:CGPointMake(BUTTONID*self.width, 0) animated:YES];
-                //赋值滑动列表选择频道ID
-                scrollViewSelectedChannelID = sender.tag;
-            }
-        }];
-        
-    }
-    //重复点击选中按钮
-    else {
-        
+    [self changeButtonStateAtIndex:sender.tag];
+    if ([_delegate respondsToSelector:@selector(clickMenuButtonAtIndex:)]) {
+        [_delegate clickMenuButtonAtIndex:sender.tag];
     }
 }
-- (void)adjustScrollViewContentX:(UIButton *)sender
-{
-    float originX = [[_buttonOriginXArray objectAtIndex:BUTTONID] floatValue];
-    float width = [[_buttonWithArray objectAtIndex:BUTTONID] floatValue];
-    
-    if (sender.frame.origin.x - self.scrollBar.contentOffset.x > self.width-(BUTTONGAP+width)) {
-        [self.scrollBar setContentOffset:CGPointMake(originX - 30, 0)  animated:YES];
+#pragma mark 改变第几个button为选中状态，不发送delegate
+-(void)changeButtonStateAtIndex:(NSInteger)aIndex{
+    UIButton *vButton = [self.mButtonArray objectAtIndex:aIndex];
+    [self changeButtonsToNormalState];
+    vButton.selected = YES;
+    [self moveScrolViewWithIndex:aIndex];
+}
+
+#pragma mark - 其他辅助功能
+#pragma mark 取消所有button点击状态
+-(void)changeButtonsToNormalState{
+    for (UIButton *vButton in self.mButtonArray) {
+        vButton.selected = NO;
     }
-    
-    if (sender.frame.origin.x - self.scrollBar.contentOffset.x < 5) {
-        [self.scrollBar setContentOffset:CGPointMake(originX,0)  animated:YES];
+}
+#pragma mark 移动button到可视的区域
+-(void)moveScrolViewWithIndex:(NSInteger)aIndex{
+    if (self.mItemInfoArray.count < aIndex) {
+        return;
+    }
+    //宽度小于self.width肯定不需要移动
+    if (mTotalWidth <= self.width) {
+        return;
+    }
+
+    float vButtonOrigin = self.scrollBar.width/5*aIndex;
+    if (vButtonOrigin >= 300) {
+        if ((vButtonOrigin + 180) >= self.scrollBar.contentSize.width) {
+            [self.scrollBar setContentOffset:CGPointMake(self.scrollBar.contentSize.width - self.scrollBar.width, self.scrollBar.contentOffset.y) animated:YES];
+            return;
+        }
+        
+        float vMoveToContentOffset = vButtonOrigin - 180;
+        if (vMoveToContentOffset > 0) {
+            [self.scrollBar setContentOffset:CGPointMake(vMoveToContentOffset, self.scrollBar.contentOffset.y) animated:YES];
+        }
+    }else{
+        [self.scrollBar setContentOffset:CGPointMake(0, self.scrollBar.contentOffset.y) animated:YES];
+        return;
     }
 }
 

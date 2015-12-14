@@ -45,7 +45,7 @@
         [self.wg_pager addLoadMoreHandler:^(WGPager *pager) {
     
         }];
-        [self.wg_pager triggerRefresh];
+//        [self.wg_pager triggerRefresh];
     }
     return self;
 }

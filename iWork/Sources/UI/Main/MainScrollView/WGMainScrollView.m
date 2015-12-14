@@ -11,18 +11,27 @@
 #import "UIViewAdditions.h"
 #import "WGMainTableView.h"
 
-@interface WGMainScrollView()<UIScrollViewDelegate>
+@interface WGMainScrollView()<UIScrollViewDelegate>{
+    BOOL mNeedUseDelegate;
+    NSInteger mCurrentPage;
+}
 
 @end
 
 @implementation WGMainScrollView
 
-ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGMainScrollView)
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    
+    self.delegate = self;
+    mNeedUseDelegate = YES;
+    
+}
 
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.delegate = self;
+        
     }
     return self;
 }
@@ -37,6 +46,46 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGMainScrollView)
 //        [_contentItems addObject:vCustomTableView];
     }
     [self setContentSize:CGSizeMake(self.width * itmes.count, self.height)];
+}
+
+- (void)moveScrollowViewAthIndex:(NSInteger)aIndex{
+    mNeedUseDelegate = NO;
+    CGRect vMoveRect = CGRectMake(self.width * aIndex, 0, self.width, self.width);
+    [self scrollRectToVisible:vMoveRect animated:YES];
+    mCurrentPage= aIndex;
+    if ([_mainScrolldelegate respondsToSelector:@selector(didScrollPageViewChangedPage:)]) {
+        [_mainScrolldelegate didScrollPageViewChangedPage:mCurrentPage];
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    mNeedUseDelegate = YES;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    int page = (self.contentOffset.x+self.width/2.0) / self.width;
+    if (mCurrentPage == page) {
+        return;
+    }
+    mCurrentPage= page;
+    if ([_mainScrolldelegate respondsToSelector:@selector(didScrollPageViewChangedPage:)] && mNeedUseDelegate) {
+        [_mainScrolldelegate didScrollPageViewChangedPage:mCurrentPage];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate)
+    {
+        //        CGFloat targetX = _scrollView.contentOffset.x + _scrollView.frame.size.width;
+        //        targetX = (int)(targetX/ITEM_WIDTH) * ITEM_WIDTH;
+        //        [self moveToTargetPosition:targetX];
+    }
+    
+    
 }
 
 @end

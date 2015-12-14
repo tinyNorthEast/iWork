@@ -8,12 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-#import "SynthesizeSingletonForArc.h"
+@protocol WGMainScrollViewDelegate <NSObject>
+
+-(void)didScrollPageViewChangedPage:(NSInteger)aPage;
+
+@end
 
 @interface WGMainScrollView : UIScrollView
 
-ARC_SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(WGMainScrollView)
+@property (nonatomic,assign) id<WGMainScrollViewDelegate> mainScrolldelegate;
 
 - (void)initWithViews:(NSArray *)items;
+
+
+-(void)moveScrollowViewAthIndex:(NSInteger)aIndex;
 
 @end

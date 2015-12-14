@@ -55,6 +55,8 @@
 		B55D12361C070EAA0035C6B4 /* ShareSDKShareActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55D12281C070EAA0035C6B4 /* ShareSDKShareActionSheet.framework */; };
 		B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */; };
 		B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D0E7FB1C046EB000358351 /* WGCountDownButton.m */; };
+		B5E07BCD1C1ABE8700AC1402 /* WGMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E07BCC1C1ABE8700AC1402 /* WGMainView.m */; };
+		B5E07BCF1C1AC40300AC1402 /* WGMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E07BCE1C1AC40300AC1402 /* WGMainView.xib */; };
 		B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E6003E1BFECBCD00265307 /* WGSignInViewController.m */; };
 		B5E600421BFECF8800265307 /* WGVertifyPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E600411BFECF8800265307 /* WGVertifyPhoneViewController.m */; };
 		B5E600541BFF065000265307 /* libPushSDK-1.8.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E600531BFF065000265307 /* libPushSDK-1.8.8.a */; };
@@ -220,6 +222,9 @@
 		B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+WGPager.m"; sourceTree = "<group>"; };
 		B5D0E7FA1C046EB000358351 /* WGCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCountDownButton.h; sourceTree = "<group>"; };
 		B5D0E7FB1C046EB000358351 /* WGCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCountDownButton.m; sourceTree = "<group>"; };
+		B5E07BCB1C1ABE8700AC1402 /* WGMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMainView.h; sourceTree = "<group>"; };
+		B5E07BCC1C1ABE8700AC1402 /* WGMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMainView.m; sourceTree = "<group>"; };
+		B5E07BCE1C1AC40300AC1402 /* WGMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGMainView.xib; sourceTree = "<group>"; };
 		B5E6003D1BFECBCD00265307 /* WGSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInViewController.h; sourceTree = "<group>"; };
 		B5E6003E1BFECBCD00265307 /* WGSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInViewController.m; sourceTree = "<group>"; };
 		B5E600401BFECF8800265307 /* WGVertifyPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGVertifyPhoneViewController.h; sourceTree = "<group>"; };
@@ -553,6 +558,7 @@
 		B54FA8081BF46FCD0018B682 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B5E07BCA1C1ABE4500AC1402 /* MainView */,
 				B5066A111C0C8E7E00D87E56 /* MainMenuBar */,
 				B5E7E1A41C19592500BA545E /* MainScrollView */,
 				B5E7E19E1C19276E00BA545E /* MainTableView */,
@@ -782,6 +788,16 @@
 				B5D0E7FB1C046EB000358351 /* WGCountDownButton.m */,
 			);
 			path = CountDownButton;
+			sourceTree = "<group>";
+		};
+		B5E07BCA1C1ABE4500AC1402 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				B5E07BCB1C1ABE8700AC1402 /* WGMainView.h */,
+				B5E07BCC1C1ABE8700AC1402 /* WGMainView.m */,
+				B5E07BCE1C1AC40300AC1402 /* WGMainView.xib */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 		B5E600511BFF065000265307 /* JPush */ = {
@@ -1016,6 +1032,7 @@
 				B5E600661BFF0BAE00265307 /* PushConfig.plist in Resources */,
 				B5E6011E1C030ED700265307 /* Sign.xcassets in Resources */,
 				B55D12021C0702BD0035C6B4 /* Sign.storyboard in Resources */,
+				B5E07BCF1C1AC40300AC1402 /* WGMainView.xib in Resources */,
 				B54FA8111BF46FCD0018B682 /* Icon.xcassets in Resources */,
 				B5E601201C03179F00265307 /* Navigation.xcassets in Resources */,
 				B55D12311C070EAA0035C6B4 /* WeiboSDK.bundle in Resources */,
@@ -1104,6 +1121,7 @@
 				B5FB3D451C0EFB5500B35AB6 /* WGDataPickerView.m in Sources */,
 				B54FA84F1BF4A9EB0018B682 /* WGBaseModel.m in Sources */,
 				B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */,
+				B5E07BCD1C1ABE8700AC1402 /* WGMainView.m in Sources */,
 				B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */,
 				B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */,
 				B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */,
