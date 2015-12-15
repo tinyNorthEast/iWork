@@ -8,6 +8,8 @@
 
 #import "WGCityListViewController.h"
 
+#import <extobjc.h>
+
 #import "WGCityModel.h"
 #import "WGCityListModel.h"
 #import "WGCityListRequest.h"
@@ -17,9 +19,8 @@ NSString *const CONFIGMODEL_PATH = @"configModel";
 
 @interface WGCityListViewController()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, strong) NSArray *cityGroups;
-@property (nonatomic, strong) NSArray *cityList;
-@property (nonatomic, strong) WGCityModel *cityModel;
+@property (weak, nonatomic) IBOutlet UITableView *cityTable;
+@property (nonatomic, strong) NSMutableArray *cityList;
 
 @end
 
@@ -36,6 +37,13 @@ NSString *const CONFIGMODEL_PATH = @"configModel";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Init
+- (NSMutableArray *)cityList{
+    if (!_cityList) {
+        _cityList = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _cityList;
+}
 - (NSArray *)cacheCityList
 {
     if (!self.cityList)
@@ -54,7 +62,7 @@ NSString *const CONFIGMODEL_PATH = @"configModel";
         }
         @try
         {
-            _cityModel = [[WGCityModel alloc] initWithString:text error:nil];
+            
         }
         @catch (NSException *exception)
         {
@@ -71,15 +79,19 @@ NSString *const CONFIGMODEL_PATH = @"configModel";
 
 - (void)loadCitys{
     WGCityListRequest *request = [[WGCityListRequest alloc] init];
+    @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
-        WGCityListModel *model = (WGCityListModel *)baseModel;
-//        self.cityList = model;
-        
+        @strongify(self);
+        if (baseModel.infoCode.integerValue == 0) {
+            WGCityListModel *model = (WGCityListModel *)baseModel;
+            if (model.data.count) {
+                [self.cityList addObjectsFromArray:model.data];
+                [self.cityTable reloadData];
+            }
+        }   
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];
-    
-    
 }
 
 #pragma mark - IBAction

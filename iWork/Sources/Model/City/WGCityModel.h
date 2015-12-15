@@ -13,12 +13,8 @@
 
 @interface WGCityModel : WGBaseModel
 
-@property (nonatomic,copy)NSString<Optional> *areaId;
 @property (nonatomic,copy)NSString<Optional> *areaName;
 @property (nonatomic,copy)NSString<Optional> *areaCode;
-@property (nonatomic,copy)NSString<Optional> *areaIsLeaf;
-@property (nonatomic,copy)NSString<Optional> *areaLevel;
 @property (nonatomic,copy)NSString<Optional> *areaSort;
-@property (nonatomic,copy)NSNumber<Optional> *createTime;
 
 @end

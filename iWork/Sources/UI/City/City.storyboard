@@ -56,6 +56,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cityTable" destination="prF-JC-cbR" id="hHz-Sa-Pgq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDR-sq-OyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

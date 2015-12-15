@@ -12,6 +12,6 @@
 
 @interface WGCityListModel : WGBaseModel
 
-@property(nonatomic,strong)NSArray <Optional,WGCityModel> *air_list;
+@property(nonatomic,strong)NSArray <Optional,WGCityModel> *data;
 
 @end
