@@ -1,3 +1,4 @@
+
 //
 //  WGMainTableViewCell.m
 //  iWork
@@ -24,8 +25,25 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+}
 
-    // Configure the view for the selected state
+- (void)setHunters:(WGHunterListModel *)hunters{
+    
+}
+- (void)setHunters:(WGHunterListModel *)hunters byIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        
+    }else if (indexPath.row == 1){
+        
+    }else if (indexPath.row == 2){
+        
+    }
+}
+
+- (IBAction)commentAction:(id)sender {
+    if (self.selectBBS) {
+        self.selectBBS();
+    }
 }
 
 @end

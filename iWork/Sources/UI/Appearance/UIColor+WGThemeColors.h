@@ -30,4 +30,8 @@
 
 + (instancetype)wg_themeColorFromSelectorString:(NSString *)string;
 
+
++ (UIColor *)messagesBackgroundColor;
++ (UIColor *)messagesTimestampColor;
+
 @end

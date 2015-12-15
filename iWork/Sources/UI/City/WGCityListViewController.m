@@ -9,6 +9,7 @@
 #import "WGCityListViewController.h"
 
 #import "WGCityModel.h"
+#import "WGCityListModel.h"
 #import "WGCityListRequest.h"
 
 #define kCacheDirectory [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
@@ -69,20 +70,15 @@ NSString *const CONFIGMODEL_PATH = @"configModel";
 }
 
 - (void)loadCitys{
-
-    WGCityModel *aCity1 = [[WGCityModel alloc] init];
-    aCity1.city_name = @"北京";
-    WGCityModel *aCity2 = [[WGCityModel alloc] init];
-    aCity2.city_name = @"上海";
-    WGCityModel *aCity3 = [[WGCityModel alloc] init];
-    aCity3.city_name = @"广东";
-    WGCityModel *aCity4 = [[WGCityModel alloc] init];
-    aCity4.city_name = @"深圳";
-    WGCityModel *aCity5 = [[WGCityModel alloc] init];
-    aCity5.city_name = @"成都";
-    WGCityModel *aCity6 = [[WGCityModel alloc] init];
-    aCity6.city_name = @"苏州";
-    self.cityList = @[aCity1,aCity2,aCity3,aCity4,aCity5,aCity6];
+    WGCityListRequest *request = [[WGCityListRequest alloc] init];
+    [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+        WGCityListModel *model = (WGCityListModel *)baseModel;
+//        self.cityList = model;
+        
+    } failure:^(WGBaseModel *baseModel, NSError *error) {
+        
+    }];
+    
     
 }
 
@@ -110,7 +106,7 @@ NSString *const CONFIGMODEL_PATH = @"configModel";
     }
 
     WGCityModel *cityModel = [self.cityList objectAtIndex:indexPath.row];
-    cell.textLabel.text = cityModel.city_name;
+    cell.textLabel.text = cityModel.areaName;
 
     return cell;
 }

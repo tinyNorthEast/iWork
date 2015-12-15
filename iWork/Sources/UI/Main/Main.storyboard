@@ -60,6 +60,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="nbl-ks-JOS"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="cityButton" destination="h0v-4n-bvJ" id="uXB-Fp-R9d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

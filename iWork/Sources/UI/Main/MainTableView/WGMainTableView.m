@@ -9,9 +9,12 @@
 #import "WGMainTableView.h"
 
 #import <XXNibBridge.h>
+#import <extobjc.h>
 
 #import "WGMainCell.h"
 #import "UIScrollView+WGPager.h"
+#import "WGMainViewController.h"
+#import "WGBBSViewController.h"
 
 @interface WGMainTableView()<UITableViewDataSource,UITableViewDelegate>{
     
@@ -52,7 +55,7 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;//self.hunters.count;
+    return 4;//self.hunters.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -63,8 +66,24 @@
 - (void)configureCell:(WGMainCell *)cell forIndexPath:(NSIndexPath *)indexPath{
     //    NSDictionary *dic = self.hunters[indexPath.row];
     //    cell.hunters =
+    
+    
+    
+    
+//    @weakify(self);
+    cell.selectBBS = ^{
+//        @strongify(self);
+        UINavigationController *topController = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        WGBBSViewController *vc = [WGBBSViewController new];
+        [topController pushViewController:vc animated:YES];
+    };
 }
 
 #pragma mark - UITableViewDelegate
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UINavigationController *topController = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"City" bundle:nil];
+    UIViewController *vc = [sb instantiateInitialViewController];
+    [topController pushViewController:vc animated:YES];
+}
 @end

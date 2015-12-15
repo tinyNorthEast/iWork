@@ -11,12 +11,17 @@
 #import <extobjc.h>
 #import <XXNibBridge.h>
 
-#import "WGMenuBar.h"
-#import "WGMainScrollView.h"
-#import "SignHeader.h"
 #import "WGDataAccess.h"
 
+#import "SignHeader.h"
+#import "WGMenuBar.h"
+#import "WGMainScrollView.h"
+
+#import "WGCityModel.h"
+#import "WGCityListViewController.h"
+
 @interface WGMainViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *cityButton;
 
 @end
 
@@ -40,10 +45,16 @@
 #pragma mark - IBAction
 - (IBAction)chooseCityAction:(id)sender {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"City" bundle:nil];
-    UIViewController *vc = [sb instantiateInitialViewController];
+    WGCityListViewController *vc = [sb instantiateInitialViewController];
     [self presentViewController:vc animated:YES completion:^{
         
     }];
+    
+    @weakify(self);
+    vc.selectCity = ^(WGCityModel *city){
+        @strongify(self);
+        [self.cityButton setTitle:city.areaName forState:UIControlStateNormal];
+    };
 }
 
 - (IBAction)signAciton:(id)sender {

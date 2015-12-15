@@ -10,7 +10,6 @@
 
 @interface WGHunterListRequest : WGBaseRequest
 
-
 - (instancetype)init;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface WGCityListRequest : WGBaseRequest
 
+- (instancetype)init;
+
 @end

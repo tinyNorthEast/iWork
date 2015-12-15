@@ -14,4 +14,8 @@
 
 @property (nonatomic, strong) WGHunterListModel *hunters;
 
+@property (nonatomic, copy) void (^selectBBS)();
+
+- (void)setHunters:(WGHunterListModel *)hunters byIndexPath:(NSIndexPath *)indexPath;
+
 @end
