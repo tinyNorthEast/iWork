@@ -8,12 +8,19 @@
 
 #import "WGHunterListRequest.h"
 
+#import "NSMutableDictionary+WGExtension.h"
+
+#import "WGHunterListModel.h"
+
 @implementation WGHunterListRequest
 
-- (instancetype)init
+- (instancetype)initWithAreaCode:(NSString *)areaCode industryId:(NSString *)industryId pageNo:(NSNumber *)pageNo
 {
     self = [super init];
     if (self) {
+//        [self.getParams safeSetValue:areaCode forKey:@"areaCode"];
+//        [self.getParams safeSetValue:industryId forKey:@"industryId"];
+        [self.getParams safeSetValue:pageNo forKey:@"pageNo"];
         
         return self;
     }
@@ -21,12 +28,15 @@
 }
 
 - (NSString *)pathName{
-    return @"api/v1/headhunter/list";
+    return @"api/v1/headhunter/list.action";
 }
 
 - (WGHTTPRequestMethod)requestMethod{
-    return WGHTTPRequestMethodPOST;
+    return WGHTTPRequestMethodGET;
 }
 
+- (WGBaseModel *)responseModelWithData:(id)data{
+    return [[WGHunterListModel alloc] initWithDictionary:data error:nil];
+}
 
 @end

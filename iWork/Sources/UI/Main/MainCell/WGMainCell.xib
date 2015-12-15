@@ -32,10 +32,6 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjy-lf-cVi">
-                        <rect key="frame" x="189" y="117" width="46" height="30"/>
-                        <state key="normal" title="Button"/>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nb-LW-Jhr" userLabel="评论">
                         <rect key="frame" x="275" y="117" width="25" height="26"/>
                         <state key="normal" image="comment"/>
@@ -43,9 +39,21 @@
                             <action selector="commentAction:" destination="ELp-f0-j3X" eventType="touchUpInside" id="abZ-Zs-6EH"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjy-lf-cVi">
+                        <rect key="frame" x="214" y="113" width="46" height="30"/>
+                        <state key="normal" title="Button"/>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="318" y="258"/>
+            <connections>
+                <outlet property="commentButton" destination="1nb-LW-Jhr" id="T7j-cs-JDt"/>
+                <outlet property="headerImage" destination="8Vr-Vw-Jm0" id="foj-hl-mu2"/>
+                <outlet property="nameLabel" destination="QvJ-jd-I9h" id="Pm2-B7-MFK"/>
+                <outlet property="pariseButton" destination="zjy-lf-cVi" id="Mk3-Za-81D"/>
+                <outlet property="rateImage" destination="wvg-xO-37B" id="0PK-ee-ioq"/>
+                <outlet property="rateLabel" destination="U0d-tK-7gr" id="NQf-ae-pj6"/>
+            </connections>
+            <point key="canvasLocation" x="504" y="273"/>
         </tableViewCell>
     </objects>
     <resources>

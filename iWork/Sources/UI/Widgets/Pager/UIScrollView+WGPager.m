@@ -26,6 +26,7 @@
     
     self.referScrollView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self);
+        self.currentPageIndex = 1;
         if (handler) {
             handler(self);
         }

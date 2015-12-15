@@ -10,6 +10,9 @@
 
 #import "AFNetworking.h"
 
+#import "UIDevice+WGIdentifier.h"
+#import "NSMutableDictionary+WGExtension.h"
+
 #import "WGURLConfig.h"
 #import "WGBaseModel.h"
 
@@ -34,9 +37,16 @@
     return self;
 }
 
+- (void)setBaseParamsTo:(NSMutableDictionary *)param{
+    [param safeSetValue:@"2" forKey:@"client"];
+    [param safeSetValue:[[UIDevice currentDevice] UniqueGlobalDeviceIdentifier] forKey:@"eq_num"];
+    [param safeSetValue:@"1.0" forKey:@"version"];
+}
+
 - (NSMutableDictionary *)getParams{
     if (!_getParams) {
         _getParams = [NSMutableDictionary dictionary];
+        [self setBaseParamsTo:_getParams];
     }
     return _getParams;
 }
@@ -44,6 +54,7 @@
 - (NSMutableDictionary *)postParams{
     if (!_postParams) {
         _postParams = [NSMutableDictionary dictionary];
+        [self setBaseParamsTo:_postParams];
     }
     return _postParams;
 }

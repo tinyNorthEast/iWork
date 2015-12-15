@@ -10,6 +10,8 @@
 
 #import <extobjc.h>
 
+#import "WGProgressHUD.h"
+
 #import "WGCityModel.h"
 #import "WGCityListModel.h"
 #import "WGCityListRequest.h"
@@ -88,7 +90,9 @@ NSString *const CONFIGMODEL_PATH = @"configModel";
                 [self.cityList addObjectsFromArray:model.data];
                 [self.cityTable reloadData];
             }
-        }   
+        }else{
+            [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
+        }
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];

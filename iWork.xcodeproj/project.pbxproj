@@ -144,6 +144,8 @@
 		B5E907C71C09A292003AB736 /* Widget.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E907C61C09A292003AB736 /* Widget.xcassets */; };
 		B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA30331C044FA20003FB3A /* WGRepeatPasswordViewController.m */; };
 		B5F150A31C1FAF8900EC9503 /* WGCityListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150A21C1FAF8900EC9503 /* WGCityListModel.m */; };
+		B5F150A61C2007ED00EC9503 /* WGHunterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150A51C2007ED00EC9503 /* WGHunterModel.m */; };
+		B5F150A91C20387300EC9503 /* UIImageView+WGHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150A81C20387300EC9503 /* UIImageView+WGHTTP.m */; };
 		B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */; };
 		B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */; };
 		B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D3B1C0EF3E600B35AB6 /* WGGlobal.m */; };
@@ -392,6 +394,10 @@
 		B5EFD2361C0C060E0099365F /* SignHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignHeader.h; sourceTree = "<group>"; };
 		B5F150A11C1FAF8900EC9503 /* WGCityListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCityListModel.h; sourceTree = "<group>"; };
 		B5F150A21C1FAF8900EC9503 /* WGCityListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCityListModel.m; sourceTree = "<group>"; };
+		B5F150A41C2007ED00EC9503 /* WGHunterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHunterModel.h; sourceTree = "<group>"; };
+		B5F150A51C2007ED00EC9503 /* WGHunterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHunterModel.m; sourceTree = "<group>"; };
+		B5F150A71C20387300EC9503 /* UIImageView+WGHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WGHTTP.h"; sourceTree = "<group>"; };
+		B5F150A81C20387300EC9503 /* UIImageView+WGHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WGHTTP.m"; sourceTree = "<group>"; };
 		B5F4B1F71C1E997000CD44A3 /* WGSignInRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInRequestModel.h; sourceTree = "<group>"; };
 		B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInRequestModel.m; sourceTree = "<group>"; };
 		B5FB3D371C0EDC8A00B35AB6 /* WGQNTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGQNTokenRequest.h; sourceTree = "<group>"; };
@@ -808,6 +814,8 @@
 				B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */,
 				B5FB3D551C1071CC00B35AB6 /* UIDevice+WGIdentifier.h */,
 				B5FB3D561C1071CC00B35AB6 /* UIDevice+WGIdentifier.m */,
+				B5F150A71C20387300EC9503 /* UIImageView+WGHTTP.h */,
+				B5F150A81C20387300EC9503 /* UIImageView+WGHTTP.m */,
 				B5FB3D581C10745300B35AB6 /* OpenUDID.h */,
 				B5FB3D591C10745300B35AB6 /* OpenUDID.m */,
 				B5FB3D3E1C0EF48700B35AB6 /* SynthesizeSingletonForArc.h */,
@@ -1167,6 +1175,8 @@
 			children = (
 				B5FB3D4F1C1034A500B35AB6 /* WGHunterListModel.h */,
 				B5FB3D501C1034A500B35AB6 /* WGHunterListModel.m */,
+				B5F150A41C2007ED00EC9503 /* WGHunterModel.h */,
+				B5F150A51C2007ED00EC9503 /* WGHunterModel.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1438,10 +1448,12 @@
 				B5E7E1AA1C1993DA00BA545E /* WGHunterListRequest.m in Sources */,
 				B5E6011C1C03005B00265307 /* WGCustomIBSupports.m in Sources */,
 				B5E7E1A31C1927F400BA545E /* WGMainTableView.m in Sources */,
+				B5F150A61C2007ED00EC9503 /* WGHunterModel.m in Sources */,
 				B5FB3D481C0EFBA800B35AB6 /* WGToolBarView.m in Sources */,
 				B54FA84C1BF4A98B0018B682 /* WGBaseRequest.m in Sources */,
 				B54FA85F1BF4CBDB0018B682 /* UIViewAdditions.m in Sources */,
 				B54FA8141BF46FCD0018B682 /* WGMainViewController.m in Sources */,
+				B5F150A91C20387300EC9503 /* UIImageView+WGHTTP.m in Sources */,
 				B538755E1C1EDB69002FB222 /* UIButton+JSMessagesView.m in Sources */,
 				B53875371C1EDB69002FB222 /* JSBubbleMessageCell.m in Sources */,
 				B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */,

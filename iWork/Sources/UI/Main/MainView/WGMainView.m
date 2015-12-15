@@ -28,7 +28,7 @@
 }
 
 - (void)initView{
-     NSArray *barItems = @[@"实时",@"娱乐",@"经济",@"科技"];
+     NSArray *barItems = @[@"法务",@"财务",@"HR",@"消费品",@"互联网&通讯",@"汽车&机械",@"金融服务",@"供应链",@"化工",@"医疗&生命科学",@"地产"];
     [self.menuBar initMenuItems:barItems];
     self.menuBar.delegate = self;
     

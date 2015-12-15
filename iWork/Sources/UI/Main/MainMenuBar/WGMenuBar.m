@@ -15,11 +15,8 @@
 #include "UIColor+WGThemeColors.h"
 #import "WGMainScrollView.h"
 
-
 //按钮空隙
 #define BUTTONGAP 5
-#define BUTTONID (sender.tag-100)
-#define BUTTONSELECTEDID (scrollViewSelectedChannelID - 100)
 
 @interface WGMenuBar()<XXNibBridge>{
     float                 mTotalWidth;
@@ -51,6 +48,8 @@
     return _mItemInfoArray;
 }
 - (void)initMenuItems:(NSArray *)items{
+    float xPos = 5.0;
+
     int i = 0;
     float menuWidth = 0.0;
     for (NSString *title in items) {
@@ -64,16 +63,26 @@
 //        [vButton setBackgroundImage:[UIImage imageNamed:vHeligtImageStr] forState:UIControlStateSelected];
         [vButton setTitle:title forState:UIControlStateNormal];
         [vButton setTitleColor:[UIColor wg_themeWhiteColor] forState:UIControlStateNormal];
-        [vButton setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        [vButton setTitleColor:[UIColor wg_themeCyanColor] forState:UIControlStateSelected];
         [vButton setTag:i];
         [vButton addTarget:self action:@selector(selectMenu:) forControlEvents:UIControlEventTouchUpInside];
         
-        int vButtonWidth = self.scrollBar.width/5;
-        [vButton setFrame:CGRectMake(menuWidth, 0, vButtonWidth, self.height)];
+
+        int baseWidth = self.scrollBar.width/5;
+  
+        CGSize size = [vButton.titleLabel.text boundingRectWithSize:CGSizeMake(0, 40) options:NSStringDrawingUsesLineFragmentOrigin
+                                     attributes: @{ NSFontAttributeName:vButton.titleLabel.font } context: nil].size;
+        
+        int vButtonWidth = (baseWidth>size.width?baseWidth:size.width);
+        
+        [vButton setFrame:CGRectMake(xPos, 2, vButtonWidth+BUTTONGAP, 40)];
+        
+        xPos = vButton.right+BUTTONGAP;
+        
         [self.scrollBar addSubview:vButton];
         [self.mButtonArray addObject:vButton];
         
-        menuWidth += vButtonWidth;
+        menuWidth = vButton.left+vButton.width;
         i++;
     }
     

@@ -8,8 +8,10 @@
 
 #import "WGBaseRequest.h"
 
+@class WGPager;
+
 @interface WGHunterListRequest : WGBaseRequest
 
-- (instancetype)init;
+- (instancetype)initWithAreaCode:(NSString *)areaCode industryId:(NSString *)industryId pageNo:(NSNumber *)pageNo;
 
 @end

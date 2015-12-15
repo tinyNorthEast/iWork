@@ -8,6 +8,10 @@
 
 #import "WGBaseModel.h"
 
+#import "WGHunterModel.h"
+
 @interface WGHunterListModel : WGBaseModel
+
+@property(nonatomic,strong)NSArray <Optional,WGHunterModel> *data;
 
 @end

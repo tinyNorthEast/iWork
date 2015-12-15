@@ -11,10 +11,16 @@
 #import <XXNibBridge.h>
 #import <extobjc.h>
 
+#import "WGProgressHUD.h"
+
 #import "WGMainCell.h"
 #import "UIScrollView+WGPager.h"
 #import "WGMainViewController.h"
 #import "WGBBSViewController.h"
+#import "WGHunterListRequest.h"
+#import "WGBaseModel.h"
+#import "WGHunterListModel.h"
+#import "WGHunterModel.h"
 
 @interface WGMainTableView()<UITableViewDataSource,UITableViewDelegate>{
     
@@ -25,14 +31,6 @@
 @end
 @implementation WGMainTableView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
@@ -42,8 +40,10 @@
         self.rowHeight = 166;
         [self registerNib:[WGMainCell xx_nib] forCellReuseIdentifier:[WGMainCell xx_nibID]];
     
+        @weakify(self);
         [self.wg_pager addPullDownRefreshHandler:^(WGPager *pager) {
-    
+            @strongify(self);
+            [self requestHuntersWithPage:pager];
         }];
         [self.wg_pager addLoadMoreHandler:^(WGPager *pager) {
     
@@ -53,9 +53,38 @@
     return self;
 }
 
+- (NSMutableArray *)hunters{
+    if (!_hunters) {
+        _hunters = [NSMutableArray array];
+    }
+    return _hunters;
+}
+
+#pragma mark - Request
+- (void)requestHuntersWithPage:(WGPager *)pager{
+    WGHunterListRequest *request = [[WGHunterListRequest alloc] initWithAreaCode:@"1000" industryId:@"-1" pageNo:@(pager.currentPageIndex)];
+    @weakify(self);
+    [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+        @strongify(self);
+        if (baseModel.infoCode.integerValue == 0) {
+            WGHunterListModel *model = (WGHunterListModel *)baseModel;
+            [self.hunters addObjectsFromArray:model.data];
+            if (self.hunters.count) {
+                [self reloadData];
+            }
+            
+        }else{
+            [WGProgressHUD disappearFailureMessage:baseModel.message onView:self];
+        }
+        
+    } failure:^(WGBaseModel *baseModel, NSError *error) {
+        
+    }];
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;//self.hunters.count;
+    return self.hunters.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -64,11 +93,10 @@
     return cell;
 }
 - (void)configureCell:(WGMainCell *)cell forIndexPath:(NSIndexPath *)indexPath{
-    //    NSDictionary *dic = self.hunters[indexPath.row];
-    //    cell.hunters =
+    WGHunterModel *aHunter = self.hunters[indexPath.row];
+    cell.hunter = aHunter;
     
-    
-    
+
     
 //    @weakify(self);
     cell.selectBBS = ^{

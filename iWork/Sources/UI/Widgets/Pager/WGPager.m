@@ -13,7 +13,8 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-        _nextPageIndex = 20;
+        _currentPageIndex = 1;
+        _nextPageIndex = 10;
     }
     return self;
 }

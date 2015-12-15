@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class WGHunterListModel;
+@class WGHunterModel;
 
 @interface WGMainCell : UITableViewCell
 
-@property (nonatomic, strong) WGHunterListModel *hunters;
+@property (nonatomic, strong) WGHunterModel *hunter;
 
 @property (nonatomic, copy) void (^selectBBS)();
 
-- (void)setHunters:(WGHunterListModel *)hunters byIndexPath:(NSIndexPath *)indexPath;
+- (void)setHunters:(WGHunterModel *)hunters byIndexPath:(NSIndexPath *)indexPath;
 
 @end
