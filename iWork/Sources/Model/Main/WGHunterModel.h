@@ -8,15 +8,18 @@
 
 #import "WGBaseModel.h"
 
+#import "WGIndustryModel.h"
+
 @protocol WGHunterModel <NSObject>
 @end
 
 @interface WGHunterModel : WGBaseModel
 
-//@property (nonatomic,copy)NSString<Optional> *id;
+@property (nonatomic,copy)NSString<Optional> *objId;
 @property (nonatomic,copy)NSString<Optional> *realName;
 @property (nonatomic,copy)NSString<Optional> *pic;
-@property (nonatomic,copy)NSNumber<Optional> *ranking;
-@property (nonatomic,copy)NSNumber<Optional> *commentCount;
+@property (nonatomic,strong)NSNumber<Optional> *ranking;
+@property (nonatomic,strong)NSNumber<Optional> *commentCount;
+@property (nonatomic,strong)NSArray <Optional,WGIndustryModel> *industryList;
 
 @end

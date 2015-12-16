@@ -11,13 +11,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cw1-EB-62j">
-                    <rect key="frame" x="279" y="6" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
-                </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LoI-9r-82S">
                     <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cw1-EB-62j">
+                    <rect key="frame" x="274" y="2" width="46" height="40"/>
+                    <state key="normal" image="main_scrollButton"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -28,4 +28,7 @@
             <point key="canvasLocation" x="-131" y="34"/>
         </view>
     </objects>
+    <resources>
+        <image name="main_scrollButton" width="46" height="40"/>
+    </resources>
 </document>

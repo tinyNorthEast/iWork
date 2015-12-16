@@ -110,7 +110,7 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UINavigationController *topController = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"City" bundle:nil];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
     UIViewController *vc = [sb instantiateInitialViewController];
     [topController pushViewController:vc animated:YES];
 }

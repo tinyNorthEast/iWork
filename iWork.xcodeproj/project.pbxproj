@@ -146,6 +146,7 @@
 		B5F150A31C1FAF8900EC9503 /* WGCityListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150A21C1FAF8900EC9503 /* WGCityListModel.m */; };
 		B5F150A61C2007ED00EC9503 /* WGHunterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150A51C2007ED00EC9503 /* WGHunterModel.m */; };
 		B5F150A91C20387300EC9503 /* UIImageView+WGHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150A81C20387300EC9503 /* UIImageView+WGHTTP.m */; };
+		B5F150B71C21139700EC9503 /* WGIndustryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150B61C21139700EC9503 /* WGIndustryModel.m */; };
 		B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */; };
 		B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */; };
 		B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D3B1C0EF3E600B35AB6 /* WGGlobal.m */; };
@@ -398,6 +399,8 @@
 		B5F150A51C2007ED00EC9503 /* WGHunterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHunterModel.m; sourceTree = "<group>"; };
 		B5F150A71C20387300EC9503 /* UIImageView+WGHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WGHTTP.h"; sourceTree = "<group>"; };
 		B5F150A81C20387300EC9503 /* UIImageView+WGHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WGHTTP.m"; sourceTree = "<group>"; };
+		B5F150B51C21139700EC9503 /* WGIndustryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGIndustryModel.h; sourceTree = "<group>"; };
+		B5F150B61C21139700EC9503 /* WGIndustryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIndustryModel.m; sourceTree = "<group>"; };
 		B5F4B1F71C1E997000CD44A3 /* WGSignInRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInRequestModel.h; sourceTree = "<group>"; };
 		B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInRequestModel.m; sourceTree = "<group>"; };
 		B5FB3D371C0EDC8A00B35AB6 /* WGQNTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGQNTokenRequest.h; sourceTree = "<group>"; };
@@ -1177,6 +1180,8 @@
 				B5FB3D501C1034A500B35AB6 /* WGHunterListModel.m */,
 				B5F150A41C2007ED00EC9503 /* WGHunterModel.h */,
 				B5F150A51C2007ED00EC9503 /* WGHunterModel.m */,
+				B5F150B51C21139700EC9503 /* WGIndustryModel.h */,
+				B5F150B61C21139700EC9503 /* WGIndustryModel.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1415,6 +1420,7 @@
 				B5FB3D5A1C10745300B35AB6 /* OpenUDID.m in Sources */,
 				B55D12001C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.m in Sources */,
 				B53875641C1EDE49002FB222 /* WGBBSViewController.m in Sources */,
+				B5F150B71C21139700EC9503 /* WGIndustryModel.m in Sources */,
 				B50C5BFE1C11471F0043C26B /* WGCityModel.m in Sources */,
 				B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */,
 				B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */,
