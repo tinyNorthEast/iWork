@@ -147,6 +147,14 @@
 		B5F150A61C2007ED00EC9503 /* WGHunterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150A51C2007ED00EC9503 /* WGHunterModel.m */; };
 		B5F150A91C20387300EC9503 /* UIImageView+WGHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150A81C20387300EC9503 /* UIImageView+WGHTTP.m */; };
 		B5F150B71C21139700EC9503 /* WGIndustryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150B61C21139700EC9503 /* WGIndustryModel.m */; };
+		B5F150BC1C21205C00EC9503 /* WGHunterDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150BB1C21205C00EC9503 /* WGHunterDetailRequest.m */; };
+		B5F150BF1C21214300EC9503 /* WGHunterDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150BE1C21214300EC9503 /* WGHunterDetailModel.m */; };
+		B5F150C11C214DA600EC9503 /* Detail.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F150C01C214DA600EC9503 /* Detail.xcassets */; };
+		B5F150C41C225EBC00EC9503 /* WGHunterInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150C31C225EBC00EC9503 /* WGHunterInfoModel.m */; };
+		B5F150C81C228B5600EC9503 /* WGDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150C71C228B5600EC9503 /* WGDetailHeaderView.m */; };
+		B5F150CA1C228B7000EC9503 /* WGDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F150C91C228B7000EC9503 /* WGDetailHeaderView.xib */; };
+		B5F150CE1C22D1B400EC9503 /* WGIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150CD1C22D1B400EC9503 /* WGIntroductionView.m */; };
+		B5F150D01C22D6D800EC9503 /* WGIntroductionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F150CF1C22D6D800EC9503 /* WGIntroductionView.xib */; };
 		B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */; };
 		B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */; };
 		B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D3B1C0EF3E600B35AB6 /* WGGlobal.m */; };
@@ -401,6 +409,19 @@
 		B5F150A81C20387300EC9503 /* UIImageView+WGHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WGHTTP.m"; sourceTree = "<group>"; };
 		B5F150B51C21139700EC9503 /* WGIndustryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGIndustryModel.h; sourceTree = "<group>"; };
 		B5F150B61C21139700EC9503 /* WGIndustryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIndustryModel.m; sourceTree = "<group>"; };
+		B5F150BA1C21205C00EC9503 /* WGHunterDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHunterDetailRequest.h; sourceTree = "<group>"; };
+		B5F150BB1C21205C00EC9503 /* WGHunterDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHunterDetailRequest.m; sourceTree = "<group>"; };
+		B5F150BD1C21214300EC9503 /* WGHunterDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHunterDetailModel.h; sourceTree = "<group>"; };
+		B5F150BE1C21214300EC9503 /* WGHunterDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHunterDetailModel.m; sourceTree = "<group>"; };
+		B5F150C01C214DA600EC9503 /* Detail.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Detail.xcassets; sourceTree = "<group>"; };
+		B5F150C21C225EBC00EC9503 /* WGHunterInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHunterInfoModel.h; sourceTree = "<group>"; };
+		B5F150C31C225EBC00EC9503 /* WGHunterInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHunterInfoModel.m; sourceTree = "<group>"; };
+		B5F150C61C228B5600EC9503 /* WGDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDetailHeaderView.h; sourceTree = "<group>"; };
+		B5F150C71C228B5600EC9503 /* WGDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDetailHeaderView.m; sourceTree = "<group>"; };
+		B5F150C91C228B7000EC9503 /* WGDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGDetailHeaderView.xib; sourceTree = "<group>"; };
+		B5F150CC1C22D1B400EC9503 /* WGIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGIntroductionView.h; sourceTree = "<group>"; };
+		B5F150CD1C22D1B400EC9503 /* WGIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIntroductionView.m; sourceTree = "<group>"; };
+		B5F150CF1C22D6D800EC9503 /* WGIntroductionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGIntroductionView.xib; sourceTree = "<group>"; };
 		B5F4B1F71C1E997000CD44A3 /* WGSignInRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInRequestModel.h; sourceTree = "<group>"; };
 		B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInRequestModel.m; sourceTree = "<group>"; };
 		B5FB3D371C0EDC8A00B35AB6 /* WGQNTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGQNTokenRequest.h; sourceTree = "<group>"; };
@@ -727,6 +748,7 @@
 				B5E6011F1C03179F00265307 /* Navigation.xcassets */,
 				B5E907C61C09A292003AB736 /* Widget.xcassets */,
 				B5E7E1AD1C19A5E700BA545E /* Main.xcassets */,
+				B5F150C01C214DA600EC9503 /* Detail.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -748,6 +770,7 @@
 			isa = PBXGroup;
 			children = (
 				B5FB3D4E1C10344A00B35AB6 /* Main */,
+				B5F150B91C21203400EC9503 /* Detail */,
 				B50C5BFB1C1147060043C26B /* City */,
 				B5E907BC1C082BDE003AB736 /* Sign in&Sign up */,
 				B54FA8491BF4A9120018B682 /* BaseModel */,
@@ -760,6 +783,7 @@
 			isa = PBXGroup;
 			children = (
 				B5FB3D4D1C10335900B35AB6 /* Main */,
+				B5F150B81C21201600EC9503 /* Detail */,
 				B50C5BFF1C11474C0043C26B /* City */,
 				B53875651C1EE57F002FB222 /* BBS */,
 				B5E907BB1C082BCE003AB736 /* Sign in&Sign up */,
@@ -1094,6 +1118,46 @@
 			path = "Sign in&Sign up";
 			sourceTree = "<group>";
 		};
+		B5F150B81C21201600EC9503 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B5F150BA1C21205C00EC9503 /* WGHunterDetailRequest.h */,
+				B5F150BB1C21205C00EC9503 /* WGHunterDetailRequest.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B5F150B91C21203400EC9503 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B5F150BD1C21214300EC9503 /* WGHunterDetailModel.h */,
+				B5F150BE1C21214300EC9503 /* WGHunterDetailModel.m */,
+				B5F150C21C225EBC00EC9503 /* WGHunterInfoModel.h */,
+				B5F150C31C225EBC00EC9503 /* WGHunterInfoModel.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B5F150C51C228B3600EC9503 /* HeadView */ = {
+			isa = PBXGroup;
+			children = (
+				B5F150C61C228B5600EC9503 /* WGDetailHeaderView.h */,
+				B5F150C71C228B5600EC9503 /* WGDetailHeaderView.m */,
+				B5F150C91C228B7000EC9503 /* WGDetailHeaderView.xib */,
+			);
+			path = HeadView;
+			sourceTree = "<group>";
+		};
+		B5F150CB1C22D16B00EC9503 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				B5F150CC1C22D1B400EC9503 /* WGIntroductionView.h */,
+				B5F150CD1C22D1B400EC9503 /* WGIntroductionView.m */,
+				B5F150CF1C22D6D800EC9503 /* WGIntroductionView.xib */,
+			);
+			path = Introduction;
+			sourceTree = "<group>";
+		};
 		B5F4B1F31C1E8F1E00CD44A3 /* BBS */ = {
 			isa = PBXGroup;
 			children = (
@@ -1107,6 +1171,8 @@
 		B5F4B1F41C1E8F1E00CD44A3 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				B5F150C51C228B3600EC9503 /* HeadView */,
+				B5F150CB1C22D16B00EC9503 /* Introduction */,
 				B53875691C1EF3EE002FB222 /* WGHunterDetailViewController.h */,
 				B538756A1C1EF3EE002FB222 /* WGHunterDetailViewController.m */,
 				B538756C1C1EF3FD002FB222 /* Detail.storyboard */,
@@ -1315,6 +1381,7 @@
 				B538754D1C1EDB69002FB222 /* bubble-square-incoming@2x.png in Resources */,
 				B5E7E1AE1C19A5E700BA545E /* Main.xcassets in Resources */,
 				B538754C1C1EDB69002FB222 /* bubble-square-incoming.png in Resources */,
+				B5F150CA1C228B7000EC9503 /* WGDetailHeaderView.xib in Resources */,
 				B538753E1C1EDB69002FB222 /* bubble-default-incoming-green.png in Resources */,
 				B53875531C1EDB69002FB222 /* bubble-typing@2x.png in Resources */,
 				B53875491C1EDB69002FB222 /* bubble-default-outgoing@2x.png in Resources */,
@@ -1324,6 +1391,7 @@
 				B5E600C61C00245400265307 /* SMS_SDKLocalizable.strings in Resources */,
 				B53875411C1EDB69002FB222 /* bubble-default-incoming-selected@2x.png in Resources */,
 				B538755C1C1EDB69002FB222 /* messageReceived.aiff in Resources */,
+				B5F150C11C214DA600EC9503 /* Detail.xcassets in Resources */,
 				B538756D1C1EF3FD002FB222 /* Detail.storyboard in Resources */,
 				B55D12341C070EAA0035C6B4 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				B54FA82F1BF49DF90018B682 /* Launch.xcassets in Resources */,
@@ -1333,6 +1401,7 @@
 				B538755B1C1EDB69002FB222 /* send@2x.png in Resources */,
 				B5E600661BFF0BAE00265307 /* PushConfig.plist in Resources */,
 				B53875591C1EDB69002FB222 /* send-highlighted@2x.png in Resources */,
+				B5F150D01C22D6D800EC9503 /* WGIntroductionView.xib in Resources */,
 				B538754B1C1EDB69002FB222 /* bubble-square-incoming-selected@2x.png in Resources */,
 				B5E6011E1C030ED700265307 /* Sign.xcassets in Resources */,
 				B53875461C1EDB69002FB222 /* bubble-default-outgoing-selected.png in Resources */,
@@ -1410,6 +1479,7 @@
 				B5066A051C0C23CE00D87E56 /* PopoverView.m in Sources */,
 				B5E907BF1C083E6C003AB736 /* WGSignInRequest.m in Sources */,
 				B50C5C061C1159690043C26B /* WGCityListViewController.m in Sources */,
+				B5F150C81C228B5600EC9503 /* WGDetailHeaderView.m in Sources */,
 				B5FB3D4C1C0FEDBF00B35AB6 /* WGMainCell.m in Sources */,
 				B538753B1C1EDB69002FB222 /* JSMessageSoundEffect.m in Sources */,
 				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
@@ -1418,6 +1488,7 @@
 				B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */,
 				B5FB3D511C1034A500B35AB6 /* WGHunterListModel.m in Sources */,
 				B5FB3D5A1C10745300B35AB6 /* OpenUDID.m in Sources */,
+				B5F150BF1C21214300EC9503 /* WGHunterDetailModel.m in Sources */,
 				B55D12001C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.m in Sources */,
 				B53875641C1EDE49002FB222 /* WGBBSViewController.m in Sources */,
 				B5F150B71C21139700EC9503 /* WGIndustryModel.m in Sources */,
@@ -1427,11 +1498,13 @@
 				B538753C1C1EDB69002FB222 /* JSMessagesViewController.m in Sources */,
 				B53875391C1EDB69002FB222 /* JSDismissiveTextView.m in Sources */,
 				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,
+				B5F150C41C225EBC00EC9503 /* WGHunterInfoModel.m in Sources */,
 				B5FB3D571C1071CC00B35AB6 /* UIDevice+WGIdentifier.m in Sources */,
 				B53875381C1EDB69002FB222 /* JSBubbleView.m in Sources */,
 				B5066A141C0C8EBD00D87E56 /* WGMenuBar.m in Sources */,
 				B53875601C1EDB69002FB222 /* UIImage+JSMessagesView.m in Sources */,
 				B5E600421BFECF8800265307 /* WGVertifyPhoneViewController.m in Sources */,
+				B5F150BC1C21205C00EC9503 /* WGHunterDetailRequest.m in Sources */,
 				B54FA8171BF46FCD0018B682 /* main.m in Sources */,
 				B5055BEE1BF9CF33001736AD /* WGPager.m in Sources */,
 				B5055BF41BF9FB5B001736AD /* WGValidJudge.m in Sources */,
@@ -1465,6 +1538,7 @@
 				B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */,
 				B538753D1C1EDB69002FB222 /* NSString+JSMessagesView.m in Sources */,
 				B5055C021BFA02ED001736AD /* WGTools.m in Sources */,
+				B5F150CE1C22D1B400EC9503 /* WGIntroductionView.m in Sources */,
 				B52AD9781BFB21E0006540B3 /* WGNetworkHelper.m in Sources */,
 				B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */,
 				B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */,

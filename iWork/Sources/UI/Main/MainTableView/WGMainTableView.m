@@ -72,7 +72,6 @@
             if (self.hunters.count) {
                 [self reloadData];
             }
-            
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self];
         }
@@ -80,6 +79,16 @@
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];
+}
+
+- (WGMainViewController *)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder *nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[WGMainViewController class]]) {
+            return (WGMainViewController *)nextResponder;
+        }
+    }
+    return nil;
 }
 
 #pragma mark - UITableViewDataSource
@@ -95,23 +104,19 @@
 - (void)configureCell:(WGMainCell *)cell forIndexPath:(NSIndexPath *)indexPath{
     WGHunterModel *aHunter = self.hunters[indexPath.row];
     cell.hunter = aHunter;
-    
 
-    
-//    @weakify(self);
+    @weakify(self);
     cell.selectBBS = ^{
-//        @strongify(self);
-        UINavigationController *topController = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        @strongify(self);
         WGBBSViewController *vc = [WGBBSViewController new];
-        [topController pushViewController:vc animated:YES];
+        [[self viewController].navigationController pushViewController:vc animated:YES];
     };
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UINavigationController *topController = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
     UIViewController *vc = [sb instantiateInitialViewController];
-    [topController pushViewController:vc animated:YES];
+    [[self viewController].navigationController pushViewController:vc animated:YES];
 }
 @end

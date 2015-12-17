@@ -13,6 +13,7 @@
 #import "M13BadgeView.h"
 
 #import "UIImageView+WGHTTP.h"
+#import "UIColor+WGThemeColors.h"
 
 #import "WGHunterModel.h"
 #import "WGIndustryModel.h"
@@ -38,7 +39,7 @@
     [super setSelected:selected animated:animated];
 }
 - (void)setHunter:(WGHunterModel *)hunter{
-    [self.headerImage wg_loadImageFromURL:hunter.pic placeholder:nil];
+    [self.headerImage wg_loadImageFromURL:hunter.pic placeholder:[UIImage imageNamed:@"main_defaultHeader"]];
     [self.nameLabel setText:hunter.realName];
     
     
@@ -57,6 +58,7 @@
     
     M13BadgeView *badgeView = [[M13BadgeView alloc] initWithFrame:CGRectMake(0, 0, 24.0, 24.0)];
     badgeView.text = @"9";//self.hunter.commentCount.stringValue;
+    badgeView.badgeBackgroundColor = [UIColor wg_themeCyanColor];
     badgeView.horizontalAlignment = M13BadgeViewHorizontalAlignmentRight;
     badgeView.verticalAlignment = M13BadgeViewVerticalAlignmentTop;
     badgeView.hidesWhenZero = YES;
