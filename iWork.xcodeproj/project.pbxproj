@@ -155,6 +155,10 @@
 		B5F150CA1C228B7000EC9503 /* WGDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F150C91C228B7000EC9503 /* WGDetailHeaderView.xib */; };
 		B5F150CE1C22D1B400EC9503 /* WGIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150CD1C22D1B400EC9503 /* WGIntroductionView.m */; };
 		B5F150D01C22D6D800EC9503 /* WGIntroductionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F150CF1C22D6D800EC9503 /* WGIntroductionView.xib */; };
+		B5F150D41C22E4AD00EC9503 /* WGTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150D31C22E4AD00EC9503 /* WGTagList.m */; };
+		B5F150D71C22E63200EC9503 /* WGIndustryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150D61C22E63200EC9503 /* WGIndustryListModel.m */; };
+		B5F150DB1C22E75200EC9503 /* WGIndustryView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150DA1C22E75200EC9503 /* WGIndustryView.m */; };
+		B5F150DD1C22E78B00EC9503 /* WGIndustryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F150DC1C22E78B00EC9503 /* WGIndustryView.xib */; };
 		B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */; };
 		B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */; };
 		B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D3B1C0EF3E600B35AB6 /* WGGlobal.m */; };
@@ -422,6 +426,13 @@
 		B5F150CC1C22D1B400EC9503 /* WGIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGIntroductionView.h; sourceTree = "<group>"; };
 		B5F150CD1C22D1B400EC9503 /* WGIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIntroductionView.m; sourceTree = "<group>"; };
 		B5F150CF1C22D6D800EC9503 /* WGIntroductionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGIntroductionView.xib; sourceTree = "<group>"; };
+		B5F150D21C22E4AD00EC9503 /* WGTagList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTagList.h; sourceTree = "<group>"; };
+		B5F150D31C22E4AD00EC9503 /* WGTagList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTagList.m; sourceTree = "<group>"; };
+		B5F150D51C22E63200EC9503 /* WGIndustryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGIndustryListModel.h; sourceTree = "<group>"; };
+		B5F150D61C22E63200EC9503 /* WGIndustryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIndustryListModel.m; sourceTree = "<group>"; };
+		B5F150D91C22E75200EC9503 /* WGIndustryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGIndustryView.h; sourceTree = "<group>"; };
+		B5F150DA1C22E75200EC9503 /* WGIndustryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIndustryView.m; sourceTree = "<group>"; };
+		B5F150DC1C22E78B00EC9503 /* WGIndustryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGIndustryView.xib; sourceTree = "<group>"; };
 		B5F4B1F71C1E997000CD44A3 /* WGSignInRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInRequestModel.h; sourceTree = "<group>"; };
 		B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInRequestModel.m; sourceTree = "<group>"; };
 		B5FB3D371C0EDC8A00B35AB6 /* WGQNTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGQNTokenRequest.h; sourceTree = "<group>"; };
@@ -907,6 +918,7 @@
 		B54FA8571BF4C4480018B682 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				B5F150D11C22E3D900EC9503 /* Tags */,
 				B5FB3D421C0EFB2600B35AB6 /* PickerView */,
 				B5066A021C0C23CE00D87E56 /* PopoverView */,
 				B54FA85C1BF4CBDB0018B682 /* ViewAdditions */,
@@ -1134,6 +1146,8 @@
 				B5F150BE1C21214300EC9503 /* WGHunterDetailModel.m */,
 				B5F150C21C225EBC00EC9503 /* WGHunterInfoModel.h */,
 				B5F150C31C225EBC00EC9503 /* WGHunterInfoModel.m */,
+				B5F150D51C22E63200EC9503 /* WGIndustryListModel.h */,
+				B5F150D61C22E63200EC9503 /* WGIndustryListModel.m */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1158,6 +1172,25 @@
 			path = Introduction;
 			sourceTree = "<group>";
 		};
+		B5F150D11C22E3D900EC9503 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				B5F150D21C22E4AD00EC9503 /* WGTagList.h */,
+				B5F150D31C22E4AD00EC9503 /* WGTagList.m */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		B5F150D81C22E73100EC9503 /* Industry */ = {
+			isa = PBXGroup;
+			children = (
+				B5F150D91C22E75200EC9503 /* WGIndustryView.h */,
+				B5F150DA1C22E75200EC9503 /* WGIndustryView.m */,
+				B5F150DC1C22E78B00EC9503 /* WGIndustryView.xib */,
+			);
+			path = Industry;
+			sourceTree = "<group>";
+		};
 		B5F4B1F31C1E8F1E00CD44A3 /* BBS */ = {
 			isa = PBXGroup;
 			children = (
@@ -1173,6 +1206,7 @@
 			children = (
 				B5F150C51C228B3600EC9503 /* HeadView */,
 				B5F150CB1C22D16B00EC9503 /* Introduction */,
+				B5F150D81C22E73100EC9503 /* Industry */,
 				B53875691C1EF3EE002FB222 /* WGHunterDetailViewController.h */,
 				B538756A1C1EF3EE002FB222 /* WGHunterDetailViewController.m */,
 				B538756C1C1EF3FD002FB222 /* Detail.storyboard */,
@@ -1365,6 +1399,7 @@
 				B538753F1C1EDB69002FB222 /* bubble-default-incoming-green@2x.png in Resources */,
 				B53875541C1EDB69002FB222 /* input-bar.png in Resources */,
 				B53875471C1EDB69002FB222 /* bubble-default-outgoing-selected@2x.png in Resources */,
+				B5F150DD1C22E78B00EC9503 /* WGIndustryView.xib in Resources */,
 				B54FA8131BF46FCD0018B682 /* Main.storyboard in Resources */,
 				B53874F71C1EA9B8002FB222 /* User.storyboard in Resources */,
 				B53875481C1EDB69002FB222 /* bubble-default-outgoing.png in Resources */,
@@ -1511,6 +1546,7 @@
 				B5FB3D541C10499A00B35AB6 /* WGSignInModel.m in Sources */,
 				B55D11FD1C06F7100035C6B4 /* WGSignUpUserInfoViewController.m in Sources */,
 				B54FA8471BF4A88D0018B682 /* UIFont+WGThemeFonts.m in Sources */,
+				B5F150D41C22E4AD00EC9503 /* WGTagList.m in Sources */,
 				B5F150A31C1FAF8900EC9503 /* WGCityListModel.m in Sources */,
 				B538756B1C1EF3EE002FB222 /* WGHunterDetailViewController.m in Sources */,
 				B5FB3D451C0EFB5500B35AB6 /* WGDataPickerView.m in Sources */,
@@ -1518,6 +1554,7 @@
 				B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */,
 				B5E07BCD1C1ABE8700AC1402 /* WGMainView.m in Sources */,
 				B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */,
+				B5F150DB1C22E75200EC9503 /* WGIndustryView.m in Sources */,
 				B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */,
 				B538753A1C1EDB69002FB222 /* JSMessageInputView.m in Sources */,
 				B53875611C1EDB69002FB222 /* UIView+AnimationOptionsForCurve.m in Sources */,
@@ -1525,6 +1562,7 @@
 				B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */,
 				B5066A081C0C44AB00D87E56 /* WGResetPasswordRequest.m in Sources */,
 				B5E7E1AA1C1993DA00BA545E /* WGHunterListRequest.m in Sources */,
+				B5F150D71C22E63200EC9503 /* WGIndustryListModel.m in Sources */,
 				B5E6011C1C03005B00265307 /* WGCustomIBSupports.m in Sources */,
 				B5E7E1A31C1927F400BA545E /* WGMainTableView.m in Sources */,
 				B5F150A61C2007ED00EC9503 /* WGHunterModel.m in Sources */,

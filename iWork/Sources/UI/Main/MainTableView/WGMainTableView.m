@@ -37,6 +37,7 @@
         self.dataSource = self;
         self.delegate = self;
         
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.rowHeight = 166;
         [self registerNib:[WGMainCell xx_nib] forCellReuseIdentifier:[WGMainCell xx_nibID]];
     
@@ -98,6 +99,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     WGMainCell *cell = [tableView dequeueReusableCellWithIdentifier:[WGMainCell xx_nibID] forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [self configureCell:cell forIndexPath:indexPath];
     return cell;
 }

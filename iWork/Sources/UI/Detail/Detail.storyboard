@@ -85,23 +85,23 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vKC-8Z-lQQ" customClass="WGIntroductionView">
-                                        <rect key="frame" x="0.0" y="168" width="320" height="39"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fic-Ao-Tb0">
-                                        <rect key="frame" x="0.0" y="221" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="168" width="320" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdp-js-rHy">
-                                        <rect key="frame" x="0.0" y="278" width="320" height="48"/>
+                                        <rect key="frame" x="0.0" y="269" width="320" height="43"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7U6-Oi-R9S">
-                                        <rect key="frame" x="0.0" y="339" width="320" height="56"/>
+                                        <rect key="frame" x="0.0" y="327" width="320" height="43"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9BW-ku-E4V">
-                                        <rect key="frame" x="0.0" y="410" width="320" height="35"/>
+                                        <rect key="frame" x="0.0" y="386" width="320" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fic-Ao-Tb0" customClass="WGIndustryView">
+                                        <rect key="frame" x="0.0" y="178" width="320" height="78"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -112,6 +112,7 @@
                     <connections>
                         <outlet property="describeView" destination="vKC-8Z-lQQ" id="Qom-dA-wW3"/>
                         <outlet property="headerView" destination="NX4-NF-qag" id="nIB-Ce-zZH"/>
+                        <outlet property="industryView" destination="Fic-Ao-Tb0" id="ET8-Mr-B39"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdZ-eZ-6iB" userLabel="First Responder" sceneMemberID="firstResponder"/>

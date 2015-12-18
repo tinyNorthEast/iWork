@@ -8,24 +8,44 @@
 
 #import "WGBaseModel.h"
 
+#import "WGIndustryListModel.h"
+
 @interface WGHunterInfoModel : WGBaseModel
 
 
-//objId: 3,
-//realName: "2",
-//phone: "18201413267",
-//companyName: "撒旦法",
-//position: "撒旦法",
-//workTime: 1448035200000,
-//phone400: "234234",
-//pic: "http://www.7xoors.com1.z0.glb.clouddn.com/PNG-20151214211338-884.png",
-//describe: "阿萨德发斯蒂芬",
-//ranking: 0,
-//participated: 0,
-//commentCount: 0,
-//industryList: [ ],
-//functionsList: [ ]
-
+//headhunterInfo: {
+//objId: 16,
+//realName: "廖端永",
+//phone: "18201413265",
+//companyName: "搜狐",
+//position: "高级开发",
+//workTime: 1448380800000,
+//phone400: "0101234",
+//pic: "http://www.7xoors.com1.z0.glb.clouddn.com/JPG-20151214210947-312.jpg",
+//describe: "阿斯顿飞洒",
+//ranking: 1,
+//participated: 1,
+//commentCount: 2,
+//industryList: [
+//    {
+//    objId: 3,
+//    createTime: 1450349580079,
+//    industryName: "法务"
+//    }
+//               ],
+//functionsList: [
+//    {
+//    objId: 82,
+//    createTime: 1450349580082,
+//    functionsName: "外部审计-四大"
+//    },
+//    {
+//    objId: 2,
+//    createTime: 1450349580082,
+//    functionsName: "洽谈"
+//    }
+//                ]
+//}
 
 @property (nonatomic,strong)NSNumber<Optional> *objId;
 @property (nonatomic,copy)NSString<Optional> *realName;
@@ -39,5 +59,6 @@
 @property (nonatomic,copy)NSString<Optional> *ranking;
 @property (nonatomic,copy)NSString<Optional> *participated;
 @property (nonatomic,copy)NSString<Optional> *commentCount;
+@property (nonatomic,copy)NSArray<Optional,WGIndustryListModel> *industryList;
 
 @end

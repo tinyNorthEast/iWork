@@ -12,6 +12,7 @@
 #import <ShareSDK/ShareSDK.h>
 
 #import "WGProgressHUD.h"
+#import "UIViewAdditions.h"
 
 #import "WGHunterDetailRequest.h"
 #import "WGBaseModel.h"
@@ -19,10 +20,13 @@
 #import "WGHunterInfoModel.h"
 #import "WGDetailHeaderView.h"
 #import "WGIntroductionView.h"
+#import "WGIndustryView.h"
+#import "WGIndustryModel.h"
 
 @interface WGHunterDetailViewController ()
 @property (weak, nonatomic) IBOutlet WGDetailHeaderView *headerView;
 @property (weak, nonatomic) IBOutlet WGIntroductionView *describeView;
+@property (weak, nonatomic) IBOutlet WGIndustryView *industryView;
 
 
 @end
@@ -87,7 +91,7 @@
 
 #pragma mark - Request
 - (void)requestDetailData{
-    WGHunterDetailRequest *request = [[WGHunterDetailRequest alloc] initWithHunterId:@(3)];
+    WGHunterDetailRequest *request = [[WGHunterDetailRequest alloc] initWithHunterId:@(16)];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
@@ -96,6 +100,16 @@
             WGHunterInfoModel *infoModel = [[WGHunterInfoModel alloc] initWithDictionary:model.data[@"headhunterInfo"] error:nil];
             self.headerView.infoModel = infoModel;
             self.describeView.describeStr = infoModel.describe;
+//            self.describeView.height = 100;
+            self.describeView.backgroundColor = [UIColor redColor];
+            
+            NSMutableArray *industrys = [NSMutableArray array];
+            for (WGIndustryModel *industryModel in infoModel.industryList) {
+                [industrys addObject:industryModel.industryName];
+            }
+            self.industryView.tagsArray = industrys;
+            self.industryView.backgroundColor = [UIColor redColor];
+            
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
         }
