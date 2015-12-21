@@ -1,20 +1,18 @@
 //
-//  WGUserInfoViewController.m
+//  WGWriteBBSViewController.m
 //  iWork
 //
-//  Created by Adele on 12/14/15.
+//  Created by Adele on 12/21/15.
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
-#import "WGUserInfoViewController.h"
+#import "WGWriteBBSViewController.h"
 
-#import "WGGlobal.h"
-
-@interface WGUserInfoViewController ()
+@interface WGWriteBBSViewController ()
 
 @end
 
-@implementation WGUserInfoViewController
+@implementation WGWriteBBSViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,20 +26,9 @@
 
 #pragma mark - IBAction
 - (IBAction)backAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-- (IBAction)gotoSettingAction:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Setting" bundle:nil];
-    UIViewController *vc = [sb instantiateInitialViewController];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-- (IBAction)signOutAction:(id)sender {
-    [[WGGlobal sharedInstance] clearToken];
-}
 
 /*
 #pragma mark - Navigation

@@ -13,6 +13,7 @@
 
 #import "WGProgressHUD.h"
 #import "UIViewAdditions.h"
+#import "WGTools.h"
 
 #import "WGHunterDetailRequest.h"
 #import "WGBaseModel.h"
@@ -91,6 +92,17 @@
                                 }
                             }];
 }
+- (IBAction)writeBBS:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WriteBBS" bundle:nil];
+    UIViewController *vc = [sb instantiateInitialViewController];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
+- (IBAction)callConsultant:(id)sender {
+    [WGTools callPhone:@"" prompt:NO];
+}
+
 
 #pragma mark - Request
 - (void)requestDetailData{
@@ -115,7 +127,6 @@
             }
             self.industryView.tagsArray = industrys;
             self.industryHeight.constant = 100;
-            
             
             
             

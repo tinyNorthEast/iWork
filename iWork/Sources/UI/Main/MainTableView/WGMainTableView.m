@@ -110,7 +110,8 @@
     @weakify(self);
     cell.selectBBS = ^{
         @strongify(self);
-        WGBBSViewController *vc = [WGBBSViewController new];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
+        WGBBSViewController *vc = [sb instantiateInitialViewController];;
         [[self viewController].navigationController pushViewController:vc animated:YES];
     };
 }

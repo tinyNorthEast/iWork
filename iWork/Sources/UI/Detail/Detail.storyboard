@@ -76,6 +76,9 @@
                                                 <state key="normal" title="给顾问留言">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="writeBBS:" destination="LTU-VW-rVz" eventType="touchUpInside" id="0Vf-h9-ble"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -94,6 +97,9 @@
                                                 <state key="normal" title="联系顾问">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="callConsultant:" destination="LTU-VW-rVz" eventType="touchUpInside" id="mZm-YN-Xys"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
