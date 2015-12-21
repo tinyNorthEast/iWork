@@ -28,6 +28,9 @@
 @property (weak, nonatomic) IBOutlet WGIntroductionView *describeView;
 @property (weak, nonatomic) IBOutlet WGIndustryView *industryView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *describeHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *industryHeight;
 
 @end
 
@@ -98,17 +101,23 @@
         if (baseModel.infoCode.integerValue == 0) {
             WGHunterDetailModel *model = (WGHunterDetailModel *)baseModel;
             WGHunterInfoModel *infoModel = [[WGHunterInfoModel alloc] initWithDictionary:model.data[@"headhunterInfo"] error:nil];
+            
             self.headerView.infoModel = infoModel;
+            self.headerHeight.constant = 255;
+            
             self.describeView.describeStr = infoModel.describe;
-//            self.describeView.height = 100;
-            self.describeView.backgroundColor = [UIColor redColor];
+            self.describeHeight.constant = 130;
+            
             
             NSMutableArray *industrys = [NSMutableArray array];
             for (WGIndustryModel *industryModel in infoModel.industryList) {
                 [industrys addObject:industryModel.industryName];
             }
             self.industryView.tagsArray = industrys;
-            self.industryView.backgroundColor = [UIColor redColor];
+            self.industryHeight.constant = 100;
+            
+            
+            
             
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];

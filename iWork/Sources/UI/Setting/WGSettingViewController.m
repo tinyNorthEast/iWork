@@ -30,29 +30,10 @@
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 4;
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    switch (section) {
-        case 0:
-            return 1;
-            break;
-            
-        case 1:
-            return 1;
-            break;
-        case 2:
-            return 1;
-            break;
-        case 3:
-            return 1;
-            break;
-    }
-    return 0;
-}
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -60,15 +41,24 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
-    
-    
+    switch (indexPath.row) {
+        case 0:
+            cell.textLabel.text = @"推荐码";
+            break;
+        case 1:
+            cell.textLabel.text = @"推送设置";
+            break;
+        case 2:
+            cell.textLabel.text = @"清空缓存";
+            break;
+        case 3:
+            cell.textLabel.text = @"关于";
+            break;
+        default:
+            break;
+    }
     return cell;
 }
-
-
-
-
 
 /*
 #pragma mark - Navigation

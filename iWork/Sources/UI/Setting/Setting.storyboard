@@ -8,7 +8,6 @@
         <!--设置-->
         <scene sceneID="eAw-hg-GZd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="icb-lY-zk0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Svw-FD-Gl3" customClass="WGSettingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jmn-1J-XuI"/>
@@ -18,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="AuQ-ft-MgS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AuQ-ft-MgS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Svw-FD-Gl3" id="VKz-1m-ZFf"/>
                                     <outlet property="delegate" destination="Svw-FD-Gl3" id="2l1-n2-4Fg"/>
@@ -31,6 +30,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="设置" id="oae-QW-N9a"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="icb-lY-zk0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="655" y="246"/>
         </scene>

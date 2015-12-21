@@ -105,6 +105,7 @@
 		B55D12361C070EAA0035C6B4 /* ShareSDKShareActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55D12281C070EAA0035C6B4 /* ShareSDKShareActionSheet.framework */; };
 		B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */; };
 		B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D0E7FB1C046EB000358351 /* WGCountDownButton.m */; };
+		B5D4F3F71C279467007474F0 /* User.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D4F3F61C279467007474F0 /* User.xcassets */; };
 		B5E07BCD1C1ABE8700AC1402 /* WGMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E07BCC1C1ABE8700AC1402 /* WGMainView.m */; };
 		B5E07BCF1C1AC40300AC1402 /* WGMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E07BCE1C1AC40300AC1402 /* WGMainView.xib */; };
 		B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E6003E1BFECBCD00265307 /* WGSignInViewController.m */; };
@@ -354,6 +355,7 @@
 		B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+WGPager.m"; sourceTree = "<group>"; };
 		B5D0E7FA1C046EB000358351 /* WGCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCountDownButton.h; sourceTree = "<group>"; };
 		B5D0E7FB1C046EB000358351 /* WGCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCountDownButton.m; sourceTree = "<group>"; };
+		B5D4F3F61C279467007474F0 /* User.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = User.xcassets; sourceTree = "<group>"; };
 		B5E07BCB1C1ABE8700AC1402 /* WGMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMainView.h; sourceTree = "<group>"; };
 		B5E07BCC1C1ABE8700AC1402 /* WGMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMainView.m; sourceTree = "<group>"; };
 		B5E07BCE1C1AC40300AC1402 /* WGMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGMainView.xib; sourceTree = "<group>"; };
@@ -760,6 +762,7 @@
 				B5E907C61C09A292003AB736 /* Widget.xcassets */,
 				B5E7E1AD1C19A5E700BA545E /* Main.xcassets */,
 				B5F150C01C214DA600EC9503 /* Detail.xcassets */,
+				B5D4F3F61C279467007474F0 /* User.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1426,6 +1429,7 @@
 				B5E600C61C00245400265307 /* SMS_SDKLocalizable.strings in Resources */,
 				B53875411C1EDB69002FB222 /* bubble-default-incoming-selected@2x.png in Resources */,
 				B538755C1C1EDB69002FB222 /* messageReceived.aiff in Resources */,
+				B5D4F3F71C279467007474F0 /* User.xcassets in Resources */,
 				B5F150C11C214DA600EC9503 /* Detail.xcassets in Resources */,
 				B538756D1C1EF3FD002FB222 /* Detail.storyboard in Resources */,
 				B55D12341C070EAA0035C6B4 /* ShareSDKFlatShareViewUI.bundle in Resources */,

@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWork/Sources/UI/Detail/WGHunterDetailViewController.m"
-            timestampString = "472058410.111064"
+            timestampString = "472293345.775058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-requestDetailData"
             landmarkType = "5">
          </BreakpointContent>

@@ -15,16 +15,22 @@
 #import "WGTagList.h"
 
 @interface WGIndustryView()<XXNibBridge>
+@property (strong, nonatomic) WGTagList *tagList;
 @property (weak, nonatomic) IBOutlet UIView *tagsView;
 
 @end
 
 @implementation WGIndustryView
 
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    
+    self.tagList = [[WGTagList alloc] initWithFrame:CGRectMake(self.tagsView.left, self.tagsView.top, self.tagsView.width, 0.0f)];
+    [self.tagsView addSubview:self.tagList];
+}
+
 - (void)setTagsArray:(NSArray *)tagsArray{
-    WGTagList *tagList = [[WGTagList alloc] initWithFrame:CGRectMake(self.tagsView.left, self.tagsView.top, self.tagsView.width, 0.0f)];
-    [tagList setTags:tagsArray];
-    [self.tagsView addSubview:tagList];
+    [self.tagList setTags:tagsArray];
 }
 
 @end

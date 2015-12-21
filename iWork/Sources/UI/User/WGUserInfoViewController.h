@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WGUserInfoViewController : UIViewController
+@interface WGUserInfoViewController : UITableViewController
 
 @end

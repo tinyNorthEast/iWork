@@ -8,12 +8,21 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WGIndustryView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="擅长行业" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGU-6b-HvQ">
+                    <rect key="frame" x="126" y="8" width="68" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detail_seperatorline" translatesAutoresizingMaskIntoConstraints="NO" id="uPH-1s-Rxb">
+                    <rect key="frame" x="104" y="32" width="113" height="2"/>
+                </imageView>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Btr-1U-Ny1">
-                    <rect key="frame" x="8" y="37" width="304" height="68"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="8" y="50" width="304" height="42"/>
+                    <color key="backgroundColor" red="0.94509803920000002" green="0.41960784309999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -21,7 +30,10 @@
             <connections>
                 <outlet property="tagsView" destination="Btr-1U-Ny1" id="Re8-uj-sSl"/>
             </connections>
-            <point key="canvasLocation" x="258" y="58.5"/>
+            <point key="canvasLocation" x="204" y="59"/>
         </view>
     </objects>
+    <resources>
+        <image name="detail_seperatorline" width="113" height="1"/>
+    </resources>
 </document>
