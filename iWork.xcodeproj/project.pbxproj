@@ -69,6 +69,7 @@
 		B5D4F4091C27E546007474F0 /* WGBBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D4F4061C27E546007474F0 /* WGBBSViewController.m */; };
 		B5D4F40D1C27E8CF007474F0 /* WGWriteBBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D4F40C1C27E8CF007474F0 /* WGWriteBBSViewController.m */; };
 		B5D4F40F1C27E8F9007474F0 /* WriteBBS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D4F40E1C27E8F9007474F0 /* WriteBBS.storyboard */; };
+		B5D4F4121C28259E007474F0 /* NSFileManager+WGFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D4F4111C28259E007474F0 /* NSFileManager+WGFileHelper.m */; };
 		B5E07BCD1C1ABE8700AC1402 /* WGMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E07BCC1C1ABE8700AC1402 /* WGMainView.m */; };
 		B5E07BCF1C1AC40300AC1402 /* WGMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E07BCE1C1AC40300AC1402 /* WGMainView.xib */; };
 		B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E6003E1BFECBCD00265307 /* WGSignInViewController.m */; };
@@ -275,6 +276,8 @@
 		B5D4F40B1C27E8CF007474F0 /* WGWriteBBSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGWriteBBSViewController.h; sourceTree = "<group>"; };
 		B5D4F40C1C27E8CF007474F0 /* WGWriteBBSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGWriteBBSViewController.m; sourceTree = "<group>"; };
 		B5D4F40E1C27E8F9007474F0 /* WriteBBS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WriteBBS.storyboard; sourceTree = "<group>"; };
+		B5D4F4101C28259E007474F0 /* NSFileManager+WGFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+WGFileHelper.h"; sourceTree = "<group>"; };
+		B5D4F4111C28259E007474F0 /* NSFileManager+WGFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+WGFileHelper.m"; sourceTree = "<group>"; };
 		B5E07BCB1C1ABE8700AC1402 /* WGMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMainView.h; sourceTree = "<group>"; };
 		B5E07BCC1C1ABE8700AC1402 /* WGMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMainView.m; sourceTree = "<group>"; };
 		B5E07BCE1C1AC40300AC1402 /* WGMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGMainView.xib; sourceTree = "<group>"; };
@@ -694,6 +697,8 @@
 				B5FB3D561C1071CC00B35AB6 /* UIDevice+WGIdentifier.m */,
 				B5F150A71C20387300EC9503 /* UIImageView+WGHTTP.h */,
 				B5F150A81C20387300EC9503 /* UIImageView+WGHTTP.m */,
+				B5D4F4101C28259E007474F0 /* NSFileManager+WGFileHelper.h */,
+				B5D4F4111C28259E007474F0 /* NSFileManager+WGFileHelper.m */,
 				B5FB3D581C10745300B35AB6 /* OpenUDID.h */,
 				B5FB3D591C10745300B35AB6 /* OpenUDID.m */,
 				B5FB3D3E1C0EF48700B35AB6 /* SynthesizeSingletonForArc.h */,
@@ -1411,6 +1416,7 @@
 				B5F150CE1C22D1B400EC9503 /* WGIntroductionView.m in Sources */,
 				B52AD9781BFB21E0006540B3 /* WGNetworkHelper.m in Sources */,
 				B5D4F4091C27E546007474F0 /* WGBBSViewController.m in Sources */,
+				B5D4F4121C28259E007474F0 /* NSFileManager+WGFileHelper.m in Sources */,
 				B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */,
 				B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */,
 				B53874F51C1EA997002FB222 /* WGUserInfoViewController.m in Sources */,

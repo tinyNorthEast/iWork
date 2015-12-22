@@ -8,7 +8,7 @@
 
 #import "WGSettingViewController.h"
 
-@interface WGSettingViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface WGSettingViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -31,43 +31,13 @@
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 2) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"缓存大小为%f.确定要删除缓存吗?",@(5.9)] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
     }
-    switch (indexPath.row) {
-        case 0:
-            cell.textLabel.text = @"推荐码";
-            break;
-        case 1:
-            cell.textLabel.text = @"推送设置";
-            break;
-        case 2:
-            cell.textLabel.text = @"清空缓存";
-            break;
-        case 3:
-            cell.textLabel.text = @"关于";
-            break;
-        default:
-            break;
-    }
-    return cell;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

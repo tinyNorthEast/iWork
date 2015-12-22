@@ -120,15 +120,12 @@
             self.describeView.describeStr = infoModel.describe;
             self.describeHeight.constant = 130;
             
-            
             NSMutableArray *industrys = [NSMutableArray array];
             for (WGIndustryModel *industryModel in infoModel.industryList) {
                 [industrys addObject:industryModel.industryName];
             }
             self.industryView.tagsArray = industrys;
             self.industryHeight.constant = 100;
-            
-            
             
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
