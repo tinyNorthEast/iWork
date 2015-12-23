@@ -14,7 +14,7 @@
 
 @implementation WGHunterListRequest
 
-- (instancetype)initWithAreaCode:(NSString *)areaCode industryId:(NSString *)industryId pageNo:(NSNumber *)pageNo
+- (instancetype)initWithAreaCode:(NSString *)areaCode industryId:(NSNumber *)industryId pageNo:(NSNumber *)pageNo
 {
     self = [super init];
     if (self) {

@@ -1,8 +1,8 @@
 //
-//  WGGlobal.h
+//  WGDBManager.h
 //  iWork
 //
-//  Created by Adele on 12/2/15.
+//  Created by Adele on 12/23/15.
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
@@ -13,27 +13,15 @@
 
 #import "WGIndustryModel.h"
 
-@interface WGGlobal : NSObject
+@interface WGDBManager : NSObject
 
-ARC_SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(WGGlobal)
+ARC_SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(WGDBManager)
 
-@property (nonatomic, copy) NSString *userToken;
-
-@property (nonatomic, copy) NSString *phone;
-
-@property (nonatomic, copy) NSArray *industryLists;
-
-- (void)saveToken:(NSString *)token;
-
-- (void)clearToken;
 
 - (void )getIndustryList:(void (^)(NSMutableArray *array))block;
 
 -(void)insertOrUpdateFlightModel:(WGIndustryModel *)aModel
                          success:(void (^)(WGIndustryModel *model))success
                          failure:(void (^)(DBAccessResultType result))failure;
-
-- (void)saveIndustryList:(NSArray *)lists;
-- (void)clearIndustryList;
 
 @end

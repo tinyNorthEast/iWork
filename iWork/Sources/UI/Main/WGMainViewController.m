@@ -11,16 +11,17 @@
 #import <extobjc.h>
 #import <XXNibBridge.h>
 
-#import "WGDataAccess.h"
-
 #import "SignHeader.h"
 #import "WGMenuBar.h"
 #import "WGMainScrollView.h"
 
+#import "WGGlobal.h"
 #import "WGCityModel.h"
 #import "WGCityListViewController.h"
 #import "WGIndustryListRequest.h"
 #import "WGMainIndustryListModel.h"
+
+#import "WGDataAccess.h"
 
 @interface WGMainViewController ()<WGMenuBarDelegate,WGMainScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *cityButton;
@@ -50,6 +51,8 @@
         [self.mainScrollView initWithViews:model.data];
         self.mainScrollView.mainScrolldelegate = self;
         
+        [[WGGlobal sharedInstance] setIndustryLists:model.data];
+        
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];
@@ -77,9 +80,8 @@
 
 - (IBAction)signAciton:(id)sender {
     UIStoryboard *sb = nil;
-    if ([WGDataAccess userDefaultsStringForKey:kUSERTOKEN_KEY].length) {
+    if ([[WGGlobal sharedInstance].userToken length]) {
         sb = [UIStoryboard storyboardWithName:@"User" bundle:nil];
-        
     }else{
         sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
     }
@@ -100,6 +102,5 @@
     //    [mScrollPageView freshContentTableAtIndex:aPage];
     
 }
-
 
 @end

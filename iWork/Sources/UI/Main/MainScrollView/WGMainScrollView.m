@@ -37,13 +37,10 @@
 }
 
 - (void)initWithViews:(NSArray *)itmes{
-    for (int i = 0; i < itmes.count; i++) {
-        WGMainTableView *vCustomTableView = [[WGMainTableView alloc] initWithFrame:CGRectMake(self.width * i, 0, self.width, self.frame.size.height)];
+    for (int index = 0; index < itmes.count; index++) {
+        WGMainTableView *vCustomTableView = [[WGMainTableView alloc] initWithFrame:CGRectMake(self.width * index, 0, self.width, self.frame.size.height)];
+        [vCustomTableView setTag:index];
         [self addSubview:vCustomTableView];
-        
-        //为table添加嵌套HeadderView
-//        [self addLoopScrollowView:vCustomTableView];
-//        [_contentItems addObject:vCustomTableView];
     }
     [self setContentSize:CGSizeMake(self.width * itmes.count, self.height)];
 }
@@ -84,8 +81,6 @@
         //        targetX = (int)(targetX/ITEM_WIDTH) * ITEM_WIDTH;
         //        [self moveToTargetPosition:targetX];
     }
-    
-    
 }
 
 @end

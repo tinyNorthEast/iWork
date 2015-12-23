@@ -16,6 +16,4 @@
 
 @property (nonatomic, copy) void (^selectBBS)();
 
-- (void)setHunters:(WGHunterModel *)hunters byIndexPath:(NSIndexPath *)indexPath;
-
 @end

@@ -19,4 +19,14 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
++ (NSArray *)industryListForKey:(NSString *)key{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:key];
+}
++ (void)industryListSetLists:(NSArray *)lists forKey:(NSString *)key;{
+    [[NSUserDefaults standardUserDefaults] setObject:lists forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
+
 @end

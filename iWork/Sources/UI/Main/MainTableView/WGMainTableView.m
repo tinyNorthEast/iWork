@@ -12,6 +12,7 @@
 #import <extobjc.h>
 
 #import "WGProgressHUD.h"
+#import "WGGlobal.h"
 
 #import "WGMainCell.h"
 #import "UIScrollView+WGPager.h"
@@ -21,6 +22,7 @@
 #import "WGBaseModel.h"
 #import "WGHunterListModel.h"
 #import "WGHunterModel.h"
+#import "WGIndustryModel.h"
 
 @interface WGMainTableView()<UITableViewDataSource,UITableViewDelegate>{
     
@@ -63,8 +65,13 @@
 }
 
 #pragma mark - Request
+//根据table tag重找industry id
 - (void)requestHuntersWithPage:(WGPager *)pager isRefresh:(BOOL)isRefresh{
-    WGHunterListRequest *request = [[WGHunterListRequest alloc] initWithAreaCode:@"1000" industryId:@"-1" pageNo:@(pager.currentPageIndex)];
+    NSArray *lists = [[WGGlobal sharedInstance] industryLists];
+    WGIndustryModel *industry = [lists objectAtIndex:self.tag];
+    
+    
+    WGHunterListRequest *request = [[WGHunterListRequest alloc] initWithAreaCode:@"1000" industryId:industry.objId  pageNo:@(pager.currentPageIndex)];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);

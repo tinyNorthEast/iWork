@@ -12,6 +12,7 @@
 #import <XXNibBridge.h>
 #import "M13BadgeView.h"
 
+#import "UIViewAdditions.h"
 #import "UIImageView+WGHTTP.h"
 #import "UIColor+WGThemeColors.h"
 
@@ -39,9 +40,22 @@
     [super setSelected:selected animated:animated];
 }
 - (void)setHunter:(WGHunterModel *)hunter{
+    if (hunter.ranking.integerValue == 1) {
+        self.rateImage.image = [UIImage imageNamed:@"main_rank1"];
+        self.rateLabel.text = @"人气顾问第一名";
+        
+    }else if (hunter.ranking.integerValue == 2){
+        self.rateImage.image = [UIImage imageNamed:@"main_rank2"];
+        self.rateLabel.text = @"人气顾问第二名";
+        
+    }else if (hunter.ranking.integerValue == 3){
+        self.rateImage.image = [UIImage imageNamed:@"main_rank3"];
+        self.rateLabel.text = @"人气顾问第三名";
+    }
+    
+    
     [self.headerImage wg_loadImageFromURL:hunter.pic placeholder:[UIImage imageNamed:@"main_defaultHeader"]];
     [self.nameLabel setText:hunter.realName];
-    
     
     NSArray *industrys = hunter.industryList;
     if (industrys.count) {
@@ -56,24 +70,12 @@
         self.positionLabel.text = positionStr;
     }
     
-    M13BadgeView *badgeView = [[M13BadgeView alloc] initWithFrame:CGRectMake(0, 0, 24.0, 24.0)];
+    M13BadgeView *badgeView = [[M13BadgeView alloc] initWithFrame:CGRectMake(self.commentButton.right-12, 12, 24.0, 24.0)];
+    [self.commentButton addSubview:badgeView];
     badgeView.text = @"9";//self.hunter.commentCount.stringValue;
     badgeView.badgeBackgroundColor = [UIColor wg_themeCyanColor];
-    badgeView.horizontalAlignment = M13BadgeViewHorizontalAlignmentRight;
-    badgeView.verticalAlignment = M13BadgeViewVerticalAlignmentTop;
     badgeView.hidesWhenZero = YES;
-    [self.commentButton addSubview:badgeView];
 }
-- (void)setHunters:(WGHunterModel *)hunters byIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        
-    }else if (indexPath.row == 1){
-        
-    }else if (indexPath.row == 2){
-        
-    }
-}
-
 - (IBAction)commentAction:(id)sender {
     if (self.selectBBS) {
         self.selectBBS();

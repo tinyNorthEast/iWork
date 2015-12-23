@@ -72,6 +72,12 @@
 		B5D4F40D1C27E8CF007474F0 /* WGWriteBBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D4F40C1C27E8CF007474F0 /* WGWriteBBSViewController.m */; };
 		B5D4F40F1C27E8F9007474F0 /* WriteBBS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D4F40E1C27E8F9007474F0 /* WriteBBS.storyboard */; };
 		B5D4F4121C28259E007474F0 /* NSFileManager+WGFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D4F4111C28259E007474F0 /* NSFileManager+WGFileHelper.m */; };
+		B5E2F43A1C2A901D005F8BA4 /* DBAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E2F4351C2A901D005F8BA4 /* DBAccess.m */; };
+		B5E2F43B1C2A901D005F8BA4 /* DBAccessQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E2F4371C2A901D005F8BA4 /* DBAccessQueue.m */; };
+		B5E2F43C1C2A901D005F8BA4 /* DBRestriction.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E2F4391C2A901D005F8BA4 /* DBRestriction.m */; };
+		B5E2F43F1C2A913B005F8BA4 /* DEFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E2F43E1C2A913B005F8BA4 /* DEFileUtil.m */; };
+		B5E2F4421C2A9555005F8BA4 /* WGDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E2F4411C2A9555005F8BA4 /* WGDBManager.m */; };
+		B5E2F4451C2AA193005F8BA4 /* DEReflectUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E2F4441C2AA193005F8BA4 /* DEReflectUtil.m */; };
 		B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E6003E1BFECBCD00265307 /* WGSignInViewController.m */; };
 		B5E600421BFECF8800265307 /* WGVertifyPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E600411BFECF8800265307 /* WGVertifyPhoneViewController.m */; };
 		B5E600541BFF065000265307 /* libPushSDK-1.8.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E600531BFF065000265307 /* libPushSDK-1.8.8.a */; };
@@ -282,6 +288,18 @@
 		B5D4F40E1C27E8F9007474F0 /* WriteBBS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WriteBBS.storyboard; sourceTree = "<group>"; };
 		B5D4F4101C28259E007474F0 /* NSFileManager+WGFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+WGFileHelper.h"; sourceTree = "<group>"; };
 		B5D4F4111C28259E007474F0 /* NSFileManager+WGFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+WGFileHelper.m"; sourceTree = "<group>"; };
+		B5E2F4341C2A901D005F8BA4 /* DBAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAccess.h; sourceTree = "<group>"; };
+		B5E2F4351C2A901D005F8BA4 /* DBAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAccess.m; sourceTree = "<group>"; };
+		B5E2F4361C2A901D005F8BA4 /* DBAccessQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAccessQueue.h; sourceTree = "<group>"; };
+		B5E2F4371C2A901D005F8BA4 /* DBAccessQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAccessQueue.m; sourceTree = "<group>"; };
+		B5E2F4381C2A901D005F8BA4 /* DBRestriction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBRestriction.h; sourceTree = "<group>"; };
+		B5E2F4391C2A901D005F8BA4 /* DBRestriction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBRestriction.m; sourceTree = "<group>"; };
+		B5E2F43D1C2A913B005F8BA4 /* DEFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEFileUtil.h; sourceTree = "<group>"; };
+		B5E2F43E1C2A913B005F8BA4 /* DEFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEFileUtil.m; sourceTree = "<group>"; };
+		B5E2F4401C2A9555005F8BA4 /* WGDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDBManager.h; sourceTree = "<group>"; };
+		B5E2F4411C2A9555005F8BA4 /* WGDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDBManager.m; sourceTree = "<group>"; };
+		B5E2F4431C2AA193005F8BA4 /* DEReflectUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEReflectUtil.h; sourceTree = "<group>"; };
+		B5E2F4441C2AA193005F8BA4 /* DEReflectUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEReflectUtil.m; sourceTree = "<group>"; };
 		B5E6003D1BFECBCD00265307 /* WGSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInViewController.h; sourceTree = "<group>"; };
 		B5E6003E1BFECBCD00265307 /* WGSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInViewController.m; sourceTree = "<group>"; };
 		B5E600401BFECF8800265307 /* WGVertifyPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGVertifyPhoneViewController.h; sourceTree = "<group>"; };
@@ -623,6 +641,7 @@
 		B54FA8051BF46FCD0018B682 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B5E2F4331C2A901D005F8BA4 /* DBAccess */,
 				B5FB3D4E1C10344A00B35AB6 /* Main */,
 				B5F150B91C21203400EC9503 /* Detail */,
 				B50C5BFB1C1147060043C26B /* City */,
@@ -701,6 +720,10 @@
 				B5D4F4111C28259E007474F0 /* NSFileManager+WGFileHelper.m */,
 				B5FB3D581C10745300B35AB6 /* OpenUDID.h */,
 				B5FB3D591C10745300B35AB6 /* OpenUDID.m */,
+				B5E2F43D1C2A913B005F8BA4 /* DEFileUtil.h */,
+				B5E2F43E1C2A913B005F8BA4 /* DEFileUtil.m */,
+				B5E2F4431C2AA193005F8BA4 /* DEReflectUtil.h */,
+				B5E2F4441C2AA193005F8BA4 /* DEReflectUtil.m */,
 				B5FB3D3E1C0EF48700B35AB6 /* SynthesizeSingletonForArc.h */,
 			);
 			path = Utils;
@@ -933,6 +956,19 @@
 			path = WriteBBS;
 			sourceTree = "<group>";
 		};
+		B5E2F4331C2A901D005F8BA4 /* DBAccess */ = {
+			isa = PBXGroup;
+			children = (
+				B5E2F4341C2A901D005F8BA4 /* DBAccess.h */,
+				B5E2F4351C2A901D005F8BA4 /* DBAccess.m */,
+				B5E2F4361C2A901D005F8BA4 /* DBAccessQueue.h */,
+				B5E2F4371C2A901D005F8BA4 /* DBAccessQueue.m */,
+				B5E2F4381C2A901D005F8BA4 /* DBRestriction.h */,
+				B5E2F4391C2A901D005F8BA4 /* DBRestriction.m */,
+			);
+			path = DBAccess;
+			sourceTree = "<group>";
+		};
 		B5E600511BFF065000265307 /* JPush */ = {
 			isa = PBXGroup;
 			children = (
@@ -1104,6 +1140,8 @@
 			children = (
 				B5FB3D3F1C0EF57C00B35AB6 /* WGDataAccess.h */,
 				B5FB3D401C0EF57C00B35AB6 /* WGDataAccess.m */,
+				B5E2F4401C2A9555005F8BA4 /* WGDBManager.h */,
+				B5E2F4411C2A9555005F8BA4 /* WGDBManager.m */,
 			);
 			path = DataAccess;
 			sourceTree = "<group>";
@@ -1350,11 +1388,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50C5C021C1159190043C26B /* WGCityListRequest.m in Sources */,
+				B5E2F4421C2A9555005F8BA4 /* WGDBManager.m in Sources */,
 				B5066A051C0C23CE00D87E56 /* PopoverView.m in Sources */,
 				B5E907BF1C083E6C003AB736 /* WGSignInRequest.m in Sources */,
 				B50C5C061C1159690043C26B /* WGCityListViewController.m in Sources */,
 				B5F150C81C228B5600EC9503 /* WGDetailHeaderView.m in Sources */,
 				B5FB3D4C1C0FEDBF00B35AB6 /* WGMainCell.m in Sources */,
+				B5E2F43C1C2A901D005F8BA4 /* DBRestriction.m in Sources */,
 				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
 				B53875681C1EE5DA002FB222 /* WGMessgesRequest.m in Sources */,
 				B5E7E1A71C19598100BA545E /* WGMainScrollView.m in Sources */,
@@ -1373,6 +1413,7 @@
 				B5FB3D571C1071CC00B35AB6 /* UIDevice+WGIdentifier.m in Sources */,
 				B5066A141C0C8EBD00D87E56 /* WGMenuBar.m in Sources */,
 				B5E600421BFECF8800265307 /* WGVertifyPhoneViewController.m in Sources */,
+				B5E2F4451C2AA193005F8BA4 /* DEReflectUtil.m in Sources */,
 				B5F150BC1C21205C00EC9503 /* WGHunterDetailRequest.m in Sources */,
 				B54FA8171BF46FCD0018B682 /* main.m in Sources */,
 				B5055BEE1BF9CF33001736AD /* WGPager.m in Sources */,
@@ -1383,6 +1424,7 @@
 				B5F150D41C22E4AD00EC9503 /* WGTagList.m in Sources */,
 				B5F150A31C1FAF8900EC9503 /* WGCityListModel.m in Sources */,
 				B538756B1C1EF3EE002FB222 /* WGHunterDetailViewController.m in Sources */,
+				B5E2F43F1C2A913B005F8BA4 /* DEFileUtil.m in Sources */,
 				B5721E4D1C29AE20007EE80F /* WGMainIndustryListModel.m in Sources */,
 				B5FB3D451C0EFB5500B35AB6 /* WGDataPickerView.m in Sources */,
 				B54FA84F1BF4A9EB0018B682 /* WGBaseModel.m in Sources */,
@@ -1413,9 +1455,11 @@
 				B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */,
 				B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */,
 				B53874F51C1EA997002FB222 /* WGUserInfoViewController.m in Sources */,
+				B5E2F43B1C2A901D005F8BA4 /* DBAccessQueue.m in Sources */,
 				B53874FA1C1EAA1A002FB222 /* WGSettingViewController.m in Sources */,
 				B5D4F4001C27E1B3007474F0 /* WGCommentModel.m in Sources */,
 				B520B2D11C0B3D5C00CFD6CD /* NSString+WGMD5.m in Sources */,
+				B5E2F43A1C2A901D005F8BA4 /* DBAccess.m in Sources */,
 				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,
 				B5721E4A1C29ADA5007EE80F /* WGIndustryListRequest.m in Sources */,
 			);
