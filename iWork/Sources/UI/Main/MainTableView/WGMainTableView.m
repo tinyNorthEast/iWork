@@ -44,12 +44,13 @@
         @weakify(self);
         [self.wg_pager addPullDownRefreshHandler:^(WGPager *pager) {
             @strongify(self);
-            [self requestHuntersWithPage:pager];
+            [self requestHuntersWithPage:pager isRefresh:YES];
         }];
         [self.wg_pager addLoadMoreHandler:^(WGPager *pager) {
-    
+            @strongify(self);
+            [self requestHuntersWithPage:pager isRefresh:NO];
         }];
-//        [self.wg_pager triggerRefresh];
+        [self.wg_pager triggerRefresh];
     }
     return self;
 }
@@ -62,7 +63,7 @@
 }
 
 #pragma mark - Request
-- (void)requestHuntersWithPage:(WGPager *)pager{
+- (void)requestHuntersWithPage:(WGPager *)pager isRefresh:(BOOL)isRefresh{
     WGHunterListRequest *request = [[WGHunterListRequest alloc] initWithAreaCode:@"1000" industryId:@"-1" pageNo:@(pager.currentPageIndex)];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
@@ -76,9 +77,19 @@
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self];
         }
+        if (isRefresh) {
+            [pager finishRefreshWithError:error];
+        }else{
+            [pager finishLoadMoreWithError:error];
+        }
+        
         
     } failure:^(WGBaseModel *baseModel, NSError *error) {
-        
+        if (isRefresh) {
+            [pager finishRefreshWithError:error];
+        }else{
+            [pager finishLoadMoreWithError:error];
+        }
     }];
 }
 

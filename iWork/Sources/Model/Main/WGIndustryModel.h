@@ -13,8 +13,8 @@
 
 @interface WGIndustryModel : WGBaseModel
 
-@property (nonatomic,copy)NSString<Optional> *objId;
-@property (nonatomic,copy)NSString<Optional> *industryName;
-@property (nonatomic,strong)NSNumber<Optional> *createTime;
+@property (nonatomic,strong)NSNumber<Optional> *objId;
+@property (nonatomic,copy)NSString<Optional> *name;
+@property (nonatomic,copy)NSString<Optional> *tip;
 
 @end

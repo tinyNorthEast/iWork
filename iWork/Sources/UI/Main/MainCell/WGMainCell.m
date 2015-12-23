@@ -48,9 +48,9 @@
         NSString *positionStr = nil;
         for (WGIndustryModel *aModel in industrys) {
             if (positionStr.length == 0) {
-                positionStr = aModel.industryName;
+                positionStr = aModel.name;
             }else{
-                positionStr = [positionStr stringByAppendingString:[NSString stringWithFormat:@",%@" ,aModel.industryName]];
+                positionStr = [positionStr stringByAppendingString:[NSString stringWithFormat:@",%@" ,aModel.name]];
             }
         }
         self.positionLabel.text = positionStr;

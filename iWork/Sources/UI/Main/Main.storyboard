@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--首页-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WGMainViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="首页" customClass="WGMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -51,8 +51,29 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAz-TV-XaU" customClass="WGMainView">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAz-TV-XaU">
                                 <rect key="frame" x="0.0" y="72" width="320" height="496"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28Q-pk-7Uk" customClass="WGMenuBar">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sR-l3-hSs">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                            </scrollView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksS-U4-pRP">
+                                                <rect key="frame" x="274" y="2" width="46" height="40"/>
+                                                <state key="normal" image="main_scrollButton"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="scrollBar" destination="7sR-l3-hSs" id="Go0-qr-paj"/>
+                                        </connections>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aGJ-zu-egh" customClass="WGMainScrollView">
+                                        <rect key="frame" x="0.0" y="42" width="320" height="454"/>
+                                    </scrollView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -62,6 +83,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="cityButton" destination="h0v-4n-bvJ" id="uXB-Fp-R9d"/>
+                        <outlet property="mainScrollView" destination="aGJ-zu-egh" id="Lwd-Lk-Rzb"/>
+                        <outlet property="menuBar" destination="28Q-pk-7Uk" id="LK8-le-U5w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -90,6 +113,7 @@
     <resources>
         <image name="main_city" width="14" height="7"/>
         <image name="main_logo" width="96" height="20"/>
+        <image name="main_scrollButton" width="46" height="40"/>
         <image name="main_user" width="26" height="30"/>
     </resources>
 </document>

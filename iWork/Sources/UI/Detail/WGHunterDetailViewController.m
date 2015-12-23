@@ -122,7 +122,7 @@
             
             NSMutableArray *industrys = [NSMutableArray array];
             for (WGIndustryModel *industryModel in infoModel.industryList) {
-                [industrys addObject:industryModel.industryName];
+                [industrys addObject:industryModel.name];
             }
             self.industryView.tagsArray = industrys;
             self.industryHeight.constant = 100;
