@@ -25,7 +25,7 @@
 - (void)awakeFromNib{
     [super awakeFromNib];
     
-    self.tagList = [[WGTagList alloc] initWithFrame:CGRectMake(self.tagsView.left, self.tagsView.top, self.tagsView.width, 0.0f)];
+    self.tagList = [[WGTagList alloc] initWithFrame:CGRectMake(0, 0, self.tagsView.width, 0.0f)];
     [self.tagsView addSubview:self.tagList];
 }
 

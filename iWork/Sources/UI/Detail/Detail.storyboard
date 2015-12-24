@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LTU-VW-rVz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LTU-VW-rVz">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -101,6 +101,9 @@
                                                     <action selector="callConsultant:" destination="LTU-VW-rVz" eventType="touchUpInside" id="mZm-YN-Xys"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detail_call" translatesAutoresizingMaskIntoConstraints="NO" id="2cd-IO-5bh">
+                                                <rect key="frame" x="5" y="10" width="17" height="17"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -110,6 +113,9 @@
                                             <constraint firstItem="2r6-O1-PM3" firstAttribute="top" secondItem="1W2-90-6HM" secondAttribute="top" constant="4" id="t0T-4n-5DS"/>
                                         </constraints>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detail_message" translatesAutoresizingMaskIntoConstraints="NO" id="zuj-3Y-Cis">
+                                        <rect key="frame" x="29" y="21" width="17" height="17"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -152,21 +158,21 @@
                                             <constraint firstAttribute="height" constant="40" id="nZN-x5-5DV"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdp-js-rHy">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdp-js-rHy" customClass="WGFunctionView">
                                         <rect key="frame" x="0.0" y="250" width="320" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="yJb-XH-BBi"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7U6-Oi-R9S">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7U6-Oi-R9S" customClass="WGResultsView">
                                         <rect key="frame" x="0.0" y="310" width="320" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="nMR-sI-6tT"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9BW-ku-E4V">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9BW-ku-E4V" customClass="WGBBSView">
                                         <rect key="frame" x="0.0" y="370" width="320" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -214,12 +220,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bbsHeight" destination="zAA-nC-xoV" id="cnS-7D-co0"/>
+                        <outlet property="bbsView" destination="9BW-ku-E4V" id="IAv-7F-f1g"/>
                         <outlet property="describeHeight" destination="dkH-e7-9zl" id="tZX-FK-9V8"/>
                         <outlet property="describeView" destination="vKC-8Z-lQQ" id="Qom-dA-wW3"/>
+                        <outlet property="functionHeight" destination="yJb-XH-BBi" id="bms-ZH-KkT"/>
+                        <outlet property="functionView" destination="tdp-js-rHy" id="6Wu-JW-bDW"/>
                         <outlet property="headerHeight" destination="yDD-vQ-BAA" id="jQ3-WI-gn7"/>
                         <outlet property="headerView" destination="NX4-NF-qag" id="nIB-Ce-zZH"/>
                         <outlet property="industryHeight" destination="nZN-x5-5DV" id="YoO-ra-Nhj"/>
                         <outlet property="industryView" destination="Fic-Ao-Tb0" id="ET8-Mr-B39"/>
+                        <outlet property="resultsHeight" destination="nMR-sI-6tT" id="IBF-B9-avO"/>
+                        <outlet property="resultsView" destination="7U6-Oi-R9S" id="ElG-JG-H6p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdZ-eZ-6iB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,6 +240,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="detail_call" width="17" height="17"/>
+        <image name="detail_message" width="17" height="17"/>
         <image name="detail_share" width="18" height="18"/>
         <image name="navi_back" width="9" height="19"/>
     </resources>

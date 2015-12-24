@@ -66,6 +66,13 @@
 		B59426ED1C2B91DA008BD92A /* WGUserInfoRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B59426EC1C2B91DA008BD92A /* WGUserInfoRequestModel.m */; };
 		B59426F01C2B91F6008BD92A /* WGUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B59426EF1C2B91F6008BD92A /* WGUserInfoModel.m */; };
 		B59426FB1C2BD43A008BD92A /* WGResetUserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59426FA1C2BD43A008BD92A /* WGResetUserInfoController.m */; };
+		B59426FF1C2BF6AB008BD92A /* WGFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B59426FE1C2BF6AB008BD92A /* WGFunctionView.m */; };
+		B59427011C2BF6C9008BD92A /* WGFunctionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59427001C2BF6C9008BD92A /* WGFunctionView.xib */; };
+		B59427041C2C12C8008BD92A /* WGFunctionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B59427031C2C12C8008BD92A /* WGFunctionModel.m */; };
+		B59427081C2C1FC6008BD92A /* WGResultsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B59427071C2C1FC6008BD92A /* WGResultsView.m */; };
+		B594270A1C2C1FD8008BD92A /* WGResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59427091C2C1FD8008BD92A /* WGResultsView.xib */; };
+		B594270E1C2C2321008BD92A /* WGBBSView.m in Sources */ = {isa = PBXBuildFile; fileRef = B594270D1C2C2321008BD92A /* WGBBSView.m */; };
+		B59427101C2C2334008BD92A /* WGBBSView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B594270F1C2C2334008BD92A /* WGBBSView.xib */; };
 		B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */; };
 		B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D0E7FB1C046EB000358351 /* WGCountDownButton.m */; };
 		B5D4F3F71C279467007474F0 /* User.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D4F3F61C279467007474F0 /* User.xcassets */; };
@@ -283,6 +290,17 @@
 		B59426EF1C2B91F6008BD92A /* WGUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGUserInfoModel.m; sourceTree = "<group>"; };
 		B59426F91C2BD43A008BD92A /* WGResetUserInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGResetUserInfoController.h; sourceTree = "<group>"; };
 		B59426FA1C2BD43A008BD92A /* WGResetUserInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGResetUserInfoController.m; sourceTree = "<group>"; };
+		B59426FD1C2BF6AB008BD92A /* WGFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFunctionView.h; sourceTree = "<group>"; };
+		B59426FE1C2BF6AB008BD92A /* WGFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFunctionView.m; sourceTree = "<group>"; };
+		B59427001C2BF6C9008BD92A /* WGFunctionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGFunctionView.xib; sourceTree = "<group>"; };
+		B59427021C2C12C8008BD92A /* WGFunctionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFunctionModel.h; sourceTree = "<group>"; };
+		B59427031C2C12C8008BD92A /* WGFunctionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFunctionModel.m; sourceTree = "<group>"; };
+		B59427061C2C1FC6008BD92A /* WGResultsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGResultsView.h; sourceTree = "<group>"; };
+		B59427071C2C1FC6008BD92A /* WGResultsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGResultsView.m; sourceTree = "<group>"; };
+		B59427091C2C1FD8008BD92A /* WGResultsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGResultsView.xib; sourceTree = "<group>"; };
+		B594270C1C2C2321008BD92A /* WGBBSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBBSView.h; sourceTree = "<group>"; };
+		B594270D1C2C2321008BD92A /* WGBBSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBBSView.m; sourceTree = "<group>"; };
+		B594270F1C2C2334008BD92A /* WGBBSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGBBSView.xib; sourceTree = "<group>"; };
 		B5BF96CA1BFC862C00A4CFAC /* UIScrollView+WGPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+WGPager.h"; sourceTree = "<group>"; };
 		B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+WGPager.m"; sourceTree = "<group>"; };
 		B5D0E7FA1C046EB000358351 /* WGCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCountDownButton.h; sourceTree = "<group>"; };
@@ -930,6 +948,36 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		B59426FC1C2BF68C008BD92A /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				B59426FD1C2BF6AB008BD92A /* WGFunctionView.h */,
+				B59426FE1C2BF6AB008BD92A /* WGFunctionView.m */,
+				B59427001C2BF6C9008BD92A /* WGFunctionView.xib */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		B59427051C2C1F9E008BD92A /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				B59427061C2C1FC6008BD92A /* WGResultsView.h */,
+				B59427071C2C1FC6008BD92A /* WGResultsView.m */,
+				B59427091C2C1FD8008BD92A /* WGResultsView.xib */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		B594270B1C2C2305008BD92A /* BBS */ = {
+			isa = PBXGroup;
+			children = (
+				B594270C1C2C2321008BD92A /* WGBBSView.h */,
+				B594270D1C2C2321008BD92A /* WGBBSView.m */,
+				B594270F1C2C2334008BD92A /* WGBBSView.xib */,
+			);
+			path = BBS;
+			sourceTree = "<group>";
+		};
 		B5B94F7A1BFDB2BE00EBCBD3 /* Sign in&Sign up */ = {
 			isa = PBXGroup;
 			children = (
@@ -1084,6 +1132,8 @@
 				B5F150C31C225EBC00EC9503 /* WGHunterInfoModel.m */,
 				B5F150D51C22E63200EC9503 /* WGIndustryListModel.h */,
 				B5F150D61C22E63200EC9503 /* WGIndustryListModel.m */,
+				B59427021C2C12C8008BD92A /* WGFunctionModel.h */,
+				B59427031C2C12C8008BD92A /* WGFunctionModel.m */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1142,6 +1192,9 @@
 				B5F150C51C228B3600EC9503 /* HeadView */,
 				B5F150CB1C22D16B00EC9503 /* Introduction */,
 				B5F150D81C22E73100EC9503 /* Industry */,
+				B59426FC1C2BF68C008BD92A /* Function */,
+				B59427051C2C1F9E008BD92A /* Results */,
+				B594270B1C2C2305008BD92A /* BBS */,
 				B53875691C1EF3EE002FB222 /* WGHunterDetailViewController.h */,
 				B538756A1C1EF3EE002FB222 /* WGHunterDetailViewController.m */,
 				B538756C1C1EF3FD002FB222 /* Detail.storyboard */,
@@ -1339,13 +1392,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F150DD1C22E78B00EC9503 /* WGIndustryView.xib in Resources */,
+				B59427011C2BF6C9008BD92A /* WGFunctionView.xib in Resources */,
 				B54FA8131BF46FCD0018B682 /* Main.storyboard in Resources */,
 				B53874F71C1EA9B8002FB222 /* User.storyboard in Resources */,
+				B59427101C2C2334008BD92A /* WGBBSView.xib in Resources */,
 				B53874FC1C1EAA28002FB222 /* Setting.storyboard in Resources */,
 				B5D4F40F1C27E8F9007474F0 /* WriteBBS.storyboard in Resources */,
 				B5E7E1A01C19279400BA545E /* WGMainCell.xib in Resources */,
 				B55D122E1C070EAA0035C6B4 /* Resource.bundle in Resources */,
 				B54FA8161BF46FCD0018B682 /* LaunchScreen.storyboard in Resources */,
+				B594270A1C2C1FD8008BD92A /* WGResultsView.xib in Resources */,
 				B5E7E1AE1C19A5E700BA545E /* Main.xcassets in Resources */,
 				B5F150CA1C228B7000EC9503 /* WGDetailHeaderView.xib in Resources */,
 				B55D122C1C070EAA0035C6B4 /* ShareSDKLocalizable.strings in Resources */,
@@ -1432,6 +1488,7 @@
 				B5FB3D4C1C0FEDBF00B35AB6 /* WGMainCell.m in Sources */,
 				B5E2F43C1C2A901D005F8BA4 /* DBRestriction.m in Sources */,
 				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
+				B59427081C2C1FC6008BD92A /* WGResultsView.m in Sources */,
 				B53875681C1EE5DA002FB222 /* WGMessgesRequest.m in Sources */,
 				B5E7E1A71C19598100BA545E /* WGMainScrollView.m in Sources */,
 				B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */,
@@ -1465,12 +1522,15 @@
 				B5FB3D451C0EFB5500B35AB6 /* WGDataPickerView.m in Sources */,
 				B54FA84F1BF4A9EB0018B682 /* WGBaseModel.m in Sources */,
 				B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */,
+				B59426FF1C2BF6AB008BD92A /* WGFunctionView.m in Sources */,
 				B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */,
+				B594270E1C2C2321008BD92A /* WGBBSView.m in Sources */,
 				B5F150DB1C22E75200EC9503 /* WGIndustryView.m in Sources */,
 				B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */,
 				B59426FB1C2BD43A008BD92A /* WGResetUserInfoController.m in Sources */,
 				B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */,
 				B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */,
+				B59427041C2C12C8008BD92A /* WGFunctionModel.m in Sources */,
 				B5066A081C0C44AB00D87E56 /* WGResetPasswordRequest.m in Sources */,
 				B5E7E1AA1C1993DA00BA545E /* WGHunterListRequest.m in Sources */,
 				B5F150D71C22E63200EC9503 /* WGIndustryListModel.m in Sources */,

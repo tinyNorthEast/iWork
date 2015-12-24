@@ -10,17 +10,16 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#import "UIColor+WGThemeColors.h"
+
 #define CORNER_RADIUS 10.0f
 #define LABEL_MARGIN 5.0f
 #define BOTTOM_MARGIN 5.0f
 #define FONT_SIZE 13.0f
 #define HORIZONTAL_PADDING 7.0f
 #define VERTICAL_PADDING 3.0f
-#define BACKGROUND_COLOR [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1.00]
-#define TEXT_COLOR [UIColor blackColor]
-#define TEXT_SHADOW_COLOR [UIColor whiteColor]
 #define TEXT_SHADOW_OFFSET CGSizeMake(0.0f, 1.0f)
-#define BORDER_COLOR [UIColor lightGrayColor].CGColor
+
 #define BORDER_WIDTH 1.0f
 
 
@@ -81,18 +80,17 @@
         gotPreviousFrame = YES;
         [label setFont:[UIFont systemFontOfSize:FONT_SIZE]];
         if (!lblBackgroundColor) {
-            [label setBackgroundColor:BACKGROUND_COLOR];
+            [label setBackgroundColor:[UIColor wg_themeWhiteColor]];
         } else {
             [label setBackgroundColor:lblBackgroundColor];
         }
-        [label setTextColor:TEXT_COLOR];
+        [label setTextColor:[UIColor wg_themeGrayColor]];
         [label setText:text];
         [label setTextAlignment:NSTextAlignmentCenter];
-        [label setShadowColor:TEXT_SHADOW_COLOR];
         [label setShadowOffset:TEXT_SHADOW_OFFSET];
         [label.layer setMasksToBounds:YES];
         [label.layer setCornerRadius:CORNER_RADIUS];
-        [label.layer setBorderColor:BORDER_COLOR];
+        [label.layer setBorderColor:[UIColor wg_themeGrayColor].CGColor];
         [label.layer setBorderWidth: BORDER_WIDTH];
         [self addSubview:label];
     }

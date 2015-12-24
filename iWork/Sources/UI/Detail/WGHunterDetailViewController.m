@@ -23,15 +23,24 @@
 #import "WGIntroductionView.h"
 #import "WGIndustryView.h"
 #import "WGIndustryListModel.h"
+#import "WGFunctionView.h"
+#import "WGResultsView.h"
+#import "WGBBSView.h"
 
 @interface WGHunterDetailViewController ()
 @property (weak, nonatomic) IBOutlet WGDetailHeaderView *headerView;
 @property (weak, nonatomic) IBOutlet WGIntroductionView *describeView;
 @property (weak, nonatomic) IBOutlet WGIndustryView *industryView;
+@property (weak, nonatomic) IBOutlet WGFunctionView *functionView;
+@property (weak, nonatomic) IBOutlet WGResultsView *resultsView;
+@property (weak, nonatomic) IBOutlet WGBBSView *bbsView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *describeHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *industryHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *functionHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *resultsHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bbsHeight;
 
 @end
 
@@ -126,6 +135,20 @@
             }
             self.industryView.tagsArray = industrys;
             self.industryHeight.constant = 100;
+            
+            
+            NSMutableArray *functions = [NSMutableArray array];
+            for (WGFunctionModel *functionModel in infoModel.functionsList) {
+                [functions addObject:functionModel.functionsName];
+            }
+            self.functionView.functionsStr = [functions componentsJoinedByString:@"."];
+            self.functionHeight.constant = 100;
+            
+            
+            self.resultsHeight.constant = 250;
+            
+            self.bbsHeight.constant = 200;
+            
             
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
