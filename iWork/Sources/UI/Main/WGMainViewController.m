@@ -21,8 +21,6 @@
 #import "WGIndustryListRequest.h"
 #import "WGMainIndustryListModel.h"
 
-#import "WGDataAccess.h"
-
 @interface WGMainViewController ()<WGMenuBarDelegate,WGMainScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *cityButton;
 @property (weak, nonatomic) IBOutlet WGMenuBar *menuBar;

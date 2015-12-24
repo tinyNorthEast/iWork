@@ -8,6 +8,8 @@
 
 #import "WGDataAccess.h"
 
+#import "WGSignInModel.h"
+
 @implementation WGDataAccess
 
 + (NSString *)userDefaultsStringForKey:(NSString *)key{
@@ -16,6 +18,14 @@
 
 + (void)userDefaultsSetString:(NSString *)string forKey:(NSString *)key{
     [[NSUserDefaults standardUserDefaults] setObject:string forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSNumber *)userRoleForKey:(NSString *)key{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:key];
+}
++ (void)saveUserRole:(NSNumber *)role forKey:(NSString *)key{
+    [[NSUserDefaults standardUserDefaults] setObject:role forKey:key];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

@@ -22,7 +22,7 @@
 #import "WGDetailHeaderView.h"
 #import "WGIntroductionView.h"
 #import "WGIndustryView.h"
-#import "WGIndustryModel.h"
+#import "WGIndustryListModel.h"
 
 @interface WGHunterDetailViewController ()
 @property (weak, nonatomic) IBOutlet WGDetailHeaderView *headerView;
@@ -121,8 +121,8 @@
             self.describeHeight.constant = 130;
             
             NSMutableArray *industrys = [NSMutableArray array];
-            for (WGIndustryModel *industryModel in infoModel.industryList) {
-                [industrys addObject:industryModel.name];
+            for (WGIndustryListModel *industryModel in infoModel.industryList) {
+                [industrys addObject:industryModel.industryName];
             }
             self.industryView.tagsArray = industrys;
             self.industryHeight.constant = 100;

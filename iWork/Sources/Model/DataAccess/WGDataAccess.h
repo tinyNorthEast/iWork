@@ -13,6 +13,9 @@
 + (NSString *)userDefaultsStringForKey:(NSString *)key;
 + (void)userDefaultsSetString:(NSString *)string forKey:(NSString *)key;
 
++ (NSNumber *)userRoleForKey:(NSString *)key;
++ (void)saveUserRole:(NSNumber *)role forKey:(NSString *)key;
+
 + (NSArray *)industryListForKey:(NSString *)key;
 + (void)industryListSetLists:(NSArray *)lists forKey:(NSString *)key;
 

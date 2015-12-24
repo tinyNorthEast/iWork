@@ -15,6 +15,9 @@
 #import "DEReflectUtil.h"
 #import "SignHeader.h"
 
+#import "WGSignInModel.h"
+#import "WGIndustryModel.h"
+
 #define kIndustryList @"industrylist"
 
 @interface WGGlobal()
@@ -43,16 +46,25 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
     return _userToken;
 }
 
+- (void)saveUserRole:(NSNumber *)role{
+    [WGDataAccess saveUserRole:role forKey:kUSERROLR_KEY];
+    _userRole = role;
+    
+}
+
 - (void)saveToken:(NSString *)token
 {
     [WGDataAccess userDefaultsSetString:token forKey:kUSERTOKEN_KEY];
     _userToken = token;
 }
 
-- (void)clearToken
+- (void)clearUserInfo
 {
     [WGDataAccess userDefaultsSetString:nil forKey:kUSERTOKEN_KEY];
     _userToken = nil;
+    
+    [WGDataAccess saveUserRole:nil forKey:kUSERROLR_KEY];
+    _userRole = nil;
 }
 - (NSArray *)industryLists{
     if (_industryLists == nil)

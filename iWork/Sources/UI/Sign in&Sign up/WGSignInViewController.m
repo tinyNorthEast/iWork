@@ -17,7 +17,8 @@
 #import "WGSignInRequestModel.h"
 #import "WGSignInModel.h"
 #import "WGVertifyPhoneViewController.h"
-#import "WGDataAccess.h"
+
+#import "WGGlobal.h"
 
 NSString *PhoneNoneWarning = @"请填写用户名";
 NSString *PhoneWrongWarning = @"请填写正确的电话号码";
@@ -72,7 +73,9 @@ NSString *PasswordNoneWarning = @"请填写密码";
             WGSignInRequestModel *model = (WGSignInRequestModel *)baseModel;
             if (model.infoCode.integerValue==0) {
                 WGSignInModel *signInModel = model.data;
-                [WGDataAccess userDefaultsSetString:signInModel.token forKey:kUSERTOKEN_KEY];
+                
+                [[WGGlobal sharedInstance] saveToken:signInModel.token];
+                [[WGGlobal sharedInstance] saveUserRole:signInModel.role_code];
                 [self back];
             }else{
                 [WGProgressHUD disappearFailureMessage:model.message onView:self.view];

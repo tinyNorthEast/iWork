@@ -62,6 +62,10 @@
 		B55D12361C070EAA0035C6B4 /* ShareSDKShareActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55D12281C070EAA0035C6B4 /* ShareSDKShareActionSheet.framework */; };
 		B5721E4A1C29ADA5007EE80F /* WGIndustryListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5721E491C29ADA5007EE80F /* WGIndustryListRequest.m */; };
 		B5721E4D1C29AE20007EE80F /* WGMainIndustryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5721E4C1C29AE20007EE80F /* WGMainIndustryListModel.m */; };
+		B59426E91C2B8D8D008BD92A /* WGUserInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B59426E81C2B8D8D008BD92A /* WGUserInfoRequest.m */; };
+		B59426ED1C2B91DA008BD92A /* WGUserInfoRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B59426EC1C2B91DA008BD92A /* WGUserInfoRequestModel.m */; };
+		B59426F01C2B91F6008BD92A /* WGUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B59426EF1C2B91F6008BD92A /* WGUserInfoModel.m */; };
+		B59426FB1C2BD43A008BD92A /* WGResetUserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59426FA1C2BD43A008BD92A /* WGResetUserInfoController.m */; };
 		B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */; };
 		B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D0E7FB1C046EB000358351 /* WGCountDownButton.m */; };
 		B5D4F3F71C279467007474F0 /* User.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D4F3F61C279467007474F0 /* User.xcassets */; };
@@ -271,6 +275,14 @@
 		B5721E491C29ADA5007EE80F /* WGIndustryListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIndustryListRequest.m; sourceTree = "<group>"; };
 		B5721E4B1C29AE20007EE80F /* WGMainIndustryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMainIndustryListModel.h; sourceTree = "<group>"; };
 		B5721E4C1C29AE20007EE80F /* WGMainIndustryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMainIndustryListModel.m; sourceTree = "<group>"; };
+		B59426E71C2B8D8D008BD92A /* WGUserInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGUserInfoRequest.h; sourceTree = "<group>"; };
+		B59426E81C2B8D8D008BD92A /* WGUserInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGUserInfoRequest.m; sourceTree = "<group>"; };
+		B59426EB1C2B91DA008BD92A /* WGUserInfoRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGUserInfoRequestModel.h; sourceTree = "<group>"; };
+		B59426EC1C2B91DA008BD92A /* WGUserInfoRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGUserInfoRequestModel.m; sourceTree = "<group>"; };
+		B59426EE1C2B91F6008BD92A /* WGUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGUserInfoModel.h; sourceTree = "<group>"; };
+		B59426EF1C2B91F6008BD92A /* WGUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGUserInfoModel.m; sourceTree = "<group>"; };
+		B59426F91C2BD43A008BD92A /* WGResetUserInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGResetUserInfoController.h; sourceTree = "<group>"; };
+		B59426FA1C2BD43A008BD92A /* WGResetUserInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGResetUserInfoController.m; sourceTree = "<group>"; };
 		B5BF96CA1BFC862C00A4CFAC /* UIScrollView+WGPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+WGPager.h"; sourceTree = "<group>"; };
 		B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+WGPager.m"; sourceTree = "<group>"; };
 		B5D0E7FA1C046EB000358351 /* WGCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCountDownButton.h; sourceTree = "<group>"; };
@@ -646,6 +658,7 @@
 				B5F150B91C21203400EC9503 /* Detail */,
 				B50C5BFB1C1147060043C26B /* City */,
 				B5D4F3FD1C27E198007474F0 /* BBS */,
+				B59426EA1C2B9119008BD92A /* User */,
 				B5E907BC1C082BDE003AB736 /* Sign in&Sign up */,
 				B54FA8491BF4A9120018B682 /* BaseModel */,
 				B5FB3D3D1C0EF41C00B35AB6 /* DataAccess */,
@@ -660,6 +673,7 @@
 				B5F150B81C21201600EC9503 /* Detail */,
 				B50C5BFF1C11474C0043C26B /* City */,
 				B53875651C1EE57F002FB222 /* BBS */,
+				B59426E61C2B888D008BD92A /* User */,
 				B5E907BB1C082BCE003AB736 /* Sign in&Sign up */,
 				B54FA8481BF4A9090018B682 /* BaseRequest */,
 			);
@@ -896,6 +910,26 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		B59426E61C2B888D008BD92A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				B59426E71C2B8D8D008BD92A /* WGUserInfoRequest.h */,
+				B59426E81C2B8D8D008BD92A /* WGUserInfoRequest.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		B59426EA1C2B9119008BD92A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				B59426EB1C2B91DA008BD92A /* WGUserInfoRequestModel.h */,
+				B59426EC1C2B91DA008BD92A /* WGUserInfoRequestModel.m */,
+				B59426EE1C2B91F6008BD92A /* WGUserInfoModel.h */,
+				B59426EF1C2B91F6008BD92A /* WGUserInfoModel.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		B5B94F7A1BFDB2BE00EBCBD3 /* Sign in&Sign up */ = {
 			isa = PBXGroup;
 			children = (
@@ -1130,6 +1164,8 @@
 			children = (
 				B53874F31C1EA997002FB222 /* WGUserInfoViewController.h */,
 				B53874F41C1EA997002FB222 /* WGUserInfoViewController.m */,
+				B59426F91C2BD43A008BD92A /* WGResetUserInfoController.h */,
+				B59426FA1C2BD43A008BD92A /* WGResetUserInfoController.m */,
 				B53874F61C1EA9B8002FB222 /* User.storyboard */,
 			);
 			path = User;
@@ -1432,6 +1468,7 @@
 				B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */,
 				B5F150DB1C22E75200EC9503 /* WGIndustryView.m in Sources */,
 				B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */,
+				B59426FB1C2BD43A008BD92A /* WGResetUserInfoController.m in Sources */,
 				B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */,
 				B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */,
 				B5066A081C0C44AB00D87E56 /* WGResetPasswordRequest.m in Sources */,
@@ -1441,7 +1478,9 @@
 				B5E7E1A31C1927F400BA545E /* WGMainTableView.m in Sources */,
 				B5F150A61C2007ED00EC9503 /* WGHunterModel.m in Sources */,
 				B5D4F40D1C27E8CF007474F0 /* WGWriteBBSViewController.m in Sources */,
+				B59426F01C2B91F6008BD92A /* WGUserInfoModel.m in Sources */,
 				B5FB3D481C0EFBA800B35AB6 /* WGToolBarView.m in Sources */,
+				B59426ED1C2B91DA008BD92A /* WGUserInfoRequestModel.m in Sources */,
 				B54FA84C1BF4A98B0018B682 /* WGBaseRequest.m in Sources */,
 				B54FA85F1BF4CBDB0018B682 /* UIViewAdditions.m in Sources */,
 				B54FA8141BF46FCD0018B682 /* WGMainViewController.m in Sources */,
@@ -1459,6 +1498,7 @@
 				B53874FA1C1EAA1A002FB222 /* WGSettingViewController.m in Sources */,
 				B5D4F4001C27E1B3007474F0 /* WGCommentModel.m in Sources */,
 				B520B2D11C0B3D5C00CFD6CD /* NSString+WGMD5.m in Sources */,
+				B59426E91C2B8D8D008BD92A /* WGUserInfoRequest.m in Sources */,
 				B5E2F43A1C2A901D005F8BA4 /* DBAccess.m in Sources */,
 				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,
 				B5721E4A1C29ADA5007EE80F /* WGIndustryListRequest.m in Sources */,
