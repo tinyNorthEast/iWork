@@ -8,6 +8,20 @@
 
 #import "WGBBSTableCell.h"
 
+#import <XXNibBridge.h>
+
+#import "UIImageView+WGHTTP.h"
+
+#import "WGCommentModel.h"
+
+@interface WGBBSTableCell()<XXNibBridge>
+@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
+@end
+
 @implementation WGBBSTableCell
 
 - (void)awakeFromNib {
@@ -20,8 +34,11 @@
     // Configure the view for the selected state
 }
 
-- (void)setComments:(WGCommentModel *)comments{
-    
+- (void)setComment:(WGCommentModel *)comment{
+    [self.headerImage wg_loadImageFromURL:comment.pic placeholder:[UIImage imageNamed:@"bbs_defaultHeader"]];
+//    self.nameLabel.text = comment.
+    self.contentLabel.text = comment.content;
+    self.timeLabel.text = comment.create_time.stringValue;
 }
 
 @end

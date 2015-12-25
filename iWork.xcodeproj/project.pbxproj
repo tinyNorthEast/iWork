@@ -24,7 +24,7 @@
 		B53874F71C1EA9B8002FB222 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53874F61C1EA9B8002FB222 /* User.storyboard */; };
 		B53874FA1C1EAA1A002FB222 /* WGSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53874F91C1EAA1A002FB222 /* WGSettingViewController.m */; };
 		B53874FC1C1EAA28002FB222 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53874FB1C1EAA28002FB222 /* Setting.storyboard */; };
-		B53875681C1EE5DA002FB222 /* WGMessgesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B53875671C1EE5DA002FB222 /* WGMessgesRequest.m */; };
+		B53875681C1EE5DA002FB222 /* WGGetMessgesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B53875671C1EE5DA002FB222 /* WGGetMessgesRequest.m */; };
 		B538756B1C1EF3EE002FB222 /* WGHunterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B538756A1C1EF3EE002FB222 /* WGHunterDetailViewController.m */; };
 		B538756D1C1EF3FD002FB222 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B538756C1C1EF3FD002FB222 /* Detail.storyboard */; };
 		B54FA7E81BF46AE60018B682 /* iWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7E71BF46AE60018B682 /* iWorkTests.m */; };
@@ -73,6 +73,9 @@
 		B594270A1C2C1FD8008BD92A /* WGResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59427091C2C1FD8008BD92A /* WGResultsView.xib */; };
 		B594270E1C2C2321008BD92A /* WGBBSView.m in Sources */ = {isa = PBXBuildFile; fileRef = B594270D1C2C2321008BD92A /* WGBBSView.m */; };
 		B59427101C2C2334008BD92A /* WGBBSView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B594270F1C2C2334008BD92A /* WGBBSView.xib */; };
+		B5AAAE401C2D032C008A97E6 /* WGWriteBBSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAAE3F1C2D032C008A97E6 /* WGWriteBBSRequest.m */; };
+		B5AAAE461C2D3BCD008A97E6 /* WGBBSListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAAE451C2D3BCD008A97E6 /* WGBBSListModel.m */; };
+		B5AAAE481C2D4994008A97E6 /* BBS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5AAAE471C2D4994008A97E6 /* BBS.xcassets */; };
 		B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */; };
 		B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D0E7FB1C046EB000358351 /* WGCountDownButton.m */; };
 		B5D4F3F71C279467007474F0 /* User.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D4F3F61C279467007474F0 /* User.xcassets */; };
@@ -205,8 +208,8 @@
 		B53874F81C1EAA1A002FB222 /* WGSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSettingViewController.h; sourceTree = "<group>"; };
 		B53874F91C1EAA1A002FB222 /* WGSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSettingViewController.m; sourceTree = "<group>"; };
 		B53874FB1C1EAA28002FB222 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
-		B53875661C1EE5DA002FB222 /* WGMessgesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMessgesRequest.h; sourceTree = "<group>"; };
-		B53875671C1EE5DA002FB222 /* WGMessgesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMessgesRequest.m; sourceTree = "<group>"; };
+		B53875661C1EE5DA002FB222 /* WGGetMessgesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGetMessgesRequest.h; sourceTree = "<group>"; };
+		B53875671C1EE5DA002FB222 /* WGGetMessgesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGetMessgesRequest.m; sourceTree = "<group>"; };
 		B53875691C1EF3EE002FB222 /* WGHunterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHunterDetailViewController.h; sourceTree = "<group>"; };
 		B538756A1C1EF3EE002FB222 /* WGHunterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHunterDetailViewController.m; sourceTree = "<group>"; };
 		B538756C1C1EF3FD002FB222 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
@@ -301,6 +304,11 @@
 		B594270C1C2C2321008BD92A /* WGBBSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBBSView.h; sourceTree = "<group>"; };
 		B594270D1C2C2321008BD92A /* WGBBSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBBSView.m; sourceTree = "<group>"; };
 		B594270F1C2C2334008BD92A /* WGBBSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGBBSView.xib; sourceTree = "<group>"; };
+		B5AAAE3E1C2D032C008A97E6 /* WGWriteBBSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGWriteBBSRequest.h; sourceTree = "<group>"; };
+		B5AAAE3F1C2D032C008A97E6 /* WGWriteBBSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGWriteBBSRequest.m; sourceTree = "<group>"; };
+		B5AAAE441C2D3BCD008A97E6 /* WGBBSListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBBSListModel.h; sourceTree = "<group>"; };
+		B5AAAE451C2D3BCD008A97E6 /* WGBBSListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBBSListModel.m; sourceTree = "<group>"; };
+		B5AAAE471C2D4994008A97E6 /* BBS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BBS.xcassets; sourceTree = "<group>"; };
 		B5BF96CA1BFC862C00A4CFAC /* UIScrollView+WGPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+WGPager.h"; sourceTree = "<group>"; };
 		B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+WGPager.m"; sourceTree = "<group>"; };
 		B5D0E7FA1C046EB000358351 /* WGCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCountDownButton.h; sourceTree = "<group>"; };
@@ -583,8 +591,10 @@
 		B53875651C1EE57F002FB222 /* BBS */ = {
 			isa = PBXGroup;
 			children = (
-				B53875661C1EE5DA002FB222 /* WGMessgesRequest.h */,
-				B53875671C1EE5DA002FB222 /* WGMessgesRequest.m */,
+				B53875661C1EE5DA002FB222 /* WGGetMessgesRequest.h */,
+				B53875671C1EE5DA002FB222 /* WGGetMessgesRequest.m */,
+				B5AAAE3E1C2D032C008A97E6 /* WGWriteBBSRequest.h */,
+				B5AAAE3F1C2D032C008A97E6 /* WGWriteBBSRequest.m */,
 			);
 			path = BBS;
 			sourceTree = "<group>";
@@ -651,6 +661,7 @@
 				B5E7E1AD1C19A5E700BA545E /* Main.xcassets */,
 				B5F150C01C214DA600EC9503 /* Detail.xcassets */,
 				B5D4F3F61C279467007474F0 /* User.xcassets */,
+				B5AAAE471C2D4994008A97E6 /* BBS.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1012,6 +1023,8 @@
 			children = (
 				B5D4F3FE1C27E1B3007474F0 /* WGCommentModel.h */,
 				B5D4F3FF1C27E1B3007474F0 /* WGCommentModel.m */,
+				B5AAAE441C2D3BCD008A97E6 /* WGBBSListModel.h */,
+				B5AAAE451C2D3BCD008A97E6 /* WGBBSListModel.m */,
 			);
 			path = BBS;
 			sourceTree = "<group>";
@@ -1422,6 +1435,7 @@
 				B5E601201C03179F00265307 /* Navigation.xcassets in Resources */,
 				B55D12311C070EAA0035C6B4 /* WeiboSDK.bundle in Resources */,
 				B50C5C081C1159F90043C26B /* City.storyboard in Resources */,
+				B5AAAE481C2D4994008A97E6 /* BBS.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1489,7 +1503,7 @@
 				B5E2F43C1C2A901D005F8BA4 /* DBRestriction.m in Sources */,
 				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
 				B59427081C2C1FC6008BD92A /* WGResultsView.m in Sources */,
-				B53875681C1EE5DA002FB222 /* WGMessgesRequest.m in Sources */,
+				B53875681C1EE5DA002FB222 /* WGGetMessgesRequest.m in Sources */,
 				B5E7E1A71C19598100BA545E /* WGMainScrollView.m in Sources */,
 				B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */,
 				B5FB3D511C1034A500B35AB6 /* WGHunterListModel.m in Sources */,
@@ -1501,6 +1515,7 @@
 				B50C5BFE1C11471F0043C26B /* WGCityModel.m in Sources */,
 				B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */,
 				B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */,
+				B5AAAE461C2D3BCD008A97E6 /* WGBBSListModel.m in Sources */,
 				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,
 				B5F150C41C225EBC00EC9503 /* WGHunterInfoModel.m in Sources */,
 				B5FB3D571C1071CC00B35AB6 /* UIDevice+WGIdentifier.m in Sources */,
@@ -1522,6 +1537,7 @@
 				B5FB3D451C0EFB5500B35AB6 /* WGDataPickerView.m in Sources */,
 				B54FA84F1BF4A9EB0018B682 /* WGBaseModel.m in Sources */,
 				B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */,
+				B5AAAE401C2D032C008A97E6 /* WGWriteBBSRequest.m in Sources */,
 				B59426FF1C2BF6AB008BD92A /* WGFunctionView.m in Sources */,
 				B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */,
 				B594270E1C2C2321008BD92A /* WGBBSView.m in Sources */,

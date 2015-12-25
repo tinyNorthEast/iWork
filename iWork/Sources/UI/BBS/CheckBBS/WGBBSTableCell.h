@@ -12,6 +12,6 @@
 
 @interface WGBBSTableCell : UITableViewCell
 
-@property (nonatomic, strong) WGCommentModel *comments;
+@property (nonatomic, strong) WGCommentModel *comment;
 
 @end

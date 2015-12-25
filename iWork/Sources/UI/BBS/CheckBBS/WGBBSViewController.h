@@ -10,4 +10,6 @@
 
 @interface WGBBSViewController : UIViewController
 
+@property (nonatomic, strong) NSNumber *toUserId;
+
 @end

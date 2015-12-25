@@ -10,4 +10,6 @@
 
 @interface WGWriteBBSViewController : UIViewController
 
+@property (nonatomic,strong) NSNumber *toUserId;
+
 @end

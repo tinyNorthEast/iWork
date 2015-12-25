@@ -8,6 +8,14 @@
 
 #import "WGBaseModel.h"
 
+@protocol WGCommentModel <NSObject>
+@end
+
 @interface WGCommentModel : WGBaseModel
+
+@property (nonatomic,strong)NSNumber<Optional> *objId;
+@property (nonatomic,copy)NSString<Optional> *pic;
+@property (nonatomic,copy)NSString<Optional> *content;
+@property (nonatomic,strong)NSNumber<Optional> *create_time;
 
 @end

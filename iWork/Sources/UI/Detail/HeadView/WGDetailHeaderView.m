@@ -13,6 +13,8 @@
 #import "UIImageView+WGHTTP.h"
 
 #import "WGHunterInfoModel.h"
+#import "WGHunterDetailViewController.h"
+#import "WGBBSViewController.h"
 
 @interface WGDetailHeaderView()<XXNibBridge>
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
@@ -31,9 +33,21 @@
 }
 
 #pragma mark - IBAction
+- (UIViewController *)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder *nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[WGHunterDetailViewController class]]) {
+            return (WGHunterDetailViewController *)nextResponder;
+        }
+    }
+    return nil;
+}
 - (IBAction)praiseAction:(id)sender {
 }
 - (IBAction)gotoComment:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
+    WGBBSViewController *vc = [sb instantiateInitialViewController];;
+    [[self viewController].navigationController pushViewController:vc animated:YES];
 }
 
 

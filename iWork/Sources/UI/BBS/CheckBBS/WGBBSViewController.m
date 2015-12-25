@@ -8,12 +8,18 @@
 
 #import "WGBBSViewController.h"
 
-#import "WGMessgesRequest.h"
+#import <extobjc.h>
+#import <XXNibBridge.h>
+
+#import "WGGetMessgesRequest.h"
+#import "WGBBSListModel.h"
+#import "WGCommentModel.h"
+#import "WGBBSTableCell.h"
 
 @interface WGBBSViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *messages;
-@property (strong, nonatomic) NSMutableArray *timestamps;
 
 @end
 
@@ -32,21 +38,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Init
+- (NSMutableArray *)messages{
+    if (!_messages) {
+        _messages = [NSMutableArray array];
+    }
+    return _messages;
+}
+
 #pragma mark - Request
 - (void)requestMessages{
-    self.messages = [[NSMutableArray alloc] initWithObjects:
-                     @"Testing some messages here.",
-                     @"Options for avatars: none, circles, or squares",
-                     @"This is a complete re-write and refactoring.",
-                     @"It's easy to implement. Sound effects and images included. Animations are smooth and messages can be of arbitrary size!",
-                     nil];
-    
-    self.timestamps = [[NSMutableArray alloc] initWithObjects:
-                       [NSDate distantPast],
-                       [NSDate distantPast],
-                       [NSDate distantPast],
-                       [NSDate date],
-                       nil];
+    WGGetMessgesRequest *request = [[WGGetMessgesRequest alloc] initWithToUserId:@(16)];
+    @weakify(self);
+    [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+        @strongify(self);
+        WGBBSListModel *model = (WGBBSListModel *)baseModel;
+        
+        [self.messages addObjectsFromArray:model.data];
+        
+        [self.tableView reloadData];
+        
+    } failure:^(WGBaseModel *baseModel, NSError *error) {
+        
+    }];
 }
 
 #pragma mark - IBAction
@@ -60,11 +74,15 @@
     return self.messages.count;
 }
 
-#pragma mark - Messages view delegate
-
-
-#pragma mark - Messages view data source
-
-
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    WGBBSTableCell *cell = [tableView dequeueReusableCellWithIdentifier:[WGBBSTableCell xx_nibID] forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self configureCell:cell forIndexPath:indexPath];
+    return cell;
+}
+- (void)configureCell:(WGBBSTableCell *)cell forIndexPath:(NSIndexPath *)indexPath{
+    WGCommentModel *aComment = self.messages[indexPath.row];
+    cell.comment = aComment;
+}
 
 @end

@@ -15,6 +15,7 @@
 #import "UIViewAdditions.h"
 #import "WGTools.h"
 
+#import "WGWriteBBSViewController.h"
 #import "WGHunterDetailRequest.h"
 #import "WGBaseModel.h"
 #import "WGHunterDetailModel.h"
@@ -103,7 +104,8 @@
 }
 - (IBAction)writeBBS:(id)sender {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WriteBBS" bundle:nil];
-    UIViewController *vc = [sb instantiateInitialViewController];
+    WGWriteBBSViewController *vc = [sb instantiateInitialViewController];
+    vc.toUserId = @(16);
     [self presentViewController:vc animated:YES completion:^{
         
     }];

@@ -8,6 +8,8 @@
 
 #import "WGBaseRequest.h"
 
-@interface WGMessgesRequest : WGBaseRequest
+@interface WGGetMessgesRequest : WGBaseRequest
+
+- (instancetype)initWithToUserId:(NSNumber *)userId;
 
 @end

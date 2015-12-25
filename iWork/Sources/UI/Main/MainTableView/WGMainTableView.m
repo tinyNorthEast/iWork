@@ -100,7 +100,7 @@
     }];
 }
 
-- (WGMainViewController *)viewController {
+- (UIViewController *)viewController {
     for (UIView* next = [self superview]; next; next = next.superview) {
         UIResponder *nextResponder = [next nextResponder];
         if ([nextResponder isKindOfClass:[WGMainViewController class]]) {
