@@ -8,10 +8,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Hunter Detail View Controller-->
+        <!--详情-->
         <scene sceneID="eOP-tJ-lFb">
             <objects>
-                <viewController id="LTU-VW-rVz" customClass="WGHunterDetailViewController" sceneMemberID="viewController">
+                <viewController id="LTU-VW-rVz" userLabel="详情" customClass="WGHunterDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ppl-kf-neZ"/>
                         <viewControllerLayoutGuide type="bottom" id="aj3-SB-ahN"/>
@@ -101,25 +101,28 @@
                                                     <action selector="callConsultant:" destination="LTU-VW-rVz" eventType="touchUpInside" id="mZm-YN-Xys"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detail_call" translatesAutoresizingMaskIntoConstraints="NO" id="2cd-IO-5bh">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_call" translatesAutoresizingMaskIntoConstraints="NO" id="2cd-IO-5bh">
                                                 <rect key="frame" x="5" y="10" width="17" height="17"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="2r6-O1-PM3" firstAttribute="centerY" secondItem="1W2-90-6HM" secondAttribute="centerY" id="Bj4-lf-1BW"/>
+                                            <constraint firstItem="2cd-IO-5bh" firstAttribute="centerY" secondItem="2r6-O1-PM3" secondAttribute="centerY" id="WFw-c2-VnQ"/>
                                             <constraint firstItem="2r6-O1-PM3" firstAttribute="leading" secondItem="1W2-90-6HM" secondAttribute="leading" constant="31" id="X3X-70-9Py"/>
+                                            <constraint firstItem="2r6-O1-PM3" firstAttribute="leading" secondItem="2cd-IO-5bh" secondAttribute="trailing" constant="9" id="hC1-CZ-eW3"/>
                                             <constraint firstAttribute="trailing" secondItem="2r6-O1-PM3" secondAttribute="trailing" id="nDr-er-KsH"/>
                                             <constraint firstItem="2r6-O1-PM3" firstAttribute="top" secondItem="1W2-90-6HM" secondAttribute="top" constant="4" id="t0T-4n-5DS"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detail_message" translatesAutoresizingMaskIntoConstraints="NO" id="zuj-3Y-Cis">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_message" translatesAutoresizingMaskIntoConstraints="NO" id="zuj-3Y-Cis">
                                         <rect key="frame" x="29" y="21" width="17" height="17"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="G6o-7X-R2R" firstAttribute="centerX" secondItem="Vtq-gp-OLx" secondAttribute="centerX" id="CPW-OF-Zy2"/>
+                                    <constraint firstItem="zuj-3Y-Cis" firstAttribute="leading" secondItem="Vtq-gp-OLx" secondAttribute="leading" constant="29" id="DYO-wG-IKr"/>
                                     <constraint firstItem="jxv-jb-tzI" firstAttribute="leading" secondItem="Vtq-gp-OLx" secondAttribute="leading" constant="19" id="FcP-tK-xZw"/>
                                     <constraint firstItem="1W2-90-6HM" firstAttribute="top" secondItem="jxv-jb-tzI" secondAttribute="top" id="G7r-sD-RYr"/>
                                     <constraint firstItem="1W2-90-6HM" firstAttribute="leading" secondItem="G6o-7X-R2R" secondAttribute="trailing" constant="18" id="JMz-44-tTd"/>
@@ -128,6 +131,7 @@
                                     <constraint firstItem="G6o-7X-R2R" firstAttribute="leading" secondItem="Vtq-gp-OLx" secondAttribute="leading" constant="160" id="SQG-ur-ie8"/>
                                     <constraint firstItem="G6o-7X-R2R" firstAttribute="leading" secondItem="jxv-jb-tzI" secondAttribute="trailing" constant="13" id="cuE-Gf-fHH"/>
                                     <constraint firstAttribute="bottom" secondItem="G6o-7X-R2R" secondAttribute="bottom" id="o4J-3Z-eRs"/>
+                                    <constraint firstItem="zuj-3Y-Cis" firstAttribute="centerY" secondItem="jxv-jb-tzI" secondAttribute="centerY" id="pTl-q5-z2J"/>
                                     <constraint firstAttribute="height" constant="60" id="qm8-fu-xu3"/>
                                     <constraint firstItem="jxv-jb-tzI" firstAttribute="bottom" secondItem="1W2-90-6HM" secondAttribute="bottom" id="rrb-be-ppu"/>
                                     <constraint firstItem="jxv-jb-tzI" firstAttribute="centerY" secondItem="G6o-7X-R2R" secondAttribute="centerY" id="t2M-bS-m9u"/>

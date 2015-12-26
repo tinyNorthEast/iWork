@@ -1740,7 +1740,7 @@
 					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.impetusconsulting.iwork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.impetus.iwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1769,7 +1769,7 @@
 					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/iWork/OtherFrameworks/ShareSDK/Extend/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.impetusconsulting.iwork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.impetus.iwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

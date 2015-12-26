@@ -11,6 +11,8 @@
 #import <extobjc.h>
 
 #import "WGProgressHUD.h"
+#import "UIViewAdditions.h"
+#import "UIColor+WGThemeColors.h"
 
 #import "WGCityModel.h"
 #import "WGCityListModel.h"
@@ -119,6 +121,9 @@ NSString *const CONFIGMODEL_PATH = @"configModel";
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10, cell.height-1, tableView.width-10, 1)];
+        lineView.backgroundColor = [UIColor wg_themeLightGrayColor];
+        [cell.contentView addSubview:lineView];
     }
 
     WGCityModel *cityModel = [self.cityList objectAtIndex:indexPath.row];
