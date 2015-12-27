@@ -8,9 +8,17 @@
 
 #import "WGNotificationController.h"
 
+#import <extobjc.h>
+#import <XXNibBridge.h>
+
+#import "WGNotificationCell.h"
 #import "WGNotificationRequest.h"
+#import "WGNotificationListModel.h"
+#import "WGNotificationModel.h"
 
 @interface WGNotificationController ()
+
+@property (nonatomic, strong) NSMutableArray *notifications;
 
 @end
 
@@ -27,36 +35,43 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - Init
+- (NSMutableArray *)notifications{
+    if (!_notifications) {
+        _notifications = [NSMutableArray array];
+    }
+    return _notifications;
+}
+
 #pragma mark - Request
 - (void)fetchNotifications{
     WGNotificationRequest *request = [[WGNotificationRequest alloc] init];
+    @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
-        
+        @strongify(self);
+        WGNotificationListModel *model = (WGNotificationListModel *)baseModel;
+        [self.notifications addObjectsFromArray:model.data];
+        if (self.notifications.count) {
+            [self.tableView reloadData];
+        }
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];
 }
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.notifications.count;
 }
-
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    WGNotificationCell *cell = [tableView dequeueReusableCellWithIdentifier:[WGNotificationCell xx_nibID] forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self configureCell:cell forIndexPath:indexPath];
     return cell;
 }
-*/
+- (void)configureCell:(WGNotificationCell *)cell forIndexPath:(NSIndexPath *)indexPath{
+    WGNotificationModel *aNotification = self.notifications[indexPath.row];
+    cell.notification = aNotification;
+}
 
 /*
 // Override to support conditional editing of the table view.
