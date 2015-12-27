@@ -10,8 +10,8 @@
 
 #import "AFNetworking.h"
 
-#import "UIDevice+WGIdentifier.h"
 #import "NSMutableDictionary+WGExtension.h"
+#import "WGGlobal.h"
 
 #import "WGURLConfig.h"
 #import "WGBaseModel.h"
@@ -39,7 +39,7 @@
 
 - (void)setBaseParamsTo:(NSMutableDictionary *)param{
     [param safeSetValue:@"2" forKey:@"client"];
-    [param safeSetValue:[[UIDevice currentDevice] UniqueGlobalDeviceIdentifier] forKey:@"eq_num"];
+    [param safeSetValue:[[WGGlobal sharedInstance] deviceToken] forKey:@"eq_num"];
     [param safeSetValue:@"1.0" forKey:@"version"];
 }
 

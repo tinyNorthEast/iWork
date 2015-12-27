@@ -9,6 +9,7 @@
 #import "WGSignInViewController.h"
 
 #import <extobjc.h>
+#import "APService.h"
 
 #import "SignHeader.h"
 #import "WGValidJudge.h"
@@ -74,6 +75,9 @@ NSString *PasswordNoneWarning = @"请填写密码";
             if (model.infoCode.integerValue==0) {
                 WGSignInModel *signInModel = model.data;
                 
+
+                [APService setAlias:signInModel.userId callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
+                
                 [[WGGlobal sharedInstance] saveToken:signInModel.token];
                 [[WGGlobal sharedInstance] saveUserRole:signInModel.role_code];
                 [self back];
@@ -85,7 +89,9 @@ NSString *PasswordNoneWarning = @"请填写密码";
         }];
     }
 }
-
+-(void)tagsAliasCallback:(int)iResCode tags:(NSSet*)tags alias:(NSString*)alias{
+     NSLog(@"-----------alias success----------");
+}
 #pragma mark - NSNotification
 - (void)textFieldBeginEditing:(NSNotification *)notification{
     if (self.phoneTextField.text.length >= 11 && self.passwordTextField.text.length>kMIN_PASSWORD_LEGTH){

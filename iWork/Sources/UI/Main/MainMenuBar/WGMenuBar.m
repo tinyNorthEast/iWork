@@ -17,6 +17,7 @@
 
 //按钮空隙
 #define BUTTONGAP 5
+#define BUTTONMAX 5
 
 @interface WGMenuBar()
 
@@ -56,8 +57,13 @@
             [barButton setSelected:YES];
         }
         
-        int baseWidth = self.scrollBar.width/5;
-  
+        int baseWidth = 0;
+        if (items.count>=BUTTONMAX) {
+            baseWidth = self.scrollBar.width/BUTTONMAX;
+        }else{
+            baseWidth = self.scrollBar.width/items.count;
+        }
+
         CGSize size = [barButton.titleLabel.text boundingRectWithSize:CGSizeMake(0, 40) options:NSStringDrawingUsesLineFragmentOrigin
                                      attributes: @{ NSFontAttributeName:barButton.titleLabel.font } context: nil].size;
         

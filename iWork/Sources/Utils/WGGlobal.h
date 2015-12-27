@@ -19,6 +19,7 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(WGGlobal)
 
 @property (nonatomic, copy) NSString *userToken;
 @property (nonatomic, strong) NSNumber *userRole;
+@property (nonatomic, copy) NSString *deviceToken;
 
 
 @property (nonatomic, copy) NSString *phone;
@@ -30,6 +31,8 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(WGGlobal)
 - (void)clearUserInfo;
 
 - (void)saveUserRole:(NSNumber *)role;
+
+- (void)saveDeviceToken:(NSString *)deviceToken;
 
 
 - (void )getIndustryList:(void (^)(NSMutableArray *array))block;

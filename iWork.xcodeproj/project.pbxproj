@@ -145,6 +145,8 @@
 		B5F150DB1C22E75200EC9503 /* WGIndustryView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150DA1C22E75200EC9503 /* WGIndustryView.m */; };
 		B5F150DD1C22E78B00EC9503 /* WGIndustryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F150DC1C22E78B00EC9503 /* WGIndustryView.xib */; };
 		B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */; };
+		B5FAC9251C2E203E00C82019 /* WGNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC9241C2E203E00C82019 /* WGNotificationController.m */; };
+		B5FAC9291C2E210600C82019 /* WGNotificationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC9281C2E210600C82019 /* WGNotificationRequest.m */; };
 		B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */; };
 		B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D3B1C0EF3E600B35AB6 /* WGGlobal.m */; };
 		B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D401C0EF57C00B35AB6 /* WGDataAccess.m */; };
@@ -416,6 +418,10 @@
 		B5F150DC1C22E78B00EC9503 /* WGIndustryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGIndustryView.xib; sourceTree = "<group>"; };
 		B5F4B1F71C1E997000CD44A3 /* WGSignInRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInRequestModel.h; sourceTree = "<group>"; };
 		B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInRequestModel.m; sourceTree = "<group>"; };
+		B5FAC9231C2E203E00C82019 /* WGNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotificationController.h; sourceTree = "<group>"; };
+		B5FAC9241C2E203E00C82019 /* WGNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotificationController.m; sourceTree = "<group>"; };
+		B5FAC9271C2E210600C82019 /* WGNotificationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotificationRequest.h; sourceTree = "<group>"; };
+		B5FAC9281C2E210600C82019 /* WGNotificationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotificationRequest.m; sourceTree = "<group>"; };
 		B5FB3D371C0EDC8A00B35AB6 /* WGQNTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGQNTokenRequest.h; sourceTree = "<group>"; };
 		B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGQNTokenRequest.m; sourceTree = "<group>"; };
 		B5FB3D3A1C0EF3E600B35AB6 /* WGGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGlobal.h; sourceTree = "<group>"; };
@@ -703,6 +709,7 @@
 				B50C5BFF1C11474C0043C26B /* City */,
 				B53875651C1EE57F002FB222 /* BBS */,
 				B59426E61C2B888D008BD92A /* User */,
+				B5FAC9261C2E20DE00C82019 /* Notification */,
 				B5E907BB1C082BCE003AB736 /* Sign in&Sign up */,
 				B54FA8481BF4A9090018B682 /* BaseRequest */,
 			);
@@ -716,6 +723,7 @@
 				B5F4B1F41C1E8F1E00CD44A3 /* Detail */,
 				B5F4B1F51C1E8F1E00CD44A3 /* Setting */,
 				B5F4B1F61C1E8F1E00CD44A3 /* User */,
+				B5FAC9221C2E201E00C82019 /* Notification */,
 				B50C5C031C11594D0043C26B /* City */,
 				B5B94F7A1BFDB2BE00EBCBD3 /* Sign in&Sign up */,
 				B54FA8081BF46FCD0018B682 /* Main */,
@@ -1237,6 +1245,24 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		B5FAC9221C2E201E00C82019 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				B5FAC9231C2E203E00C82019 /* WGNotificationController.h */,
+				B5FAC9241C2E203E00C82019 /* WGNotificationController.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		B5FAC9261C2E20DE00C82019 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				B5FAC9271C2E210600C82019 /* WGNotificationRequest.h */,
+				B5FAC9281C2E210600C82019 /* WGNotificationRequest.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		B5FB3D3D1C0EF41C00B35AB6 /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
@@ -1365,6 +1391,7 @@
 				TargetAttributes = {
 					B54FA7C91BF46AE60018B682 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = UGPJN94325;
 					};
 					B54FA7E21BF46AE60018B682 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1519,12 +1546,14 @@
 				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,
 				B5F150C41C225EBC00EC9503 /* WGHunterInfoModel.m in Sources */,
 				B5FB3D571C1071CC00B35AB6 /* UIDevice+WGIdentifier.m in Sources */,
+				B5FAC9251C2E203E00C82019 /* WGNotificationController.m in Sources */,
 				B5066A141C0C8EBD00D87E56 /* WGMenuBar.m in Sources */,
 				B5E600421BFECF8800265307 /* WGVertifyPhoneViewController.m in Sources */,
 				B5E2F4451C2AA193005F8BA4 /* DEReflectUtil.m in Sources */,
 				B5F150BC1C21205C00EC9503 /* WGHunterDetailRequest.m in Sources */,
 				B54FA8171BF46FCD0018B682 /* main.m in Sources */,
 				B5055BEE1BF9CF33001736AD /* WGPager.m in Sources */,
+				B5FAC9291C2E210600C82019 /* WGNotificationRequest.m in Sources */,
 				B5055BF41BF9FB5B001736AD /* WGValidJudge.m in Sources */,
 				B5FB3D541C10499A00B35AB6 /* WGSignInModel.m in Sources */,
 				B55D11FD1C06F7100035C6B4 /* WGSignUpUserInfoViewController.m in Sources */,
@@ -1653,7 +1682,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nanxiang Chen (3EVS9Y6G5D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nanxiang Chen (3EVS9Y6G5D)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1675,6 +1705,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "0b8a806b-3b50-4b67-982b-0f032f668402";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1696,7 +1727,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nanxiang Chen (UGPJN94325)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nanxiang Chen (UGPJN94325)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1711,6 +1743,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "74294ef0-a5b6-4abe-bd80-70a0e3b9930c";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1722,6 +1755,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nanxiang Chen (3EVS9Y6G5D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nanxiang Chen (3EVS9Y6G5D)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1742,6 +1777,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.impetus.iwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0b8a806b-3b50-4b67-982b-0f032f668402";
 			};
 			name = Debug;
 		};
@@ -1751,6 +1787,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nanxiang Chen (UGPJN94325)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nanxiang Chen (UGPJN94325)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1771,6 +1809,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.impetus.iwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "74294ef0-a5b6-4abe-bd80-70a0e3b9930c";
 			};
 			name = Release;
 		};

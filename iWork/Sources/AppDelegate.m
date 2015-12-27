@@ -8,11 +8,14 @@
 
 #import "AppDelegate.h"
 
-#import "WGCommon.h"
-#import "APService.h"
-#import <ShareSDK/ShareSDK.h>
 #import "WXApi.h"
+#import "APService.h"
 #import <SMS_SDK/SMSSDK.h>
+#import <ShareSDK/ShareSDK.h>
+
+#import "WGCommon.h"
+#import "WGNotificationController.h"
+#import "WGGlobal.h"
 
 @interface AppDelegate ()
 
@@ -49,8 +52,7 @@
              // Required
              categories:nil];
         }
-    [APService setupWithOption:launchOptions];
-    
+    [APService setupWithOption:launchOptions];    
     
       //ShareSDK
     [ShareSDK registerApp:kShareSDK_appKey];
@@ -110,7 +112,22 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     // Required
+    NSString *tokenStr = [deviceToken description];
+    NSString *pushToken = [[[tokenStr
+                             stringByReplacingOccurrencesOfString:@"<" withString:@""]
+                            stringByReplacingOccurrencesOfString:@">" withString:@""]
+                           stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+//    NSString *saveToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"DeviceToken"];
+//    if (![saveToken isEqualToString:pushToken]) {
+//        
+//        [[NSUserDefaults standardUserDefaults] setObject:pushToken forKey:@"DeviceToken"];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//    }
+    [[WGGlobal sharedInstance] saveDeviceToken:pushToken];
     [APService registerDeviceToken:deviceToken];
+
+    
 }
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     // Required
@@ -119,6 +136,9 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
     // IOS 7 Support Required
     [APService handleRemoteNotification:userInfo];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"GotoNotification" object:userInfo];
+    
     completionHandler(UIBackgroundFetchResultNewData);
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{

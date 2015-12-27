@@ -100,7 +100,7 @@
                                             <outlet property="scrollBar" destination="7sR-l3-hSs" id="Go0-qr-paj"/>
                                         </connections>
                                     </view>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGJ-zu-egh" customClass="WGMainScrollView">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGJ-zu-egh" customClass="WGMainScrollView">
                                         <rect key="frame" x="0.0" y="44" width="320" height="460"/>
                                     </scrollView>
                                 </subviews>

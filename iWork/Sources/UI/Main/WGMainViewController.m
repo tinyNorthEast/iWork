@@ -34,6 +34,8 @@
     [super viewDidLoad];
     
     [self initBarView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotoNotification:) name:@"GotoNotification" object:nil];
 }
 
 - (void)initBarView{
@@ -55,7 +57,9 @@
         
     }];
 }
-
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -87,6 +91,11 @@
     [self presentViewController:vc animated:YES completion:^{
         
     }];
+}
+- (void)gotoNotification:(NSNotification *)notification{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"User" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Notification"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - WGMenuBarDelegate

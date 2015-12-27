@@ -46,6 +46,15 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
     return _userToken;
 }
 
+- (NSString *)deviceToken{
+    if (_deviceToken == nil)
+    {
+        _deviceToken = [WGDataAccess userDefaultsStringForKey:kDEVICETOKEN_KEY];
+        
+    }
+    return _deviceToken;
+}
+
 - (void)saveUserRole:(NSNumber *)role{
     [WGDataAccess saveUserRole:role forKey:kUSERROLR_KEY];
     _userRole = role;
@@ -58,6 +67,11 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
     _userToken = token;
 }
 
+- (void)saveDeviceToken:(NSString *)deviceToken{
+    [WGDataAccess userDefaultsSetString:deviceToken forKey:kDEVICETOKEN_KEY];
+    _deviceToken = deviceToken;
+}
+
 - (void)clearUserInfo
 {
     [WGDataAccess userDefaultsSetString:nil forKey:kUSERTOKEN_KEY];
@@ -65,6 +79,9 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
     
     [WGDataAccess saveUserRole:nil forKey:kUSERROLR_KEY];
     _userRole = nil;
+    
+    [WGDataAccess userDefaultsSetString:nil forKey:kDEVICETOKEN_KEY];
+    _deviceToken = nil;
 }
 - (NSArray *)industryLists{
     if (_industryLists == nil)
