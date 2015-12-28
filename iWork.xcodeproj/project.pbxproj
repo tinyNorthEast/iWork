@@ -18,7 +18,7 @@
 		B50C5C021C1159190043C26B /* WGCityListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C5C011C1159190043C26B /* WGCityListRequest.m */; };
 		B50C5C061C1159690043C26B /* WGCityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C5C051C1159690043C26B /* WGCityListViewController.m */; };
 		B50C5C081C1159F90043C26B /* City.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50C5C071C1159F90043C26B /* City.storyboard */; };
-		B520B2D11C0B3D5C00CFD6CD /* NSString+WGMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */; };
+		B520B2D11C0B3D5C00CFD6CD /* NSString+WGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B520B2D01C0B3D5C00CFD6CD /* NSString+WGExtension.m */; };
 		B52AD9781BFB21E0006540B3 /* WGNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AD9771BFB21E0006540B3 /* WGNetworkHelper.m */; };
 		B53874F51C1EA997002FB222 /* WGUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53874F41C1EA997002FB222 /* WGUserInfoViewController.m */; };
 		B53874F71C1EA9B8002FB222 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53874F61C1EA9B8002FB222 /* User.storyboard */; };
@@ -204,8 +204,8 @@
 		B50C5C041C1159690043C26B /* WGCityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCityListViewController.h; sourceTree = "<group>"; };
 		B50C5C051C1159690043C26B /* WGCityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCityListViewController.m; sourceTree = "<group>"; };
 		B50C5C071C1159F90043C26B /* City.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = City.storyboard; sourceTree = "<group>"; };
-		B520B2CF1C0B3D5C00CFD6CD /* NSString+WGMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WGMD5.h"; sourceTree = "<group>"; };
-		B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WGMD5.m"; sourceTree = "<group>"; };
+		B520B2CF1C0B3D5C00CFD6CD /* NSString+WGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WGExtension.h"; sourceTree = "<group>"; };
+		B520B2D01C0B3D5C00CFD6CD /* NSString+WGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WGExtension.m"; sourceTree = "<group>"; };
 		B52AD9761BFB21E0006540B3 /* WGNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNetworkHelper.h; sourceTree = "<group>"; };
 		B52AD9771BFB21E0006540B3 /* WGNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNetworkHelper.m; sourceTree = "<group>"; };
 		B53874F31C1EA997002FB222 /* WGUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGUserInfoViewController.h; sourceTree = "<group>"; };
@@ -774,8 +774,8 @@
 				B52AD9771BFB21E0006540B3 /* WGNetworkHelper.m */,
 				B5E907C01C083F83003AB736 /* NSMutableDictionary+WGExtension.h */,
 				B5E907C11C083F83003AB736 /* NSMutableDictionary+WGExtension.m */,
-				B520B2CF1C0B3D5C00CFD6CD /* NSString+WGMD5.h */,
-				B520B2D01C0B3D5C00CFD6CD /* NSString+WGMD5.m */,
+				B520B2CF1C0B3D5C00CFD6CD /* NSString+WGExtension.h */,
+				B520B2D01C0B3D5C00CFD6CD /* NSString+WGExtension.m */,
 				B5FB3D551C1071CC00B35AB6 /* UIDevice+WGIdentifier.h */,
 				B5FB3D561C1071CC00B35AB6 /* UIDevice+WGIdentifier.m */,
 				B5F150A71C20387300EC9503 /* UIImageView+WGHTTP.h */,
@@ -1634,7 +1634,7 @@
 				B5E2F43B1C2A901D005F8BA4 /* DBAccessQueue.m in Sources */,
 				B53874FA1C1EAA1A002FB222 /* WGSettingViewController.m in Sources */,
 				B5D4F4001C27E1B3007474F0 /* WGCommentModel.m in Sources */,
-				B520B2D11C0B3D5C00CFD6CD /* NSString+WGMD5.m in Sources */,
+				B520B2D11C0B3D5C00CFD6CD /* NSString+WGExtension.m in Sources */,
 				B59426E91C2B8D8D008BD92A /* WGUserInfoRequest.m in Sources */,
 				B5E2F43A1C2A901D005F8BA4 /* DBAccess.m in Sources */,
 				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,

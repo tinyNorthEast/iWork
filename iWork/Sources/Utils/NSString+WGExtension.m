@@ -6,11 +6,11 @@
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
-#import "NSString+WGMD5.h"
+#import "NSString+WGExtension.h"
 
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation NSString (WGMD5)
+@implementation NSString (WGExtension)
 
 + (NSString *)stringDecodingByMD5:(NSString *)string{
     const char *cString = [string UTF8String];
@@ -32,6 +32,19 @@
     
     md5String = [md5String substringToIndex:32];
     return md5String;
+}
+
+-(BOOL) isValidEmail:(NSString *)checkString
+{
+    checkString = [checkString lowercaseString];
+    BOOL stricterFilter = YES;
+    NSString *stricterFilterString = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSString *laxString = @".+@.+\\.[A-Za-z]{2}[A-Za-z]*";
+    
+    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    
+    return [emailTest evaluateWithObject:checkString];
 }
 
 @end

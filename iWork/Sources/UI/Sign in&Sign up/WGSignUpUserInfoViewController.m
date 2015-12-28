@@ -13,6 +13,7 @@
 
 #import "WGValidJudge.h"
 #import "WGProgressHUD.h"
+#import "NSString+WGExtension.h"
 #import "NSMutableDictionary+WGExtension.h"
 #import "WGSignUpWorkInfoViewController.h"
 #import "WGQNTokenRequest.h"
@@ -67,20 +68,24 @@
 - (IBAction)nextAction:(id)sender {
     if (![WGValidJudge isValidString:self.userNameTextField.text]) {
         [WGProgressHUD disappearFailureMessage:@"请填写姓名" onView:self.view];
-        return;
-    }if (![WGValidJudge isValidString:self.emailTextField.text]) {
+        
+    }else if (![NSString isValidEmail:self.emailTextField.text]){
+        [WGProgressHUD disappearFailureMessage:@"请填写正确的邮箱" onView:self.view];
+        
+    }else if (![WGValidJudge isValidString:self.emailTextField.text]) {
         [WGProgressHUD disappearFailureMessage:@"请填写邮箱" onView:self.view];
-        return;
+        
+    }else{
+        [self.userInfoDict safeSetValue:self.headerUrl forKey:@"pic"];
+        [self.userInfoDict safeSetValue:self.userNameTextField.text forKey:@"zh_name"];
+        [self.userInfoDict safeSetValue:self.enNameTextField.text forKey:@"en_name"];
+        [self.userInfoDict safeSetValue:self.emailTextField.text forKey:@"mail"];
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+        WGSignUpWorkInfoViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpWorkInfoViewController"];
+        vc.workInfoDict = self.userInfoDict;
+        [self.navigationController pushViewController:vc animated:YES];
     }
-    
-    [self.userInfoDict safeSetValue:self.userNameTextField.text forKey:@"zh_name"];
-//    [self.userInfoDict safeSetValue:self.userNameTextField.text forKey:@"zh_name"];
-    [self.userInfoDict safeSetValue:self.headerUrl forKey:@"pic"];
-    
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
-    WGSignUpWorkInfoViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpWorkInfoViewController"];
-    vc.workInfoDict = self.userInfoDict;
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Request

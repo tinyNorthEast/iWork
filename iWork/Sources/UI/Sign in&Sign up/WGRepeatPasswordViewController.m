@@ -14,7 +14,7 @@
 #import "WGValidJudge.h"
 #import "WGSignUpRequest.h"
 #import "NSMutableDictionary+WGExtension.h"
-#import "NSString+WGMD5.h"
+#import "NSString+WGExtension.h"
 #import "WGResetPasswordRequest.h"
 
 @interface WGRepeatPasswordViewController ()<UITextFieldDelegate>

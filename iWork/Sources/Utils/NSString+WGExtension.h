@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (WGMD5)
+@interface NSString (WGExtension)
 
 + (NSString *)stringDecodingByMD5:(NSString *)string;
+
++ (BOOL)isValidEmail:(NSString *)checkString;
 
 @end

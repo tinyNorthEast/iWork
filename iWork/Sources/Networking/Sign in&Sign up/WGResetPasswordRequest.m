@@ -9,7 +9,7 @@
 #import "WGResetPasswordRequest.h"
 
 #import "NSMutableDictionary+WGExtension.h"
-#import "NSString+WGMD5.h"
+#import "NSString+WGExtension.h"
 #import "WGBaseModel.h"
 
 

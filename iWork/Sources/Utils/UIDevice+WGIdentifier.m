@@ -10,7 +10,7 @@
 
 #import "WGValidJudge.h"
 #import "WGDataAccess.h"
-#import "NSString+WGMD5.h"
+#import "NSString+WGExtension.h"
 #import "OpenUDID.h"
 
 #define kKeyChainUDID   @"keyChainUDID"
