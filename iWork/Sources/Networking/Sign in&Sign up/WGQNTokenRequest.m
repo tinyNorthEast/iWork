@@ -8,7 +8,7 @@
 
 #import "WGQNTokenRequest.h"
 
-#import "WGBaseModel.h"
+#import "WGQiNiuTokenModel.h"
 
 @implementation WGQNTokenRequest
 
@@ -22,15 +22,15 @@
 }
 
 - (NSString *)pathName{
-    return @"api/v1/qiniu/getQiniuToken";
+    return @"api/v1/qiniu/getQiniuToken.action";
 }
 
 - (WGHTTPRequestMethod)requestMethod{
-    return WGHTTPRequestMethodPOST;
+    return WGHTTPRequestMethodGET;
 }
 
 - (WGBaseModel *)responseModelWithData:(id)data{
-    return [[WGBaseModel alloc] initWithDictionary:data error:nil];
+    return [[WGQiNiuTokenModel alloc] initWithDictionary:data error:nil];
 }
 
 

@@ -12,6 +12,8 @@
 #define kMIN_PASSWORD_LEGTH  6
 #define kMAX_PASSWORD_LEGTH  16
 
+#define kUSERDEFAULTPHONE       @"userDefaultPhone"
+
 #define kUSERTOKEN_KEY          @"userToken"
 #define kUSERROLR_KEY           @"userRole"
 #define kDEVICETOKEN_KEY        @"deviceToken"

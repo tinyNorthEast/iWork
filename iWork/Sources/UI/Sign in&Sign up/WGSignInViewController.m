@@ -37,7 +37,15 @@ NSString *PasswordNoneWarning = @"请填写密码";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldBeginEditing:) name:UITextFieldTextDidBeginEditingNotification object:nil];
+    //set default phone
+    if ([[WGGlobal sharedInstance] defaultPhone].length) {
+        self.phoneTextField.text = [[WGGlobal sharedInstance] defaultPhone];
+    }
+    //hide keyboard
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];
+    [self.view addGestureRecognizer:tapGesture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +55,11 @@ NSString *PasswordNoneWarning = @"请填写密码";
 
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)hideKeyboard:(UIGestureRecognizer *)gesture{
+    [self.phoneTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
 }
 
 #pragma mark - IBACtion
@@ -66,6 +79,7 @@ NSString *PasswordNoneWarning = @"请填写密码";
     }else if(![WGValidJudge isValidString:self.passwordTextField.text]){
         [WGProgressHUD disappearFailureMessage:PasswordNoneWarning onView:self.view];
     }else{
+        [WGProgressHUD loadMessage:@"正在登录..." onView:self.view];
         WGSignInRequest *request = [[WGSignInRequest alloc] initWithPhone:self.phoneTextField.text password:self.passwordTextField.text];
         
         @weakify(self);
@@ -73,9 +87,14 @@ NSString *PasswordNoneWarning = @"请填写密码";
             @strongify(self);
             WGSignInRequestModel *model = (WGSignInRequestModel *)baseModel;
             if (model.infoCode.integerValue==0) {
+                [WGProgressHUD disappearSuccessMessage:@"登录成功" onView:self.view];
+                //保存电话号码
+                [[WGGlobal sharedInstance] saveDefaultPhone:self.phoneTextField.text];
+                
+                //
                 WGSignInModel *signInModel = model.data;
                 
-
+                //设置极光别名
                 [APService setAlias:signInModel.userId callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
                 
                 [[WGGlobal sharedInstance] saveToken:signInModel.token];
@@ -85,7 +104,7 @@ NSString *PasswordNoneWarning = @"请填写密码";
                 [WGProgressHUD disappearFailureMessage:model.message onView:self.view];
             }
         } failure:^(WGBaseModel *baseModel, NSError *error) {
-            
+            [WGProgressHUD disappearSuccessMessage:@"登录失败,请检查网络设置" onView:self.view];
         }];
     }
 }
@@ -100,7 +119,6 @@ NSString *PasswordNoneWarning = @"请填写密码";
 }
 
 #pragma mark - UITextFieldDelegate
-
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     if (textField.tag == 1) {

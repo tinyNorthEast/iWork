@@ -11,6 +11,7 @@
 #import "extobjc.h"
 #import <SMS_SDK/SMSSDK.h>
 
+#import "WGGlobal.h"
 #import "WGValidJudge.h"
 #import "WGProgressHUD.h"
 #import "WGCountDownButton.h"
@@ -30,7 +31,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    if ([[WGGlobal sharedInstance] defaultPhone].length) {
+        self.phoneTextField.text = [[WGGlobal sharedInstance] defaultPhone];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,39 +71,44 @@
     }];
 }
 - (IBAction)confirmAction:(id)sender {
-    if (![WGValidJudge isValidString:self.phoneTextField.text]) {
-        [WGProgressHUD disappearFailureMessage:@"请先填写电话号码" onView:self.view];
-        return;
-    }
-    if(![WGValidJudge isValidPhoneNum:self.phoneTextField.text]){
-        [WGProgressHUD disappearFailureMessage:@"请填写正确的电话号码" onView:self.view];
-        return;
-    }
-    if (![WGValidJudge isValidString:self.codeTextField.text]) {
-        [WGProgressHUD disappearFailureMessage:@"请先填写验证码" onView:self.view];
-        return;
-    }
-    [WGProgressHUD loadMessage:@"正在验证..." onView:self.view];
-    @weakify(self);
-    [SMSSDK commitVerificationCode:self.codeTextField.text phoneNumber:self.phoneTextField.text zone:@"86" result:^(NSError *error) {
-        @strongify(self);
-        if (!error) {
-            if (self.vertifyView == WGVertifyView_SignUp) {
-                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
-                WGSignUpUserInfoViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpUserInfoViewController"];
-                [vc.userInfoDict safeSetValue:self.phoneTextField.text forKey:@"phone"];
-                [self.navigationController pushViewController:vc animated:YES];
-            }else{
-                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
-                WGRepeatPasswordViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGRepeatPasswordViewController"];
-                vc.viewFounction = WGViewFounction_ResetPassword;
-                vc.phoneStr = self.phoneTextField.text;
-                [self.navigationController pushViewController:vc animated:YES];
-            }
-        }else{
-            [WGProgressHUD disappearFailureMessage:@"请重新检查输入结果" onView:self.view];
-        }
-    }];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+    WGSignUpUserInfoViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpUserInfoViewController"];
+    [vc.userInfoDict safeSetValue:self.phoneTextField.text forKey:@"phone"];
+    [self.navigationController pushViewController:vc animated:YES];
+//    if (![WGValidJudge isValidString:self.phoneTextField.text]) {
+//        [WGProgressHUD disappearFailureMessage:@"请先填写电话号码" onView:self.view];
+//        return;
+//    }
+//    if(![WGValidJudge isValidPhoneNum:self.phoneTextField.text]){
+//        [WGProgressHUD disappearFailureMessage:@"请填写正确的电话号码" onView:self.view];
+//        return;
+//    }
+//    if (![WGValidJudge isValidString:self.codeTextField.text]) {
+//        [WGProgressHUD disappearFailureMessage:@"请先填写验证码" onView:self.view];
+//        return;
+//    }
+//    [WGProgressHUD loadMessage:@"正在验证..." onView:self.view];
+//    @weakify(self);
+//    [SMSSDK commitVerificationCode:self.codeTextField.text phoneNumber:self.phoneTextField.text zone:@"86" result:^(NSError *error) {
+//        @strongify(self);
+//        if (!error) {
+//            [WGProgressHUD dismissOnView:self.view];
+//            if (self.vertifyView == WGVertifyView_SignUp) {
+//                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+//                WGSignUpUserInfoViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpUserInfoViewController"];
+//                [vc.userInfoDict safeSetValue:self.phoneTextField.text forKey:@"phone"];
+//                [self.navigationController pushViewController:vc animated:YES];
+//            }else{
+//                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+//                WGRepeatPasswordViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGRepeatPasswordViewController"];
+//                vc.viewFounction = WGViewFounction_ResetPassword;
+//                vc.phoneStr = self.phoneTextField.text;
+//                [self.navigationController pushViewController:vc animated:YES];
+//            }
+//        }else{
+//            [WGProgressHUD disappearFailureMessage:@"请重新检查输入结果" onView:self.view];
+//        }
+//    }];
 }
 #pragma mark - UITextFieldDelegate
 

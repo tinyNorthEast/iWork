@@ -16,13 +16,18 @@
 #import "NSMutableDictionary+WGExtension.h"
 #import "WGSignUpWorkInfoViewController.h"
 #import "WGQNTokenRequest.h"
+#import "WGQiNiuTokenModel.h"
 
 @interface WGSignUpUserInfoViewController ()<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
+@property (nonatomic, strong) NSData *imageData;
+@property (nonatomic, strong) UIImage *headerImage;
+@property (nonatomic, copy) NSString *headerUrl;
+
+@property (weak, nonatomic) IBOutlet UIButton *headerButton;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *enNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-
 
 @end
 
@@ -49,10 +54,12 @@
 #pragma mark - IBACtion
 
 - (void)back{
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self.navigationController popViewControllerAnimated:YES];
 }
+- (IBAction)backAction:(id)sender {
+    [self back];
+}
+
 - (IBAction)addPhotoAction:(id)sender {
     UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从手机相册选择",nil];
     [as showInView:self.view];
@@ -67,7 +74,8 @@
     }
     
     [self.userInfoDict safeSetValue:self.userNameTextField.text forKey:@"zh_name"];
-    [self.userInfoDict safeSetValue:self.userNameTextField.text forKey:@"zh_name"];
+//    [self.userInfoDict safeSetValue:self.userNameTextField.text forKey:@"zh_name"];
+    [self.userInfoDict safeSetValue:self.headerUrl forKey:@"pic"];
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
     WGSignUpWorkInfoViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGSignUpWorkInfoViewController"];
@@ -79,23 +87,22 @@
 - (void)getUplodImageToken{
     WGQNTokenRequest *request = [[WGQNTokenRequest alloc] init];
 
+    @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
-        
-        NSString *token = @"从服务端SDK获取";
+        @strongify(self);
+        WGQiNiuTokenModel *model = (WGQiNiuTokenModel *)baseModel;
+
         QNUploadManager *upManager = [[QNUploadManager alloc] init];
-        NSData *data = [@"Hello, World!" dataUsingEncoding : NSUTF8StringEncoding];
-        [upManager putData:data key:@"hello" token:token
+        [upManager putData:self.imageData key:@"header" token:model.data
                   complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
-                      NSLog(@"%@", info);
-                      NSLog(@"%@", resp);
+                      [self.headerButton setImage:self.headerImage forState:UIControlStateNormal];
+                      self.headerUrl = [NSString stringWithFormat:@"http://7xoors.com1.z0.glb.clouddn.com/%@",key];
+                      
                   } option:nil];
         
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];
-}
-- (void)uploadImageToQU:(NSString *)token{
-    
 }
 
 #pragma mark - UIActionSheetDelegate
@@ -154,34 +161,40 @@
         imgName = @"png";
     }
     
-    NSString *paths     = [NSString stringWithFormat:@"%@/Documents/TakePhoto/photo.%@", NSHomeDirectory(),imgName];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if(![fileManager fileExistsAtPath:paths]){
-        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-        NSString *directryPath = [path stringByAppendingPathComponent:@"TakePhoto"];
-        [fileManager createDirectoryAtPath:directryPath withIntermediateDirectories:YES attributes:nil error:nil];
-        NSString *filePath = [directryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"photo.%@",imgName]];
-        [fileManager createFileAtPath:filePath contents:nil attributes:nil];
-    }
+//    NSString *paths     = [NSString stringWithFormat:@"%@/Documents/TakePhoto/photo.%@", NSHomeDirectory(),imgName];
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    if(![fileManager fileExistsAtPath:paths]){
+//        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+//        NSString *directryPath = [path stringByAppendingPathComponent:@"TakePhoto"];
+//        [fileManager createDirectoryAtPath:directryPath withIntermediateDirectories:YES attributes:nil error:nil];
+//        NSString *filePath = [directryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"photo.%@",imgName]];
+//
+//        [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+//    }
+//    
+//    [UIImagePNGRepresentation(newImg) writeToFile:paths  atomically:YES];
     
-    [UIImagePNGRepresentation(newImg) writeToFile:paths  atomically:YES];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+   
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingString:[NSString stringWithFormat:@"/%@",imgName]];
+    NSData *data = UIImageJPEGRepresentation(newImg,0.5);
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager createFileAtPath:filePath contents:data attributes:nil];
+    
+    self.imageData = data;
+    self.headerImage = newImg;
     
     if(picker.sourceType == UIImagePickerControllerSourceTypeCamera )
     {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     }
-    NSURL *imgURL;
-    if(newImg)
-    {
-        imgURL = [NSURL fileURLWithPath:paths];
-        
-    }
+    
     [self dismissViewControllerAnimated:YES completion:^{
         [self getUplodImageToken];
     }];
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    [self back];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

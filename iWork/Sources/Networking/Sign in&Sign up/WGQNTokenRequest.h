@@ -10,4 +10,6 @@
 
 @interface WGQNTokenRequest : WGBaseRequest
 
+- (instancetype)init;
+
 @end

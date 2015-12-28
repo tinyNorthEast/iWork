@@ -150,6 +150,7 @@
 		B5FAC92D1C30405C00C82019 /* WGNotificationListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC92C1C30405C00C82019 /* WGNotificationListModel.m */; };
 		B5FAC9301C30406E00C82019 /* WGNotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC92F1C30406E00C82019 /* WGNotificationModel.m */; };
 		B5FAC9331C30436F00C82019 /* WGNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC9321C30436F00C82019 /* WGNotificationCell.m */; };
+		B5FAC9361C3114E100C82019 /* WGQiNiuTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC9351C3114E100C82019 /* WGQiNiuTokenModel.m */; };
 		B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */; };
 		B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D3B1C0EF3E600B35AB6 /* WGGlobal.m */; };
 		B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FB3D401C0EF57C00B35AB6 /* WGDataAccess.m */; };
@@ -431,6 +432,8 @@
 		B5FAC92F1C30406E00C82019 /* WGNotificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotificationModel.m; sourceTree = "<group>"; };
 		B5FAC9311C30436F00C82019 /* WGNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotificationCell.h; sourceTree = "<group>"; };
 		B5FAC9321C30436F00C82019 /* WGNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotificationCell.m; sourceTree = "<group>"; };
+		B5FAC9341C3114E100C82019 /* WGQiNiuTokenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGQiNiuTokenModel.h; sourceTree = "<group>"; };
+		B5FAC9351C3114E100C82019 /* WGQiNiuTokenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGQiNiuTokenModel.m; sourceTree = "<group>"; };
 		B5FB3D371C0EDC8A00B35AB6 /* WGQNTokenRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGQNTokenRequest.h; sourceTree = "<group>"; };
 		B5FB3D381C0EDC8A00B35AB6 /* WGQNTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGQNTokenRequest.m; sourceTree = "<group>"; };
 		B5FB3D3A1C0EF3E600B35AB6 /* WGGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGlobal.h; sourceTree = "<group>"; };
@@ -1141,6 +1144,8 @@
 				B5FB3D531C10499A00B35AB6 /* WGSignInModel.m */,
 				B5F4B1F71C1E997000CD44A3 /* WGSignInRequestModel.h */,
 				B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */,
+				B5FAC9341C3114E100C82019 /* WGQiNiuTokenModel.h */,
+				B5FAC9351C3114E100C82019 /* WGQiNiuTokenModel.m */,
 			);
 			path = "Sign in&Sign up";
 			sourceTree = "<group>";
@@ -1567,6 +1572,7 @@
 				B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */,
 				B5AAAE461C2D3BCD008A97E6 /* WGBBSListModel.m in Sources */,
 				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,
+				B5FAC9361C3114E100C82019 /* WGQiNiuTokenModel.m in Sources */,
 				B5F150C41C225EBC00EC9503 /* WGHunterInfoModel.m in Sources */,
 				B5FB3D571C1071CC00B35AB6 /* UIDevice+WGIdentifier.m in Sources */,
 				B5FAC9251C2E203E00C82019 /* WGNotificationController.m in Sources */,

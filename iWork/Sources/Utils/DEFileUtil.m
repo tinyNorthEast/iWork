@@ -104,8 +104,8 @@
  *  @return <#return value description#>
  */
 +(NSString *)userDocumentDir{
-    if ([WGGlobal sharedInstance].phone.length > 0) {
-        NSString *udc = [[DEFileUtil documentDir]stringByAppendingPathComponent:[WGGlobal sharedInstance].phone];
+    if ([WGGlobal sharedInstance].defaultPhone.length > 0) {
+        NSString *udc = [[DEFileUtil documentDir]stringByAppendingPathComponent:[WGGlobal sharedInstance].defaultPhone];
         [DEFileUtil createDir:udc];
         return udc;
     }
@@ -117,8 +117,8 @@
  *  @return <#return value description#>
  */
 +(NSString *)userCacheDir{
-    if ([WGGlobal sharedInstance].phone.length > 0) {
-        NSString *ucd = [[DEFileUtil cacheDir]stringByAppendingPathComponent:[WGGlobal sharedInstance].phone];
+    if ([WGGlobal sharedInstance].defaultPhone.length > 0) {
+        NSString *ucd = [[DEFileUtil cacheDir]stringByAppendingPathComponent:[WGGlobal sharedInstance].defaultPhone];
         [DEFileUtil createDir:ucd];
         return ucd;
     }
