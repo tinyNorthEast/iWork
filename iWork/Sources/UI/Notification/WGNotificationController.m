@@ -42,6 +42,11 @@
     }
     return _notifications;
 }
+#pragma mark - IBAction
+- (IBAction)backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 #pragma mark - Request
 - (void)fetchNotifications{

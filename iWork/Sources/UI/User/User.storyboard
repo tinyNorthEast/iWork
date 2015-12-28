@@ -75,15 +75,18 @@
                                                     <rect key="frame" x="40" y="54" width="280" height="1"/>
                                                     <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_profile" translatesAutoresizingMaskIntoConstraints="NO" id="vsB-Pn-4uN">
-                                                    <rect key="frame" x="10" y="17" width="21" height="21"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="修改个人信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXW-5J-Xe3">
                                                     <rect key="frame" x="40" y="17" width="188" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_profile" translatesAutoresizingMaskIntoConstraints="NO" id="vsB-Pn-4uN">
+                                                    <rect key="frame" x="10" y="17" width="21" height="21"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_detail" translatesAutoresizingMaskIntoConstraints="NO" id="9NL-wA-RoI">
+                                                    <rect key="frame" x="305" y="21" width="7" height="13"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -110,6 +113,9 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_favorite" translatesAutoresizingMaskIntoConstraints="NO" id="n8A-bP-ifI">
                                                     <rect key="frame" x="11" y="17" width="21" height="21"/>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_detail" translatesAutoresizingMaskIntoConstraints="NO" id="RYa-g6-tg9">
+                                                    <rect key="frame" x="305" y="21" width="7" height="13"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -130,8 +136,11 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_industry" translatesAutoresizingMaskIntoConstraints="NO" id="05o-QJ-ojw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_focus" translatesAutoresizingMaskIntoConstraints="NO" id="05o-QJ-ojw">
                                                     <rect key="frame" x="10" y="17" width="21" height="21"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_detail" translatesAutoresizingMaskIntoConstraints="NO" id="0g7-sg-nre">
+                                                    <rect key="frame" x="305" y="21" width="7" height="13"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -155,6 +164,9 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_notification" translatesAutoresizingMaskIntoConstraints="NO" id="JLA-JL-1BX">
                                                     <rect key="frame" x="10" y="17" width="21" height="21"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_detail" translatesAutoresizingMaskIntoConstraints="NO" id="TLu-Te-3bR">
+                                                    <rect key="frame" x="305" y="21" width="7" height="13"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -239,7 +251,13 @@
                             <outlet property="delegate" destination="tqt-Xv-w4X" id="GDe-bC-k3c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="我的消息" id="PRv-bs-aLz"/>
+                    <navigationItem key="navigationItem" title="我的消息" id="PRv-bs-aLz">
+                        <barButtonItem key="leftBarButtonItem" image="navi_back" id="KjK-tW-zbN">
+                            <connections>
+                                <action selector="backAction:" destination="tqt-Xv-w4X" id="jK6-82-JqW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fka-tP-tMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -369,7 +387,18 @@
                             <outlet property="delegate" destination="WGm-8u-y3J" id="cGA-wA-cKc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="修改个人信息" id="s22-Nc-Evb"/>
+                    <navigationItem key="navigationItem" title="修改个人信息" id="s22-Nc-Evb">
+                        <barButtonItem key="leftBarButtonItem" image="navi_back" id="GcT-V4-83M">
+                            <connections>
+                                <action selector="backAction:" destination="WGm-8u-y3J" id="gbX-ai-h2U"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="qoI-Ju-doP">
+                            <connections>
+                                <action selector="saveAction:" destination="WGm-8u-y3J" id="lLZ-yb-2vd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="companyField" destination="gs8-iz-CBi" id="IfK-0y-Ecd"/>
                         <outlet property="enNameField" destination="ufa-lK-fMP" id="aIf-5R-1GN"/>
@@ -385,8 +414,9 @@
     </scenes>
     <resources>
         <image name="navi_back" width="9" height="19"/>
+        <image name="user_detail" width="7" height="13"/>
         <image name="user_favorite" width="21" height="21"/>
-        <image name="user_industry" width="21" height="21"/>
+        <image name="user_focus" width="18" height="18"/>
         <image name="user_notification" width="21" height="21"/>
         <image name="user_profile" width="21" height="21"/>
         <image name="user_setting" width="19" height="17"/>

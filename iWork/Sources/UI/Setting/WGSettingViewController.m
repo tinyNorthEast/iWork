@@ -36,6 +36,13 @@ NS_ENUM(NSInteger,WGSettingAlertTag){
 - (IBAction)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+- (IBAction)switchNotification:(UISwitch *)sender {
+    if (sender.on) {
+        
+    }else{
+        
+    }
+}
 - (IBAction)signOut:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"确认退出？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     alert.tag = WGSettingAlertTag_SignOut;

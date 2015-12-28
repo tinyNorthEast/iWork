@@ -20,8 +20,7 @@
     self = [super init];
     if (self) {
         
-//        [self.getParams safeSetValue:[[WGGlobal sharedInstance] userToken] forKey:@"token"];
-        [self.getParams safeSetValue:@"8108aa66226b0d699dd1cb4a01419db2" forKey:@"token"];
+        [self.getParams safeSetValue:[[WGGlobal sharedInstance] userToken] forKey:@"token"];
         return self;
     }
     return nil;
