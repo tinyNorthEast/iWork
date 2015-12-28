@@ -2,32 +2,33 @@
 //  WGResetPasswordRequest.m
 //  iWork
 //
-//  Created by Adele on 11/30/15.
+//  Created by Adele on 12/28/15.
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
 #import "WGResetPasswordRequest.h"
 
 #import "NSMutableDictionary+WGExtension.h"
-#import "NSString+WGExtension.h"
 #import "WGBaseModel.h"
-
+#import "WGGlobal.h"
 
 @implementation WGResetPasswordRequest
 
-- (instancetype)initWithPhone:(NSString *)phone password:(NSString *)password
+- (instancetype)initWithOldPassword:(NSString *)oldPsw newPassword:(NSString *)newPsw
 {
     self = [super init];
     if (self) {
-        [self.postParams safeSetValue:phone forKey:@"phone"];
-        [self.postParams safeSetValue:[[NSString stringDecodingByMD5:password] lowercaseString] forKey:@"password"];
+        [self.postParams safeSetValue:oldPsw forKey:@"phone"];
+        //        [self.postParams safeSetValue:[[NSString stringDecodingByMD5:[[WGGlobal sharedInstance] userToken]] lowercaseString] forKey:@"password"];
+        [self.postParams safeSetValue:newPsw forKey:@"password"];
+        [self.postParams safeSetValue:[[WGGlobal sharedInstance] userToken] forKey:@"token"];
         return self;
     }
     return nil;
 }
 
 - (NSString *)pathName{
-    return @"api/v1/user/updatePassword";
+    return @"api/v1/user/updatePassword.action";
 }
 
 - (WGHTTPRequestMethod)requestMethod{

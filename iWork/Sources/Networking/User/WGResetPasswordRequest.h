@@ -2,7 +2,7 @@
 //  WGResetPasswordRequest.h
 //  iWork
 //
-//  Created by Adele on 11/30/15.
+//  Created by Adele on 12/28/15.
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
@@ -10,6 +10,6 @@
 
 @interface WGResetPasswordRequest : WGBaseRequest
 
-- (instancetype)initWithPhone:(NSString *)phone password:(NSString *)password;
+- (instancetype)initWithOldPassword:(NSString *)oldPsw newPassword:(NSString *)newPsw;
 
 @end

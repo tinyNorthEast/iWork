@@ -15,7 +15,7 @@
 #import "WGSignUpRequest.h"
 #import "NSMutableDictionary+WGExtension.h"
 #import "NSString+WGExtension.h"
-#import "WGResetPasswordRequest.h"
+#import "WGForgetPasswordRequest.h"
 
 @interface WGRepeatPasswordViewController ()<UITextFieldDelegate>
 
@@ -79,7 +79,7 @@
         }];
     }else{
         @weakify(self);
-        WGResetPasswordRequest *request = [[WGResetPasswordRequest alloc] initWithPhone:self.phoneStr password:self.passwordTextField.text];
+        WGForgetPasswordRequest *request = [[WGForgetPasswordRequest alloc] initWithPhone:self.phoneStr password:self.passwordTextField.text];
         [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
             @strongify(self);
             [self back];
