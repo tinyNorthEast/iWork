@@ -24,12 +24,21 @@ NS_ENUM(NSInteger,WGSettingAlertTag){
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"设置";
+    [self initNaviBar];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initNaviBar{
+    self.navigationItem.title = @"设置";
+    UIButton *bt=[UIButton buttonWithType:UIButtonTypeCustom];
+    [bt setImage:[UIImage imageNamed:@"navi_back.png"] forState:UIControlStateNormal];
+    [bt addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftButton=[[UIBarButtonItem alloc] initWithCustomView:bt];
+    self.navigationItem.leftBarButtonItem=leftButton;
 }
 
 #pragma mark - IBAction

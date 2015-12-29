@@ -38,6 +38,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotoNotification:) name:@"GotoNotification" object:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
+
 - (void)initBarView{
     WGIndustryListRequest *request = [[WGIndustryListRequest alloc] init];
     @weakify(self);

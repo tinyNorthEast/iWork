@@ -34,7 +34,7 @@
     return md5String;
 }
 
--(BOOL) isValidEmail:(NSString *)checkString
++ (BOOL)isValidEmail:(NSString *)checkString
 {
     checkString = [checkString lowercaseString];
     BOOL stricterFilter = YES;

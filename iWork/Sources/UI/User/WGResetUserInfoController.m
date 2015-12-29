@@ -10,6 +10,8 @@
 
 #import <extobjc.h>
 
+#import "WGProgressHUD.h"
+
 #import "WGUserInfoModel.h"
 #import "WGResetUserInfoRequest.h"
 
@@ -27,10 +29,28 @@
 @implementation WGResetUserInfoController
 
 - (void)viewDidLoad{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard:)];
+    [self.view addGestureRecognizer:tap];
+    
     self.mailField.text = self.userInfoModel.mail;
     self.enNameField.text = self.userInfoModel.en_name;
     self.experienceField.text = self.userInfoModel.experience.stringValue;
     self.companyField.text = self.userInfoModel.company;
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+//    [self hideKeyboard];
+}
+
+- (void)hideKeyboard{
+    [self.mailField resignFirstResponder];
+    [self.enNameField resignFirstResponder];
+    [self.experienceField resignFirstResponder];
+    [self.companyField resignFirstResponder];
+}
+- (void)hideKeyBoard:(UIGestureRecognizer *)recognizer{
+//    [self hideKeyboard];
 }
 #pragma mark - Init
 - (NSMutableDictionary *)infoDic{
@@ -63,12 +83,29 @@
     if (self.companyField.text.length && ![self.companyField.text isEqualToString:self.userInfoModel.company]) {
         [self.infoDic setObject:self.companyField.text forKey:@"company"];
     }
+    
+    if (self.infoDic.allKeys.count == 0) {
+        [self back];
+        return;
+    }
+    
     WGResetUserInfoRequest *request = [[WGResetUserInfoRequest alloc] initWithUserInfo:self.infoDic];
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
-        
+        if (baseModel.infoCode.integerValue == 0) {
+            [self back];
+        }else{
+            [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
+        }
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];
+}
+
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
 }
 

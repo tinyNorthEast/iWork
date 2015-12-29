@@ -28,6 +28,8 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.backgroundColor = [UIColor blackColor];
     [self fetchNotifications];
 }
 
@@ -46,7 +48,6 @@
 - (IBAction)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 #pragma mark - Request
 - (void)fetchNotifications{
