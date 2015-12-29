@@ -51,7 +51,7 @@
 
 #pragma mark - Request
 - (void)fetchNotifications{
-    WGNotificationRequest *request = [[WGNotificationRequest alloc] init];
+    WGNotificationRequest *request = [[WGNotificationRequest alloc] initWithType:self.notif_type];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);

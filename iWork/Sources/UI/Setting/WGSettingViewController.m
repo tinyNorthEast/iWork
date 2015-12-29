@@ -8,6 +8,8 @@
 
 #import "WGSettingViewController.h"
 
+#import "WGProgressHUD.h"
+
 #import "WGGlobal.h"
 
 NS_ENUM(NSInteger,WGSettingAlertTag){
@@ -47,9 +49,9 @@ NS_ENUM(NSInteger,WGSettingAlertTag){
 }
 - (IBAction)switchNotification:(UISwitch *)sender {
     if (sender.on) {
-        
+        [WGProgressHUD disappearSuccessMessage:@"打开推送" onView:self.view];
     }else{
-        
+        [WGProgressHUD disappearSuccessMessage:@"关闭推送" onView:self.view];
     }
 }
 - (IBAction)signOut:(id)sender {
@@ -66,6 +68,10 @@ NS_ENUM(NSInteger,WGSettingAlertTag){
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"缓存大小为%f.确定要删除缓存吗?",@(5.9)] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alert show];
+    }else if (indexPath.row == 3){
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"About" bundle:nil];
+        UIViewController *vc = [sb instantiateInitialViewController];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

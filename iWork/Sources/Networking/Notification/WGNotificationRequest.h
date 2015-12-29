@@ -10,6 +10,6 @@
 
 @interface WGNotificationRequest : WGBaseRequest
 
-- (instancetype)init;
+- (instancetype)initWithType:(NSNumber *)type;
 
 @end

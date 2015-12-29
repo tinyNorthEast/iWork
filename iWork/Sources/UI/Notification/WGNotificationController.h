@@ -10,4 +10,6 @@
 
 @interface WGNotificationController : UITableViewController
 
+@property (nonatomic, strong) NSNumber *notif_type;
+
 @end

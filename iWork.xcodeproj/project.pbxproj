@@ -156,6 +156,11 @@
 		B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */; };
 		B5F987831C32D67F00253667 /* WGDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F987821C32D67F00253667 /* WGDateFormatter.m */; };
 		B5F987861C32DA2E00253667 /* WGNotificationCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F987851C32DA2E00253667 /* WGNotificationCategoryController.m */; };
+		B5F987891C32E05E00253667 /* WGNotifyCategoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F987881C32E05E00253667 /* WGNotifyCategoryRequest.m */; };
+		B5F9878C1C32E1C400253667 /* WGNotifiCategoryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F9878B1C32E1C400253667 /* WGNotifiCategoryListModel.m */; };
+		B5F9878F1C32E1ED00253667 /* WGNotifiCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F9878E1C32E1ED00253667 /* WGNotifiCategoryModel.m */; };
+		B5F987931C32ED1000253667 /* WGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F987921C32ED1000253667 /* WGAboutViewController.m */; };
+		B5F987951C32ED1E00253667 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F987941C32ED1E00253667 /* About.storyboard */; };
 		B5FAC9251C2E203E00C82019 /* WGNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC9241C2E203E00C82019 /* WGNotificationController.m */; };
 		B5FAC9291C2E210600C82019 /* WGNotificationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC9281C2E210600C82019 /* WGNotificationRequest.m */; };
 		B5FAC92D1C30405C00C82019 /* WGNotificationListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC92C1C30405C00C82019 /* WGNotificationListModel.m */; };
@@ -455,6 +460,15 @@
 		B5F987821C32D67F00253667 /* WGDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDateFormatter.m; sourceTree = "<group>"; };
 		B5F987841C32DA2E00253667 /* WGNotificationCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotificationCategoryController.h; sourceTree = "<group>"; };
 		B5F987851C32DA2E00253667 /* WGNotificationCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotificationCategoryController.m; sourceTree = "<group>"; };
+		B5F987871C32E05E00253667 /* WGNotifyCategoryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotifyCategoryRequest.h; sourceTree = "<group>"; };
+		B5F987881C32E05E00253667 /* WGNotifyCategoryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotifyCategoryRequest.m; sourceTree = "<group>"; };
+		B5F9878A1C32E1C400253667 /* WGNotifiCategoryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotifiCategoryListModel.h; sourceTree = "<group>"; };
+		B5F9878B1C32E1C400253667 /* WGNotifiCategoryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotifiCategoryListModel.m; sourceTree = "<group>"; };
+		B5F9878D1C32E1ED00253667 /* WGNotifiCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotifiCategoryModel.h; sourceTree = "<group>"; };
+		B5F9878E1C32E1ED00253667 /* WGNotifiCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotifiCategoryModel.m; sourceTree = "<group>"; };
+		B5F987911C32ED1000253667 /* WGAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAboutViewController.h; sourceTree = "<group>"; };
+		B5F987921C32ED1000253667 /* WGAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAboutViewController.m; sourceTree = "<group>"; };
+		B5F987941C32ED1E00253667 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		B5FAC9231C2E203E00C82019 /* WGNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotificationController.h; sourceTree = "<group>"; };
 		B5FAC9241C2E203E00C82019 /* WGNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotificationController.m; sourceTree = "<group>"; };
 		B5FAC9271C2E210600C82019 /* WGNotificationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotificationRequest.h; sourceTree = "<group>"; };
@@ -773,6 +787,7 @@
 				B50C5C031C11594D0043C26B /* City */,
 				B5B94F7A1BFDB2BE00EBCBD3 /* Sign in&Sign up */,
 				B54FA8081BF46FCD0018B682 /* Main */,
+				B5F987901C32ECDD00253667 /* About */,
 				B54FA8411BF4A2C90018B682 /* Appearance */,
 				B54FA8571BF4C4480018B682 /* Widgets */,
 			);
@@ -1313,6 +1328,16 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		B5F987901C32ECDD00253667 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				B5F987911C32ED1000253667 /* WGAboutViewController.h */,
+				B5F987921C32ED1000253667 /* WGAboutViewController.m */,
+				B5F987941C32ED1E00253667 /* About.storyboard */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		B5FAC9221C2E201E00C82019 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -1329,6 +1354,8 @@
 		B5FAC9261C2E20DE00C82019 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				B5F987871C32E05E00253667 /* WGNotifyCategoryRequest.h */,
+				B5F987881C32E05E00253667 /* WGNotifyCategoryRequest.m */,
 				B5FAC9271C2E210600C82019 /* WGNotificationRequest.h */,
 				B5FAC9281C2E210600C82019 /* WGNotificationRequest.m */,
 			);
@@ -1338,6 +1365,10 @@
 		B5FAC92A1C30404100C82019 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				B5F9878A1C32E1C400253667 /* WGNotifiCategoryListModel.h */,
+				B5F9878B1C32E1C400253667 /* WGNotifiCategoryListModel.m */,
+				B5F9878D1C32E1ED00253667 /* WGNotifiCategoryModel.h */,
+				B5F9878E1C32E1ED00253667 /* WGNotifiCategoryModel.m */,
 				B5FAC92B1C30405C00C82019 /* WGNotificationListModel.h */,
 				B5FAC92C1C30405C00C82019 /* WGNotificationListModel.m */,
 				B5FAC92E1C30406E00C82019 /* WGNotificationModel.h */,
@@ -1551,6 +1582,7 @@
 				B55D12311C070EAA0035C6B4 /* WeiboSDK.bundle in Resources */,
 				B50C5C081C1159F90043C26B /* City.storyboard in Resources */,
 				B5AAAE481C2D4994008A97E6 /* BBS.xcassets in Resources */,
+				B5F987951C32ED1E00253667 /* About.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1634,6 +1666,7 @@
 				B50C5BFE1C11471F0043C26B /* WGCityModel.m in Sources */,
 				B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */,
 				B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */,
+				B5F987891C32E05E00253667 /* WGNotifyCategoryRequest.m in Sources */,
 				B50024511C31403400CCA6E5 /* WGResetUserInfoRequest.m in Sources */,
 				B5AAAE461C2D3BCD008A97E6 /* WGBBSListModel.m in Sources */,
 				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,
@@ -1671,12 +1704,15 @@
 				B5F150DB1C22E75200EC9503 /* WGIndustryView.m in Sources */,
 				B5FB3D3C1C0EF3E600B35AB6 /* WGGlobal.m in Sources */,
 				B59426FB1C2BD43A008BD92A /* WGResetUserInfoController.m in Sources */,
+				B5F9878C1C32E1C400253667 /* WGNotifiCategoryListModel.m in Sources */,
 				B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */,
+				B5F987931C32ED1000253667 /* WGAboutViewController.m in Sources */,
 				B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */,
 				B59427041C2C12C8008BD92A /* WGFunctionModel.m in Sources */,
 				B5F987831C32D67F00253667 /* WGDateFormatter.m in Sources */,
 				B5066A081C0C44AB00D87E56 /* WGForgetPasswordRequest.m in Sources */,
 				B5E7E1AA1C1993DA00BA545E /* WGHunterListRequest.m in Sources */,
+				B5F9878F1C32E1ED00253667 /* WGNotifiCategoryModel.m in Sources */,
 				B5F150D71C22E63200EC9503 /* WGDetailIndustryModel.m in Sources */,
 				B5E6011C1C03005B00265307 /* WGCustomIBSupports.m in Sources */,
 				B5E7E1A31C1927F400BA545E /* WGMainTableView.m in Sources */,
