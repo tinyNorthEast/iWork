@@ -10,4 +10,6 @@
 
 @interface WGBBSView : UIView
 
+- (CGFloat)viewHeightbyCommentsArray:(NSArray *)comments;
+
 @end

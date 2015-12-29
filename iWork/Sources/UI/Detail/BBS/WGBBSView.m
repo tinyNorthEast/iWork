@@ -10,18 +10,23 @@
 
 #import <XXNibBridge.h>
 
+#import "WGCommentModel.h"
+
 @interface WGBBSView()<XXNibBridge>
 
 @end
 
 @implementation WGBBSView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (CGFloat)viewHeightbyCommentsArray:(NSArray *)comments{
+    if (comments.count==0) {
+        return 40+50;
+    }else if (comments.count == 1){
+        return 40+50+60;
+    }else if (comments.count ==2){
+        return 40+50+60*2;
+    }
+    return 0;
 }
-*/
 
 @end

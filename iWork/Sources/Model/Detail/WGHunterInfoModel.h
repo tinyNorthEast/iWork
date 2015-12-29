@@ -8,9 +8,10 @@
 
 #import "WGBaseModel.h"
 
-#import "WGIndustryListModel.h"
-
 #import "WGFunctionModel.h"
+#import "WGDescribeModel.h"
+#import "WGDetailIndustryModel.h"
+
 @interface WGHunterInfoModel : WGBaseModel
 
 
@@ -123,11 +124,11 @@
 @property (nonatomic,copy)NSString<Optional> *workTime;
 @property (nonatomic,copy)NSString<Optional> *phone400;
 @property (nonatomic,copy)NSString<Optional> *pic;
-@property (nonatomic,copy)NSString<Optional> *describe;
+@property (nonatomic,copy)NSArray<Optional,WGDescribeModel> *describeList;
 @property (nonatomic,copy)NSString<Optional> *ranking;
 @property (nonatomic,copy)NSString<Optional> *participated;
 @property (nonatomic,copy)NSString<Optional> *commentCount;
-@property (nonatomic,copy)NSArray<Optional,WGIndustryListModel> *industryList;
+@property (nonatomic,copy)NSArray<Optional,WGDetailIndustryModel> *industryList;
 @property (nonatomic,copy)NSArray<Optional,WGFunctionModel> *functionsList;
 
 @end

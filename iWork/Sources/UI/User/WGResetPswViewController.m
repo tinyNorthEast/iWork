@@ -30,10 +30,14 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // Dispose of any resources that can be recreated.-
 }
 
 #pragma mark - IBAction
+- (IBAction)backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)doneAction:(id)sender {
     if (self.oldPswField.text.length == 0) {
         [WGProgressHUD disappearFailureMessage:@"请输入旧密码" onView:self.view];

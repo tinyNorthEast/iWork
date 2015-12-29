@@ -10,6 +10,6 @@
 
 @interface WGFunctionView : UIView
 
-@property (nonatomic, copy) NSString *functionsStr;
+- (CGFloat)viewHeightbyFunctionsArray:(NSArray *)functions;
 
 @end

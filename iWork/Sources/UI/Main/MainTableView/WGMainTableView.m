@@ -40,7 +40,7 @@
         self.delegate = self;
         
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
-        self.rowHeight = 166;
+        self.rowHeight = 220;
         [self registerNib:[WGMainCell xx_nib] forCellReuseIdentifier:[WGMainCell xx_nibID]];
     
         @weakify(self);

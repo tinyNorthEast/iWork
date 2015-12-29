@@ -177,10 +177,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9BW-ku-E4V" customClass="WGBBSView">
-                                        <rect key="frame" x="0.0" y="370" width="320" height="40"/>
+                                        <rect key="frame" x="0.0" y="370" width="320" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="zAA-nC-xoV"/>
+                                            <constraint firstAttribute="height" constant="55" id="zAA-nC-xoV"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -196,7 +196,7 @@
                                     <constraint firstItem="7U6-Oi-R9S" firstAttribute="leading" secondItem="tdp-js-rHy" secondAttribute="leading" id="NVP-fG-lkH"/>
                                     <constraint firstItem="9BW-ku-E4V" firstAttribute="top" secondItem="7U6-Oi-R9S" secondAttribute="bottom" constant="20" id="OKt-lf-SDg"/>
                                     <constraint firstItem="7U6-Oi-R9S" firstAttribute="top" secondItem="tdp-js-rHy" secondAttribute="bottom" constant="20" id="R9o-Hx-prD"/>
-                                    <constraint firstAttribute="bottom" secondItem="9BW-ku-E4V" secondAttribute="bottom" constant="75" id="Tkp-Bm-hoo"/>
+                                    <constraint firstAttribute="bottom" secondItem="9BW-ku-E4V" secondAttribute="bottom" constant="20" id="Tkp-Bm-hoo"/>
                                     <constraint firstItem="tdp-js-rHy" firstAttribute="trailing" secondItem="7U6-Oi-R9S" secondAttribute="trailing" id="aFF-LX-ADG"/>
                                     <constraint firstItem="Fic-Ao-Tb0" firstAttribute="leading" secondItem="2vi-c6-LlA" secondAttribute="leading" id="aTU-eH-8dv"/>
                                     <constraint firstAttribute="trailing" secondItem="tdp-js-rHy" secondAttribute="trailing" id="dGl-Ge-a22"/>

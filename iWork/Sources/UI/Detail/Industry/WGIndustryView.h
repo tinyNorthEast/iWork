@@ -10,6 +10,6 @@
 
 @interface WGIndustryView : UIView
 
-@property (nonatomic, copy) NSArray *tagsArray;
+- (CGFloat)viewHeightbyTagsArray:(NSArray *)tags;
 
 @end

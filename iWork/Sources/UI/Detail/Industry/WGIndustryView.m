@@ -28,9 +28,9 @@
     self.tagList = [[WGTagList alloc] initWithFrame:CGRectMake(0, 0, self.tagsView.width, 0.0f)];
     [self.tagsView addSubview:self.tagList];
 }
-
-- (void)setTagsArray:(NSArray *)tagsArray{
-    [self.tagList setTags:tagsArray];
+- (CGFloat)viewHeightbyTagsArray:(NSArray *)tags{
+    [self.tagList setTags:tags];
+    return self.tagsView.height+50;
 }
 
 @end

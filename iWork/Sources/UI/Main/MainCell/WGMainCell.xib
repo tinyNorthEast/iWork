@@ -9,15 +9,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WGMainCell" rowHeight="167" id="ELp-f0-j3X" customClass="WGMainCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WGMainCell" rowHeight="220" id="ELp-f0-j3X" customClass="WGMainCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="221"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ELp-f0-j3X" id="wbB-Nb-BYH">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="165.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="220.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Vr-Vw-Jm0">
-                        <rect key="frame" x="20" y="8" width="280" height="113"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Vr-Vw-Jm0">
+                        <rect key="frame" x="20" y="8" width="280" height="174"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wvg-xO-37B">
                         <rect key="frame" x="8" y="20" width="113" height="37"/>
@@ -31,11 +31,11 @@
                             <constraint firstAttribute="width" constant="113" id="bhm-EN-E7f"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvJ-jd-I9h">
-                        <rect key="frame" x="20" y="136" width="77" height="21"/>
+                        <rect key="frame" x="20" y="190" width="77" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="77" id="5ME-VO-AdJ"/>
                         </constraints>
@@ -44,24 +44,24 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjy-lf-cVi">
-                        <rect key="frame" x="239" y="136" width="20" height="20"/>
+                        <rect key="frame" x="252" y="190" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="18" id="VC8-7O-tUP"/>
                         </constraints>
                         <state key="normal" image="main_favorite"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qh-MQ-WIU">
-                        <rect key="frame" x="105" y="136" width="126" height="21"/>
+                        <rect key="frame" x="105" y="190" width="126" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ixf-6k-hvd">
-                        <rect key="frame" x="8" y="165" width="304" height="1"/>
+                        <rect key="frame" x="8" y="219" width="304" height="1"/>
                         <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nb-LW-Jhr" userLabel="评论">
-                        <rect key="frame" x="280" y="138" width="20" height="20"/>
+                        <rect key="frame" x="285" y="190" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="ZJi-Ne-cve"/>
                         </constraints>
@@ -108,7 +108,7 @@
                 <outlet property="rateImage" destination="wvg-xO-37B" id="0PK-ee-ioq"/>
                 <outlet property="rateLabel" destination="U0d-tK-7gr" id="NQf-ae-pj6"/>
             </connections>
-            <point key="canvasLocation" x="504" y="281"/>
+            <point key="canvasLocation" x="504" y="308.5"/>
         </tableViewCell>
     </objects>
     <resources>

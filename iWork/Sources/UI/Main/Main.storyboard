@@ -24,10 +24,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7L-jb-ZNT">
                                         <rect key="frame" x="0.0" y="28" width="72" height="44"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_city" translatesAutoresizingMaskIntoConstraints="NO" id="cMD-Px-DZm">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="main_city" translatesAutoresizingMaskIntoConstraints="NO" id="cMD-Px-DZm">
                                                 <rect key="frame" x="50" y="14" width="14" height="7"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0v-4n-bvJ">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0v-4n-bvJ">
                                                 <rect key="frame" x="8" y="1" width="41" height="30"/>
                                                 <state key="normal" title="北京">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

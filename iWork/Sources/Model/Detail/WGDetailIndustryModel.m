@@ -6,8 +6,8 @@
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
-#import "WGIndustryListModel.h"
+#import "WGDetailIndustryModel.h"
 
-@implementation WGIndustryListModel
+@implementation WGDetailIndustryModel
 
 @end

@@ -46,6 +46,7 @@
 		B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA8511BF4B1960018B682 /* WGURLConfig.m */; };
 		B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA85A1BF4C48D0018B682 /* WGProgressHUD.m */; };
 		B54FA85F1BF4CBDB0018B682 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA85E1BF4CBDB0018B682 /* UIViewAdditions.m */; };
+		B5548D611C318453007FCF58 /* WGDescribeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5548D601C318453007FCF58 /* WGDescribeModel.m */; };
 		B55D11FD1C06F7100035C6B4 /* WGSignUpUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55D11FC1C06F7100035C6B4 /* WGSignUpUserInfoViewController.m */; };
 		B55D12001C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55D11FF1C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.m */; };
 		B55D12021C0702BD0035C6B4 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55D12011C0702BD0035C6B4 /* Sign.storyboard */; };
@@ -144,7 +145,7 @@
 		B5F150CE1C22D1B400EC9503 /* WGIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150CD1C22D1B400EC9503 /* WGIntroductionView.m */; };
 		B5F150D01C22D6D800EC9503 /* WGIntroductionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F150CF1C22D6D800EC9503 /* WGIntroductionView.xib */; };
 		B5F150D41C22E4AD00EC9503 /* WGTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150D31C22E4AD00EC9503 /* WGTagList.m */; };
-		B5F150D71C22E63200EC9503 /* WGIndustryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150D61C22E63200EC9503 /* WGIndustryListModel.m */; };
+		B5F150D71C22E63200EC9503 /* WGDetailIndustryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150D61C22E63200EC9503 /* WGDetailIndustryModel.m */; };
 		B5F150DB1C22E75200EC9503 /* WGIndustryView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150DA1C22E75200EC9503 /* WGIndustryView.m */; };
 		B5F150DD1C22E78B00EC9503 /* WGIndustryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F150DC1C22E78B00EC9503 /* WGIndustryView.xib */; };
 		B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */; };
@@ -261,6 +262,8 @@
 		B54FA85A1BF4C48D0018B682 /* WGProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGProgressHUD.m; sourceTree = "<group>"; };
 		B54FA85D1BF4CBDB0018B682 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		B54FA85E1BF4CBDB0018B682 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		B5548D5F1C318453007FCF58 /* WGDescribeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDescribeModel.h; sourceTree = "<group>"; };
+		B5548D601C318453007FCF58 /* WGDescribeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDescribeModel.m; sourceTree = "<group>"; };
 		B55D11FB1C06F7100035C6B4 /* WGSignUpUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpUserInfoViewController.h; sourceTree = "<group>"; };
 		B55D11FC1C06F7100035C6B4 /* WGSignUpUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignUpUserInfoViewController.m; sourceTree = "<group>"; };
 		B55D11FE1C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpWorkInfoViewController.h; sourceTree = "<group>"; };
@@ -424,8 +427,8 @@
 		B5F150CF1C22D6D800EC9503 /* WGIntroductionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGIntroductionView.xib; sourceTree = "<group>"; };
 		B5F150D21C22E4AD00EC9503 /* WGTagList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTagList.h; sourceTree = "<group>"; };
 		B5F150D31C22E4AD00EC9503 /* WGTagList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTagList.m; sourceTree = "<group>"; };
-		B5F150D51C22E63200EC9503 /* WGIndustryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGIndustryListModel.h; sourceTree = "<group>"; };
-		B5F150D61C22E63200EC9503 /* WGIndustryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIndustryListModel.m; sourceTree = "<group>"; };
+		B5F150D51C22E63200EC9503 /* WGDetailIndustryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDetailIndustryModel.h; sourceTree = "<group>"; };
+		B5F150D61C22E63200EC9503 /* WGDetailIndustryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDetailIndustryModel.m; sourceTree = "<group>"; };
 		B5F150D91C22E75200EC9503 /* WGIndustryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGIndustryView.h; sourceTree = "<group>"; };
 		B5F150DA1C22E75200EC9503 /* WGIndustryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIndustryView.m; sourceTree = "<group>"; };
 		B5F150DC1C22E78B00EC9503 /* WGIndustryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGIndustryView.xib; sourceTree = "<group>"; };
@@ -1179,10 +1182,12 @@
 				B5F150BE1C21214300EC9503 /* WGHunterDetailModel.m */,
 				B5F150C21C225EBC00EC9503 /* WGHunterInfoModel.h */,
 				B5F150C31C225EBC00EC9503 /* WGHunterInfoModel.m */,
-				B5F150D51C22E63200EC9503 /* WGIndustryListModel.h */,
-				B5F150D61C22E63200EC9503 /* WGIndustryListModel.m */,
+				B5F150D51C22E63200EC9503 /* WGDetailIndustryModel.h */,
+				B5F150D61C22E63200EC9503 /* WGDetailIndustryModel.m */,
 				B59427021C2C12C8008BD92A /* WGFunctionModel.h */,
 				B59427031C2C12C8008BD92A /* WGFunctionModel.m */,
+				B5548D5F1C318453007FCF58 /* WGDescribeModel.h */,
+				B5548D601C318453007FCF58 /* WGDescribeModel.m */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1574,6 +1579,7 @@
 				B5E907BF1C083E6C003AB736 /* WGSignInRequest.m in Sources */,
 				B50C5C061C1159690043C26B /* WGCityListViewController.m in Sources */,
 				B5F150C81C228B5600EC9503 /* WGDetailHeaderView.m in Sources */,
+				B5548D611C318453007FCF58 /* WGDescribeModel.m in Sources */,
 				B5FB3D4C1C0FEDBF00B35AB6 /* WGMainCell.m in Sources */,
 				B5E2F43C1C2A901D005F8BA4 /* DBRestriction.m in Sources */,
 				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
@@ -1632,7 +1638,7 @@
 				B59427041C2C12C8008BD92A /* WGFunctionModel.m in Sources */,
 				B5066A081C0C44AB00D87E56 /* WGForgetPasswordRequest.m in Sources */,
 				B5E7E1AA1C1993DA00BA545E /* WGHunterListRequest.m in Sources */,
-				B5F150D71C22E63200EC9503 /* WGIndustryListModel.m in Sources */,
+				B5F150D71C22E63200EC9503 /* WGDetailIndustryModel.m in Sources */,
 				B5E6011C1C03005B00265307 /* WGCustomIBSupports.m in Sources */,
 				B5E7E1A31C1927F400BA545E /* WGMainTableView.m in Sources */,
 				B5F150A61C2007ED00EC9503 /* WGHunterModel.m in Sources */,

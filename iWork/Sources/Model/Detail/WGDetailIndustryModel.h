@@ -15,10 +15,10 @@
 //    industryName: "法务"
 //    }
 
-@protocol WGIndustryListModel <NSObject>
+@protocol WGDetailIndustryModel <NSObject>
 @end
 
-@interface WGIndustryListModel : WGBaseModel
+@interface WGDetailIndustryModel : WGBaseModel
 
 @property (nonatomic,strong)NSNumber<Optional> *objId;
 @property (nonatomic,copy)NSString<Optional> *createTime;

@@ -17,16 +17,16 @@
 
 #import "WGWriteBBSViewController.h"
 #import "WGHunterDetailRequest.h"
-#import "WGBaseModel.h"
 #import "WGHunterDetailModel.h"
 #import "WGHunterInfoModel.h"
 #import "WGDetailHeaderView.h"
 #import "WGIntroductionView.h"
 #import "WGIndustryView.h"
-#import "WGIndustryListModel.h"
 #import "WGFunctionView.h"
 #import "WGResultsView.h"
 #import "WGBBSView.h"
+
+#import "WGBBSListModel.h"
 
 @interface WGHunterDetailViewController ()
 @property (weak, nonatomic) IBOutlet WGDetailHeaderView *headerView;
@@ -49,6 +49,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.headerHeight.constant = 255;
+    self.describeHeight.constant = 130;
+    self.industryHeight.constant = 100;
+    self.functionHeight.constant = 100;
+    self.resultsHeight.constant = 250;
+    self.bbsHeight.constant = 200;
     
     [self requestDetailData];
 }
@@ -123,35 +130,41 @@
         @strongify(self);
         if (baseModel.infoCode.integerValue == 0) {
             WGHunterDetailModel *model = (WGHunterDetailModel *)baseModel;
+            
             WGHunterInfoModel *infoModel = [[WGHunterInfoModel alloc] initWithDictionary:model.data[@"headhunterInfo"] error:nil];
             
             self.headerView.infoModel = infoModel;
-            self.headerHeight.constant = 255;
             
-            self.describeView.describeStr = infoModel.describe;
-            self.describeHeight.constant = 130;
+            self.describeHeight.constant = [self.describeView viewHeightbyDescribeArray:infoModel.describeList];
             
-            NSMutableArray *industrys = [NSMutableArray array];
-            for (WGIndustryListModel *industryModel in infoModel.industryList) {
-                [industrys addObject:industryModel.industryName];
-            }
-            self.industryView.tagsArray = industrys;
-            self.industryHeight.constant = 100;
+            self.industryHeight.constant = [self.industryView viewHeightbyTagsArray:infoModel.industryList];
+            
+            self.functionHeight.constant = [self.functionView viewHeightbyFunctionsArray:infoModel.functionsList];
             
             
-            NSMutableArray *functions = [NSMutableArray array];
-            for (WGFunctionModel *functionModel in infoModel.functionsList) {
-                [functions addObject:functionModel.functionsName];
-            }
-            self.functionView.functionsStr = [functions componentsJoinedByString:@"."];
-            self.functionHeight.constant = 100;
+            
+            
+            
+            
+            
+            
             
             
             self.resultsHeight.constant = 250;
             
-            self.bbsHeight.constant = 200;
             
             
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            WGBBSListModel *bbsModel = [[WGBBSListModel alloc] initWithDictionary:model.data[@"commentList"] error:nil];
+            self.bbsHeight.constant = [self.bbsView viewHeightbyCommentsArray:bbsModel.data];;
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
         }

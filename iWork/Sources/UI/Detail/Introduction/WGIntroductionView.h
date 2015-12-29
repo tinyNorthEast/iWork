@@ -10,6 +10,6 @@
 
 @interface WGIntroductionView : UIView
 
-@property (nonatomic, copy) NSString *describeStr;
+- (CGFloat)viewHeightbyDescribeArray:(NSArray *)describes;
 
 @end

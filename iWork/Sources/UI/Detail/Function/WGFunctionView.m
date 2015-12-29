@@ -10,8 +10,13 @@
 
 #import <XXNibBridge.h>
 
+#import "UIViewAdditions.h"
+
+#import "WGFunctionModel.h"
+
 @interface WGFunctionView()<XXNibBridge>
-@property (weak, nonatomic) IBOutlet UILabel *functionLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *functionsLabel;
 
 @end
 
@@ -21,8 +26,15 @@
     [super awakeFromNib];
 }
 
-- (void)setFunctionsStr:(NSString *)functionsStr{
-    self.functionLabel.text = functionsStr;
+- (CGFloat)viewHeightbyFunctionsArray:(NSArray *)functions{
+
+    NSMutableArray *array = [NSMutableArray array];
+    for (WGFunctionModel *functionModel in functions) {
+        [array addObject:functionModel.functionsName];
+    }
+    self.functionsLabel.text = [array componentsJoinedByString:@"."];
+
+    return self.functionsLabel.height+50;
 }
 
 @end
