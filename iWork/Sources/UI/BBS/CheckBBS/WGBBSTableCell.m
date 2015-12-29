@@ -11,6 +11,7 @@
 #import <XXNibBridge.h>
 
 #import "UIImageView+WGHTTP.h"
+#import "WGDateFormatter.h"
 
 #import "WGCommentModel.h"
 
@@ -38,7 +39,7 @@
     [self.headerImage wg_loadImageFromURL:comment.pic placeholder:[UIImage imageNamed:@"bbs_defaultHeader"]];
 //    self.nameLabel.text = comment.
     self.contentLabel.text = comment.content;
-    self.timeLabel.text = comment.create_time.stringValue;
+    self.timeLabel.text = [[WGDateFormatter sharedInstance] formatTime:comment.create_time];
 }
 
 @end

@@ -12,10 +12,14 @@
 
 #import "WGWriteBBSRequest.h"
 
+#define TEXTNUM_MAX 140
+
 @interface WGWriteBBSViewController ()<UITextViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextView *commentTextView;
 @property (weak, nonatomic) IBOutlet UILabel *holderLabel;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
+@property (weak, nonatomic) IBOutlet UILabel *textNumLabel;
 
 @end
 
@@ -23,7 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.textNumLabel.text = [NSString stringWithFormat:@"可输入%lu字",(unsigned long)TEXTNUM_MAX];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,14 +61,17 @@
         self.holderLabel.text = @"请输入您的评论";
         self.commentButton.enabled=NO;
     }else{
+        if (textView.text.length>140) {
+            return;
+        }
         self.holderLabel.text = @"";
+        self.textNumLabel.text = [NSString stringWithFormat:@"可输入%lu字",(unsigned long)(TEXTNUM_MAX-textView.text.length)];
         NSString *feedString=[self.commentTextView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         if (feedString.length!=0) {
             self.commentButton.enabled=YES;
         }else{
             self.commentButton.enabled=NO;
         }
-        
     }
 }
 

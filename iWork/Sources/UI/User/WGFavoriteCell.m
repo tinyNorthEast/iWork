@@ -9,6 +9,7 @@
 #import "WGFavoriteCell.h"
 
 #import "UIImageView+WGHTTP.h"
+#import "WGDateFormatter.h"
 
 #import "WGFavoriteModel.h"
 
@@ -35,7 +36,7 @@
 - (void)setFavorite:(WGFavoriteModel *)favorite{
     [self.headerView wg_loadImageFromURL:nil placeholder:[UIImage imageNamed:@"user_defaultHeader"]];
     self.nameLabel.text = favorite.zh_name;
-    self.timeLabel.text = favorite.create_time.stringValue;
+    self.timeLabel.text = [[WGDateFormatter sharedInstance] formatTime:favorite.create_time];
 }
 
 @end

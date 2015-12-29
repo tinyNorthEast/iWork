@@ -75,6 +75,12 @@
                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4v5-Z9-F0Q">
+                                <rect key="frame" x="188" y="310" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -82,11 +88,12 @@
                         <outlet property="commentButton" destination="H3p-Qg-6Sl" id="reb-7y-my2"/>
                         <outlet property="commentTextView" destination="0os-cm-63D" id="NxP-Ws-rNc"/>
                         <outlet property="holderLabel" destination="fcO-nB-XNX" id="KtR-r8-Wcb"/>
+                        <outlet property="textNumLabel" destination="4v5-Z9-F0Q" id="LPj-jI-fQ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hnb-A2-LuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="293"/>
+            <point key="canvasLocation" x="80" y="336"/>
         </scene>
     </scenes>
     <resources>

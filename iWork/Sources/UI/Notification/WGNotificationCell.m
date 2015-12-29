@@ -10,6 +10,8 @@
 
 #import <XXNibBridge.h>
 
+#import "WGDateFormatter.h"
+
 #import "WGNotificationModel.h"
 
 @interface WGNotificationCell()<XXNibBridge>
@@ -32,7 +34,7 @@
 
 - (void)setNotification:(WGNotificationModel *)notification{
     self.contentLabel.text = notification.content;
-    self.timeLabel.text = notification.create_time.stringValue;
+    self.timeLabel.text = [[WGDateFormatter sharedInstance] formatTime:notification.create_time];
 }
 
 @end

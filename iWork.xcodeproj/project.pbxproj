@@ -154,6 +154,8 @@
 		B5F150DB1C22E75200EC9503 /* WGIndustryView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F150DA1C22E75200EC9503 /* WGIndustryView.m */; };
 		B5F150DD1C22E78B00EC9503 /* WGIndustryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5F150DC1C22E78B00EC9503 /* WGIndustryView.xib */; };
 		B5F4B1F91C1E997000CD44A3 /* WGSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */; };
+		B5F987831C32D67F00253667 /* WGDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F987821C32D67F00253667 /* WGDateFormatter.m */; };
+		B5F987861C32DA2E00253667 /* WGNotificationCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F987851C32DA2E00253667 /* WGNotificationCategoryController.m */; };
 		B5FAC9251C2E203E00C82019 /* WGNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC9241C2E203E00C82019 /* WGNotificationController.m */; };
 		B5FAC9291C2E210600C82019 /* WGNotificationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC9281C2E210600C82019 /* WGNotificationRequest.m */; };
 		B5FAC92D1C30405C00C82019 /* WGNotificationListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC92C1C30405C00C82019 /* WGNotificationListModel.m */; };
@@ -449,6 +451,10 @@
 		B5F150DC1C22E78B00EC9503 /* WGIndustryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGIndustryView.xib; sourceTree = "<group>"; };
 		B5F4B1F71C1E997000CD44A3 /* WGSignInRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignInRequestModel.h; sourceTree = "<group>"; };
 		B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignInRequestModel.m; sourceTree = "<group>"; };
+		B5F987811C32D67F00253667 /* WGDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDateFormatter.h; sourceTree = "<group>"; };
+		B5F987821C32D67F00253667 /* WGDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDateFormatter.m; sourceTree = "<group>"; };
+		B5F987841C32DA2E00253667 /* WGNotificationCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotificationCategoryController.h; sourceTree = "<group>"; };
+		B5F987851C32DA2E00253667 /* WGNotificationCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotificationCategoryController.m; sourceTree = "<group>"; };
 		B5FAC9231C2E203E00C82019 /* WGNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotificationController.h; sourceTree = "<group>"; };
 		B5FAC9241C2E203E00C82019 /* WGNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotificationController.m; sourceTree = "<group>"; };
 		B5FAC9271C2E210600C82019 /* WGNotificationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotificationRequest.h; sourceTree = "<group>"; };
@@ -809,6 +815,8 @@
 				B5F150A81C20387300EC9503 /* UIImageView+WGHTTP.m */,
 				B5D4F4101C28259E007474F0 /* NSFileManager+WGFileHelper.h */,
 				B5D4F4111C28259E007474F0 /* NSFileManager+WGFileHelper.m */,
+				B5F987811C32D67F00253667 /* WGDateFormatter.h */,
+				B5F987821C32D67F00253667 /* WGDateFormatter.m */,
 				B5FB3D581C10745300B35AB6 /* OpenUDID.h */,
 				B5FB3D591C10745300B35AB6 /* OpenUDID.m */,
 				B5E2F43D1C2A913B005F8BA4 /* DEFileUtil.h */,
@@ -1308,6 +1316,8 @@
 		B5FAC9221C2E201E00C82019 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				B5F987841C32DA2E00253667 /* WGNotificationCategoryController.h */,
+				B5F987851C32DA2E00253667 /* WGNotificationCategoryController.m */,
 				B5FAC9231C2E203E00C82019 /* WGNotificationController.h */,
 				B5FAC9241C2E203E00C82019 /* WGNotificationController.m */,
 				B5FAC9311C30436F00C82019 /* WGNotificationCell.h */,
@@ -1664,6 +1674,7 @@
 				B5FB3D391C0EDC8A00B35AB6 /* WGQNTokenRequest.m in Sources */,
 				B5E907C51C096C96003AB736 /* WGSignUpRequest.m in Sources */,
 				B59427041C2C12C8008BD92A /* WGFunctionModel.m in Sources */,
+				B5F987831C32D67F00253667 /* WGDateFormatter.m in Sources */,
 				B5066A081C0C44AB00D87E56 /* WGForgetPasswordRequest.m in Sources */,
 				B5E7E1AA1C1993DA00BA545E /* WGHunterListRequest.m in Sources */,
 				B5F150D71C22E63200EC9503 /* WGDetailIndustryModel.m in Sources */,
@@ -1689,6 +1700,7 @@
 				B5548D641C325F63007FCF58 /* WGFavoriteListRequest.m in Sources */,
 				B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */,
 				B53874F51C1EA997002FB222 /* WGUserInfoViewController.m in Sources */,
+				B5F987861C32DA2E00253667 /* WGNotificationCategoryController.m in Sources */,
 				B5E2F43B1C2A901D005F8BA4 /* DBAccessQueue.m in Sources */,
 				B53874FA1C1EAA1A002FB222 /* WGSettingViewController.m in Sources */,
 				B5D4F4001C27E1B3007474F0 /* WGCommentModel.m in Sources */,
