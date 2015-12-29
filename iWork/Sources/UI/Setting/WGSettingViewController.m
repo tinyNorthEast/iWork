@@ -28,7 +28,10 @@ NS_ENUM(NSInteger,WGSettingAlertTag){
     
     [self initNaviBar];
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -64,8 +67,12 @@ NS_ENUM(NSInteger,WGSettingAlertTag){
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 2) {
-        
+    if (indexPath.row == 0) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"InviteCode" bundle:nil];
+        UIViewController *vc = [sb instantiateInitialViewController];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.row == 2) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"缓存大小为%f.确定要删除缓存吗?",@(5.9)] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alert show];
     }else if (indexPath.row == 3){
