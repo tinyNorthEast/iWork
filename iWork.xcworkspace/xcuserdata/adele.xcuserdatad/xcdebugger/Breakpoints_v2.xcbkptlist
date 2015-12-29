@@ -212,7 +212,7 @@
                   moduleName = "iWork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adele/study/Private/iWork/iWork/Sources/UI/User/WGResetUserInfoController.m"
-                  timestampString = "473061942.490054"
+                  timestampString = "473065608.459084"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
@@ -227,7 +227,7 @@
                   moduleName = "iWork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adele/study/Private/iWork/iWork/Sources/UI/User/WGResetUserInfoController.m"
-                  timestampString = "473061942.490234"
+                  timestampString = "473065608.460105"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
@@ -256,7 +256,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWork/Sources/UI/Detail/WGHunterDetailViewController.m"
@@ -266,6 +266,22 @@
             startingLineNumber = "142"
             endingLineNumber = "142"
             landmarkName = "-requestDetailData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWork/Sources/UI/User/WGFavoriteListController.m"
+            timestampString = "473065532.295717"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-requestFavoriteList"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

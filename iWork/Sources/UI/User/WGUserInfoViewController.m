@@ -17,6 +17,7 @@
 #import "WGUserInfoRequestModel.h"
 #import "WGUserInfoModel.h"
 #import "WGResetUserInfoController.h"
+#import "WGFavoriteListController.h"
 
 @interface WGUserInfoViewController ()
 @property (nonatomic, strong) WGUserInfoModel *userInfoModel;
@@ -100,9 +101,16 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    WGResetUserInfoController *vc = [segue destinationViewController];
+    
     if ([segue.identifier isEqualToString:@"ResetInfo"]) {
+        WGResetUserInfoController *vc = [segue destinationViewController];
         vc.userInfoModel = self.userInfoModel;
+    }else if ([segue.identifier isEqualToString:@"MyFocus"]) {
+        WGFavoriteListController *vc = [segue destinationViewController];
+        vc.searchType = FavoriteSearch_To;
+    }else if ([segue.identifier isEqualToString:@"OthersFocus"]) {
+        WGFavoriteListController *vc = [segue destinationViewController];
+        vc.searchType = FavoriteSearch_From;
     }
 }
 

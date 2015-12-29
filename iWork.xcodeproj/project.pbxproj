@@ -47,6 +47,11 @@
 		B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA85A1BF4C48D0018B682 /* WGProgressHUD.m */; };
 		B54FA85F1BF4CBDB0018B682 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA85E1BF4CBDB0018B682 /* UIViewAdditions.m */; };
 		B5548D611C318453007FCF58 /* WGDescribeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5548D601C318453007FCF58 /* WGDescribeModel.m */; };
+		B5548D641C325F63007FCF58 /* WGFavoriteListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5548D631C325F63007FCF58 /* WGFavoriteListRequest.m */; };
+		B5548D671C326175007FCF58 /* WGFavoriteListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5548D661C326175007FCF58 /* WGFavoriteListController.m */; };
+		B5548D6A1C326195007FCF58 /* WGFavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5548D691C326195007FCF58 /* WGFavoriteCell.m */; };
+		B5548D6D1C32653E007FCF58 /* WGFavoriteListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5548D6C1C32653E007FCF58 /* WGFavoriteListModel.m */; };
+		B5548D701C326566007FCF58 /* WGFavoriteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5548D6F1C326566007FCF58 /* WGFavoriteModel.m */; };
 		B55D11FD1C06F7100035C6B4 /* WGSignUpUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55D11FC1C06F7100035C6B4 /* WGSignUpUserInfoViewController.m */; };
 		B55D12001C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55D11FF1C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.m */; };
 		B55D12021C0702BD0035C6B4 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55D12011C0702BD0035C6B4 /* Sign.storyboard */; };
@@ -264,6 +269,16 @@
 		B54FA85E1BF4CBDB0018B682 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		B5548D5F1C318453007FCF58 /* WGDescribeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDescribeModel.h; sourceTree = "<group>"; };
 		B5548D601C318453007FCF58 /* WGDescribeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDescribeModel.m; sourceTree = "<group>"; };
+		B5548D621C325F63007FCF58 /* WGFavoriteListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFavoriteListRequest.h; sourceTree = "<group>"; };
+		B5548D631C325F63007FCF58 /* WGFavoriteListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFavoriteListRequest.m; sourceTree = "<group>"; };
+		B5548D651C326175007FCF58 /* WGFavoriteListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFavoriteListController.h; sourceTree = "<group>"; };
+		B5548D661C326175007FCF58 /* WGFavoriteListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFavoriteListController.m; sourceTree = "<group>"; };
+		B5548D681C326195007FCF58 /* WGFavoriteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFavoriteCell.h; sourceTree = "<group>"; };
+		B5548D691C326195007FCF58 /* WGFavoriteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFavoriteCell.m; sourceTree = "<group>"; };
+		B5548D6B1C32653E007FCF58 /* WGFavoriteListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFavoriteListModel.h; sourceTree = "<group>"; };
+		B5548D6C1C32653E007FCF58 /* WGFavoriteListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFavoriteListModel.m; sourceTree = "<group>"; };
+		B5548D6E1C326566007FCF58 /* WGFavoriteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFavoriteModel.h; sourceTree = "<group>"; };
+		B5548D6F1C326566007FCF58 /* WGFavoriteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFavoriteModel.m; sourceTree = "<group>"; };
 		B55D11FB1C06F7100035C6B4 /* WGSignUpUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpUserInfoViewController.h; sourceTree = "<group>"; };
 		B55D11FC1C06F7100035C6B4 /* WGSignUpUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignUpUserInfoViewController.m; sourceTree = "<group>"; };
 		B55D11FE1C06F8C60035C6B4 /* WGSignUpWorkInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpWorkInfoViewController.h; sourceTree = "<group>"; };
@@ -981,6 +996,8 @@
 				B50024501C31403400CCA6E5 /* WGResetUserInfoRequest.m */,
 				B500244C1C31399400CCA6E5 /* WGResetPasswordRequest.h */,
 				B500244D1C31399400CCA6E5 /* WGResetPasswordRequest.m */,
+				B5548D621C325F63007FCF58 /* WGFavoriteListRequest.h */,
+				B5548D631C325F63007FCF58 /* WGFavoriteListRequest.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -992,6 +1009,10 @@
 				B59426EC1C2B91DA008BD92A /* WGUserInfoRequestModel.m */,
 				B59426EE1C2B91F6008BD92A /* WGUserInfoModel.h */,
 				B59426EF1C2B91F6008BD92A /* WGUserInfoModel.m */,
+				B5548D6B1C32653E007FCF58 /* WGFavoriteListModel.h */,
+				B5548D6C1C32653E007FCF58 /* WGFavoriteListModel.m */,
+				B5548D6E1C326566007FCF58 /* WGFavoriteModel.h */,
+				B5548D6F1C326566007FCF58 /* WGFavoriteModel.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1275,6 +1296,10 @@
 				B59426FA1C2BD43A008BD92A /* WGResetUserInfoController.m */,
 				B50024521C31440D00CCA6E5 /* WGResetPswViewController.h */,
 				B50024531C31440D00CCA6E5 /* WGResetPswViewController.m */,
+				B5548D651C326175007FCF58 /* WGFavoriteListController.h */,
+				B5548D661C326175007FCF58 /* WGFavoriteListController.m */,
+				B5548D681C326195007FCF58 /* WGFavoriteCell.h */,
+				B5548D691C326195007FCF58 /* WGFavoriteCell.m */,
 				B53874F61C1EA9B8002FB222 /* User.storyboard */,
 			);
 			path = User;
@@ -1581,12 +1606,14 @@
 				B5F150C81C228B5600EC9503 /* WGDetailHeaderView.m in Sources */,
 				B5548D611C318453007FCF58 /* WGDescribeModel.m in Sources */,
 				B5FB3D4C1C0FEDBF00B35AB6 /* WGMainCell.m in Sources */,
+				B5548D6D1C32653E007FCF58 /* WGFavoriteListModel.m in Sources */,
 				B5E2F43C1C2A901D005F8BA4 /* DBRestriction.m in Sources */,
 				B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */,
 				B59427081C2C1FC6008BD92A /* WGResultsView.m in Sources */,
 				B53875681C1EE5DA002FB222 /* WGGetMessgesRequest.m in Sources */,
 				B5E7E1A71C19598100BA545E /* WGMainScrollView.m in Sources */,
 				B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */,
+				B5548D701C326566007FCF58 /* WGFavoriteModel.m in Sources */,
 				B5FB3D511C1034A500B35AB6 /* WGHunterListModel.m in Sources */,
 				B5FB3D5A1C10745300B35AB6 /* OpenUDID.m in Sources */,
 				B50024541C31440D00CCA6E5 /* WGResetPswViewController.m in Sources */,
@@ -1608,6 +1635,7 @@
 				B5E600421BFECF8800265307 /* WGVertifyPhoneViewController.m in Sources */,
 				B5E2F4451C2AA193005F8BA4 /* DEReflectUtil.m in Sources */,
 				B5F150BC1C21205C00EC9503 /* WGHunterDetailRequest.m in Sources */,
+				B5548D671C326175007FCF58 /* WGFavoriteListController.m in Sources */,
 				B500244E1C31399400CCA6E5 /* WGResetPasswordRequest.m in Sources */,
 				B54FA8171BF46FCD0018B682 /* main.m in Sources */,
 				B5FAC9331C30436F00C82019 /* WGNotificationCell.m in Sources */,
@@ -1658,6 +1686,7 @@
 				B5D4F4091C27E546007474F0 /* WGBBSViewController.m in Sources */,
 				B5D4F4121C28259E007474F0 /* NSFileManager+WGFileHelper.m in Sources */,
 				B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */,
+				B5548D641C325F63007FCF58 /* WGFavoriteListRequest.m in Sources */,
 				B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */,
 				B53874F51C1EA997002FB222 /* WGUserInfoViewController.m in Sources */,
 				B5E2F43B1C2A901D005F8BA4 /* DBAccessQueue.m in Sources */,
@@ -1668,6 +1697,7 @@
 				B5E2F43A1C2A901D005F8BA4 /* DBAccess.m in Sources */,
 				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,
 				B5721E4A1C29ADA5007EE80F /* WGIndustryListRequest.m in Sources */,
+				B5548D6A1C326195007FCF58 /* WGFavoriteCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

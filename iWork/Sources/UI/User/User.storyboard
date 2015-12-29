@@ -118,6 +118,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="kkY-3o-i7M" kind="push" identifier="MyFocus" id="9Sz-Zg-OZn"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="55" id="ruj-Qm-t5S">
                                         <rect key="frame" x="0.0" y="310" width="320" height="55"/>
@@ -144,6 +147,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="kkY-3o-i7M" kind="push" identifier="OthersFocus" id="nkC-wh-Yzw"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="55" id="er6-zU-WjC">
                                         <rect key="frame" x="0.0" y="365" width="320" height="55"/>
@@ -206,6 +212,57 @@
             </objects>
             <point key="canvasLocation" x="646" y="328"/>
         </scene>
+        <!--关注-->
+        <scene sceneID="yO7-DZ-bsB">
+            <objects>
+                <tableViewController id="kkY-3o-i7M" customClass="WGFavoriteListController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="aSb-pG-9R4">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WGFavoriteCell" rowHeight="64" id="vOo-0d-Um3" customClass="WGFavoriteCell">
+                                <rect key="frame" x="0.0" y="28" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vOo-0d-Um3" id="7wT-sM-ywm">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27H-lP-qe7">
+                                            <rect key="frame" x="16" y="7" width="50" height="50"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ou-Oy-B10">
+                                            <rect key="frame" x="74" y="13" width="147" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyN-SK-1JV">
+                                            <rect key="frame" x="147" y="34" width="165" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="headerView" destination="27H-lP-qe7" id="3jI-Jv-iUR"/>
+                                    <outlet property="nameLabel" destination="5Ou-Oy-B10" id="KrH-AZ-KBe"/>
+                                    <outlet property="timeLabel" destination="yyN-SK-1JV" id="dBP-CL-AQf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kkY-3o-i7M" id="5hv-cA-OwE"/>
+                            <outlet property="delegate" destination="kkY-3o-i7M" id="1qK-cs-2t6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="关注" id="sSI-MD-Lht"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ka-04-ofm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121" y="587"/>
+        </scene>
         <!--我的消息-->
         <scene sceneID="jt4-lh-0JA">
             <objects>
@@ -261,7 +318,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fka-tP-tMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="714"/>
+            <point key="canvasLocation" x="1010" y="1396"/>
         </scene>
         <!--修改个人信息-->
         <scene sceneID="U2P-6h-uDC">
@@ -413,7 +470,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brU-lo-0js" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="100"/>
+            <point key="canvasLocation" x="1088" y="-138"/>
         </scene>
         <!--忘记密码-->
         <scene sceneID="ZT3-42-4aO">
@@ -539,5 +596,8 @@
         <image name="user_profile" width="21" height="21"/>
         <image name="user_setting" width="19" height="17"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nkC-wh-Yzw"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
