@@ -37,10 +37,20 @@
                                                         <constraint firstAttribute="height" constant="1" id="stj-EB-PqJ"/>
                                                     </constraints>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_detail" translatesAutoresizingMaskIntoConstraints="NO" id="aj0-kE-T9U">
+                                                    <rect key="frame" x="305" y="21" width="7" height="13"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="7" id="BES-31-jN9"/>
+                                                        <constraint firstAttribute="height" constant="13" id="tgz-kY-JxU"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="aj0-kE-T9U" firstAttribute="top" secondItem="VzI-DA-dw4" secondAttribute="top" constant="21" id="1iy-gq-oZI"/>
                                                 <constraint firstAttribute="trailing" secondItem="vuF-9f-ofU" secondAttribute="trailing" id="89e-XZ-4i0"/>
                                                 <constraint firstItem="vuF-9f-ofU" firstAttribute="leading" secondItem="VzI-DA-dw4" secondAttribute="leading" constant="10" id="Lzl-y4-h4A"/>
+                                                <constraint firstAttribute="trailing" secondItem="aj0-kE-T9U" secondAttribute="trailing" constant="8" id="V7K-Vz-WhH"/>
+                                                <constraint firstItem="vuF-9f-ofU" firstAttribute="top" secondItem="aj0-kE-T9U" secondAttribute="bottom" constant="20" id="Z4m-1n-wGe"/>
                                                 <constraint firstAttribute="bottom" secondItem="vuF-9f-ofU" secondAttribute="bottom" id="yHK-Yx-qbI"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -113,11 +123,21 @@
                                                         <constraint firstAttribute="height" constant="1" id="vaD-Ky-7Da"/>
                                                     </constraints>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_detail" translatesAutoresizingMaskIntoConstraints="NO" id="7kj-ym-i1i">
+                                                    <rect key="frame" x="305" y="21" width="7" height="13"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="13" id="NhP-RZ-ez1"/>
+                                                        <constraint firstAttribute="width" constant="7" id="aQk-SQ-F0K"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="IEn-3X-UcA" firstAttribute="top" secondItem="7kj-ym-i1i" secondAttribute="bottom" constant="20" id="L8F-qA-h82"/>
                                                 <constraint firstItem="IEn-3X-UcA" firstAttribute="leading" secondItem="Nhd-rA-oa9" secondAttribute="leading" constant="10" id="dSM-w6-aox"/>
+                                                <constraint firstItem="7kj-ym-i1i" firstAttribute="top" secondItem="Nhd-rA-oa9" secondAttribute="top" constant="21" id="gd6-EB-nBQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="IEn-3X-UcA" secondAttribute="bottom" id="iYJ-FR-RvL"/>
                                                 <constraint firstAttribute="trailing" secondItem="IEn-3X-UcA" secondAttribute="trailing" id="sif-Mz-Yvy"/>
+                                                <constraint firstAttribute="trailing" secondItem="7kj-ym-i1i" secondAttribute="trailing" constant="8" id="v7f-Ia-Cu9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -141,10 +161,20 @@
                                                         <constraint firstAttribute="height" constant="1" id="XoN-fV-W8w"/>
                                                     </constraints>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_detail" translatesAutoresizingMaskIntoConstraints="NO" id="KZ9-44-0Hz">
+                                                    <rect key="frame" x="305" y="21" width="7" height="13"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="7" id="IL3-qw-0M9"/>
+                                                        <constraint firstAttribute="height" constant="13" id="gi1-M1-3FE"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="KZ9-44-0Hz" firstAttribute="top" secondItem="hu2-Bw-nUi" secondAttribute="top" constant="21" id="0dk-zE-cYA"/>
+                                                <constraint firstAttribute="trailing" secondItem="KZ9-44-0Hz" secondAttribute="trailing" constant="8" id="85N-34-CFT"/>
                                                 <constraint firstItem="Fvz-dg-j9Y" firstAttribute="leading" secondItem="hu2-Bw-nUi" secondAttribute="leading" constant="10" id="ABr-X7-QiT"/>
                                                 <constraint firstAttribute="bottom" secondItem="Fvz-dg-j9Y" secondAttribute="bottom" id="B5Y-eF-IgK"/>
+                                                <constraint firstItem="Fvz-dg-j9Y" firstAttribute="top" secondItem="KZ9-44-0Hz" secondAttribute="bottom" constant="20" id="b1u-6X-eIF"/>
                                                 <constraint firstAttribute="trailing" secondItem="Fvz-dg-j9Y" secondAttribute="trailing" id="qT6-eo-1NI"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -197,5 +227,8 @@
             <point key="canvasLocation" x="599" y="-38"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="user_detail" width="7" height="13"/>
+    </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
