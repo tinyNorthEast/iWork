@@ -8,7 +8,7 @@
 
 #import "WGBaseModel.h"
 
-#import "WGIndustryModel.h"
+#import "WGHunterIndustryModel.h"
 
 @protocol WGHunterModel <NSObject>
 @end
@@ -20,6 +20,7 @@
 @property (nonatomic,copy)NSString<Optional> *pic;
 @property (nonatomic,strong)NSNumber<Optional> *ranking;
 @property (nonatomic,strong)NSNumber<Optional> *commentCount;
-@property (nonatomic,strong)NSArray <Optional,WGIndustryModel> *industryList;
+@property (nonatomic,strong)NSArray <Optional,WGHunterIndustryModel> *industryList;
+@property (nonatomic,strong)NSNumber <Optional>*userId;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface WGMainTableView : UITableView
 
+- (void)freshDataAtCity:(NSNumber *)areaCode;
+
 @end

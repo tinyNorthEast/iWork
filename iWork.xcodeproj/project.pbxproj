@@ -166,6 +166,7 @@
 		B5F9879F1C32FA2300253667 /* WGCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F9879E1C32FA2300253667 /* WGCodeRequest.m */; };
 		B5F987A31C32FAF800253667 /* WGCodeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F987A21C32FAF800253667 /* WGCodeListModel.m */; };
 		B5F987A61C32FB1A00253667 /* WGCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F987A51C32FB1A00253667 /* WGCodeModel.m */; };
+		B5F987A91C33D47400253667 /* WGHunterIndustryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F987A81C33D47400253667 /* WGHunterIndustryModel.m */; };
 		B5FAC9251C2E203E00C82019 /* WGNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC9241C2E203E00C82019 /* WGNotificationController.m */; };
 		B5FAC9291C2E210600C82019 /* WGNotificationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC9281C2E210600C82019 /* WGNotificationRequest.m */; };
 		B5FAC92D1C30405C00C82019 /* WGNotificationListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FAC92C1C30405C00C82019 /* WGNotificationListModel.m */; };
@@ -483,6 +484,8 @@
 		B5F987A21C32FAF800253667 /* WGCodeListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCodeListModel.m; sourceTree = "<group>"; };
 		B5F987A41C32FB1A00253667 /* WGCodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCodeModel.h; sourceTree = "<group>"; };
 		B5F987A51C32FB1A00253667 /* WGCodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCodeModel.m; sourceTree = "<group>"; };
+		B5F987A71C33D47400253667 /* WGHunterIndustryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGHunterIndustryModel.h; sourceTree = "<group>"; };
+		B5F987A81C33D47400253667 /* WGHunterIndustryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHunterIndustryModel.m; sourceTree = "<group>"; };
 		B5FAC9231C2E203E00C82019 /* WGNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotificationController.h; sourceTree = "<group>"; };
 		B5FAC9241C2E203E00C82019 /* WGNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNotificationController.m; sourceTree = "<group>"; };
 		B5FAC9271C2E210600C82019 /* WGNotificationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGNotificationRequest.h; sourceTree = "<group>"; };
@@ -1474,6 +1477,8 @@
 				B5FB3D501C1034A500B35AB6 /* WGHunterListModel.m */,
 				B5F150A41C2007ED00EC9503 /* WGHunterModel.h */,
 				B5F150A51C2007ED00EC9503 /* WGHunterModel.m */,
+				B5F987A71C33D47400253667 /* WGHunterIndustryModel.h */,
+				B5F987A81C33D47400253667 /* WGHunterIndustryModel.m */,
 				B5721E4B1C29AE20007EE80F /* WGMainIndustryListModel.h */,
 				B5721E4C1C29AE20007EE80F /* WGMainIndustryListModel.m */,
 				B5F150B51C21139700EC9503 /* WGIndustryModel.h */,
@@ -1717,6 +1722,7 @@
 				B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */,
 				B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */,
 				B5F987891C32E05E00253667 /* WGNotifyCategoryRequest.m in Sources */,
+				B5F987A91C33D47400253667 /* WGHunterIndustryModel.m in Sources */,
 				B50024511C31403400CCA6E5 /* WGResetUserInfoRequest.m in Sources */,
 				B5AAAE461C2D3BCD008A97E6 /* WGBBSListModel.m in Sources */,
 				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,

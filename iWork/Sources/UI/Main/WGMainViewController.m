@@ -22,6 +22,10 @@
 #import "WGMainIndustryListModel.h"
 
 @interface WGMainViewController ()<WGMenuBarDelegate,WGMainScrollViewDelegate>
+
+@property (nonatomic, strong) NSNumber *selectedCityCode;
+@property (nonatomic, assign) NSInteger currentIndex;
+
 @property (weak, nonatomic) IBOutlet UIButton *cityButton;
 @property (weak, nonatomic) IBOutlet WGMenuBar *menuBar;
 @property (weak, nonatomic) IBOutlet WGMainScrollView *mainScrollView;
@@ -49,7 +53,6 @@
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
         WGMainIndustryListModel *model = (WGMainIndustryListModel *)baseModel;
-//        NSArray *barItems = @[@"法务",@"财务",@"HR",@"消费品",@"互联网&通讯",@"汽车&机械",@"金融服务",@"供应链",@"化工",@"医疗&生命科学",@"地产"];
         [self.menuBar initMenuItems:model.data];
         self.menuBar.delegate = self;
         
@@ -57,6 +60,8 @@
         self.mainScrollView.mainScrolldelegate = self;
         
         [[WGGlobal sharedInstance] setIndustryLists:model.data];
+        
+        [self.menuBar clickButtonAtIndex:0];
         
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         
@@ -82,6 +87,9 @@
     vc.selectCity = ^(WGCityModel *city){
         @strongify(self);
         [self.cityButton setTitle:city.areaName forState:UIControlStateNormal];
+        
+        self.selectedCityCode = city.areaCode;
+        [self.mainScrollView freshContentTableAtIndex:self.currentIndex atCity:self.selectedCityCode];
     };
 }
 
@@ -105,13 +113,16 @@
 
 #pragma mark - WGMenuBarDelegate
 - (void)clickMenuButtonAtIndex:(NSInteger)index{
+    self.currentIndex = index;
     [self.mainScrollView moveScrollowViewAthIndex:index];
+    [self.mainScrollView freshContentTableAtIndex:index atCity:self.selectedCityCode];
 }
 #pragma mark - WGMainScrollViewDelegate
 - (void)didScrollPageViewChangedPage:(NSInteger)aPage{
+    self.currentIndex = aPage;
     [self.menuBar changeButtonStateAtIndex:aPage];
     //刷新当页数据
-    //    [mScrollPageView freshContentTableAtIndex:aPage];
+    [self.mainScrollView freshContentTableAtIndex:aPage atCity:self.selectedCityCode];
     
 }
 

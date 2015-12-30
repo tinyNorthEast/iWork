@@ -17,7 +17,7 @@
 #import "UIColor+WGThemeColors.h"
 
 #import "WGHunterModel.h"
-#import "WGIndustryModel.h"
+#import "WGHunterIndustryModel.h"
 
 @interface WGMainCell()<XXNibBridge>
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
@@ -57,14 +57,15 @@
     [self.headerImage wg_loadImageFromURL:hunter.pic placeholder:[UIImage imageNamed:@"main_defaultHeader"]];
     [self.nameLabel setText:hunter.realName];
     
+    self.positionLabel.text = @"";
     NSArray *industrys = hunter.industryList;
     if (industrys.count) {
         NSString *positionStr = nil;
-        for (WGIndustryModel *aModel in industrys) {
+        for (WGHunterIndustryModel *aModel in industrys) {
             if (positionStr.length == 0) {
-                positionStr = aModel.name;
+                positionStr = aModel.industryName;
             }else{
-                positionStr = [positionStr stringByAppendingString:[NSString stringWithFormat:@",%@" ,aModel.name]];
+                positionStr = [positionStr stringByAppendingString:[NSString stringWithFormat:@",%@" ,aModel.industryName]];
             }
         }
         self.positionLabel.text = positionStr;
@@ -72,7 +73,7 @@
     
     M13BadgeView *badgeView = [[M13BadgeView alloc] initWithFrame:CGRectMake(self.commentButton.right-12, 12, 24.0, 24.0)];
     [self.commentButton addSubview:badgeView];
-    badgeView.text = @"9";//self.hunter.commentCount.stringValue;
+    badgeView.text = self.hunter.commentCount.stringValue;
     badgeView.badgeBackgroundColor = [UIColor wg_themeCyanColor];
     badgeView.hidesWhenZero = YES;
 }

@@ -14,7 +14,7 @@
 @interface WGCityModel : WGBaseModel
 
 @property (nonatomic,copy)NSString<Optional> *areaName;
-@property (nonatomic,copy)NSString<Optional> *areaCode;
+@property (nonatomic,copy)NSNumber<Optional> *areaCode;
 @property (nonatomic,copy)NSString<Optional> *areaSort;
 
 @end

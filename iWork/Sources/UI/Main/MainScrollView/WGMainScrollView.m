@@ -16,6 +16,8 @@
     NSInteger mCurrentPage;
 }
 
+@property (nonatomic, strong) NSMutableArray *tablesArray;
+
 @end
 
 @implementation WGMainScrollView
@@ -25,7 +27,6 @@
     
     self.delegate = self;
     mNeedUseDelegate = YES;
-    
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -36,11 +37,20 @@
     return self;
 }
 
+- (NSMutableArray *)tablesArray{
+    if (!_tablesArray) {
+        _tablesArray = [NSMutableArray array];
+    }
+    return _tablesArray;
+}
+
 - (void)initWithViews:(NSArray *)itmes{
+    
     for (int index = 0; index < itmes.count; index++) {
         WGMainTableView *vCustomTableView = [[WGMainTableView alloc] initWithFrame:CGRectMake(self.width * index, 0, self.width, self.frame.size.height)];
         [vCustomTableView setTag:index];
         [self addSubview:vCustomTableView];
+        [self.tablesArray addObject:vCustomTableView];
     }
     [self setContentSize:CGSizeMake(self.width * itmes.count, self.height)];
 }
@@ -53,6 +63,15 @@
     if ([_mainScrolldelegate respondsToSelector:@selector(didScrollPageViewChangedPage:)]) {
         [_mainScrolldelegate didScrollPageViewChangedPage:mCurrentPage];
     }
+}
+
+- (void)freshContentTableAtIndex:(NSInteger)aIndex atCity:(NSNumber *)areaCode{
+    if (self.tablesArray.count<aIndex) {
+        return;
+    }
+    
+    WGMainTableView *vTableContentView =(WGMainTableView *)[self.tablesArray objectAtIndex:aIndex];
+    [vTableContentView freshDataAtCity:areaCode];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -81,6 +100,7 @@
         //        targetX = (int)(targetX/ITEM_WIDTH) * ITEM_WIDTH;
         //        [self moveToTargetPosition:targetX];
     }
+    
 }
 
 @end

@@ -12,6 +12,6 @@
 
 @interface WGHunterListRequest : WGBaseRequest
 
-- (instancetype)initWithAreaCode:(NSString *)areaCode industryId:(NSNumber *)industryId pageNo:(NSNumber *)pageNo;
+- (instancetype)initWithAreaCode:(NSNumber *)areaCode industryId:(NSNumber *)industryId pageNo:(NSNumber *)pageNo;
 
 @end

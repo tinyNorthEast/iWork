@@ -14,12 +14,12 @@
 
 @implementation WGHunterListRequest
 
-- (instancetype)initWithAreaCode:(NSString *)areaCode industryId:(NSNumber *)industryId pageNo:(NSNumber *)pageNo
+- (instancetype)initWithAreaCode:(NSNumber *)areaCode industryId:(NSNumber *)industryId pageNo:(NSNumber *)pageNo
 {
     self = [super init];
     if (self) {
-//        [self.getParams safeSetValue:areaCode forKey:@"areaCode"];
-//        [self.getParams safeSetValue:industryId forKey:@"industryId"];
+        [self.getParams safeSetValue:areaCode forKey:@"areaCode"];
+        [self.getParams safeSetValue:industryId forKey:@"industryId"];
         [self.getParams safeSetValue:pageNo forKey:@"pageNo"];
         
         return self;

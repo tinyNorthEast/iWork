@@ -89,6 +89,12 @@
         [_delegate clickMenuButtonAtIndex:sender.tag];
     }
 }
+
+- (void)clickButtonAtIndex:(NSInteger)aIndex{
+    UIButton *barButton = [self.mButtonArray objectAtIndex:aIndex];
+    [self selectMenu:barButton];
+}
+
 #pragma mark 改变第几个button为选中状态，不发送delegate
 -(void)changeButtonStateAtIndex:(NSInteger)aIndex{
     [self changeButtonsToNormalState];

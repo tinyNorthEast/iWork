@@ -20,6 +20,8 @@
 
 - (void)initMenuItems:(NSArray *)items;
 
--(void)changeButtonStateAtIndex:(NSInteger)aIndex;
+- (void)changeButtonStateAtIndex:(NSInteger)aIndex;
+
+- (void)clickButtonAtIndex:(NSInteger)aIndex;
 
 @end

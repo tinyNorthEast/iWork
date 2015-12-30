@@ -21,6 +21,8 @@
 - (void)initWithViews:(NSArray *)items;
 
 
--(void)moveScrollowViewAthIndex:(NSInteger)aIndex;
+- (void)moveScrollowViewAthIndex:(NSInteger)aIndex;
+
+- (void)freshContentTableAtIndex:(NSInteger)aIndex atCity:(NSNumber *)areaCode;
 
 @end

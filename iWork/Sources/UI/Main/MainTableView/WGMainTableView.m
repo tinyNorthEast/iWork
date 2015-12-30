@@ -24,11 +24,12 @@
 #import "WGHunterModel.h"
 #import "WGIndustryModel.h"
 
-@interface WGMainTableView()<UITableViewDataSource,UITableViewDelegate>{
-    
-}
+#define DefaultCityCode 1000
+
+@interface WGMainTableView()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *hunters;
+@property (nonatomic, strong) NSNumber *areaCode;
 
 @end
 @implementation WGMainTableView
@@ -40,9 +41,10 @@
         self.delegate = self;
         
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
-        self.rowHeight = 220;
+        self.rowHeight = 250;
         [self registerNib:[WGMainCell xx_nib] forCellReuseIdentifier:[WGMainCell xx_nibID]];
-    
+        
+        
         @weakify(self);
         [self.wg_pager addPullDownRefreshHandler:^(WGPager *pager) {
             @strongify(self);
@@ -52,7 +54,7 @@
             @strongify(self);
             [self requestHuntersWithPage:pager isRefresh:NO];
         }];
-        [self.wg_pager triggerRefresh];
+        
     }
     return self;
 }
@@ -64,6 +66,12 @@
     return _hunters;
 }
 
+- (void)freshDataAtCity:(NSNumber *)areaCode{
+    self.areaCode = areaCode;
+    
+    [self.wg_pager triggerRefresh];
+}
+
 #pragma mark - Request
 //根据table tag重找industry id
 - (void)requestHuntersWithPage:(WGPager *)pager isRefresh:(BOOL)isRefresh{
@@ -71,7 +79,10 @@
     WGIndustryModel *industry = [lists objectAtIndex:self.tag];
     
     
-    WGHunterListRequest *request = [[WGHunterListRequest alloc] initWithAreaCode:@"1000" industryId:industry.objId  pageNo:@(pager.currentPageIndex)];
+    if (self.areaCode.integerValue == 0) {
+        self.areaCode = @(DefaultCityCode);
+    }
+    WGHunterListRequest *request = [[WGHunterListRequest alloc] initWithAreaCode:self.areaCode industryId:industry.objId  pageNo:@(pager.currentPageIndex)];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
