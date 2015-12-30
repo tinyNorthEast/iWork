@@ -39,11 +39,9 @@ NS_ENUM(NSInteger,WGSettingAlertTag){
 
 - (void)initNaviBar{
     self.navigationItem.title = @"设置";
-    UIButton *bt=[UIButton buttonWithType:UIButtonTypeCustom];
-    [bt setImage:[UIImage imageNamed:@"navi_back.png"] forState:UIControlStateNormal];
-    [bt addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *leftButton=[[UIBarButtonItem alloc] initWithCustomView:bt];
-    self.navigationItem.leftBarButtonItem=leftButton;
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_back"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
+    self.navigationItem.leftBarButtonItem=backButton;
 }
 
 #pragma mark - IBAction
