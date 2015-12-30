@@ -11,21 +11,42 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="擅长行业" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGU-6b-HvQ">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="擅长行业" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGU-6b-HvQ">
                     <rect key="frame" x="126" y="8" width="68" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="TPN-al-JFN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detail_seperatorline" translatesAutoresizingMaskIntoConstraints="NO" id="uPH-1s-Rxb">
-                    <rect key="frame" x="104" y="32" width="113" height="2"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_seperatorline" translatesAutoresizingMaskIntoConstraints="NO" id="uPH-1s-Rxb">
+                    <rect key="frame" x="104" y="32" width="112" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="kN8-Pb-be3"/>
+                    </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Btr-1U-Ny1">
-                    <rect key="frame" x="8" y="41" width="304" height="18"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btr-1U-Ny1">
+                    <rect key="frame" x="10" y="40" width="300" height="52"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="gAS-7P-bbM"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="uPH-1s-Rxb" secondAttribute="trailing" constant="104" id="Cfb-aC-dQG"/>
+                <constraint firstAttribute="bottom" secondItem="Btr-1U-Ny1" secondAttribute="bottom" constant="8" id="F3V-rg-Cm2"/>
+                <constraint firstAttribute="trailing" secondItem="QGU-6b-HvQ" secondAttribute="trailing" constant="126" id="Hbb-LY-j35"/>
+                <constraint firstItem="Btr-1U-Ny1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="WFB-rP-orz"/>
+                <constraint firstItem="Btr-1U-Ny1" firstAttribute="top" secondItem="uPH-1s-Rxb" secondAttribute="bottom" constant="6" id="eP9-1J-YOx"/>
+                <constraint firstItem="QGU-6b-HvQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="126" id="he3-h2-D85"/>
+                <constraint firstItem="QGU-6b-HvQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="lgG-af-EJF"/>
+                <constraint firstItem="uPH-1s-Rxb" firstAttribute="top" secondItem="QGU-6b-HvQ" secondAttribute="bottom" constant="3" id="wlr-K4-f5d"/>
+                <constraint firstItem="uPH-1s-Rxb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="104" id="z5k-SZ-ZYg"/>
+                <constraint firstAttribute="trailing" secondItem="Btr-1U-Ny1" secondAttribute="trailing" constant="10" id="zUQ-r7-LaG"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="tagsView" destination="Btr-1U-Ny1" id="Re8-uj-sSl"/>

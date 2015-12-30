@@ -11,21 +11,42 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="自我介绍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLB-PI-QyA">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自我介绍" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLB-PI-QyA">
                     <rect key="frame" x="126" y="8" width="68" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="3lZ-l6-eRK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detail_seperatorline" translatesAutoresizingMaskIntoConstraints="NO" id="OMp-uN-uBi">
-                    <rect key="frame" x="104" y="32" width="113" height="2"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_seperatorline" translatesAutoresizingMaskIntoConstraints="NO" id="OMp-uN-uBi">
+                    <rect key="frame" x="104" y="32" width="112" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="byp-kt-TUw"/>
+                    </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Uv-Wx-1XM">
-                    <rect key="frame" x="12" y="42" width="296" height="48"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Uv-Wx-1XM">
+                    <rect key="frame" x="15" y="40" width="290" height="82"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="82" id="tzN-P0-iz7"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="BLB-PI-QyA" secondAttribute="trailing" constant="126" id="2zs-6P-ych"/>
+                <constraint firstAttribute="bottom" secondItem="2Uv-Wx-1XM" secondAttribute="bottom" constant="8" id="5Yu-28-y7Z"/>
+                <constraint firstItem="OMp-uN-uBi" firstAttribute="leading" secondItem="XuN-iY-irP" secondAttribute="leading" constant="104" id="8WZ-yn-pdz"/>
+                <constraint firstAttribute="trailing" secondItem="OMp-uN-uBi" secondAttribute="trailing" constant="104" id="KnQ-jj-0sG"/>
+                <constraint firstItem="2Uv-Wx-1XM" firstAttribute="leading" secondItem="XuN-iY-irP" secondAttribute="leading" constant="15" id="Lo1-qF-ieY"/>
+                <constraint firstItem="BLB-PI-QyA" firstAttribute="top" secondItem="XuN-iY-irP" secondAttribute="top" constant="8" id="PoM-f3-mR4"/>
+                <constraint firstItem="OMp-uN-uBi" firstAttribute="top" secondItem="BLB-PI-QyA" secondAttribute="bottom" constant="3" id="XT4-bJ-bLi"/>
+                <constraint firstAttribute="trailing" secondItem="2Uv-Wx-1XM" secondAttribute="trailing" constant="15" id="cn9-IT-zIm"/>
+                <constraint firstItem="2Uv-Wx-1XM" firstAttribute="top" secondItem="OMp-uN-uBi" secondAttribute="bottom" constant="6" id="j2U-wG-UDF"/>
+                <constraint firstItem="BLB-PI-QyA" firstAttribute="leading" secondItem="XuN-iY-irP" secondAttribute="leading" constant="126" id="vAQ-uX-q4m"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="describeView" destination="2Uv-Wx-1XM" id="HJv-Ud-smJ"/>

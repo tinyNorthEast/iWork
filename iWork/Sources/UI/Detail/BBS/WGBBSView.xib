@@ -11,12 +11,18 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="227"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detail_seperatorline" translatesAutoresizingMaskIntoConstraints="NO" id="VMN-hf-efy">
-                    <rect key="frame" x="104" y="32" width="113" height="2"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_seperatorline" translatesAutoresizingMaskIntoConstraints="NO" id="VMN-hf-efy">
+                    <rect key="frame" x="104" y="32" width="112" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="PLJ-HQ-Ezl"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="评论" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSD-Ox-kg1">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSD-Ox-kg1">
                     <rect key="frame" x="143" y="8" width="34" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="NEP-WO-NQW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -38,6 +44,14 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VMN-hf-efy" firstAttribute="top" secondItem="tSD-Ox-kg1" secondAttribute="bottom" constant="3" id="3Ps-uJ-ORn"/>
+                <constraint firstAttribute="trailing" secondItem="tSD-Ox-kg1" secondAttribute="trailing" constant="143" id="3dd-7s-MV6"/>
+                <constraint firstItem="tSD-Ox-kg1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="143" id="64Y-tk-Lw4"/>
+                <constraint firstItem="VMN-hf-efy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="104" id="AL2-7U-pav"/>
+                <constraint firstItem="tSD-Ox-kg1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="OFa-1A-6cc"/>
+                <constraint firstAttribute="trailing" secondItem="VMN-hf-efy" secondAttribute="trailing" constant="104" id="gjT-YB-NZm"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="220" y="43.5"/>

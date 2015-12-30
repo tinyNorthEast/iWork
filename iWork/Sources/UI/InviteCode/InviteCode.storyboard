@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Invite Code Controller-->
+        <!--邀请码-->
         <scene sceneID="wMO-9V-7EL">
             <objects>
-                <viewController id="2FH-ar-BZ7" customClass="WGInviteCodeController" sceneMemberID="viewController">
+                <viewController id="2FH-ar-BZ7" userLabel="邀请码" customClass="WGInviteCodeController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hvd-4a-iFk"/>
                         <viewControllerLayoutGuide type="bottom" id="nV3-Ms-4rq"/>
@@ -61,18 +61,22 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqn-7U-Ivb">
-                                <rect key="frame" x="139" y="363" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4x-AA-egK">
-                                <rect key="frame" x="139" y="411" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="prv-fp-XhG">
+                                <rect key="frame" x="32" y="371" width="257" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2FH-ar-BZ7" id="bgB-Lf-9iS"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pzR-OQ-BNT">
+                                <rect key="frame" x="32" y="419" width="257" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2FH-ar-BZ7" id="GRU-Ky-0gg"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -82,8 +86,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="code1" destination="Yqn-7U-Ivb" id="23E-zh-g19"/>
-                        <outlet property="code2" destination="L4x-AA-egK" id="d7d-0o-T0Y"/>
+                        <outlet property="code1" destination="prv-fp-XhG" id="Hxl-JB-5OG"/>
+                        <outlet property="code2" destination="pzR-OQ-BNT" id="CjE-Tb-bqv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgs-h1-6aJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
