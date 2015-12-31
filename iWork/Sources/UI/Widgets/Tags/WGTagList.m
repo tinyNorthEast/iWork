@@ -38,11 +38,12 @@
     return self;
 }
 
-- (void)setTags:(NSArray *)array
+- (float)setTags:(NSArray *)array
 {
     textArray = [[NSArray alloc] initWithArray:array];
     sizeFit = CGSizeZero;
-    [self display];
+
+    return [self display];
 }
 
 - (void)setLabelBackgroundColor:(UIColor *)color
@@ -51,7 +52,7 @@
     [self display];
 }
 
-- (void)display
+- (float)display
 {
     for (UILabel *subview in [self subviews]) {
         [subview removeFromSuperview];
@@ -97,6 +98,7 @@
         [self addSubview:label];
     }
     sizeFit = CGSizeMake(self.frame.size.width, totalHeight + 1.0f);
+    return totalHeight;
 }
 
 - (CGSize)fittedSize

@@ -69,6 +69,9 @@
 		B55D12341C070EAA0035C6B4 /* ShareSDKFlatShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B55D12261C070EAA0035C6B4 /* ShareSDKFlatShareViewUI.bundle */; };
 		B55D12351C070EAA0035C6B4 /* ShareSDKFlatShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55D12271C070EAA0035C6B4 /* ShareSDKFlatShareViewUI.framework */; };
 		B55D12361C070EAA0035C6B4 /* ShareSDKShareActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55D12281C070EAA0035C6B4 /* ShareSDKShareActionSheet.framework */; };
+		B56320761C34FBB6006FB9EA /* WGBBSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B56320741C34FBB6006FB9EA /* WGBBSCell.m */; };
+		B56320771C34FBB6006FB9EA /* WGBBSCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56320751C34FBB6006FB9EA /* WGBBSCell.xib */; };
+		B563207A1C3513B3006FB9EA /* WGBBSListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B56320791C3513B3006FB9EA /* WGBBSListModel.m */; };
 		B5721E4A1C29ADA5007EE80F /* WGIndustryListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5721E491C29ADA5007EE80F /* WGIndustryListRequest.m */; };
 		B5721E4D1C29AE20007EE80F /* WGMainIndustryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5721E4C1C29AE20007EE80F /* WGMainIndustryListModel.m */; };
 		B59426E91C2B8D8D008BD92A /* WGUserInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B59426E81C2B8D8D008BD92A /* WGUserInfoRequest.m */; };
@@ -83,7 +86,6 @@
 		B594270E1C2C2321008BD92A /* WGBBSView.m in Sources */ = {isa = PBXBuildFile; fileRef = B594270D1C2C2321008BD92A /* WGBBSView.m */; };
 		B59427101C2C2334008BD92A /* WGBBSView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B594270F1C2C2334008BD92A /* WGBBSView.xib */; };
 		B5AAAE401C2D032C008A97E6 /* WGWriteBBSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAAE3F1C2D032C008A97E6 /* WGWriteBBSRequest.m */; };
-		B5AAAE461C2D3BCD008A97E6 /* WGBBSListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAAE451C2D3BCD008A97E6 /* WGBBSListModel.m */; };
 		B5AAAE481C2D4994008A97E6 /* BBS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5AAAE471C2D4994008A97E6 /* BBS.xcassets */; };
 		B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */; };
 		B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D0E7FB1C046EB000358351 /* WGCountDownButton.m */; };
@@ -327,6 +329,11 @@
 		B55D12261C070EAA0035C6B4 /* ShareSDKFlatShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKFlatShareViewUI.bundle; sourceTree = "<group>"; };
 		B55D12271C070EAA0035C6B4 /* ShareSDKFlatShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKFlatShareViewUI.framework; sourceTree = "<group>"; };
 		B55D12281C070EAA0035C6B4 /* ShareSDKShareActionSheet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKShareActionSheet.framework; sourceTree = "<group>"; };
+		B56320731C34FBB6006FB9EA /* WGBBSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBBSCell.h; sourceTree = "<group>"; };
+		B56320741C34FBB6006FB9EA /* WGBBSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBBSCell.m; sourceTree = "<group>"; };
+		B56320751C34FBB6006FB9EA /* WGBBSCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGBBSCell.xib; sourceTree = "<group>"; };
+		B56320781C3513B3006FB9EA /* WGBBSListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBBSListModel.h; sourceTree = "<group>"; };
+		B56320791C3513B3006FB9EA /* WGBBSListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBBSListModel.m; sourceTree = "<group>"; };
 		B5721E481C29ADA5007EE80F /* WGIndustryListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGIndustryListRequest.h; sourceTree = "<group>"; };
 		B5721E491C29ADA5007EE80F /* WGIndustryListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIndustryListRequest.m; sourceTree = "<group>"; };
 		B5721E4B1C29AE20007EE80F /* WGMainIndustryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMainIndustryListModel.h; sourceTree = "<group>"; };
@@ -352,8 +359,6 @@
 		B594270F1C2C2334008BD92A /* WGBBSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGBBSView.xib; sourceTree = "<group>"; };
 		B5AAAE3E1C2D032C008A97E6 /* WGWriteBBSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGWriteBBSRequest.h; sourceTree = "<group>"; };
 		B5AAAE3F1C2D032C008A97E6 /* WGWriteBBSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGWriteBBSRequest.m; sourceTree = "<group>"; };
-		B5AAAE441C2D3BCD008A97E6 /* WGBBSListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBBSListModel.h; sourceTree = "<group>"; };
-		B5AAAE451C2D3BCD008A97E6 /* WGBBSListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBBSListModel.m; sourceTree = "<group>"; };
 		B5AAAE471C2D4994008A97E6 /* BBS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BBS.xcassets; sourceTree = "<group>"; };
 		B5BF96CA1BFC862C00A4CFAC /* UIScrollView+WGPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+WGPager.h"; sourceTree = "<group>"; };
 		B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+WGPager.m"; sourceTree = "<group>"; };
@@ -1086,6 +1091,9 @@
 				B594270C1C2C2321008BD92A /* WGBBSView.h */,
 				B594270D1C2C2321008BD92A /* WGBBSView.m */,
 				B594270F1C2C2334008BD92A /* WGBBSView.xib */,
+				B56320731C34FBB6006FB9EA /* WGBBSCell.h */,
+				B56320741C34FBB6006FB9EA /* WGBBSCell.m */,
+				B56320751C34FBB6006FB9EA /* WGBBSCell.xib */,
 			);
 			path = BBS;
 			sourceTree = "<group>";
@@ -1124,8 +1132,8 @@
 			children = (
 				B5D4F3FE1C27E1B3007474F0 /* WGCommentModel.h */,
 				B5D4F3FF1C27E1B3007474F0 /* WGCommentModel.m */,
-				B5AAAE441C2D3BCD008A97E6 /* WGBBSListModel.h */,
-				B5AAAE451C2D3BCD008A97E6 /* WGBBSListModel.m */,
+				B56320781C3513B3006FB9EA /* WGBBSListModel.h */,
+				B56320791C3513B3006FB9EA /* WGBBSListModel.m */,
 			);
 			path = BBS;
 			sourceTree = "<group>";
@@ -1618,6 +1626,7 @@
 				B55D122C1C070EAA0035C6B4 /* ShareSDKLocalizable.strings in Resources */,
 				B5E600C61C00245400265307 /* SMS_SDKLocalizable.strings in Resources */,
 				B5D4F3F71C279467007474F0 /* User.xcassets in Resources */,
+				B56320771C34FBB6006FB9EA /* WGBBSCell.xib in Resources */,
 				B5F150C11C214DA600EC9503 /* Detail.xcassets in Resources */,
 				B5D4F4071C27E546007474F0 /* BBS.storyboard in Resources */,
 				B538756D1C1EF3FD002FB222 /* Detail.storyboard in Resources */,
@@ -1722,9 +1731,9 @@
 				B5EA30341C044FA20003FB3A /* WGRepeatPasswordViewController.m in Sources */,
 				B5E907C21C083F83003AB736 /* NSMutableDictionary+WGExtension.m in Sources */,
 				B5F987891C32E05E00253667 /* WGNotifyCategoryRequest.m in Sources */,
+				B563207A1C3513B3006FB9EA /* WGBBSListModel.m in Sources */,
 				B5F987A91C33D47400253667 /* WGHunterIndustryModel.m in Sources */,
 				B50024511C31403400CCA6E5 /* WGResetUserInfoRequest.m in Sources */,
-				B5AAAE461C2D3BCD008A97E6 /* WGBBSListModel.m in Sources */,
 				B54FA8441BF4A7D50018B682 /* UIColor+WGThemeColors.m in Sources */,
 				B5FAC9361C3114E100C82019 /* WGQiNiuTokenModel.m in Sources */,
 				B5F150C41C225EBC00EC9503 /* WGHunterInfoModel.m in Sources */,
@@ -1800,6 +1809,7 @@
 				B5D4F4001C27E1B3007474F0 /* WGCommentModel.m in Sources */,
 				B520B2D11C0B3D5C00CFD6CD /* NSString+WGExtension.m in Sources */,
 				B59426E91C2B8D8D008BD92A /* WGUserInfoRequest.m in Sources */,
+				B56320761C34FBB6006FB9EA /* WGBBSCell.m in Sources */,
 				B5E2F43A1C2A901D005F8BA4 /* DBAccess.m in Sources */,
 				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,
 				B5721E4A1C29ADA5007EE80F /* WGIndustryListRequest.m in Sources */,

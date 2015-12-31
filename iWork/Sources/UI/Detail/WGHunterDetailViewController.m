@@ -26,8 +26,6 @@
 #import "WGResultsView.h"
 #import "WGBBSView.h"
 
-#import "WGBBSListModel.h"
-
 @interface WGHunterDetailViewController ()
 @property (weak, nonatomic) IBOutlet WGDetailHeaderView *headerView;
 @property (weak, nonatomic) IBOutlet WGIntroductionView *describeView;
@@ -163,8 +161,8 @@
             
             
             
-            WGBBSListModel *bbsModel = [[WGBBSListModel alloc] initWithDictionary:model.data[@"commentList"] error:nil];
-            self.bbsHeight.constant = [self.bbsView viewHeightbyCommentsArray:bbsModel.data];;
+            NSArray *bbsArray = model.data[@"commentList"];
+            self.bbsHeight.constant = [self.bbsView viewHeightbyCommentsArray:bbsArray];
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
         }

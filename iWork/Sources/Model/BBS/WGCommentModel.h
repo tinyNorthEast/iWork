@@ -17,5 +17,6 @@
 @property (nonatomic,copy)NSString<Optional> *pic;
 @property (nonatomic,copy)NSString<Optional> *content;
 @property (nonatomic,strong)NSNumber<Optional> *create_time;
+@property (nonatomic,copy)NSString<Optional> *fromName;
 
 @end

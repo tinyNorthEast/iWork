@@ -20,7 +20,7 @@
 @property (nonatomic, strong) NSArray *textArray;
 
 - (void)setLabelBackgroundColor:(UIColor *)color;
-- (void)setTags:(NSArray *)array;
-- (void)display;
+- (float)setTags:(NSArray *)array;
+- (float)display;
 - (CGSize)fittedSize;
 @end

@@ -29,8 +29,7 @@
     [self.tagsView addSubview:self.tagList];
 }
 - (CGFloat)viewHeightbyTagsArray:(NSArray *)tags{
-    [self.tagList setTags:tags];
-    return self.tagsView.height+50;
+    return [self.tagList setTags:tags]+50;
 }
 
 @end
