@@ -626,7 +626,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L49-hu-3VM">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="52" translatesAutoresizingMaskIntoConstraints="NO" id="L49-hu-3VM">
                                             <rect key="frame" x="8" y="8" width="304" height="51.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -856,13 +856,22 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_detail" translatesAutoresizingMaskIntoConstraints="NO" id="dF2-YR-mSH">
-                                                    <rect key="frame" x="302" y="20" width="7" height="13"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_detail" translatesAutoresizingMaskIntoConstraints="NO" id="dF2-YR-mSH">
+                                                    <rect key="frame" x="305" y="21" width="7" height="13"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="13" id="7Ur-7h-sxP"/>
+                                                        <constraint firstAttribute="width" constant="7" id="XJT-6B-AGU"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dF2-YR-mSH" firstAttribute="top" secondItem="luG-4V-9oO" secondAttribute="top" constant="21" id="6Nv-Cd-IT9"/>
+                                                <constraint firstAttribute="trailing" secondItem="dF2-YR-mSH" secondAttribute="trailing" constant="8" id="d6Z-Jw-IlB"/>
+                                                <constraint firstAttribute="bottom" secondItem="dF2-YR-mSH" secondAttribute="bottom" constant="21" id="sVe-Jb-JXj"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="EZE-jO-jtC" kind="push" id="qV9-jm-DnC"/>
+                                            <segue destination="EZE-jO-jtC" kind="push" id="8bo-Uh-4Ui"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1021,8 +1030,8 @@
         <image name="user_setting" width="19" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nkC-wh-Yzw"/>
         <segue reference="qOj-QT-o5e"/>
+        <segue reference="9Sz-Zg-OZn"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

@@ -40,17 +40,17 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-//    [self hideKeyboard];
+    [self hideKeyboard];
 }
 
 - (void)hideKeyboard{
-    [self.mailField resignFirstResponder];
-    [self.enNameField resignFirstResponder];
-    [self.experienceField resignFirstResponder];
-    [self.companyField resignFirstResponder];
+//    [self.mailField resignFirstResponder];
+//    [self.enNameField resignFirstResponder];
+//    [self.experienceField resignFirstResponder];
+//    [self.companyField resignFirstResponder];
 }
 - (void)hideKeyBoard:(UIGestureRecognizer *)recognizer{
-//    [self hideKeyboard];
+    [self hideKeyboard];
 }
 #pragma mark - Init
 - (NSMutableDictionary *)infoDic{
@@ -100,6 +100,8 @@
         
     }];
 }
+
+
 
 
 #pragma mark - Navigation
