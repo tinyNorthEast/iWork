@@ -50,7 +50,14 @@
     }else{
         WGResetPasswordRequest *requst = [[WGResetPasswordRequest alloc] initWithOldPassword:self.oldPswField.text newPassword:self.pswField.text];
         [requst requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
-            if (baseModel.infoCode.integerValue == 0) {
+            if (baseModel.infoCode.integerValue == TokenFailed) {
+                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+                UIViewController *vc = [sb instantiateInitialViewController];
+                [self presentViewController:vc animated:YES completion:^{
+                    
+                }];
+            }
+            else if (baseModel.infoCode.integerValue == 0) {
                 
             }else{
                 [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];

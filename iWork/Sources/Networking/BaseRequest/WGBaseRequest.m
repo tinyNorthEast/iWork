@@ -95,11 +95,6 @@
     self.requestSuccess = success;
     self.requestFailed = failure;
     
-    if (self.requestMethod == WGHTTPRequestMethodGET) {
-        
-    }else{
-        
-    }
     [self request];
 }
 

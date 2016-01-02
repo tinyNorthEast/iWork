@@ -122,11 +122,21 @@
 
 #pragma mark - Request
 - (void)requestDetailData{
+    [WGProgressHUD defaultLoadingOnView:self.view];
+    
     WGHunterDetailRequest *request = [[WGHunterDetailRequest alloc] initWithHunterId:@(16)];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
-        if (baseModel.infoCode.integerValue == 0) {
+        [WGProgressHUD dismissOnView:self.view];
+        if (baseModel.infoCode.integerValue == TokenFailed) {
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+            UIViewController *vc = [sb instantiateInitialViewController];
+            [self presentViewController:vc animated:YES completion:^{
+                
+            }];
+        }
+        else if (baseModel.infoCode.integerValue == 0) {
             WGHunterDetailModel *model = (WGHunterDetailModel *)baseModel;
             
             WGHunterInfoModel *infoModel = [[WGHunterInfoModel alloc] initWithDictionary:model.data[@"headhunterInfo"] error:nil];

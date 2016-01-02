@@ -11,6 +11,7 @@
 #import <extobjc.h>
 
 #import "WGProgressHUD.h"
+#import "UIImageView+WGHTTP.h"
 
 #import "WGUserInfoModel.h"
 #import "WGResetUserInfoRequest.h"
@@ -19,6 +20,7 @@
 
 @property (nonatomic, strong) NSMutableDictionary *infoDic;
 
+@property (weak, nonatomic) IBOutlet UIImageView *headerView;
 @property (weak, nonatomic) IBOutlet UITextField *mailField;
 @property (weak, nonatomic) IBOutlet UITextField *enNameField;
 @property (weak, nonatomic) IBOutlet UITextField *experienceField;
@@ -29,9 +31,10 @@
 @implementation WGResetUserInfoController
 
 - (void)viewDidLoad{
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard:)];
-    [self.view addGestureRecognizer:tap];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard:)];
+//    [self.view addGestureRecognizer:tap];
     
+    [self.headerView wg_loadImageFromURL:self.userInfoModel.pic placeholder:[UIImage imageNamed:@"user_defaultHeader"]];
     self.mailField.text = self.userInfoModel.mail;
     self.enNameField.text = self.userInfoModel.en_name;
     self.experienceField.text = self.userInfoModel.experience.stringValue;
@@ -91,7 +94,14 @@
     
     WGResetUserInfoRequest *request = [[WGResetUserInfoRequest alloc] initWithUserInfo:self.infoDic];
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
-        if (baseModel.infoCode.integerValue == 0) {
+        if (baseModel.infoCode.integerValue == TokenFailed) {
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+            UIViewController *vc = [sb instantiateInitialViewController];
+            [self presentViewController:vc animated:YES completion:^{
+                
+            }];
+        }
+        else if (baseModel.infoCode.integerValue == 0) {
             [self back];
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
@@ -100,16 +110,5 @@
         
     }];
 }
-
-
-
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-}
-
 
 @end

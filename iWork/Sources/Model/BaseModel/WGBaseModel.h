@@ -8,6 +8,8 @@
 
 #import "JSONModel.h"
 
+#define TokenFailed 30003
+
 @interface WGBaseModel : JSONModel
 
 @property (nonatomic, strong) NSNumber<Optional> *infoCode;
