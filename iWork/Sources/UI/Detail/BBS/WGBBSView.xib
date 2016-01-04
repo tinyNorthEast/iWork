@@ -40,6 +40,9 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="wg_bgCornerColor" value="AAAAAA"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="checkAllComments:" destination="iN0-l3-epB" eventType="touchUpInside" id="x0o-KH-kId"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tP5-ym-ljF">
                     <rect key="frame" x="0.0" y="40" width="320" height="128"/>

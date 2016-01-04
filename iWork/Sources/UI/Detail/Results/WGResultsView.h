@@ -10,4 +10,6 @@
 
 @interface WGResultsView : UIView
 
+- (CGFloat)viewHeightbyResultsArray:(NSArray *)results;
+
 @end

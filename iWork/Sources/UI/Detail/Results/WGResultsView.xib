@@ -26,8 +26,11 @@
                         <constraint firstAttribute="height" constant="2" id="IGL-Bi-Df1"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poI-oP-Z9b">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poI-oP-Z9b">
                     <rect key="frame" x="8" y="195" width="304" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="yWH-gU-jgY"/>
+                    </constraints>
                     <state key="normal" title="申请开通权限">
                         <color key="titleColor" red="0.066666666669999999" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -37,19 +40,41 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="wg_bgCornerColor" value="AAAAAA"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="openPermission:" destination="iN0-l3-epB" eventType="touchUpInside" id="J99-7E-xCe"/>
+                    </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2t-kJ-nKA">
+                    <rect key="frame" x="10" y="40" width="300" height="142"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="142" id="mHJ-d4-kCN"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="aAu-Ec-itB" secondAttribute="trailing" constant="126" id="2k4-dq-PHZ"/>
+                <constraint firstAttribute="trailing" secondItem="poI-oP-Z9b" secondAttribute="trailing" constant="8" id="6fZ-Bn-dx2"/>
+                <constraint firstItem="poI-oP-Z9b" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="91F-CW-KpD"/>
                 <constraint firstItem="aAu-Ec-itB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="ARO-gE-rlI"/>
+                <constraint firstItem="k2t-kJ-nKA" firstAttribute="top" secondItem="6vH-31-W3I" secondAttribute="bottom" constant="6" id="G8l-yy-FR4"/>
+                <constraint firstItem="poI-oP-Z9b" firstAttribute="top" secondItem="k2t-kJ-nKA" secondAttribute="bottom" constant="13" id="Pzh-QL-0W6"/>
+                <constraint firstAttribute="trailing" secondItem="k2t-kJ-nKA" secondAttribute="trailing" constant="10" id="W2z-K7-kkI"/>
                 <constraint firstAttribute="trailing" secondItem="6vH-31-W3I" secondAttribute="trailing" constant="104" id="dwn-tj-9Xo"/>
                 <constraint firstItem="6vH-31-W3I" firstAttribute="top" secondItem="aAu-Ec-itB" secondAttribute="bottom" constant="3" id="kvK-6f-OAp"/>
+                <constraint firstAttribute="bottom" secondItem="poI-oP-Z9b" secondAttribute="bottom" constant="8" id="lWD-kk-6rF"/>
+                <constraint firstItem="k2t-kJ-nKA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="oC3-vI-dPe"/>
                 <constraint firstItem="6vH-31-W3I" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="104" id="ok6-Ac-Xlz"/>
+                <constraint firstItem="poI-oP-Z9b" firstAttribute="top" secondItem="k2t-kJ-nKA" secondAttribute="bottom" constant="13" id="vf1-uw-Uky"/>
                 <constraint firstItem="aAu-Ec-itB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="126" id="wyV-cp-h1a"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="resultView" destination="k2t-kJ-nKA" id="9Hy-aj-zjD"/>
+                <outlet property="resultViewHeight" destination="mHJ-d4-kCN" id="D2U-uA-fwW"/>
+            </connections>
             <point key="canvasLocation" x="220" y="116"/>
         </view>
     </objects>

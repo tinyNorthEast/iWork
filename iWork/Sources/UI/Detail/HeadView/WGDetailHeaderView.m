@@ -10,8 +10,10 @@
 
 #import <XXNibBridge.h>
 
+#import "UIViewAdditions.h"
 #import "UIImageView+WGHTTP.h"
 
+#import "WGGlobal.h"
 #import "WGHunterInfoModel.h"
 #import "WGHunterDetailViewController.h"
 #import "WGBBSViewController.h"
@@ -33,23 +35,42 @@
 }
 
 #pragma mark - IBAction
-- (UIViewController *)viewController {
-    for (UIView* next = [self superview]; next; next = next.superview) {
-        UIResponder *nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:[WGHunterDetailViewController class]]) {
-            return (WGHunterDetailViewController *)nextResponder;
-        }
-    }
-    return nil;
+//- (UIViewController *)viewController {
+//    for (UIView* next = [self superview]; next; next = next.superview) {
+//        UIResponder *nextResponder = [next nextResponder];
+//        if ([nextResponder isKindOfClass:[WGHunterDetailViewController class]]) {
+//            return (WGHunterDetailViewController *)nextResponder;
+//        }
+//    }
+//    return nil;
+//}
+- (BOOL)isSignIn{
+    return ([[WGGlobal sharedInstance] userToken].length>0?YES:NO);
 }
 - (IBAction)praiseAction:(id)sender {
+    if ([self isSignIn]) {
+        
+    }else{
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+        UIViewController *vc = [sb instantiateInitialViewController];
+        [[self viewController] presentViewController:vc animated:YES completion:^{
+            
+        }];
+    }
 }
 - (IBAction)gotoComment:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
-    WGBBSViewController *vc = [sb instantiateInitialViewController];;
-    [[self viewController].navigationController pushViewController:vc animated:YES];
+    if ([self isSignIn]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
+        WGBBSViewController *vc = [sb instantiateInitialViewController];;
+        [[self viewController].navigationController pushViewController:vc animated:YES];
+    }else{
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+        UIViewController *vc = [sb instantiateInitialViewController];
+        [[self viewController] presentViewController:vc animated:YES completion:^{
+            
+        }];
+    }
 }
-
 
 /*
 // Only override drawRect: if you perform custom drawing.

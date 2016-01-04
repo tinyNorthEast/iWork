@@ -9,9 +9,11 @@
 #import "WGBBSView.h"
 
 #import <XXNibBridge.h>
+#import "UIViewAdditions.h"
 
 #import "WGCommentModel.h"
 #import "WGBBSCell.h"
+#import "WGGlobal.h"
 
 @interface WGBBSView()<XXNibBridge,UITableViewDataSource,UITableViewDelegate>
 
@@ -60,6 +62,20 @@
     cell.comment = aComment;
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark - IBAcion
+- (BOOL)isSignIn{
+    return ([[WGGlobal sharedInstance] userToken].length>0?YES:NO);
+}
+- (IBAction)checkAllComments:(id)sender {
+    if ([self isSignIn]) {
+        
+    }else{
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+        UIViewController *vc = [sb instantiateInitialViewController];
+        [[self viewController] presentViewController:vc animated:YES completion:^{
+            
+        }];
+    }
+}
 
 @end

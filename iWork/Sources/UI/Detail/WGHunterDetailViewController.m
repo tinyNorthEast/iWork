@@ -15,6 +15,7 @@
 #import "UIViewAdditions.h"
 #import "WGTools.h"
 
+#import "WGGlobal.h"
 #import "WGWriteBBSViewController.h"
 #import "WGHunterDetailRequest.h"
 #import "WGHunterDetailModel.h"
@@ -49,11 +50,11 @@
     [super viewDidLoad];
     
     self.headerHeight.constant = 255;
-    self.describeHeight.constant = 130;
-    self.industryHeight.constant = 100;
+    self.describeHeight.constant = 70;
+    self.industryHeight.constant = 50;
     self.functionHeight.constant = 100;
-    self.resultsHeight.constant = 250;
-    self.bbsHeight.constant = 200;
+    self.resultsHeight.constant = 110;
+    self.bbsHeight.constant = 110;
     
     [self requestDetailData];
 }
@@ -107,18 +108,28 @@
                                 }
                             }];
 }
+- (BOOL)isSignIn{
+    return ([[WGGlobal sharedInstance] userToken].length>0?YES:NO);
+}
 - (IBAction)writeBBS:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WriteBBS" bundle:nil];
-    WGWriteBBSViewController *vc = [sb instantiateInitialViewController];
-    vc.toUserId = @(16);
-    [self presentViewController:vc animated:YES completion:^{
-        
-    }];
+    if ([self isSignIn]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WriteBBS" bundle:nil];
+        WGWriteBBSViewController *vc = [sb instantiateInitialViewController];
+        vc.toUserId = @(16);
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
+    }else{
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+        UIViewController *vc = [sb instantiateInitialViewController];
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
+    }
 }
 - (IBAction)callConsultant:(id)sender {
     [WGTools callPhone:@"" prompt:NO];
 }
-
 
 #pragma mark - Request
 - (void)requestDetailData{
@@ -149,27 +160,8 @@
             
             self.functionHeight.constant = [self.functionView viewHeightbyFunctionsArray:infoModel.functionsList];
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            self.resultsHeight.constant = 250;
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            NSArray *resultsArray = model.data[@"performanceList"];
+            self.resultsHeight.constant = [self.resultsView viewHeightbyResultsArray:resultsArray];
             
             NSArray *bbsArray = model.data[@"commentList"];
             self.bbsHeight.constant = [self.bbsView viewHeightbyCommentsArray:bbsArray];

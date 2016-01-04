@@ -9,7 +9,7 @@
 #import "WGHunterDetailRequest.h"
 
 #import "NSMutableDictionary+WGExtension.h"
-#import "WGDataAccess.h"
+#import "WGGlobal.h"
 #import "SignHeader.h"
 
 #import "WGHunterDetailModel.h"
@@ -21,7 +21,7 @@
     if (self) {
         
         [self.getParams safeSetValue:hunterId forKey:@"headhunterId"];
-        [self.getParams safeSetValue:[WGDataAccess userDefaultsStringForKey:kUSERTOKEN_KEY] forKey:@"token"];
+        [self.getParams safeSetValue:[[WGGlobal sharedInstance]userToken] forKey:@"token"];
         
         return self;
     }

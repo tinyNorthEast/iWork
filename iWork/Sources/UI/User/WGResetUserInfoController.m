@@ -9,16 +9,23 @@
 #import "WGResetUserInfoController.h"
 
 #import <extobjc.h>
+#import <QiniuSDK.h>
 
 #import "WGProgressHUD.h"
 #import "UIImageView+WGHTTP.h"
+#import "WGValidJudge.h"
 
+#import "WGQNTokenRequest.h"
+#import "WGQiNiuTokenModel.h"
 #import "WGUserInfoModel.h"
 #import "WGResetUserInfoRequest.h"
 
-@interface WGResetUserInfoController()
+@interface WGResetUserInfoController()<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary *infoDic;
+
+@property (nonatomic, copy) NSData *imageData;
+@property (nonatomic, copy) UIImage *headerImage;
 
 @property (weak, nonatomic) IBOutlet UIImageView *headerView;
 @property (weak, nonatomic) IBOutlet UITextField *mailField;
@@ -110,5 +117,127 @@
         
     }];
 }
+
+#pragma mark - Request
+- (void)getUplodImageToken{
+    WGQNTokenRequest *request = [[WGQNTokenRequest alloc] init];
+    
+    @weakify(self);
+    [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+        @strongify(self);
+        WGQiNiuTokenModel *model = (WGQiNiuTokenModel *)baseModel;
+        
+        QNUploadManager *upManager = [[QNUploadManager alloc] init];
+        [upManager putData:self.imageData key:@"header" token:model.data
+                  complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+                      [self.headerView setImage:self.headerImage];
+                      [self.infoDic setObject:[NSString stringWithFormat:@"http://7xoors.com1.z0.glb.clouddn.com/%@",key] forKey:@"pic"];
+                      
+                  } option:nil];
+        
+    } failure:^(WGBaseModel *baseModel, NSError *error) {
+        
+    }];
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从手机相册选择",nil];
+        [as showInView:self.view];
+    }
+}
+#pragma mark - UIActionSheetDelegate
+- (void)callCamera{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:picker animated:YES completion:^{
+            
+        }];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Opps" message:@"你没有摄像头" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+- (void)callPhotoLibary{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:^{
+        
+    }];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        [self callCamera];
+    }else{
+        [self callPhotoLibary];
+    }
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)size
+{
+    UIGraphicsBeginImageContext(size);
+    [img drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return scaledImage;
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    //得到图片
+    UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage * editedimage = [info objectForKey:UIImagePickerControllerEditedImage];
+    NSURL *url      = [info objectForKey:UIImagePickerControllerReferenceURL];
+    UIImage *newImg = [self scaleToSize:editedimage size:CGSizeMake(500, 500)];
+    NSString *imgName = [url pathExtension];
+    
+    if( ![WGValidJudge isValidString:imgName] )
+    {
+        imgName = @"png";
+    }
+    
+    //    NSString *paths     = [NSString stringWithFormat:@"%@/Documents/TakePhoto/photo.%@", NSHomeDirectory(),imgName];
+    //    NSFileManager *fileManager = [NSFileManager defaultManager];
+    //    if(![fileManager fileExistsAtPath:paths]){
+    //        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    //        NSString *directryPath = [path stringByAppendingPathComponent:@"TakePhoto"];
+    //        [fileManager createDirectoryAtPath:directryPath withIntermediateDirectories:YES attributes:nil error:nil];
+    //        NSString *filePath = [directryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"photo.%@",imgName]];
+    //
+    //        [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+    //    }
+    //
+    //    [UIImagePNGRepresentation(newImg) writeToFile:paths  atomically:YES];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingString:[NSString stringWithFormat:@"/%@",imgName]];
+    NSData *data = UIImageJPEGRepresentation(newImg,0.5);
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager createFileAtPath:filePath contents:data attributes:nil];
+    
+    self.imageData = data;
+    self.headerImage = newImg;
+    
+    if(picker.sourceType == UIImagePickerControllerSourceTypeCamera )
+    {
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self getUplodImageToken];
+    }];
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end
