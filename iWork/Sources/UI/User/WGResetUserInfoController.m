@@ -19,8 +19,11 @@
 #import "WGQiNiuTokenModel.h"
 #import "WGUserInfoModel.h"
 #import "WGResetUserInfoRequest.h"
+#import "WGDataPickerView.h"
 
 @interface WGResetUserInfoController()<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+
+@property (strong, nonatomic) WGDataPickerView *picker;
 
 @property (nonatomic, strong) NSMutableDictionary *infoDic;
 
@@ -44,7 +47,7 @@
     [self.headerView wg_loadImageFromURL:self.userInfoModel.pic placeholder:[UIImage imageNamed:@"user_defaultHeader"]];
     self.mailField.text = self.userInfoModel.mail;
     self.enNameField.text = self.userInfoModel.en_name;
-    self.experienceField.text = self.userInfoModel.experience.stringValue;
+    self.experienceField.text = [self mappingExperience:self.userInfoModel.experience.integerValue];
     self.companyField.text = self.userInfoModel.company;
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -62,12 +65,45 @@
 - (void)hideKeyBoard:(UIGestureRecognizer *)recognizer{
     [self hideKeyboard];
 }
+- (NSString *)mappingExperience:(NSUInteger)exID{
+
+    NSString *experienceStr = nil;
+    switch (exID) {
+        case 0:
+            
+            experienceStr = @"3年以下";
+            break;
+            
+        case 1:
+            experienceStr = @"3-5年";
+            break;
+            
+        case 2:
+            experienceStr = @"5-10年";
+            break;
+            
+        case 3:
+            experienceStr = @"10年以上";
+            break;
+    }
+    return experienceStr;
+    
+}
 #pragma mark - Init
 - (NSMutableDictionary *)infoDic{
     if (!_infoDic) {
         _infoDic = [NSMutableDictionary dictionary];
     }
     return _infoDic;
+}
+- (WGDataPickerView *)picker{
+    if (!_picker) {
+        _picker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
+        _picker.autoHidden = YES;
+        [_picker setSelectIndex:0];
+        [_picker showInView:self.view];
+    }
+    return _picker;
 }
 - (void)setUserInfoModel:(WGUserInfoModel *)userInfoModel{    
     _userInfoModel = userInfoModel;
@@ -80,6 +116,46 @@
 - (IBAction)backAction:(id)sender {
     [self back];
 }
+- (IBAction)showExperienceSheet:(id)sender {
+    _picker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
+    _picker.autoHidden = YES;
+    [_picker setSelectIndex:0];
+    
+    self.picker.dataArray = @[@"3年以下", @"3-5年", @"5-10年",@"10年以上"];
+    self.picker.barTitle = @"工作经验";
+    
+    @weakify(self);
+    [self.picker showSelectDate:^(NSInteger selectRow) {
+        @strongify(self);
+        NSInteger exID = 0;
+        switch (selectRow) {
+            case 0:
+                exID = 1;
+                break;
+                
+            case 1:
+                exID = 2;
+                break;
+                
+            case 2:
+                exID = 3;
+                break;
+                
+            case 3:
+                exID = 4;
+                break;
+        }
+        
+        self.experienceField.text = self.picker.dataArray[selectRow];
+        [self.infoDic setObject:self.experienceField.text forKey:@"experience"];
+        
+    } cancel:^{
+        
+    }];
+    
+    [_picker showInView:self.view];
+}
+
 - (IBAction)saveAction:(id)sender {
     if (self.mailField.text.length && ![self.mailField.text isEqualToString:self.userInfoModel.mail]) {
         [self.infoDic setObject:self.mailField.text forKey:@"mail"];
@@ -237,6 +313,11 @@
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    return YES;
 }
 
 

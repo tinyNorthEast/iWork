@@ -858,9 +858,14 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="可修改工作年限" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gs8-iz-CBi">
                                                     <rect key="frame" x="92" y="12" width="220" height="30"/>
+                                                    <gestureRecognizers/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="WGm-8u-y3J" id="LNw-bY-VFC"/>
+                                                        <outletCollection property="gestureRecognizers" destination="ptR-af-S1v" appends="YES" id="Q4d-PI-F4q"/>
+                                                    </connections>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ow-Ti-0Ms">
                                                     <rect key="frame" x="10" y="54" width="310" height="1"/>
@@ -870,6 +875,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstItem="gs8-iz-CBi" firstAttribute="leading" secondItem="8ls-ia-qBI" secondAttribute="trailing" constant="9.5" id="5fF-ph-Bs7"/>
                                                 <constraint firstAttribute="trailing" secondItem="0ow-Ti-0Ms" secondAttribute="trailing" id="72Z-FZ-pJm"/>
@@ -995,6 +1001,12 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brU-lo-0js" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ptR-af-S1v">
+                    <connections>
+                        <action selector="showExperienceSheet:" destination="WGm-8u-y3J" id="ivU-ia-jXN"/>
+                        <outlet property="delegate" destination="WGm-8u-y3J" id="LxP-7W-amh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1072" y="-190"/>
         </scene>

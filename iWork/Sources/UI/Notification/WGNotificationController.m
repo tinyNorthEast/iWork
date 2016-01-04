@@ -100,6 +100,7 @@
             
             [WGProgressHUD dismissOnView:self.view];
             if (baseModel.infoCode.integerValue == 0) {
+                // Delete the row from the data source
                 [self.notifications removeObjectAtIndex:indexPath.row];
                 [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             }
@@ -107,10 +108,6 @@
         } failure:^(WGBaseModel *baseModel, NSError *error) {
             
         }];
-        
-        
-        // Delete the row from the data source
-        
     }
 }
 

@@ -10,6 +10,8 @@
 
 #import "UIViewAdditions.h"
 
+#import "UIColor+WGThemeColors.h"
+
 @interface WGToolBarView(){
     float _xPadding;
 }
@@ -25,7 +27,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-//        self.backgroundColor = [UIColor kColorGray2];
+        self.backgroundColor = [UIColor wg_themeLightGrayColor];
         
         [self setupView];
     }
@@ -38,7 +40,7 @@
 //    lineLabel.backgroundColor = [UIColor kColorGray1];
 //    [self addSubview:lineLabel];
 //    
-//    _xPadding = (SCREEN_WIDTH ==320.0f) ? 4: 10;
+    _xPadding = 8;
     //取消按钮
     [self addSubview:self.cancelButton];
     //确定按钮
@@ -68,7 +70,7 @@
 //        [_confirmButton setTitleColor:[UIColor kColorGray] forState:UIControlStateNormal];
         [_confirmButton addTarget:self action:@selector(confirmPressed:) forControlEvents:UIControlEventTouchUpInside];
         _confirmButton.frame = CGRectMake(0, 0, 60, 40);
-//        _confirmButton.right = SCREEN_WIDTH - _xPadding;
+        _confirmButton.right = self.width - _xPadding;
         _confirmButton.centerY = self.centerY;
     }
     return _confirmButton;
@@ -81,7 +83,7 @@
         _titleLabel.backgroundColor=[UIColor clearColor];
         _titleLabel.textAlignment=NSTextAlignmentCenter;
 //        _titleLabel.font=[UIFont kFontSizeLarge];
-//        _titleLabel.textColor=[UIColor kColorGray];
+        _titleLabel.textColor=[UIColor wg_themeWhiteColor];
     }
     return _titleLabel;
 }
