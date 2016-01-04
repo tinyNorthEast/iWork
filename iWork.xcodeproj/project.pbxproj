@@ -17,6 +17,7 @@
 		B5066A081C0C44AB00D87E56 /* WGForgetPasswordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5066A071C0C44AB00D87E56 /* WGForgetPasswordRequest.m */; };
 		B5066A141C0C8EBD00D87E56 /* WGMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B5066A131C0C8EBD00D87E56 /* WGMenuBar.m */; };
 		B5066A161C0C8EDA00D87E56 /* WGMenuBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5066A151C0C8EDA00D87E56 /* WGMenuBar.xib */; };
+		B509BDDB1C3A232600AECA6A /* WGDeleteNotificationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B509BDDA1C3A232600AECA6A /* WGDeleteNotificationRequest.m */; };
 		B50C5BFE1C11471F0043C26B /* WGCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C5BFD1C11471F0043C26B /* WGCityModel.m */; };
 		B50C5C021C1159190043C26B /* WGCityListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C5C011C1159190043C26B /* WGCityListRequest.m */; };
 		B50C5C061C1159690043C26B /* WGCityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C5C051C1159690043C26B /* WGCityListViewController.m */; };
@@ -229,6 +230,8 @@
 		B5066A121C0C8EBD00D87E56 /* WGMenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMenuBar.h; sourceTree = "<group>"; };
 		B5066A131C0C8EBD00D87E56 /* WGMenuBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMenuBar.m; sourceTree = "<group>"; };
 		B5066A151C0C8EDA00D87E56 /* WGMenuBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGMenuBar.xib; sourceTree = "<group>"; };
+		B509BDD91C3A232600AECA6A /* WGDeleteNotificationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDeleteNotificationRequest.h; sourceTree = "<group>"; };
+		B509BDDA1C3A232600AECA6A /* WGDeleteNotificationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGDeleteNotificationRequest.m; sourceTree = "<group>"; };
 		B50C5BFC1C11471F0043C26B /* WGCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCityModel.h; sourceTree = "<group>"; };
 		B50C5BFD1C11471F0043C26B /* WGCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCityModel.m; sourceTree = "<group>"; };
 		B50C5C001C1159190043C26B /* WGCityListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCityListRequest.h; sourceTree = "<group>"; };
@@ -1426,6 +1429,8 @@
 				B5F987881C32E05E00253667 /* WGNotifyCategoryRequest.m */,
 				B5FAC9271C2E210600C82019 /* WGNotificationRequest.h */,
 				B5FAC9281C2E210600C82019 /* WGNotificationRequest.m */,
+				B509BDD91C3A232600AECA6A /* WGDeleteNotificationRequest.h */,
+				B509BDDA1C3A232600AECA6A /* WGDeleteNotificationRequest.m */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -1826,6 +1831,7 @@
 				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,
 				B5721E4A1C29ADA5007EE80F /* WGIndustryListRequest.m in Sources */,
 				B5548D6A1C326195007FCF58 /* WGFavoriteCell.m in Sources */,
+				B509BDDB1C3A232600AECA6A /* WGDeleteNotificationRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

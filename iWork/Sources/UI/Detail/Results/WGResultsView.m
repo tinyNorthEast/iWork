@@ -10,6 +10,7 @@
 
 #import <XXNibBridge.h>
 
+#import "WGProgressHUD.h"
 #import "UIViewAdditions.h"
 #import "UIFont+WGThemeFonts.h"
 #import "UIColor+WGThemeColors.h"
@@ -83,7 +84,19 @@
 }
 - (IBAction)openPermission:(id)sender {
     if ([self isSignIn]) {
-//        WGApplyAuthRequest *request = [WGApplyAuthRequest alloc] initWithHunterId:<#(NSNumber *)#> hr_mail:<#(NSString *)#>
+        [WGProgressHUD loadMessage:@"正在帮你申请权限" onView:[self viewController].view];
+        WGApplyAuthRequest *request = [[WGApplyAuthRequest alloc] initWithHunterId:@(16) hr_mail:@""];
+        [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+            [WGProgressHUD dismissOnView:[self viewController].view];
+            if (baseModel.infoCode.integerValue == 0) {
+                
+            }else{
+                
+            }
+            
+        } failure:^(WGBaseModel *baseModel, NSError *error) {
+            
+        }];
         
     }else{
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];

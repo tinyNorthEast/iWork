@@ -11,10 +11,13 @@
 #import <extobjc.h>
 #import <XXNibBridge.h>
 
+#import "WGProgressHUD.h"
+
 #import "WGNotificationCell.h"
 #import "WGNotificationRequest.h"
 #import "WGNotificationListModel.h"
 #import "WGNotificationModel.h"
+#import "WGDeleteNotificationRequest.h"
 
 @interface WGNotificationController ()
 
@@ -86,9 +89,28 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        WGNotificationModel *aNotification = self.notifications[indexPath.row];
+        
+        WGDeleteNotificationRequest *request = [[WGDeleteNotificationRequest alloc] initWithObjId:aNotification.objId];
+        @weakify(self);
+        [WGProgressHUD loadMessage:@"正在删除消息" onView:self.view];
+        [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+            @strongify(self);
+            
+            [WGProgressHUD dismissOnView:self.view];
+            if (baseModel.infoCode.integerValue == 0) {
+                [self.notifications removeObjectAtIndex:indexPath.row];
+                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+            
+        } failure:^(WGBaseModel *baseModel, NSError *error) {
+            
+        }];
+        
+        
         // Delete the row from the data source
-        [self.notifications removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
     }
 }
 
