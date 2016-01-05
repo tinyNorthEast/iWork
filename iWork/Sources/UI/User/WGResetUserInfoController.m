@@ -47,7 +47,7 @@
     [self.headerView wg_loadImageFromURL:self.userInfoModel.pic placeholder:[UIImage imageNamed:@"user_defaultHeader"]];
     self.mailField.text = self.userInfoModel.mail;
     self.enNameField.text = self.userInfoModel.en_name;
-    self.experienceField.text = [self mappingExperience:self.userInfoModel.experience.integerValue];
+    self.experienceField.text = [self mappingExperienceId:self.userInfoModel.experience.integerValue];
     self.companyField.text = self.userInfoModel.company;
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -65,7 +65,7 @@
 - (void)hideKeyBoard:(UIGestureRecognizer *)recognizer{
     [self hideKeyboard];
 }
-- (NSString *)mappingExperience:(NSUInteger)exID{
+- (NSString *)mappingExperienceId:(NSUInteger)exID{
 
     NSString *experienceStr = nil;
     switch (exID) {
@@ -89,6 +89,19 @@
     return experienceStr;
     
 }
+- (NSUInteger)mappingExperienceStr:(NSString *)exStr{
+    if ([exStr isEqualToString:@"3年以下"]) {
+        return 0;
+    }else if ([exStr isEqualToString:@"3-5年"]){
+        return 1;
+    }else if ([exStr isEqualToString:@"5-10年"]){
+        return 2;
+    }else if ([exStr isEqualToString:@"10年以上"]){
+        return 3;
+    }
+    return -1;
+}
+
 #pragma mark - Init
 - (NSMutableDictionary *)infoDic{
     if (!_infoDic) {
@@ -163,7 +176,7 @@
     if (self.enNameField.text.length && ![self.enNameField.text isEqualToString:self.userInfoModel.en_name]) {
         [self.infoDic setObject:self.enNameField.text forKey:@"en_name"];
     }
-    if (self.experienceField.text.length && ![self.experienceField.text isEqualToString:self.userInfoModel.experience.stringValue]) {
+    if (self.experienceField.text.length && ![self mappingExperienceStr:self.experienceField.text] == self.userInfoModel.experience.integerValue) {
         [self.infoDic setObject:self.experienceField.text forKey:@"experience"];
     }
     if (self.companyField.text.length && ![self.companyField.text isEqualToString:self.userInfoModel.company]) {
@@ -175,8 +188,10 @@
         return;
     }
     
+    [WGProgressHUD loadMessage:@"正在修改个人资料" onView:self.view];
     WGResetUserInfoRequest *request = [[WGResetUserInfoRequest alloc] initWithUserInfo:self.infoDic];
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+        [WGProgressHUD dismissOnView:self.view];
         if (baseModel.infoCode.integerValue == TokenFailed) {
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
             UIViewController *vc = [sb instantiateInitialViewController];

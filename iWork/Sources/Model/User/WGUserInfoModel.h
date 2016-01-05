@@ -18,5 +18,6 @@
 @property (nonatomic, strong) NSNumber<Optional> *experience;
 @property (nonatomic, copy) NSString<Optional> *roleName;
 @property (nonatomic, copy) NSString<Optional> *pic;
+@property (nonatomic, strong) NSNumber<Optional> *noticeCount;
 
 @end

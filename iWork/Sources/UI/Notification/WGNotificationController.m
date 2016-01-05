@@ -18,6 +18,8 @@
 #import "WGNotificationListModel.h"
 #import "WGNotificationModel.h"
 #import "WGDeleteNotificationRequest.h"
+#import "WGNotifiCategoryListModel.h"
+#import "WGBBSViewController.h"
 
 @interface WGNotificationController ()
 
@@ -74,6 +76,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WGNotificationCell *cell = [tableView dequeueReusableCellWithIdentifier:[WGNotificationCell xx_nibID] forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.notify_type = self.notif_type;
     [self configureCell:cell forIndexPath:indexPath];
     return cell;
 }
@@ -108,6 +111,15 @@
         } failure:^(WGBaseModel *baseModel, NSError *error) {
             
         }];
+    }
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([self.notif_type integerValue] ==  WGNOTIFICATIONCATEGORY_BBS) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
+        WGBBSViewController *vc = [sb instantiateInitialViewController];;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

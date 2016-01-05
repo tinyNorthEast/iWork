@@ -20,6 +20,8 @@
 #import "WGHunterIndustryModel.h"
 
 @interface WGMainCell()<XXNibBridge>
+@property (nonatomic, assign) NSUInteger praiseTag;
+
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 @property (weak, nonatomic) IBOutlet UIImageView *rateImage;
 @property (weak, nonatomic) IBOutlet UILabel *rateLabel;
@@ -34,6 +36,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -81,6 +84,15 @@
     if (self.selectBBS) {
         self.selectBBS();
     }
+}
+- (IBAction)praiseButton:(id)sender {
+    [self.pariseButton setImage:[UIImage imageNamed:(self.praiseTag%2==0?@"detail_favorite2":@"main_favorite")] forState:UIControlStateNormal];
+    self.praiseTag++;
+    CAKeyframeAnimation *k = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    k.values = @[@(0.1),@(1.0),@(1.5)];
+    k.keyTimes = @[@(0.0),@(0.5),@(0.8),@(1.0)];
+    k.calculationMode = kCAAnimationLinear;
+    [self.pariseButton.layer addAnimation:k forKey:@"SHOW"];
 }
 
 @end

@@ -38,11 +38,7 @@
         }
         if ([[[UIDevice currentDevice] model] isEqualToString:@"iPhone"]){
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:call]];
-        } else {
-//            NSString *tip = [NSString stringWithFormat:@"您的设备不支持电话，请用其他电话拨打:%@", phoneNumber];
-           
         }
-
     }
 }
 

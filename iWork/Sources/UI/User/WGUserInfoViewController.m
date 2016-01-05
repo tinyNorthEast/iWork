@@ -9,9 +9,13 @@
 #import "WGUserInfoViewController.h"
 
 #import <extobjc.h>
+#import "M13BadgeView.h"
+
+#import "UIViewAdditions.h"
 #import "UIImageView+WGHTTP.h"
 #import "WGGlobal.h"
 #import "SignHeader.h"
+#import "UIColor+WGThemeColors.h"
 
 #import "WGUserInfoRequest.h"
 #import "WGUserInfoRequestModel.h"
@@ -25,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *myNotifiLabel;
 
 @end
 
@@ -71,15 +76,21 @@
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
-        WGUserInfoRequestModel *model = (WGUserInfoRequestModel *)baseModel;
-        WGUserInfoModel *infoModel = model.data;
-        
-        self.userInfoModel = infoModel;
-        
-        [self.headerImage wg_loadImageFromURL:infoModel.pic placeholder:[UIImage imageNamed:@"user_defaultHeader"]];
-        [self.nameLabel setText:infoModel.zh_name];
-        
-        
+        if (baseModel.infoCode.integerValue == 0) {
+            WGUserInfoRequestModel *model = (WGUserInfoRequestModel *)baseModel;
+            WGUserInfoModel *infoModel = model.data;
+            
+            self.userInfoModel = infoModel;
+            
+            [self.headerImage wg_loadImageFromURL:infoModel.pic placeholder:[UIImage imageNamed:@"user_defaultHeader"]];
+            [self.nameLabel setText:infoModel.zh_name];
+            
+            M13BadgeView *badgeView = [[M13BadgeView alloc] initWithFrame:CGRectMake(self.myNotifiLabel.right, 12, 24.0, 24.0)];
+            [self.myNotifiLabel addSubview:badgeView];
+            badgeView.text = infoModel.noticeCount.stringValue;
+            badgeView.badgeBackgroundColor = [UIColor wg_themeCyanColor];
+            badgeView.hidesWhenZero = YES;
+        }   
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];

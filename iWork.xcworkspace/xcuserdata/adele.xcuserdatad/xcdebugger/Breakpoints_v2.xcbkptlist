@@ -243,13 +243,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWork/Sources/UI/Detail/WGHunterDetailViewController.m"
-            timestampString = "473479629.072192"
+            filePath = "iWork/Sources/UI/Detail/HeadView/WGDetailHeaderView.m"
+            timestampString = "473604012.423532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "-callConsultant:"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-setInfoModel:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWork/Sources/UI/Detail/Results/WGResultsView.m"
+            timestampString = "473604675.395465"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-openPermission:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -61,9 +61,7 @@
         self.holderLabel.text = @"请输入您的评论";
         self.commentButton.enabled=NO;
     }else{
-        if (textView.text.length>140) {
-            return;
-        }
+        
         self.holderLabel.text = @"";
         self.textNumLabel.text = [NSString stringWithFormat:@"可输入%lu字",(unsigned long)(TEXTNUM_MAX-textView.text.length)];
         NSString *feedString=[self.commentTextView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -71,6 +69,23 @@
             self.commentButton.enabled=YES;
         }else{
             self.commentButton.enabled=NO;
+        }
+    }
+}
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@""] && range.length > 0) {
+        //删除字符肯定是安全的
+        return YES;
+    }
+    else {
+        if (textView.text.length - range.length + text.length > TEXTNUM_MAX) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"超出最大可输入长度" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
+            return NO;
+        }
+        else {
+            return YES;
         }
     }
 }

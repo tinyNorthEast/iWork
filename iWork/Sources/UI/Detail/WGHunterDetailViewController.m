@@ -128,7 +128,7 @@
     }
 }
 - (IBAction)callConsultant:(id)sender {
-    [WGTools callPhone:@"" prompt:NO];
+    [WGTools callPhone:self.headerView.infoModel.phone prompt:NO];
 }
 
 #pragma mark - Request

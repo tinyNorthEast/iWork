@@ -10,8 +10,14 @@
 
 @class WGNotificationModel;
 
+typedef void (^ ControlPermission)(NSNumber *state);
+
 @interface WGNotificationCell : UITableViewCell
 
 @property(nonatomic, strong) WGNotificationModel *notification;
+
+@property(nonatomic, strong) NSNumber *notify_type;
+
+@property(nonatomic, copy) ControlPermission controlPermission;
 
 @end

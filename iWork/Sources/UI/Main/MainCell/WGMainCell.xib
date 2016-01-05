@@ -55,6 +55,9 @@
                             <constraint firstAttribute="height" constant="20" id="B0c-xr-sd7"/>
                         </constraints>
                         <state key="normal" image="main_favorite"/>
+                        <connections>
+                            <action selector="praiseButton:" destination="ELp-f0-j3X" eventType="touchUpInside" id="wEd-0m-Je3"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qh-MQ-WIU">
                         <rect key="frame" x="93" y="222" width="127" height="20"/>
