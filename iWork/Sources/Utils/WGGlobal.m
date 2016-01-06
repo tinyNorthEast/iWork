@@ -17,6 +17,7 @@
 
 #import "WGSignInModel.h"
 #import "WGIndustryModel.h"
+#import "WGSignInModel.h"
 
 #define kIndustryList @"industrylist"
 
@@ -63,13 +64,11 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
     }
     return _defaultPhone;    
 }
-
-- (void)saveUserRole:(NSNumber *)role{
-    [WGDataAccess saveUserRole:role forKey:kUSERROLR_KEY];
-    _userRole = role;
-    
+- (WGSignInModel *)signInfo{
+    NSMutableDictionary *afterData = [[NSMutableDictionary alloc] initWithContentsOfFile:[self fileName]];
+    WGSignInModel *infoModel = [[WGSignInModel alloc] initWithDictionary:afterData error:nil];
+    return infoModel;
 }
-
 - (void)saveToken:(NSString *)token
 {
     [WGDataAccess userDefaultsSetString:token forKey:kUSERTOKEN_KEY];
@@ -85,24 +84,33 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
     [WGDataAccess userDefaultsSetString:defualtPhone forKey:kUSERDEFAULTPHONE];
     _defaultPhone = defualtPhone;
 }
+- (NSString *)fileName{
+    //获取应用沙盒的的DOCUMENT 的路径；
+    //在此处设置文件的名字补全其中的路径, 注意对于文件内存的修改是在内存之中完成的，然后直接把现在的数据一次性更新，这样减少了文件的读写的次数
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* plistPath1 = [paths objectAtIndex:0];
+    NSString *filename =[plistPath1 stringByAppendingPathComponent:@"userInfo.plist"];
+    return filename;
+}
+- (void)saveSignInfo:(NSDictionary *)dict{
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"userInfo" ofType:@"plist"];
+    NSMutableDictionary *infoDict = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    infoDict = [dict mutableCopy];
+    //写入文件
+    [infoDict writeToFile:[self fileName] atomically:YES];
+}
 
 - (void)clearUserInfo
 {
     [WGDataAccess userDefaultsSetString:nil forKey:kUSERTOKEN_KEY];
     _userToken = nil;
     
-    [WGDataAccess saveUserRole:nil forKey:kUSERROLR_KEY];
-    _userRole = nil;
-    
     [WGDataAccess userDefaultsSetString:nil forKey:kDEVICETOKEN_KEY];
     _deviceToken = nil;
+    
+    NSFileManager *defaultManager = [NSFileManager defaultManager];
+    [defaultManager removeItemAtPath:[self fileName] error:nil];
 }
-
-
-
-
-
-
 
 
 

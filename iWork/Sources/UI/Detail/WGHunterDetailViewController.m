@@ -27,7 +27,7 @@
 #import "WGResultsView.h"
 #import "WGBBSView.h"
 
-@interface WGHunterDetailViewController ()
+@interface WGHunterDetailViewController ()<UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet WGDetailHeaderView *headerView;
 @property (weak, nonatomic) IBOutlet WGIntroductionView *describeView;
 @property (weak, nonatomic) IBOutlet WGIndustryView *industryView;
@@ -127,8 +127,11 @@
         }];
     }
 }
+
 - (IBAction)callConsultant:(id)sender {
-    [WGTools callPhone:self.headerView.infoModel.phone prompt:NO];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:self.headerView.infoModel.phone delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"拨打", nil];
+    [alert show];
+    
 }
 
 #pragma mark - Request
@@ -171,6 +174,13 @@
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1) {
+        [WGTools callPhone:self.headerView.infoModel.phone prompt:NO];
+    }
 }
 
 @end

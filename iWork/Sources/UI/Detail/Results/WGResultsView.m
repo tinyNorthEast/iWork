@@ -18,6 +18,7 @@
 #import "WGGlobal.h"
 #import "WGResultModel.h"
 #import "WGApplyAuthRequest.h"
+#import "WGSignInModel.h"
 
 @interface WGResultsView()<XXNibBridge>
 @property (weak, nonatomic) IBOutlet UIView *resultView;
@@ -85,7 +86,7 @@
 - (IBAction)openPermission:(id)sender {
     if ([self isSignIn]) {
         [WGProgressHUD loadMessage:@"正在帮你申请权限" onView:[self viewController].view];
-        WGApplyAuthRequest *request = [[WGApplyAuthRequest alloc] initWithHunterId:@(16) hr_mail:@""];
+        WGApplyAuthRequest *request = [[WGApplyAuthRequest alloc] initWithHunterId:@(16) hr_mail:[WGGlobal sharedInstance].signInfo.mail];
         [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
             [WGProgressHUD dismissOnView:[self viewController].view];
             if (baseModel.infoCode.integerValue == 0) {

@@ -22,6 +22,7 @@
 #import "WGUserInfoModel.h"
 #import "WGResetUserInfoController.h"
 #import "WGFavoriteListController.h"
+#import "WGSignInModel.h"
 
 @interface WGUserInfoViewController ()
 @property (nonatomic, strong) WGUserInfoModel *userInfoModel;
@@ -50,7 +51,7 @@
 }
 #pragma mark - Init
 - (void)initView{
-    NSNumber *role = [[WGGlobal sharedInstance] userRole];
+    NSNumber *role = [[WGGlobal sharedInstance] signInfo].role_code;
     switch (role.integerValue) {
         case kkUserRole_headhunters:
             self.titleLabel.text = @"猎头";
