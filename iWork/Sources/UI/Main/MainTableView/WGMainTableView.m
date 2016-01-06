@@ -82,10 +82,14 @@
     if (self.areaCode.integerValue == 0) {
         self.areaCode = @(DefaultCityCode);
     }
+    
+    [WGProgressHUD defaultLoadingOnView:[self viewController].view];
     WGHunterListRequest *request = [[WGHunterListRequest alloc] initWithAreaCode:self.areaCode industryId:industry.objId  pageNo:@(pager.currentPageIndex)];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
+        [WGProgressHUD dismissOnView:[self viewController].view];
+        
         if (baseModel.infoCode.integerValue == 0) {
             WGHunterListModel *model = (WGHunterListModel *)baseModel;
             [self.hunters addObjectsFromArray:model.data];

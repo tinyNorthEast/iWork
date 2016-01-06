@@ -130,5 +130,7 @@
 @property (nonatomic,copy)NSString<Optional> *commentCount;
 @property (nonatomic,copy)NSArray<Optional,WGDetailIndustryModel> *industryList;
 @property (nonatomic,copy)NSArray<Optional,WGFunctionModel> *functionsList;
+@property (nonatomic,strong)NSNumber<Optional> *userId;
+@property (nonatomic,strong)NSNumber<Optional> *isAttention;
 
 @end

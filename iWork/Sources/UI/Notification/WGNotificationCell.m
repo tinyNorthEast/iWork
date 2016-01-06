@@ -11,9 +11,12 @@
 #import <XXNibBridge.h>
 
 #import "WGDateFormatter.h"
+#import "WGProgressHUD.h"
+#import "UIViewAdditions.h"
 
 #import "WGNotificationModel.h"
 #import "WGNotifiCategoryListModel.h"
+#import "WGUpdateAuthRequest.h"
 
 @interface WGNotificationCell()<XXNibBridge>
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
@@ -50,16 +53,35 @@
     }
 }
 
+#pragma mark - Request
+- (void)updateAuthRequestStatus:(NSNumber*)status{
+    WGUpdateAuthRequest *request = [[WGUpdateAuthRequest alloc] initWithAuthId:self.notification.record_id status:status];
+    [WGProgressHUD defaultLoadingOnView:[self viewController].view];
+    [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+        [WGProgressHUD dismissOnView:self.viewController.view];
+        if (baseModel.infoCode.integerValue == 0) {
+            
+        }else{
+            [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.viewController.view];
+        }
+        
+    } failure:^(WGBaseModel *baseModel, NSError *error) {
+        
+    }];
+}
 #pragma mark - IBAcion
 - (IBAction)agreeAction:(id)sender {
     if (self.controlPermission) {
         self.controlPermission(@(1));
     }
+    [self updateAuthRequestStatus:@(1)];
 }
 - (IBAction)disagreeAction:(id)sender {
     if (self.controlPermission) {
         self.controlPermission(@(0));
+        
     }
+    [self updateAuthRequestStatus:@(0)];
 }
 
 

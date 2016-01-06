@@ -48,6 +48,7 @@
     self.mailField.text = self.userInfoModel.mail;
     self.enNameField.text = self.userInfoModel.en_name;
     self.experienceField.text = [self mappingExperienceId:self.userInfoModel.experience.integerValue];
+    [self.experienceField endEditing:YES];
     self.companyField.text = self.userInfoModel.company;
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -130,6 +131,9 @@
     [self back];
 }
 - (IBAction)showExperienceSheet:(id)sender {
+    if (self.experienceField.resignFirstResponder) {
+        [self.experienceField resignFirstResponder];
+    }
     _picker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
     _picker.autoHidden = YES;
     [_picker setSelectIndex:0];

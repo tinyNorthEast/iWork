@@ -62,6 +62,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)popExperienceView:(id)sender {
+    if (self.experienceTextFiled.resignFirstResponder) {
+        [self.experienceTextFiled resignFirstResponder];
+    }
     _picker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
     _picker.autoHidden = YES;
     [_picker setSelectIndex:0];

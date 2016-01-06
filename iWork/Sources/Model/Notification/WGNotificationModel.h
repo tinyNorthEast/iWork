@@ -15,8 +15,10 @@
 
 @property (nonatomic, strong) NSNumber *objId;
 @property (nonatomic, strong) NSNumber *user_id;
+@property (nonatomic, strong) NSNumber *n_type;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, strong) NSNumber *create_time;
 @property (nonatomic, strong) NSNumber *status;
+@property (nonatomic, strong) NSNumber *record_id;
 
 @end

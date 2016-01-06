@@ -9,6 +9,7 @@
 
 #import "WGMainCell.h"
 
+#import <extobjc.h>
 #import <XXNibBridge.h>
 #import "M13BadgeView.h"
 
@@ -18,6 +19,7 @@
 
 #import "WGHunterModel.h"
 #import "WGHunterIndustryModel.h"
+#import "WGAttentionRequest.h"
 
 @interface WGMainCell()<XXNibBridge>
 @property (nonatomic, assign) NSUInteger praiseTag;
@@ -43,6 +45,8 @@
     [super setSelected:selected animated:animated];
 }
 - (void)setHunter:(WGHunterModel *)hunter{
+    _hunter = hunter;
+    
     if (hunter.ranking.integerValue == 1) {
         self.rateImage.image = [UIImage imageNamed:@"main_rank1"];
         self.rateLabel.text = @"人气顾问第一名";
@@ -74,6 +78,12 @@
         self.positionLabel.text = positionStr;
     }
     
+    if (hunter.isAttention.integerValue == 0) {
+        [self.pariseButton setImage:[UIImage imageNamed:@"main_favorite"] forState:UIControlStateNormal];
+    }else{
+        [self.pariseButton setImage:[UIImage imageNamed:@"detail_favorite2"] forState:UIControlStateNormal];
+    }
+    
     M13BadgeView *badgeView = [[M13BadgeView alloc] initWithFrame:CGRectMake(self.commentButton.right-12, 12, 24.0, 24.0)];
     [self.commentButton addSubview:badgeView];
     badgeView.text = self.hunter.commentCount.stringValue;
@@ -86,13 +96,29 @@
     }
 }
 - (IBAction)praiseButton:(id)sender {
-    [self.pariseButton setImage:[UIImage imageNamed:(self.praiseTag%2==0?@"detail_favorite2":@"main_favorite")] forState:UIControlStateNormal];
-    self.praiseTag++;
-    CAKeyframeAnimation *k = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    k.values = @[@(0.1),@(1.0),@(1.5)];
-    k.keyTimes = @[@(0.0),@(0.5),@(0.8),@(1.0)];
-    k.calculationMode = kCAAnimationLinear;
-    [self.pariseButton.layer addAnimation:k forKey:@"SHOW"];
+    BOOL isAttention = self.hunter.isAttention.integerValue;
+    
+    WGAttentionRequest *request = [[WGAttentionRequest alloc] initAttention:@(!isAttention) toId:self.hunter.userId];
+    @weakify(self);
+    [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+        @strongify(self);
+        if (baseModel.infoCode.integerValue == 0) {
+            if (self.hunter.isAttention.integerValue == 0) {
+                [self.pariseButton setImage:[UIImage imageNamed:@"detail_favorite2"] forState:UIControlStateNormal];
+            }else{
+                [self.pariseButton setImage:[UIImage imageNamed:@"main_favorite"] forState:UIControlStateNormal];
+            }
+            CAKeyframeAnimation *k = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+            k.values = @[@(0.1),@(1.0),@(1.5)];
+            k.keyTimes = @[@(0.0),@(0.5),@(0.8),@(1.0)];
+            k.calculationMode = kCAAnimationLinear;
+            [self.pariseButton.layer addAnimation:k forKey:@"SHOW"];
+
+        }
+        
+    } failure:^(WGBaseModel *baseModel, NSError *error) {
+        
+    }];
 }
 
 @end

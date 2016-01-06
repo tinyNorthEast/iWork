@@ -8,6 +8,7 @@
 
 #import "WGDetailHeaderView.h"
 
+#import <extobjc.h>
 #import <XXNibBridge.h>
 
 #import "UIViewAdditions.h"
@@ -17,6 +18,7 @@
 #import "WGHunterInfoModel.h"
 #import "WGHunterDetailViewController.h"
 #import "WGBBSViewController.h"
+#import "WGAttentionRequest.h"
 
 @interface WGDetailHeaderView()<XXNibBridge>
 @property (nonatomic, assign) NSUInteger praiseTag;
@@ -35,6 +37,11 @@
     _infoModel = infoModel;
     [self.headerImage wg_loadImageFromURL:infoModel.pic placeholder:[UIImage imageNamed:@"detail_defaultHeader"]];
     self.nameLabel.text = infoModel.realName;
+    if (infoModel.isAttention.integerValue == 0) {
+        [self.praiseButton setImage:[UIImage imageNamed:@"detail_favorite1"] forState:UIControlStateNormal];
+    }else{
+        [self.praiseButton setImage:[UIImage imageNamed:@"detail_favorite2"] forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark - IBAction
@@ -52,14 +59,39 @@
 }
 - (IBAction)praiseAction:(id)sender {
     if ([self isSignIn]) {
+        BOOL isAttention = self.infoModel.isAttention.integerValue;
         
-        [self.praiseButton setImage:[UIImage imageNamed:(self.praiseTag%2==0?@"detail_favorite2":@"detail_favorite1")] forState:UIControlStateNormal];
-        self.praiseTag++;
-        CAKeyframeAnimation *k = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-        k.values = @[@(0.1),@(1.0),@(1.5)];
-        k.keyTimes = @[@(0.0),@(0.5),@(0.8),@(1.0)];
-        k.calculationMode = kCAAnimationLinear;
-        [self.praiseButton.layer addAnimation:k forKey:@"SHOW"];
+        WGAttentionRequest *request = [[WGAttentionRequest alloc] initAttention:@(!isAttention) toId:self.infoModel.userId];
+        @weakify(self);
+        [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+            @strongify(self);
+            if (baseModel.infoCode.integerValue == 0) {
+                if (self.infoModel.isAttention.integerValue == 0) {
+                    [self.self.praiseButton setImage:[UIImage imageNamed:@"detail_favorite2"] forState:UIControlStateNormal];
+                }else{
+                    [self.self.praiseButton setImage:[UIImage imageNamed:@"detail_favorite1"] forState:UIControlStateNormal];
+                }
+                CAKeyframeAnimation *k = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+                k.values = @[@(0.1),@(1.0),@(1.5)];
+                k.keyTimes = @[@(0.0),@(0.5),@(0.8),@(1.0)];
+                k.calculationMode = kCAAnimationLinear;
+                [self.self.praiseButton.layer addAnimation:k forKey:@"SHOW"];
+                
+            }
+            
+        } failure:^(WGBaseModel *baseModel, NSError *error) {
+            
+        }];
+        
+        
+        
+//        [self.praiseButton setImage:[UIImage imageNamed:(self.praiseTag%2==0?@"detail_favorite2":@"detail_favorite1")] forState:UIControlStateNormal];
+//        self.praiseTag++;
+//        CAKeyframeAnimation *k = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+//        k.values = @[@(0.1),@(1.0),@(1.5)];
+//        k.keyTimes = @[@(0.0),@(0.5),@(0.8),@(1.0)];
+//        k.calculationMode = kCAAnimationLinear;
+//        [self.praiseButton.layer addAnimation:k forKey:@"SHOW"];
     }else{
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
         UIViewController *vc = [sb instantiateInitialViewController];
@@ -81,13 +113,5 @@
         }];
     }
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

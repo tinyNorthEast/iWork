@@ -22,5 +22,6 @@
 @property (nonatomic,strong)NSNumber<Optional> *commentCount;
 @property (nonatomic,strong)NSArray <Optional,WGHunterIndustryModel> *industryList;
 @property (nonatomic,strong)NSNumber <Optional>*userId;
+@property (nonatomic,strong)NSNumber <Optional>*isAttention;
 
 @end
