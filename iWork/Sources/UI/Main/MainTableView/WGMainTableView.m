@@ -48,6 +48,7 @@
         @weakify(self);
         [self.wg_pager addPullDownRefreshHandler:^(WGPager *pager) {
             @strongify(self);
+            [self.hunters removeAllObjects];
             [self requestHuntersWithPage:pager isRefresh:YES];
         }];
         [self.wg_pager addLoadMoreHandler:^(WGPager *pager) {

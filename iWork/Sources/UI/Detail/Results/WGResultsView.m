@@ -14,13 +14,14 @@
 #import "UIViewAdditions.h"
 #import "UIFont+WGThemeFonts.h"
 #import "UIColor+WGThemeColors.h"
+#import "NSString+WGExtension.h"
 
 #import "WGGlobal.h"
 #import "WGResultModel.h"
 #import "WGApplyAuthRequest.h"
 #import "WGSignInModel.h"
 
-@interface WGResultsView()<XXNibBridge>
+@interface WGResultsView()<XXNibBridge,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *resultView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *resultViewHeight;
 
@@ -85,19 +86,14 @@
 }
 - (IBAction)openPermission:(id)sender {
     if ([self isSignIn]) {
-        [WGProgressHUD loadMessage:@"正在帮你申请权限" onView:[self viewController].view];
-        WGApplyAuthRequest *request = [[WGApplyAuthRequest alloc] initWithHunterId:@(16) hr_mail:[WGGlobal sharedInstance].signInfo.mail];
-        [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
-            [WGProgressHUD dismissOnView:[self viewController].view];
-            if (baseModel.infoCode.integerValue == 0) {
-                
-            }else{
-                
-            }
-            
-        } failure:^(WGBaseModel *baseModel, NSError *error) {
-            
-        }];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请核对邮箱" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"正确", nil];
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        
+        UITextField *textField  = [alert textFieldAtIndex:0];
+        textField.text = [WGGlobal sharedInstance].signInfo.mail;
+        textField.keyboardType = UIKeyboardTypeEmailAddress;
+        
+        [alert show];
         
     }else{
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
@@ -105,6 +101,32 @@
         [[self viewController] presentViewController:vc animated:YES completion:^{
             
         }];
+    }
+    
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==1)
+    {
+        UITextField *textField  = [alertView textFieldAtIndex:0];
+        if (![NSString isValidEmail:textField.text]) {
+            [WGProgressHUD disappearFailureMessage:@"请输入正确邮箱" onView:self.viewController.view];
+        }else{
+            [WGProgressHUD loadMessage:@"正在帮你申请权限" onView:[self viewController].view];
+            WGApplyAuthRequest *request = [[WGApplyAuthRequest alloc] initWithHunterId:@(16) hr_mail:textField.text];
+            [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+                [WGProgressHUD dismissOnView:[self viewController].view];
+                if (baseModel.infoCode.integerValue == 0) {
+                    
+                }else{
+                    
+                }
+            } failure:^(WGBaseModel *baseModel, NSError *error) {
+                
+            }];
+        }
     }
 }
 

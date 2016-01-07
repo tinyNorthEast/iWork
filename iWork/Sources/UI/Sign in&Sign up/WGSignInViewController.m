@@ -71,6 +71,10 @@ NSString *PasswordNoneWarning = @"请填写密码";
 - (IBAction)backAction:(id)sender {
     [self back];
 }
+- (IBAction)goRoundAction:(id)sender {
+    [self back];
+}
+
 - (IBAction)sign_upAction:(id)sender {
     if (![WGValidJudge isValidString:self.phoneTextField.text]) {
         [WGProgressHUD disappearFailureMessage:PhoneNoneWarning onView:self.view];

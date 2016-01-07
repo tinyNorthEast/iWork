@@ -13,10 +13,12 @@
 #import <XXNibBridge.h>
 #import "M13BadgeView.h"
 
+#import "WGProgressHUD.h"
 #import "UIViewAdditions.h"
 #import "UIImageView+WGHTTP.h"
 #import "UIColor+WGThemeColors.h"
 
+#import "WGGlobal.h"
 #import "WGHunterModel.h"
 #import "WGHunterIndustryModel.h"
 #import "WGAttentionRequest.h"
@@ -90,35 +92,52 @@
     badgeView.badgeBackgroundColor = [UIColor wg_themeCyanColor];
     badgeView.hidesWhenZero = YES;
 }
+- (void)gotoLoginView{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+    UIViewController *vc = [sb instantiateInitialViewController];
+    [self.viewController presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
 - (IBAction)commentAction:(id)sender {
-    if (self.selectBBS) {
-        self.selectBBS();
+    if ([WGGlobal sharedInstance].userToken.length == 0) {
+        [self gotoLoginView];
+    }else{
+        if (self.selectBBS) {
+            self.selectBBS();
+        }
     }
 }
 - (IBAction)praiseButton:(id)sender {
-    BOOL isAttention = self.hunter.isAttention.integerValue;
-    
-    WGAttentionRequest *request = [[WGAttentionRequest alloc] initAttention:@(!isAttention) toId:self.hunter.userId];
-    @weakify(self);
-    [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
-        @strongify(self);
-        if (baseModel.infoCode.integerValue == 0) {
-            if (self.hunter.isAttention.integerValue == 0) {
-                [self.pariseButton setImage:[UIImage imageNamed:@"detail_favorite2"] forState:UIControlStateNormal];
+    if ([WGGlobal sharedInstance].userToken.length == 0) {
+        [self gotoLoginView];
+    }else{
+        BOOL isAttention = self.hunter.isAttention.integerValue;
+        
+        WGAttentionRequest *request = [[WGAttentionRequest alloc] initAttention:@(!isAttention) toId:self.hunter.userId];
+        @weakify(self);
+        [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+            @strongify(self);
+            if (baseModel.infoCode.integerValue == 0) {
+                if (self.hunter.isAttention.integerValue == 0) {
+                    [self.pariseButton setImage:[UIImage imageNamed:@"detail_favorite2"] forState:UIControlStateNormal];
+                }else{
+                    [self.pariseButton setImage:[UIImage imageNamed:@"main_favorite"] forState:UIControlStateNormal];
+                }
+                CAKeyframeAnimation *k = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+                k.values = @[@(0.1),@(1.0),@(1.5)];
+                k.keyTimes = @[@(0.0),@(0.5),@(0.8),@(1.0)];
+                k.calculationMode = kCAAnimationLinear;
+                [self.pariseButton.layer addAnimation:k forKey:@"SHOW"];
+                
             }else{
-                [self.pariseButton setImage:[UIImage imageNamed:@"main_favorite"] forState:UIControlStateNormal];
+                [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.viewController.view];
             }
-            CAKeyframeAnimation *k = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-            k.values = @[@(0.1),@(1.0),@(1.5)];
-            k.keyTimes = @[@(0.0),@(0.5),@(0.8),@(1.0)];
-            k.calculationMode = kCAAnimationLinear;
-            [self.pariseButton.layer addAnimation:k forKey:@"SHOW"];
-
-        }
-        
-    } failure:^(WGBaseModel *baseModel, NSError *error) {
-        
-    }];
+            
+        } failure:^(WGBaseModel *baseModel, NSError *error) {
+            
+        }];
+    }
 }
 
 @end
