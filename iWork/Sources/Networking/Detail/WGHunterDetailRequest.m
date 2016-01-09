@@ -28,6 +28,7 @@
     return nil;
 }
 - (NSString *)pathName{
+    
     return @"api/v1/headhunter/detail.action";
 }
 
