@@ -8,6 +8,15 @@
 
 #import "WGBaseModel.h"
 
+typedef enum{
+    UserRole_Hunter = 100,
+    UserRole_HR = 101,
+    UserRole_Candidate= 102,
+
+}UserRole;
+
+
+
 @interface WGSignInModel : WGBaseModel
 
 @property (nonatomic, copy) NSString<Optional> *token;

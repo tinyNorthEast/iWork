@@ -179,22 +179,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWork/Sources/UI/Notification/WGNotificationCell.m"
-            timestampString = "473752245.92992"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "-updateAuthRequestStatus:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "iWork/Sources/UI/User/WGResetUserInfoController.m"
             timestampString = "473875624.229468"
             startingColumnNumber = "9223372036854775807"
@@ -308,12 +292,12 @@
                   moduleName = "iWork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adele/study/Private/iWork/iWork/Sources/UI/Detail/WGHunterDetailViewController.m"
-                  timestampString = "474046518.566156"
+                  timestampString = "474054661.261565"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
                   endingLineNumber = "143"
-                  offsetFromSymbolStart = "246">
+                  offsetFromSymbolStart = "238">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -323,7 +307,7 @@
                   moduleName = "iWork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adele/study/Private/iWork/iWork/Sources/UI/Detail/WGHunterDetailViewController.m"
-                  timestampString = "474046518.566357"
+                  timestampString = "474054661.261729"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -346,6 +330,22 @@
             startingLineNumber = "134"
             endingLineNumber = "134"
             landmarkName = "-request"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWork/Sources/UI/Notification/WGNotificationCell.m"
+            timestampString = "474054667.115992"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-setNotification:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

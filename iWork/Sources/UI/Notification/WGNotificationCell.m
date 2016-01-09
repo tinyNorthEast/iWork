@@ -55,7 +55,7 @@
 
 #pragma mark - Request
 - (void)updateAuthRequestStatus:(NSNumber*)status{
-    WGUpdateAuthRequest *request = [[WGUpdateAuthRequest alloc] initWithAuthId:self.notification.record_id status:status];
+    WGUpdateAuthRequest *request = [[WGUpdateAuthRequest alloc] initWithAuthId:self.notification.record_id objId:self.notification.objId status:status];
     [WGProgressHUD defaultLoadingOnView:[self viewController].view];
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         [WGProgressHUD dismissOnView:self.viewController.view];

@@ -64,9 +64,9 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkx-7M-rpX">
-                                        <rect key="frame" x="291" y="36" width="21" height="23"/>
+                                        <rect key="frame" x="276" y="20" width="44" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="21" id="doj-aa-Bgi"/>
+                                            <constraint firstAttribute="width" constant="44" id="doj-aa-Bgi"/>
                                         </constraints>
                                         <state key="normal" image="main_user"/>
                                         <connections>
@@ -82,9 +82,9 @@
                                     <constraint firstItem="5vm-ex-5KE" firstAttribute="centerX" secondItem="1WP-yc-HGd" secondAttribute="centerX" id="IOb-vt-1cK"/>
                                     <constraint firstItem="G7L-jb-ZNT" firstAttribute="top" secondItem="1WP-yc-HGd" secondAttribute="top" constant="20" id="Nt2-df-lqO"/>
                                     <constraint firstItem="G7L-jb-ZNT" firstAttribute="leading" secondItem="1WP-yc-HGd" secondAttribute="leading" id="YcM-Z0-KzX"/>
-                                    <constraint firstItem="nkx-7M-rpX" firstAttribute="top" secondItem="1WP-yc-HGd" secondAttribute="top" constant="36" id="gSh-De-jH9"/>
-                                    <constraint firstAttribute="bottom" secondItem="nkx-7M-rpX" secondAttribute="bottom" constant="5" id="kKs-6b-joE"/>
-                                    <constraint firstItem="nkx-7M-rpX" firstAttribute="trailing" secondItem="1WP-yc-HGd" secondAttribute="trailingMargin" id="lpS-yM-z4n"/>
+                                    <constraint firstItem="nkx-7M-rpX" firstAttribute="top" secondItem="1WP-yc-HGd" secondAttribute="top" constant="20" id="gSh-De-jH9"/>
+                                    <constraint firstAttribute="bottom" secondItem="nkx-7M-rpX" secondAttribute="bottom" id="kKs-6b-joE"/>
+                                    <constraint firstAttribute="trailing" secondItem="nkx-7M-rpX" secondAttribute="trailing" id="wDP-wq-LLl"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAz-TV-XaU">
@@ -179,6 +179,6 @@
         <image name="main_city" width="14" height="7"/>
         <image name="main_logo" width="96" height="20"/>
         <image name="main_scrollButton" width="46" height="40"/>
-        <image name="main_user" width="26" height="30"/>
+        <image name="main_user" width="17" height="19"/>
     </resources>
 </document>

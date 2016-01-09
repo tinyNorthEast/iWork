@@ -38,20 +38,13 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bbs_timeicon" translatesAutoresizingMaskIntoConstraints="NO" id="fCN-AJ-GSj">
-                        <rect key="frame" x="236" y="13" width="10" height="10"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="10" id="KT9-cV-vGH"/>
-                            <constraint firstAttribute="height" constant="10" id="Pgu-XO-qVe"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="21" translatesAutoresizingMaskIntoConstraints="NO" id="7KF-Gy-js5">
-                        <rect key="frame" x="54" y="34" width="258" height="21"/>
+                        <rect key="frame" x="58" y="34" width="254" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="VSU-xU-I4W"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -61,9 +54,7 @@
                     <constraint firstAttribute="trailing" secondItem="7KF-Gy-js5" secondAttribute="trailing" constant="8" id="TeM-rt-si7"/>
                     <constraint firstItem="gN4-Ad-HHZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="XQC-s4-6Ar"/>
                     <constraint firstItem="7KF-Gy-js5" firstAttribute="top" secondItem="gN4-Ad-HHZ" secondAttribute="bottom" constant="5" id="bu8-SC-OFp"/>
-                    <constraint firstItem="7KF-Gy-js5" firstAttribute="leading" secondItem="h0l-HE-Eky" secondAttribute="trailing" constant="6" id="eXS-wC-ziO"/>
-                    <constraint firstItem="fCN-AJ-GSj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="poL-kf-Rgl"/>
-                    <constraint firstItem="gN4-Ad-HHZ" firstAttribute="leading" secondItem="fCN-AJ-GSj" secondAttribute="trailing" constant="1" id="wdX-uU-pFm"/>
+                    <constraint firstItem="7KF-Gy-js5" firstAttribute="leading" secondItem="h0l-HE-Eky" secondAttribute="trailing" constant="10" id="eXS-wC-ziO"/>
                     <constraint firstItem="h0l-HE-Eky" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="z9G-aM-QhY"/>
                 </constraints>
             </tableViewCellContentView>
@@ -76,7 +67,4 @@
             <point key="canvasLocation" x="220" y="261.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="bbs_timeicon" width="10" height="10"/>
-    </resources>
 </document>

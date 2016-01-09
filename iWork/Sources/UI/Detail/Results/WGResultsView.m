@@ -53,19 +53,19 @@
         for (int x = 0; x < lists.count; x++) {
             WGResultModel *resultModel = [[WGResultModel alloc] initWithDictionary:lists[i] error:nil];
             line += x+1;
-            UILabel *compayLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (x+1)*20, self.resultView.width*2/5, 20)];
+            UILabel *compayLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, (x+1)*20, (self.resultView.width-10)*2/5, 20)];
             compayLabel.text = resultModel.companyName;
             compayLabel.font = [UIFont kFontSize14];
             compayLabel.textColor = [UIColor wg_themeDarkGrayColor];
             [self.resultView addSubview:compayLabel];
             
-            UILabel *positionLabel = [[UILabel alloc] initWithFrame:CGRectMake(compayLabel.right, compayLabel.top, self.resultView.width*1.6/5, 20)];
+            UILabel *positionLabel = [[UILabel alloc] initWithFrame:CGRectMake(compayLabel.right, compayLabel.top, (self.resultView.width-10)*1.6/5, 20)];
             positionLabel.font = [UIFont kFontSize14];
             positionLabel.textColor = [UIColor wg_themeDarkGrayColor];
             positionLabel.text = resultModel.position;
             [self.resultView addSubview:positionLabel];
             
-            UILabel *salaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(positionLabel.right, compayLabel.top, self.resultView.width*1.4/5, 20)];
+            UILabel *salaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(positionLabel.right, compayLabel.top, (self.resultView.width-10)*1.4/5, 20)];
             salaryLabel.font = [UIFont kFontSize14];
             salaryLabel.textColor = [UIColor wg_themeDarkGrayColor];
             salaryLabel.textAlignment = NSTextAlignmentRight;

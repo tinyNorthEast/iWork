@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *experienceTextFiled;
 @property (weak, nonatomic) IBOutlet UITextField *roleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeight;
 
 @end
 
@@ -33,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.viewHeight.constant = 138;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -135,14 +136,17 @@
         switch (selectRow) {
             case 0:
                 roleID = 100;
+                self.viewHeight.constant = 183;
                 break;
                 
             case 1:
                 roleID = 101;
+                self.viewHeight.constant = 138;
                 break;
                 
             case 2:
                 roleID = 102;
+                self.viewHeight.constant = 138;
                 break;
         }
         self.roleTextField.text = self.rolePicker.dataArray[selectRow];

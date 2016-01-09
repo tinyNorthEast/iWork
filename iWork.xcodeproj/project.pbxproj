@@ -13,6 +13,7 @@
 		B5026D531C3EA2A9004E46FB /* WGVertifyPhoneRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5026D521C3EA2A9004E46FB /* WGVertifyPhoneRequest.m */; };
 		B5026D561C3EB4E5004E46FB /* WGSignUpRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5026D551C3EB4E5004E46FB /* WGSignUpRequestModel.m */; };
 		B5026D591C3EB4F7004E46FB /* WGSignUpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5026D581C3EB4F7004E46FB /* WGSignUpModel.m */; };
+		B5026D5B1C41818A004E46FB /* Notification.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5026D5A1C41818A004E46FB /* Notification.xcassets */; };
 		B5055BEE1BF9CF33001736AD /* WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055BED1BF9CF33001736AD /* WGPager.m */; };
 		B5055BF41BF9FB5B001736AD /* WGValidJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055BF31BF9FB5B001736AD /* WGValidJudge.m */; };
 		B5055C021BFA02ED001736AD /* WGTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055C011BFA02ED001736AD /* WGTools.m */; };
@@ -228,6 +229,7 @@
 		B5026D551C3EB4E5004E46FB /* WGSignUpRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignUpRequestModel.m; sourceTree = "<group>"; };
 		B5026D571C3EB4F7004E46FB /* WGSignUpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpModel.h; sourceTree = "<group>"; };
 		B5026D581C3EB4F7004E46FB /* WGSignUpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignUpModel.m; sourceTree = "<group>"; };
+		B5026D5A1C41818A004E46FB /* Notification.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Notification.xcassets; sourceTree = "<group>"; };
 		B5055BEC1BF9CF33001736AD /* WGPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPager.h; sourceTree = "<group>"; };
 		B5055BED1BF9CF33001736AD /* WGPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPager.m; sourceTree = "<group>"; };
 		B5055BF21BF9FB5B001736AD /* WGValidJudge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGValidJudge.h; sourceTree = "<group>"; };
@@ -773,6 +775,7 @@
 				B5F150C01C214DA600EC9503 /* Detail.xcassets */,
 				B5D4F3F61C279467007474F0 /* User.xcassets */,
 				B5AAAE471C2D4994008A97E6 /* BBS.xcassets */,
+				B5026D5A1C41818A004E46FB /* Notification.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1678,6 +1681,7 @@
 				B5F150D01C22D6D800EC9503 /* WGIntroductionView.xib in Resources */,
 				B5E6011E1C030ED700265307 /* Sign.xcassets in Resources */,
 				B55D12021C0702BD0035C6B4 /* Sign.storyboard in Resources */,
+				B5026D5B1C41818A004E46FB /* Notification.xcassets in Resources */,
 				B54FA8111BF46FCD0018B682 /* Icon.xcassets in Resources */,
 				B5E601201C03179F00265307 /* Navigation.xcassets in Resources */,
 				B55D12311C070EAA0035C6B4 /* WeiboSDK.bundle in Resources */,

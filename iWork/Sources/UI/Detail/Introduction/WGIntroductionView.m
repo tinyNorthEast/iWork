@@ -11,6 +11,7 @@
 #import <XXNibBridge.h>
 
 #import "UIViewAdditions.h"
+#import "UIColor+WGThemeColors.h"
 
 #import "WGDescribeModel.h"
 
@@ -31,6 +32,7 @@
         UILabel *alabel = [[UILabel alloc] initWithFrame:CGRectMake(0,height,self.describeView.width,20)];//后面还会重新设置其size。
        
 //        [alabel setNumberOfLines:0];
+        alabel.textColor = [UIColor wg_themeDarkGrayColor];
         NSString *s = [NSString stringWithFormat:@"%d.%@",index+1,aModel.describe];
         alabel.text = s;
         UIFont *font = [UIFont fontWithName:@"Arial" size:12];

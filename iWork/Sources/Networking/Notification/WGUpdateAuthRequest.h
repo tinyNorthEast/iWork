@@ -10,6 +10,6 @@
 
 @interface WGUpdateAuthRequest : WGBaseRequest
 
-- (instancetype)initWithAuthId:(NSNumber *)authId status:(NSNumber *)stauts;
+- (instancetype)initWithAuthId:(NSNumber *)authId objId:(NSNumber *)objId status:(NSNumber *)stauts;
 
 @end

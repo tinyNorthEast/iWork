@@ -27,10 +27,10 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btr-1U-Ny1">
-                    <rect key="frame" x="10" y="40" width="300" height="52"/>
+                    <rect key="frame" x="10" y="46" width="300" height="46"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="52" id="gAS-7P-bbM"/>
+                        <constraint firstAttribute="height" constant="46" id="gAS-7P-bbM"/>
                     </constraints>
                 </view>
             </subviews>
@@ -40,7 +40,7 @@
                 <constraint firstAttribute="bottom" secondItem="Btr-1U-Ny1" secondAttribute="bottom" constant="8" id="F3V-rg-Cm2"/>
                 <constraint firstAttribute="trailing" secondItem="QGU-6b-HvQ" secondAttribute="trailing" constant="126" id="Hbb-LY-j35"/>
                 <constraint firstItem="Btr-1U-Ny1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="WFB-rP-orz"/>
-                <constraint firstItem="Btr-1U-Ny1" firstAttribute="top" secondItem="uPH-1s-Rxb" secondAttribute="bottom" constant="6" id="eP9-1J-YOx"/>
+                <constraint firstItem="Btr-1U-Ny1" firstAttribute="top" secondItem="uPH-1s-Rxb" secondAttribute="bottom" constant="12" id="eP9-1J-YOx"/>
                 <constraint firstItem="QGU-6b-HvQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="126" id="he3-h2-D85"/>
                 <constraint firstItem="QGU-6b-HvQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="lgG-af-EJF"/>
                 <constraint firstItem="uPH-1s-Rxb" firstAttribute="top" secondItem="QGU-6b-HvQ" secondAttribute="bottom" constant="3" id="wlr-K4-f5d"/>

@@ -15,13 +15,14 @@
 
 @implementation WGUpdateAuthRequest
 
-- (instancetype)initWithAuthId:(NSNumber *)authId status:(NSNumber *)stauts
+- (instancetype)initWithAuthId:(NSNumber *)authId objId:(NSNumber *)objId status:(NSNumber *)stauts
 {
     self = [super init];
     if (self) {
         
         [self.postParams safeSetValue:[[WGGlobal sharedInstance] userToken] forKey:@"token"];
         [self.postParams safeSetValue:authId forKey:@"authId"];
+        [self.postParams safeSetValue:objId forKey:@"objId"];
         [self.postParams safeSetValue:stauts forKey:@"lt_status"];
         return self;
     }

@@ -10,6 +10,6 @@
 
 @interface WGApplyAuthRequest : WGBaseRequest
 
-- (instancetype)initWithHunterId:(NSNumber *)hunterId hr_mail:(NSString *)mail;
+- (instancetype)initWithHunterId:(NSNumber *)hunterId hr_mail:(NSString *)mail ;
 
 @end

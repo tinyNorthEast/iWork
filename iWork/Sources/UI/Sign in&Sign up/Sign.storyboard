@@ -161,7 +161,7 @@
                                     <color key="titleColor" red="0.066666666669999999" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vvP-XG-7Em" kind="push" identifier="SignUp" id="xB9-ng-nWx"/>
+                                    <segue destination="vvP-XG-7Em" kind="modal" identifier="SignUp" id="xB9-ng-nWx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q5-k5-mPN">
@@ -889,6 +889,7 @@
                         <outlet property="experienceTextFiled" destination="fPI-MI-2dw" id="iuH-jf-6xX"/>
                         <outlet property="positionTextField" destination="Pcs-WS-qzb" id="Knu-l8-GTp"/>
                         <outlet property="roleTextField" destination="fnT-eG-up1" id="acg-Iw-OqF"/>
+                        <outlet property="viewHeight" destination="Y3K-sb-KGS" id="Xw4-Rn-Zex"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPg-uc-cil" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1112,6 +1113,6 @@
         <image name="sign_password" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MCk-Ci-q4o"/>
+        <segue reference="xB9-ng-nWx"/>
     </inferredMetricsTieBreakers>
 </document>
