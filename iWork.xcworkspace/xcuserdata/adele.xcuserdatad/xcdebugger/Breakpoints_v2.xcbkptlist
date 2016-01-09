@@ -308,7 +308,7 @@
                   moduleName = "iWork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adele/study/Private/iWork/iWork/Sources/UI/Detail/WGHunterDetailViewController.m"
-                  timestampString = "473914721.532954"
+                  timestampString = "474042374.24521"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -323,7 +323,7 @@
                   moduleName = "iWork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adele/study/Private/iWork/iWork/Sources/UI/Detail/WGHunterDetailViewController.m"
-                  timestampString = "473914721.533154"
+                  timestampString = "474042374.245744"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
@@ -331,22 +331,6 @@
                   offsetFromSymbolStart = "70">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iWork/Sources/Networking/BaseRequest/WGBaseRequest.m"
-            timestampString = "473914737.562573"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "-request"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

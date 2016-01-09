@@ -115,6 +115,7 @@
     return requesturl;
 }
 - (void)request{
+    
     if (self.requestMethod == WGHTTPRequestMethodGET) {
        [self.manager GET:[self buildRequestUrl] parameters:self.getParams success:^(AFHTTPRequestOperation *operation, id responseObject)  {
             WGBaseModel *model = [self responseModelWithData:responseObject];
