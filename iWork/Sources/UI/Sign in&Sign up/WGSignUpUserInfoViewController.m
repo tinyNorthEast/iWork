@@ -18,11 +18,13 @@
 #import "WGSignUpWorkInfoViewController.h"
 #import "WGQNTokenRequest.h"
 #import "WGQiNiuTokenModel.h"
+#import "WGDateFormatter.h"
 
 @interface WGSignUpUserInfoViewController ()<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) NSData *imageData;
 @property (nonatomic, strong) UIImage *headerImage;
+@property (nonatomic, copy) NSString *imageName;
 @property (nonatomic, copy) NSString *headerUrl;
 
 @property (weak, nonatomic) IBOutlet UIButton *headerButton;
@@ -62,6 +64,10 @@
 }
 
 - (IBAction)addPhotoAction:(id)sender {
+    [self.userNameTextField resignFirstResponder];
+    [self.enNameTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
+    
     UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从手机相册选择",nil];
     [as showInView:self.view];
 }
@@ -98,7 +104,7 @@
         WGQiNiuTokenModel *model = (WGQiNiuTokenModel *)baseModel;
 
         QNUploadManager *upManager = [[QNUploadManager alloc] init];
-        [upManager putData:self.imageData key:@"header" token:model.data
+        [upManager putData:self.imageData key:self.imageName token:model.data
                   complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
                       [self.headerButton setImage:self.headerImage forState:UIControlStateNormal];
                       self.headerUrl = [NSString stringWithFormat:@"http://7xoors.com1.z0.glb.clouddn.com/%@",key];
@@ -137,7 +143,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         [self callCamera];
-    }else{
+    }else if(buttonIndex ==1){
         [self callPhotoLibary];
     }
 }
@@ -157,27 +163,8 @@
     //得到图片
     UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
     UIImage * editedimage = [info objectForKey:UIImagePickerControllerEditedImage];
-    NSURL *url      = [info objectForKey:UIImagePickerControllerReferenceURL];
     UIImage *newImg = [self scaleToSize:editedimage size:CGSizeMake(500, 500)];
-    NSString *imgName = [url pathExtension];
-    
-    if( ![WGValidJudge isValidString:imgName] )
-    {
-        imgName = @"png";
-    }
-    
-//    NSString *paths     = [NSString stringWithFormat:@"%@/Documents/TakePhoto/photo.%@", NSHomeDirectory(),imgName];
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    if(![fileManager fileExistsAtPath:paths]){
-//        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-//        NSString *directryPath = [path stringByAppendingPathComponent:@"TakePhoto"];
-//        [fileManager createDirectoryAtPath:directryPath withIntermediateDirectories:YES attributes:nil error:nil];
-//        NSString *filePath = [directryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"photo.%@",imgName]];
-//
-//        [fileManager createFileAtPath:filePath contents:nil attributes:nil];
-//    }
-//    
-//    [UIImagePNGRepresentation(newImg) writeToFile:paths  atomically:YES];
+    NSString *imgName = [[WGDateFormatter sharedInstance] timeString];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
    
@@ -188,6 +175,7 @@
     
     self.imageData = data;
     self.headerImage = newImg;
+    self.imageName = imgName;
     
     if(picker.sourceType == UIImagePickerControllerSourceTypeCamera )
     {

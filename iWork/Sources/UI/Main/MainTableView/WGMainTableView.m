@@ -84,8 +84,16 @@
         self.areaCode = @(DefaultCityCode);
     }
     
+    NSNumber *requestPagerNum;
+    if (isRefresh) {
+        requestPagerNum = @(pager.currentPageIndex);
+    }else{
+        requestPagerNum = @(pager.nextPageIndex);
+    }
+    
+    
     [WGProgressHUD defaultLoadingOnView:[self viewController].view];
-    WGHunterListRequest *request = [[WGHunterListRequest alloc] initWithAreaCode:self.areaCode industryId:industry.objId  pageNo:@(pager.currentPageIndex)];
+    WGHunterListRequest *request = [[WGHunterListRequest alloc] initWithAreaCode:self.areaCode industryId:industry.objId  pageNo:requestPagerNum];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
@@ -138,9 +146,10 @@
     return cell;
 }
 - (void)configureCell:(WGMainCell *)cell forIndexPath:(NSIndexPath *)indexPath{
-    WGHunterModel *aHunter = self.hunters[indexPath.row];
-    cell.hunter = aHunter;
-
+    if (self.hunters.count) {
+        WGHunterModel *aHunter = self.hunters[indexPath.row];
+        cell.hunter = aHunter;
+    }
     @weakify(self);
     cell.selectBBS = ^{
         @strongify(self);

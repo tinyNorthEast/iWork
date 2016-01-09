@@ -23,5 +23,11 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGDateFormatter)
     return [formatter stringFromDate:date];
 }
 
+- (NSString *)timeString{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSString *currentDateStr = [dateFormatter stringFromDate:[NSDate date]];
+    return currentDateStr;
+}
 
 @end

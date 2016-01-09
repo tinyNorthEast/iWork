@@ -49,6 +49,7 @@
         [barButton setTitle:industry.name forState:UIControlStateNormal];
         [barButton setTitleColor:[UIColor wg_themeWhiteColor] forState:UIControlStateNormal];
         [barButton setTitleColor:[UIColor wg_themeCyanColor] forState:UIControlStateSelected];
+        barButton.titleLabel.font = [UIFont kFontSize14];
         [barButton setTag:tag];
         [barButton addTarget:self action:@selector(selectMenu:) forControlEvents:UIControlEventTouchUpInside];
         [barButton setSelected:NO];
@@ -65,7 +66,7 @@
         }
 
         CGSize size = [barButton.titleLabel.text boundingRectWithSize:CGSizeMake(0, 40) options:NSStringDrawingUsesLineFragmentOrigin
-                                     attributes: @{ NSFontAttributeName:barButton.titleLabel.font } context: nil].size;
+                                     attributes: @{ NSFontAttributeName:[UIFont kFontSize14] } context: nil].size;
         
         int vButtonWidth = (baseWidth>size.width?baseWidth:size.width);
         

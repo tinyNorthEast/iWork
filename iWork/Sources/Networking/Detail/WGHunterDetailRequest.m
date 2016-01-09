@@ -20,7 +20,7 @@
     self = [super init];
     if (self) {
         
-        [self.getParams safeSetValue:hunterId forKey:@"headhunterId"];
+        [self.getParams safeSetValue:hunterId forKey:@"headhunter_id"];
         [self.getParams safeSetValue:[[WGGlobal sharedInstance]userToken] forKey:@"token"];
         
         return self;

@@ -19,7 +19,7 @@
     self = [super init];
     if (self) {
         
-        [self.postParams safeSetValue:hunterId forKey:@"headhunterId"];
+        [self.postParams safeSetValue:hunterId forKey:@"headhunter_id"];
         [self.postParams safeSetValue:[[WGGlobal sharedInstance]userToken] forKey:@"token"];
         [self.postParams safeSetValue:mail forKey:@"hr_mail"];
         
@@ -28,7 +28,7 @@
     return nil;
 }
 - (NSString *)pathName{
-    return @"api/v1/headhunter/saveHeadhunterAuth.action ";
+    return @"api/v1/headhunter/saveHeadhunterAuth.action";
 }
 
 - (WGHTTPRequestMethod)requestMethod{

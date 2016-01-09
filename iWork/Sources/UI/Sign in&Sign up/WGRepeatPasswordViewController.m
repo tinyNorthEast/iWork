@@ -16,6 +16,9 @@
 #import "NSMutableDictionary+WGExtension.h"
 #import "NSString+WGExtension.h"
 #import "WGForgetPasswordRequest.h"
+#import "WGSignUpRequestModel.h"
+#import "WGSignUpModel.h"
+#import "WGGlobal.h"
 
 @interface WGRepeatPasswordViewController ()<UITextFieldDelegate>
 
@@ -30,7 +33,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    if (self.viewFounction == WGViewFounction_SignUp) {
+       self.passwordTextField.placeholder = @"请输入密码";
+    }else{
+        self.passwordTextField.placeholder = @"重置密码";
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,24 +75,39 @@
     
     if (self.viewFounction == WGViewFounction_SignUp) {
         [self.signUpInfoDict safeSetValue:[[NSString stringDecodingByMD5:self.passwordTextField.text] lowercaseString] forKey:@"password"];
-        
-        @weakify(self);
+       
         WGSignUpRequest *request = [[WGSignUpRequest alloc] initWithInfo:self.signUpInfoDict];
-        
+         @weakify(self);
         [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
             @strongify(self);
-            [self back];
+            WGSignUpRequestModel *model = (WGSignUpRequestModel *)baseModel;
+            if (baseModel.infoCode.integerValue == 0) {
+                if ([WGValidJudge isValidString:model.data.token]) {
+                    [[WGGlobal sharedInstance] saveToken:model.data.token];
+                    [self back];
+                }
+            }else{
+                [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
+            }
         } failure:^(WGBaseModel *baseModel, NSError *error) {
+            [WGProgressHUD disappearFailureMessage:@"注册失败" onView:self.view];
             
         }];
     }else{
         @weakify(self);
+        [WGProgressHUD defaultLoadingOnView:self.view];
         WGForgetPasswordRequest *request = [[WGForgetPasswordRequest alloc] initWithPhone:self.phoneStr password:self.passwordTextField.text];
         [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
             @strongify(self);
-            [self back];
-        } failure:^(WGBaseModel *baseModel, NSError *error) {
+            if (baseModel.infoCode.integerValue == 0) {
+                [WGProgressHUD dismissOnView:self.view];
+                [self back];
+            }else{
+                [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
+            }
             
+        } failure:^(WGBaseModel *baseModel, NSError *error) {
+            [WGProgressHUD disappearFailureMessage:@"重置密码失败" onView:self.view];
         }];
     }
 }

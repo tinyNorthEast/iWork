@@ -20,6 +20,7 @@
 #import "WGUserInfoModel.h"
 #import "WGResetUserInfoRequest.h"
 #import "WGDataPickerView.h"
+#import "WGDateFormatter.h"
 
 @interface WGResetUserInfoController()<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
@@ -29,6 +30,7 @@
 
 @property (nonatomic, copy) NSData *imageData;
 @property (nonatomic, copy) UIImage *headerImage;
+@property (nonatomic, copy) NSString *imageStr;
 
 @property (weak, nonatomic) IBOutlet UIImageView *headerView;
 @property (weak, nonatomic) IBOutlet UITextField *mailField;
@@ -223,7 +225,7 @@
         WGQiNiuTokenModel *model = (WGQiNiuTokenModel *)baseModel;
         
         QNUploadManager *upManager = [[QNUploadManager alloc] init];
-        [upManager putData:self.imageData key:@"header" token:model.data
+        [upManager putData:self.imageData key:self.imageStr token:model.data
                   complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
                       [self.headerView setImage:self.headerImage];
                       [self.infoDic setObject:[NSString stringWithFormat:@"http://7xoors.com1.z0.glb.clouddn.com/%@",key] forKey:@"pic"];
@@ -289,27 +291,8 @@
     //得到图片
     UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
     UIImage * editedimage = [info objectForKey:UIImagePickerControllerEditedImage];
-    NSURL *url      = [info objectForKey:UIImagePickerControllerReferenceURL];
     UIImage *newImg = [self scaleToSize:editedimage size:CGSizeMake(500, 500)];
-    NSString *imgName = [url pathExtension];
-    
-    if( ![WGValidJudge isValidString:imgName] )
-    {
-        imgName = @"png";
-    }
-    
-    //    NSString *paths     = [NSString stringWithFormat:@"%@/Documents/TakePhoto/photo.%@", NSHomeDirectory(),imgName];
-    //    NSFileManager *fileManager = [NSFileManager defaultManager];
-    //    if(![fileManager fileExistsAtPath:paths]){
-    //        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    //        NSString *directryPath = [path stringByAppendingPathComponent:@"TakePhoto"];
-    //        [fileManager createDirectoryAtPath:directryPath withIntermediateDirectories:YES attributes:nil error:nil];
-    //        NSString *filePath = [directryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"photo.%@",imgName]];
-    //
-    //        [fileManager createFileAtPath:filePath contents:nil attributes:nil];
-    //    }
-    //
-    //    [UIImagePNGRepresentation(newImg) writeToFile:paths  atomically:YES];
+    NSString *imgName = [[WGDateFormatter sharedInstance] timeString];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     
@@ -320,6 +303,7 @@
     
     self.imageData = data;
     self.headerImage = newImg;
+    self.imageStr = imgName;
     
     if(picker.sourceType == UIImagePickerControllerSourceTypeCamera )
     {

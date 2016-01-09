@@ -117,11 +117,12 @@
             [WGProgressHUD loadMessage:@"正在帮你申请权限" onView:[self viewController].view];
             WGApplyAuthRequest *request = [[WGApplyAuthRequest alloc] initWithHunterId:@(16) hr_mail:textField.text];
             [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
-                [WGProgressHUD dismissOnView:[self viewController].view];
                 if (baseModel.infoCode.integerValue == 0) {
-                    
+                    [WGProgressHUD disappearSuccessMessage:@"发送申请成功" onView:
+                     self.viewController.view];
+                   
                 }else{
-                    
+                    [WGProgressHUD disappearFailureMessage:baseModel.message onView:[self viewController].view];
                 }
             } failure:^(WGBaseModel *baseModel, NSError *error) {
                 

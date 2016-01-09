@@ -10,6 +10,9 @@
 		B500244E1C31399400CCA6E5 /* WGResetPasswordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B500244D1C31399400CCA6E5 /* WGResetPasswordRequest.m */; };
 		B50024511C31403400CCA6E5 /* WGResetUserInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B50024501C31403400CCA6E5 /* WGResetUserInfoRequest.m */; };
 		B50024541C31440D00CCA6E5 /* WGResetPswViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50024531C31440D00CCA6E5 /* WGResetPswViewController.m */; };
+		B5026D531C3EA2A9004E46FB /* WGVertifyPhoneRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5026D521C3EA2A9004E46FB /* WGVertifyPhoneRequest.m */; };
+		B5026D561C3EB4E5004E46FB /* WGSignUpRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5026D551C3EB4E5004E46FB /* WGSignUpRequestModel.m */; };
+		B5026D591C3EB4F7004E46FB /* WGSignUpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5026D581C3EB4F7004E46FB /* WGSignUpModel.m */; };
 		B5055BEE1BF9CF33001736AD /* WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055BED1BF9CF33001736AD /* WGPager.m */; };
 		B5055BF41BF9FB5B001736AD /* WGValidJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055BF31BF9FB5B001736AD /* WGValidJudge.m */; };
 		B5055C021BFA02ED001736AD /* WGTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055C011BFA02ED001736AD /* WGTools.m */; };
@@ -219,6 +222,12 @@
 		B50024501C31403400CCA6E5 /* WGResetUserInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGResetUserInfoRequest.m; sourceTree = "<group>"; };
 		B50024521C31440D00CCA6E5 /* WGResetPswViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGResetPswViewController.h; sourceTree = "<group>"; };
 		B50024531C31440D00CCA6E5 /* WGResetPswViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGResetPswViewController.m; sourceTree = "<group>"; };
+		B5026D511C3EA2A9004E46FB /* WGVertifyPhoneRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGVertifyPhoneRequest.h; sourceTree = "<group>"; };
+		B5026D521C3EA2A9004E46FB /* WGVertifyPhoneRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGVertifyPhoneRequest.m; sourceTree = "<group>"; };
+		B5026D541C3EB4E5004E46FB /* WGSignUpRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpRequestModel.h; sourceTree = "<group>"; };
+		B5026D551C3EB4E5004E46FB /* WGSignUpRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignUpRequestModel.m; sourceTree = "<group>"; };
+		B5026D571C3EB4F7004E46FB /* WGSignUpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpModel.h; sourceTree = "<group>"; };
+		B5026D581C3EB4F7004E46FB /* WGSignUpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignUpModel.m; sourceTree = "<group>"; };
 		B5055BEC1BF9CF33001736AD /* WGPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPager.h; sourceTree = "<group>"; };
 		B5055BED1BF9CF33001736AD /* WGPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPager.m; sourceTree = "<group>"; };
 		B5055BF21BF9FB5B001736AD /* WGValidJudge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGValidJudge.h; sourceTree = "<group>"; };
@@ -1232,6 +1241,8 @@
 				B5E907BE1C083E6C003AB736 /* WGSignInRequest.m */,
 				B5E907C31C096C96003AB736 /* WGSignUpRequest.h */,
 				B5E907C41C096C96003AB736 /* WGSignUpRequest.m */,
+				B5026D511C3EA2A9004E46FB /* WGVertifyPhoneRequest.h */,
+				B5026D521C3EA2A9004E46FB /* WGVertifyPhoneRequest.m */,
 				B5066A061C0C44AB00D87E56 /* WGForgetPasswordRequest.h */,
 				B5066A071C0C44AB00D87E56 /* WGForgetPasswordRequest.m */,
 				B5FB3D371C0EDC8A00B35AB6 /* WGQNTokenRequest.h */,
@@ -1247,6 +1258,10 @@
 				B5FB3D531C10499A00B35AB6 /* WGSignInModel.m */,
 				B5F4B1F71C1E997000CD44A3 /* WGSignInRequestModel.h */,
 				B5F4B1F81C1E997000CD44A3 /* WGSignInRequestModel.m */,
+				B5026D541C3EB4E5004E46FB /* WGSignUpRequestModel.h */,
+				B5026D551C3EB4E5004E46FB /* WGSignUpRequestModel.m */,
+				B5026D571C3EB4F7004E46FB /* WGSignUpModel.h */,
+				B5026D581C3EB4F7004E46FB /* WGSignUpModel.m */,
 				B5FAC9341C3114E100C82019 /* WGQiNiuTokenModel.h */,
 				B5FAC9351C3114E100C82019 /* WGQiNiuTokenModel.m */,
 			);
@@ -1766,7 +1781,9 @@
 				B5F150C41C225EBC00EC9503 /* WGHunterInfoModel.m in Sources */,
 				B5FB3D571C1071CC00B35AB6 /* UIDevice+WGIdentifier.m in Sources */,
 				B5FAC9251C2E203E00C82019 /* WGNotificationController.m in Sources */,
+				B5026D591C3EB4F7004E46FB /* WGSignUpModel.m in Sources */,
 				B5066A141C0C8EBD00D87E56 /* WGMenuBar.m in Sources */,
+				B5026D531C3EA2A9004E46FB /* WGVertifyPhoneRequest.m in Sources */,
 				B5E600421BFECF8800265307 /* WGVertifyPhoneViewController.m in Sources */,
 				B5E2F4451C2AA193005F8BA4 /* DEReflectUtil.m in Sources */,
 				B5F150BC1C21205C00EC9503 /* WGHunterDetailRequest.m in Sources */,
@@ -1791,6 +1808,7 @@
 				B5E6003F1BFECBCD00265307 /* WGSignInViewController.m in Sources */,
 				B5AAAE401C2D032C008A97E6 /* WGWriteBBSRequest.m in Sources */,
 				B59426FF1C2BF6AB008BD92A /* WGFunctionView.m in Sources */,
+				B5026D561C3EB4E5004E46FB /* WGSignUpRequestModel.m in Sources */,
 				B5D0E7FC1C046EB000358351 /* WGCountDownButton.m in Sources */,
 				B594270E1C2C2321008BD92A /* WGBBSView.m in Sources */,
 				B5F150DB1C22E75200EC9503 /* WGIndustryView.m in Sources */,

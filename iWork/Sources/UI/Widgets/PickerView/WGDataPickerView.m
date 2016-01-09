@@ -97,9 +97,7 @@
                 self.pickerViewCancelBlock();
             }
             [self clearMaskSubView];
-            if (self.autoHidden) {
-                [self hiddenAnim];
-            }
+            [self hiddenAnim];
         };
         _toolBarView.confirmBlock = ^{
             @strongify(self);
@@ -109,9 +107,7 @@
                 self.pickerViewSelectBlock(selectRow);
             }
             [self clearMaskSubView];
-            if (self.autoHidden) {
-                [self hiddenAnim];
-            }
+            [self hiddenAnim];
         };
     }
     return _toolBarView;

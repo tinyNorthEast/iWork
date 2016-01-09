@@ -25,14 +25,19 @@
                                         <rect key="frame" x="0.0" y="20" width="72" height="44"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_city" translatesAutoresizingMaskIntoConstraints="NO" id="cMD-Px-DZm">
-                                                <rect key="frame" x="46" y="19" width="14" height="7"/>
+                                                <rect key="frame" x="38" y="22" width="14" height="7"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="14" id="0t1-PY-gK2"/>
                                                     <constraint firstAttribute="height" constant="7" id="2xJ-eA-N6o"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0v-4n-bvJ">
-                                                <rect key="frame" x="0.0" y="7" width="41" height="30"/>
+                                                <rect key="frame" x="0.0" y="9" width="44" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="0vT-Zh-OJf"/>
+                                                    <constraint firstAttribute="width" constant="44" id="oZM-Tp-Nc0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="北京">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -43,22 +48,21 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="cMD-Px-DZm" firstAttribute="leading" secondItem="h0v-4n-bvJ" secondAttribute="trailing" constant="5" id="2Zv-UO-Clr"/>
-                                            <constraint firstAttribute="bottom" secondItem="h0v-4n-bvJ" secondAttribute="bottom" constant="7" id="Jpc-65-TXh"/>
+                                            <constraint firstItem="cMD-Px-DZm" firstAttribute="leading" secondItem="h0v-4n-bvJ" secondAttribute="trailing" constant="-6" id="2Zv-UO-Clr"/>
+                                            <constraint firstAttribute="bottom" secondItem="h0v-4n-bvJ" secondAttribute="bottom" constant="5" id="Jpc-65-TXh"/>
                                             <constraint firstAttribute="height" constant="44" id="iaI-bs-174"/>
-                                            <constraint firstItem="cMD-Px-DZm" firstAttribute="top" secondItem="G7L-jb-ZNT" secondAttribute="top" constant="19" id="mIr-za-Lcf"/>
-                                            <constraint firstItem="h0v-4n-bvJ" firstAttribute="top" secondItem="G7L-jb-ZNT" secondAttribute="top" constant="7" id="mXs-Xq-UOn"/>
                                             <constraint firstItem="h0v-4n-bvJ" firstAttribute="leading" secondItem="G7L-jb-ZNT" secondAttribute="leadingMargin" constant="-8" id="q1O-sx-9q2"/>
-                                            <constraint firstItem="cMD-Px-DZm" firstAttribute="trailing" secondItem="G7L-jb-ZNT" secondAttribute="trailingMargin" constant="-4" id="wjw-ps-kdH"/>
+                                            <constraint firstAttribute="bottom" secondItem="cMD-Px-DZm" secondAttribute="bottom" constant="15" id="w1L-J8-Sjg"/>
+                                            <constraint firstItem="cMD-Px-DZm" firstAttribute="trailing" secondItem="G7L-jb-ZNT" secondAttribute="trailingMargin" constant="-12" id="wjw-ps-kdH"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5vm-ex-5KE">
                                         <rect key="frame" x="112" y="36" width="96" height="20"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkx-7M-rpX">
-                                        <rect key="frame" x="280" y="20" width="44" height="44"/>
+                                        <rect key="frame" x="291" y="36" width="21" height="23"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="doj-aa-Bgi"/>
+                                            <constraint firstAttribute="width" constant="21" id="doj-aa-Bgi"/>
                                         </constraints>
                                         <state key="normal" image="main_user"/>
                                         <connections>
@@ -74,9 +78,9 @@
                                     <constraint firstItem="5vm-ex-5KE" firstAttribute="centerX" secondItem="1WP-yc-HGd" secondAttribute="centerX" id="IOb-vt-1cK"/>
                                     <constraint firstItem="G7L-jb-ZNT" firstAttribute="top" secondItem="1WP-yc-HGd" secondAttribute="top" constant="20" id="Nt2-df-lqO"/>
                                     <constraint firstItem="G7L-jb-ZNT" firstAttribute="leading" secondItem="1WP-yc-HGd" secondAttribute="leading" id="YcM-Z0-KzX"/>
-                                    <constraint firstItem="nkx-7M-rpX" firstAttribute="top" secondItem="1WP-yc-HGd" secondAttribute="top" constant="20" id="gSh-De-jH9"/>
-                                    <constraint firstAttribute="bottom" secondItem="nkx-7M-rpX" secondAttribute="bottom" id="kKs-6b-joE"/>
-                                    <constraint firstItem="nkx-7M-rpX" firstAttribute="trailing" secondItem="1WP-yc-HGd" secondAttribute="trailingMargin" constant="12" id="lpS-yM-z4n"/>
+                                    <constraint firstItem="nkx-7M-rpX" firstAttribute="top" secondItem="1WP-yc-HGd" secondAttribute="top" constant="36" id="gSh-De-jH9"/>
+                                    <constraint firstAttribute="bottom" secondItem="nkx-7M-rpX" secondAttribute="bottom" constant="5" id="kKs-6b-joE"/>
+                                    <constraint firstItem="nkx-7M-rpX" firstAttribute="trailing" secondItem="1WP-yc-HGd" secondAttribute="trailingMargin" id="lpS-yM-z4n"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAz-TV-XaU">
@@ -146,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="621" y="220"/>
+            <point key="canvasLocation" x="477" y="258"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jUR-co-t58">

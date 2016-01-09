@@ -16,4 +16,6 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(WGDateFormatter)
 
 - (NSString *)formatTime:(NSNumber *)time;
 
+- (NSString *)timeString;
+
 @end

@@ -27,7 +27,7 @@
 }
 
 - (NSString *)pathName{
-    return @"api/v1/user/updatePassword";
+    return @"api/v1/user/forgetPassword.action";
 }
 
 - (WGHTTPRequestMethod)requestMethod{

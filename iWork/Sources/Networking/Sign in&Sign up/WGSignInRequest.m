@@ -21,8 +21,7 @@
     self = [super init];
     if (self) {
         [self.postParams safeSetValue:phone forKey:@"phone"];
-//        [self.postParams safeSetValue:[[NSString stringDecodingByMD5:password] lowercaseString] forKey:@"password"];
-        [self.postParams safeSetValue:password forKey:@"password"];
+        [self.postParams safeSetValue:[[NSString stringDecodingByMD5:password] lowercaseString] forKey:@"password"];
         return self;
     }
     return nil;

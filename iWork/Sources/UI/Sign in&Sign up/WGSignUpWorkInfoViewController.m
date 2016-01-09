@@ -19,11 +19,13 @@
 
 @interface WGSignUpWorkInfoViewController ()<UITextFieldDelegate>
 
-@property (strong, nonatomic) WGDataPickerView *picker;
+@property (strong, nonatomic) WGDataPickerView *exPicker;
+@property (strong, nonatomic) WGDataPickerView *rolePicker;
 
 @property (weak, nonatomic) IBOutlet UITextField *positionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *experienceTextFiled;
 @property (weak, nonatomic) IBOutlet UITextField *roleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *codeTextField;
 
 @end
 
@@ -47,14 +49,23 @@
     return _workInfoDict;
 }
 
-- (WGDataPickerView *)picker{
-    if (!_picker) {
-        _picker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
-        _picker.autoHidden = YES;
-        [_picker setSelectIndex:0];
-        [_picker showInView:self.view];
+- (WGDataPickerView *)exPicker{
+    if (!_exPicker) {
+        _exPicker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
+        _exPicker.autoHidden = NO;
+        [_exPicker setSelectIndex:0];
+        [_exPicker showInView:self.view];
     }
-    return _picker;
+    return _exPicker;
+}
+- (WGDataPickerView *)rolePicker{
+    if (!_rolePicker) {
+        _rolePicker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
+        _rolePicker.autoHidden = NO;
+        [_rolePicker setSelectIndex:0];
+        [_rolePicker showInView:self.view];
+    }
+    return _rolePicker;
 }
 
 #pragma mark - IBACtion
@@ -62,18 +73,20 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)popExperienceView:(id)sender {
-    if (self.experienceTextFiled.resignFirstResponder) {
-        [self.experienceTextFiled resignFirstResponder];
-    }
-    _picker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
-    _picker.autoHidden = YES;
-    [_picker setSelectIndex:0];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self hideKeyboard];
+        if (self.experienceTextFiled.resignFirstResponder) {
+            [self.experienceTextFiled resignFirstResponder];
+        }
+    });
 
-    self.picker.dataArray = @[@"3年以下", @"3-5年", @"5-10年",@"10年以上"];
-    self.picker.barTitle = @"工作经验";
-
+    self.exPicker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
+    
+    self.exPicker.dataArray = @[@"3年以下", @"3-5年", @"5-10年",@"10年以上"];
+    self.exPicker.barTitle = @"工作经验";
+    
     @weakify(self);
-    [self.picker showSelectDate:^(NSInteger selectRow) {
+    [self.exPicker showSelectDate:^(NSInteger selectRow) {
         @strongify(self);
         NSInteger exID = 0;
         switch (selectRow) {
@@ -94,22 +107,29 @@
                 break;
         }
         
-        self.experienceTextFiled.text = self.picker.dataArray[selectRow];
+        self.experienceTextFiled.text = self.exPicker.dataArray[selectRow];
         [self.workInfoDict safeSetValue:@(exID) forKey:@"experience"];
         
     } cancel:^{
         
     }];
     
-    [_picker showInView:self.view];
+    [self.exPicker showInView:self.view];
 }
 - (IBAction)popRoleView:(id)sender {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self hideKeyboard];
+        if (self.roleTextField.resignFirstResponder) {
+            [self.roleTextField resignFirstResponder];
+        }
+    });
     
-    self.picker.dataArray = @[@"猎头顾问", @"企业HR", @"候选人"];
-    self.picker.barTitle = @"工作经验";
+    self.rolePicker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
+    self.rolePicker.dataArray = @[@"猎头顾问", @"企业HR", @"候选人"];
+    self.rolePicker.barTitle = @"工作经验";
     
     @weakify(self);
-    [self.picker showSelectDate:^(NSInteger selectRow) {
+    [self.rolePicker showSelectDate:^(NSInteger selectRow) {
         @strongify(self);
         NSInteger roleID = 0;
         switch (selectRow) {
@@ -125,12 +145,13 @@
                 roleID = 102;
                 break;
         }
-        self.roleTextField.text = self.picker.dataArray[selectRow];
+        self.roleTextField.text = self.rolePicker.dataArray[selectRow];
         [self.workInfoDict safeSetValue:@(roleID) forKey:@"role_code"];
         
     } cancel:^{
         
     }];
+    [self.rolePicker showInView:self.view];
 }
 
 - (IBAction)nextAction:(id)sender {
@@ -146,14 +167,24 @@
     }
     
     [self.workInfoDict safeSetValue:self.positionTextField.text forKey:@"position"];
-    [self.workInfoDict safeSetValue:self.experienceTextFiled.text forKey:@"experience"];
-    [self.workInfoDict safeSetValue:self.roleTextField.text forKey:@"role_code"];
+    [self.workInfoDict safeSetValue:self.codeTextField.text forKey:@"invate_code"];
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
     WGRepeatPasswordViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGRepeatPasswordViewController"];
     vc.viewFounction = WGViewFounction_SignUp;
     vc.signUpInfoDict = self.workInfoDict;
     [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)hideKeyboard{
+    if (self.positionTextField.resignFirstResponder) {
+        [self.positionTextField resignFirstResponder];
+    }
+    if (self.codeTextField.resignFirstResponder) {
+        [self.codeTextField resignFirstResponder];
+    }
+}
+- (IBAction)tapBackground:(id)sender {
+    [self hideKeyboard];
 }
 
 #pragma mark - UIGestureRecognizerDelegate
@@ -162,7 +193,6 @@
 }
 
 #pragma mark - UITextFieldDelegate
-
 
 /*
 #pragma mark - Navigation
