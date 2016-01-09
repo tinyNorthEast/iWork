@@ -22,7 +22,7 @@
 #define VERTICAL_PADDING 3.0f
 #define TEXT_SHADOW_OFFSET CGSizeMake(0.0f, 1.0f)
 
-#define BORDER_WIDTH 1.0f
+#define BORDER_WIDTH 0.5f
 
 
 @implementation WGTagList
@@ -87,13 +87,13 @@
         } else {
             [label setBackgroundColor:lblBackgroundColor];
         }
-        [label setTextColor:[UIColor wg_themeGrayColor]];
+        [label setTextColor:[UIColor wg_themeDarkGrayColor]];
         [label setText:model.industryName];
         [label setTextAlignment:NSTextAlignmentCenter];
         [label setShadowOffset:TEXT_SHADOW_OFFSET];
         [label.layer setMasksToBounds:YES];
         [label.layer setCornerRadius:CORNER_RADIUS];
-        [label.layer setBorderColor:[UIColor wg_themeGrayColor].CGColor];
+        [label.layer setBorderColor:[UIColor wg_themeMoreLightGrayColor].CGColor];
         [label.layer setBorderWidth: BORDER_WIDTH];
         [self addSubview:label];
     }

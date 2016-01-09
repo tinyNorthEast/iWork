@@ -28,6 +28,10 @@
     return [UIColor colorWithHex:0xAAAAAA];
 }
 
++ (instancetype)wg_themeMoreLightGrayColor{
+    return [UIColor colorWithHex:0xCCCCCC];
+}
+
 + (instancetype)wg_themeDarkWhiteColor{
     return [UIColor colorWithHex:0xF3F3F3];
 }

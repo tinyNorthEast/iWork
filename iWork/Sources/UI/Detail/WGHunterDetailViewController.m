@@ -138,7 +138,7 @@
 - (void)requestDetailData{
     [WGProgressHUD defaultLoadingOnView:self.view];
     
-    WGHunterDetailRequest *request = [[WGHunterDetailRequest alloc] initWithHunterId:@(16)];
+    WGHunterDetailRequest *request = [[WGHunterDetailRequest alloc] initWithHunterId:self.hunterId];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);

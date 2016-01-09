@@ -15,7 +15,7 @@
 
 @interface WGHunterModel : WGBaseModel
 
-@property (nonatomic,copy)NSString<Optional> *objId;
+@property (nonatomic,strong)NSNumber<Optional> *objId;
 @property (nonatomic,copy)NSString<Optional> *realName;
 @property (nonatomic,copy)NSString<Optional> *pic;
 @property (nonatomic,strong)NSNumber<Optional> *ranking;

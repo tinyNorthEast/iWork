@@ -58,6 +58,10 @@
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5vm-ex-5KE">
                                         <rect key="frame" x="112" y="36" width="96" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="NRc-qS-GSe"/>
+                                            <constraint firstAttribute="height" constant="20" id="wMe-Xi-4Ii"/>
+                                        </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkx-7M-rpX">
                                         <rect key="frame" x="291" y="36" width="21" height="23"/>

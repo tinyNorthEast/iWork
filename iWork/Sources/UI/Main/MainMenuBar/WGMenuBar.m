@@ -49,7 +49,7 @@
         [barButton setTitle:industry.name forState:UIControlStateNormal];
         [barButton setTitleColor:[UIColor wg_themeWhiteColor] forState:UIControlStateNormal];
         [barButton setTitleColor:[UIColor wg_themeCyanColor] forState:UIControlStateSelected];
-        barButton.titleLabel.font = [UIFont kFontSize14];
+        barButton.titleLabel.font = [UIFont kFontSize13];
         [barButton setTag:tag];
         [barButton addTarget:self action:@selector(selectMenu:) forControlEvents:UIControlEventTouchUpInside];
         [barButton setSelected:NO];
@@ -66,7 +66,7 @@
         }
 
         CGSize size = [barButton.titleLabel.text boundingRectWithSize:CGSizeMake(0, 40) options:NSStringDrawingUsesLineFragmentOrigin
-                                     attributes: @{ NSFontAttributeName:[UIFont kFontSize14] } context: nil].size;
+                                     attributes: @{ NSFontAttributeName:[UIFont kFontSize15] } context: nil].size;
         
         int vButtonWidth = (baseWidth>size.width?baseWidth:size.width);
         
@@ -101,6 +101,7 @@
     [self changeButtonsToNormalState];
     UIButton *barButton = [self.mButtonArray objectAtIndex:aIndex];
     [barButton setSelected:YES];
+    barButton.titleLabel.font = [UIFont kFontSize15];
     [self moveScrolViewWithIndex:aIndex];
 }
 
@@ -108,6 +109,7 @@
 #pragma mark 取消所有button点击状态
 -(void)changeButtonsToNormalState{
     for (UIButton *vButton in self.mButtonArray) {
+        vButton.titleLabel.font = [UIFont kFontSize13];
         [vButton setSelected:NO];
     }
 }

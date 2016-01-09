@@ -16,6 +16,8 @@
 
 + (instancetype)kFontSize16;
 
++ (instancetype)kFontSize15;
+
 + (instancetype)kFontSize14;
 
 + (instancetype)kFontSize13;

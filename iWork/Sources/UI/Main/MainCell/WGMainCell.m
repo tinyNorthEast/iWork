@@ -74,7 +74,7 @@
             if (positionStr.length == 0) {
                 positionStr = aModel.industryName;
             }else{
-                positionStr = [positionStr stringByAppendingString:[NSString stringWithFormat:@",%@" ,aModel.industryName]];
+                positionStr = [positionStr stringByAppendingString:[NSString stringWithFormat:@" | %@" ,aModel.industryName]];
             }
         }
         self.positionLabel.text = positionStr;

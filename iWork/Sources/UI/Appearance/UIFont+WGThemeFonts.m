@@ -21,7 +21,9 @@
 + (instancetype)kFontSize16{
     return [UIFont systemFontOfSize:16.0];
 }
-
++ (instancetype)kFontSize15{
+    return [UIFont systemFontOfSize:15.0];
+}
 + (instancetype)kFontSize14{
     return [UIFont systemFontOfSize:14.0];
 }

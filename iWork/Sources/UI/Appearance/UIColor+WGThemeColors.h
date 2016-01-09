@@ -18,6 +18,8 @@
 
 + (instancetype)wg_themeLightGrayColor;
 
++ (instancetype)wg_themeMoreLightGrayColor;
+
 + (instancetype)wg_themeDarkWhiteColor;
 
 + (instancetype)wg_themeWhiteColor;

@@ -10,4 +10,6 @@
 
 @interface WGHunterDetailViewController : UIViewController
 
+@property (nonatomic, strong) NSNumber *hunterId;
+
 @end

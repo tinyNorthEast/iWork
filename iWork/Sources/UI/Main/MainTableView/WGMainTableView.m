@@ -23,6 +23,7 @@
 #import "WGHunterListModel.h"
 #import "WGHunterModel.h"
 #import "WGIndustryModel.h"
+#import "WGHunterDetailViewController.h"
 
 #define DefaultCityCode 1000
 
@@ -92,12 +93,12 @@
     }
     
     
-    [WGProgressHUD defaultLoadingOnView:[self viewController].view];
+    [WGProgressHUD defaultLoadingOnView:[UIApplication sharedApplication].keyWindow];
     WGHunterListRequest *request = [[WGHunterListRequest alloc] initWithAreaCode:self.areaCode industryId:industry.objId  pageNo:requestPagerNum];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
-        [WGProgressHUD dismissOnView:[self viewController].view];
+        [WGProgressHUD dismissOnView:[UIApplication sharedApplication].keyWindow];
         
         if (baseModel.infoCode.integerValue == 0) {
             WGHunterListModel *model = (WGHunterListModel *)baseModel;
@@ -106,7 +107,7 @@
                 [self reloadData];
             }
         }else{
-            [WGProgressHUD disappearFailureMessage:baseModel.message onView:self];
+            [WGProgressHUD disappearFailureMessage:baseModel.message onView:[UIApplication sharedApplication].keyWindow];
         }
         if (isRefresh) {
             [pager finishRefreshWithError:error];
@@ -162,7 +163,9 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
-    UIViewController *vc = [sb instantiateInitialViewController];
+    WGHunterDetailViewController *vc = [sb instantiateInitialViewController];
+    WGHunterModel *aHunter = self.hunters[indexPath.row];
+    vc.hunterId = aHunter.objId;
     [[self viewController].navigationController pushViewController:vc animated:YES];
 }
 @end

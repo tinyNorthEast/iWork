@@ -36,9 +36,9 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="wg_bgCornerWidth">
-                            <real key="value" value="1"/>
+                            <real key="value" value="0.5"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="wg_bgCornerColor" value="AAAAAA"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="wg_bgCornerColor" value="CCCCCC"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="openPermission:" destination="iN0-l3-epB" eventType="touchUpInside" id="J99-7E-xCe"/>
