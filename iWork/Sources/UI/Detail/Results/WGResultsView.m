@@ -23,7 +23,9 @@
 
 @interface WGResultsView()<XXNibBridge,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *resultView;
+@property (weak, nonatomic) IBOutlet UIButton *permissionButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *resultViewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonHeight;
 
 @end
 
@@ -77,7 +79,16 @@
     }
     self.resultViewHeight.constant = height;
     
-    return 50+height+70;
+    if ([WGGlobal sharedInstance].signInfo.role_code.integerValue == UserRole_Hunter) {
+        self.buttonHeight.constant = 45;
+        [self.permissionButton setHidden:NO];
+        return 50+height+70;
+    }
+    else{
+        self.buttonHeight.constant = 0;
+        [self.permissionButton setHidden:YES];
+        return 50+height;
+    }
 }
 
 #pragma mark - IBAcion

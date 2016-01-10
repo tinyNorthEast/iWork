@@ -72,6 +72,8 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="buttonHeight" destination="yWH-gU-jgY" id="Zvw-Wg-bsR"/>
+                <outlet property="permissionButton" destination="poI-oP-Z9b" id="AcL-qc-1zn"/>
                 <outlet property="resultView" destination="k2t-kJ-nKA" id="9Hy-aj-zjD"/>
                 <outlet property="resultViewHeight" destination="mHJ-d4-kCN" id="D2U-uA-fwW"/>
             </connections>

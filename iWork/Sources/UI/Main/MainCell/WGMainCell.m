@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *positionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *pariseButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameWidth;
 
 @end
 
@@ -65,6 +66,14 @@
     
     [self.headerImage wg_loadImageFromURL:hunter.pic placeholder:[UIImage imageNamed:@"main_defaultHeader"]];
     [self.nameLabel setText:hunter.realName];
+    
+    CGSize size = [self.nameLabel.text boundingRectWithSize:CGSizeMake(0, 300) options:NSStringDrawingUsesLineFragmentOrigin
+                                                       attributes: @{ NSFontAttributeName:self.nameLabel.font } context: nil].size;
+    
+    
+    self.nameWidth.constant = size.width;
+    
+    
     
     self.positionLabel.text = @"";
     NSArray *industrys = hunter.industryList;

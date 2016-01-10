@@ -20,6 +20,7 @@
 #import "WGCityListViewController.h"
 #import "WGIndustryListRequest.h"
 #import "WGMainIndustryListModel.h"
+#import "WGNotificationController.h"
 
 @interface WGMainViewController ()<WGMenuBarDelegate,WGMainScrollViewDelegate>
 
@@ -107,7 +108,8 @@
 }
 - (void)gotoNotification:(NSNotification *)notification{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"User" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Notification"];
+    WGNotificationController *vc = [sb instantiateViewControllerWithIdentifier:@"Notification"];
+    vc.notif_type = notification.object[@"n_type"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -10,6 +10,7 @@
 
 #import "NSMutableDictionary+WGExtension.h"
 
+#import "WGGlobal.h"
 #import "WGHunterListModel.h"
 
 @implementation WGHunterListRequest
@@ -18,6 +19,7 @@
 {
     self = [super init];
     if (self) {
+        [self.getParams safeSetValue:[[WGGlobal sharedInstance] userToken] forKey:@"token"];
         [self.getParams safeSetValue:areaCode forKey:@"areaCode"];
         [self.getParams safeSetValue:industryId forKey:@"industryId"];
         [self.getParams safeSetValue:pageNo forKey:@"pageNo"];

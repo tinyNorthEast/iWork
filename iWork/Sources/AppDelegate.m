@@ -118,16 +118,8 @@
                             stringByReplacingOccurrencesOfString:@">" withString:@""]
                            stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-//    NSString *saveToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"DeviceToken"];
-//    if (![saveToken isEqualToString:pushToken]) {
-//        
-//        [[NSUserDefaults standardUserDefaults] setObject:pushToken forKey:@"DeviceToken"];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//    }
     [[WGGlobal sharedInstance] saveDeviceToken:pushToken];
     [APService registerDeviceToken:deviceToken];
-
-    
 }
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     // Required
@@ -138,7 +130,6 @@
     [APService handleRemoteNotification:userInfo];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"GotoNotification" object:userInfo];
-    
     completionHandler(UIBackgroundFetchResultNewData);
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{

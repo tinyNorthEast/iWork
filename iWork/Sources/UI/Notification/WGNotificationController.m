@@ -57,15 +57,22 @@
 #pragma mark - Request
 - (void)fetchNotifications{
     WGNotificationRequest *request = [[WGNotificationRequest alloc] initWithType:self.notif_type];
+    [WGProgressHUD defaultLoadingOnView:self.view];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
-        WGNotificationListModel *model = (WGNotificationListModel *)baseModel;
-        [self.notifications addObjectsFromArray:model.data];
-        if (self.notifications.count) {
-            [self.tableView reloadData];
+        if (baseModel.infoCode.integerValue ==0) {
+            [WGProgressHUD dismissOnView:self.view];
+            WGNotificationListModel *model = (WGNotificationListModel *)baseModel;
+            [self.notifications addObjectsFromArray:model.data];
+            if (self.notifications.count) {
+                [self.tableView reloadData];
+            }
+
+        }else{
+            [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
         }
-    } failure:^(WGBaseModel *baseModel, NSError *error) {
+            } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];
 }

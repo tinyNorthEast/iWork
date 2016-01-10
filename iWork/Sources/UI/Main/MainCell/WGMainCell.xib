@@ -154,6 +154,7 @@
                 <outlet property="commentButton" destination="1nb-LW-Jhr" id="T7j-cs-JDt"/>
                 <outlet property="headerImage" destination="8Vr-Vw-Jm0" id="foj-hl-mu2"/>
                 <outlet property="nameLabel" destination="QvJ-jd-I9h" id="Pm2-B7-MFK"/>
+                <outlet property="nameWidth" destination="eXj-rb-SNY" id="OGP-68-wcb"/>
                 <outlet property="pariseButton" destination="zjy-lf-cVi" id="Mk3-Za-81D"/>
                 <outlet property="positionLabel" destination="1qh-MQ-WIU" id="BZI-ch-wCb"/>
                 <outlet property="rateImage" destination="wvg-xO-37B" id="0PK-ee-ioq"/>
