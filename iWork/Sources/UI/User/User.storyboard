@@ -379,7 +379,7 @@
             </objects>
             <point key="canvasLocation" x="1140" y="447"/>
         </scene>
-        <!--我的消息-->
+        <!--消息类别-->
         <scene sceneID="CuC-9I-m0B">
             <objects>
                 <tableViewController id="tfE-va-5Pg" customClass="WGNotificationCategoryController" sceneMemberID="viewController">
@@ -598,7 +598,7 @@
                             <outlet property="delegate" destination="tfE-va-5Pg" id="hny-SE-0Zz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="我的消息" id="phx-wU-MM2">
+                    <navigationItem key="navigationItem" title="消息类别" id="phx-wU-MM2">
                         <barButtonItem key="leftBarButtonItem" image="navi_back" id="YIM-tI-rUX">
                             <connections>
                                 <action selector="backAction:" destination="tfE-va-5Pg" id="Jx7-Er-4uP"/>
