@@ -77,8 +77,6 @@
             
         }];
     }else{
-        
-
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK" ofType:@"png"];
     
     //构造分享内容
