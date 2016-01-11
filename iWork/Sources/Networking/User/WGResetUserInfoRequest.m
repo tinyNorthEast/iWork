@@ -26,6 +26,7 @@
         [self.postParams safeSetValue:info[@"en_name"] forKey:@"en_name"];
         [self.postParams safeSetValue:info[@"company"] forKey:@"company"];
         [self.postParams safeSetValue:info[@"experience"] forKey:@"experience"];
+        [self.postParams safeSetValue:info[@"pic"] forKey:@"pic"];
         
         return self;
     }

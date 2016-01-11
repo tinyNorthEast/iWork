@@ -80,4 +80,20 @@ static NSInteger timeInterval = 1.5;
     [MBProgressHUD hideAllHUDsForView:view animated:YES];
 }
 
++ (void)disappearSuccessMessage:(NSString *)message onView:(UIView *)view completBlock:(void(^)())completion{
+    [self dismissOnView:view];
+    MBProgressHUD *HUD = [self initHUDonView:view];
+    
+    [view addSubview:HUD];
+    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hud_success"]];
+    HUD.mode = MBProgressHUDModeCustomView;
+    HUD.labelText = message;
+    [HUD show:YES];
+    [HUD hide:YES afterDelay:timeInterval];
+    
+    if (completion) {
+        completion();
+    }
+}
+
 @end

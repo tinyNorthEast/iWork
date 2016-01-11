@@ -11,8 +11,10 @@
 #import <XXNibBridge.h>
 #import <extobjc.h>
 
+#import "UIViewAdditions.h"
 #import "WGProgressHUD.h"
 #import "WGGlobal.h"
+#import "MJRefresh.h"
 
 #import "WGMainCell.h"
 #import "UIScrollView+WGPager.h"
@@ -44,7 +46,6 @@
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.rowHeight = 255;
         [self registerNib:[WGMainCell xx_nib] forCellReuseIdentifier:[WGMainCell xx_nibID]];
-        
         
         @weakify(self);
         [self.wg_pager addPullDownRefreshHandler:^(WGPager *pager) {
@@ -105,6 +106,8 @@
             [self.hunters addObjectsFromArray:model.data];
             if (self.hunters.count) {
                 [self reloadData];
+            }else{
+                self.wg_pager.referScrollView.footer.hidden = YES;
             }
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:[UIApplication sharedApplication].keyWindow];
@@ -112,6 +115,7 @@
         if (isRefresh) {
             [pager finishRefreshWithError:error];
         }else{
+            self.wg_pager.referScrollView.footer.hidden = YES;
             [pager finishLoadMoreWithError:error];
         }
         
@@ -120,6 +124,7 @@
         if (isRefresh) {
             [pager finishRefreshWithError:error];
         }else{
+            self.wg_pager.referScrollView.footer.hidden = YES;
             [pager finishLoadMoreWithError:error];
         }
     }];
@@ -167,5 +172,21 @@
     WGHunterModel *aHunter = self.hunters[indexPath.row];
     vc.hunterId = aHunter.objId;
     [[self viewController].navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - UIScrollViewDelegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    CGFloat offsetY = scrollView.contentOffset.y;
+    // 当最后一个cell完全显示在眼前时，contentOffset的y值
+    CGFloat judgeOffsetY = scrollView.contentSize.height + scrollView.contentInset.bottom;
+    //- scrollView.height - 20;
+    if (judgeOffsetY >= scrollView.height) { // 最后一个cell完全进入视野范围内
+        // 显示footer
+        self.wg_pager.referScrollView.footer.hidden = NO;
+        // 加载更多的微博数据
+//        [self loadMoreStatus];
+    }else{
+        self.wg_pager.referScrollView.footer.hidden = YES;
+    }
 }
 @end

@@ -79,7 +79,7 @@
     }
     self.resultViewHeight.constant = height;
     
-    if ([WGGlobal sharedInstance].signInfo.role_code.integerValue == UserRole_Hunter) {
+    if ([WGGlobal sharedInstance].signInfo.role_code.integerValue == UserRole_HR) {
         self.buttonHeight.constant = 45;
         [self.permissionButton setHidden:NO];
         return 50+height+70;

@@ -112,9 +112,9 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if ([WGGlobal sharedInstance].signInfo.role_code.integerValue == UserRole_Hunter) {
-        return 4;
-    }else{
         return 5;
+    }else{
+        return 4;
     }
 }
 

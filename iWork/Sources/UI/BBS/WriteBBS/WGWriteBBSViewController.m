@@ -10,6 +10,8 @@
 
 #import <extobjc.h>
 
+#import "WGProgressHUD.h"
+
 #import "WGWriteBBSRequest.h"
 
 #define TEXTNUM_MAX 140
@@ -45,11 +47,14 @@
 }
 
 - (IBAction)sendComment:(id)sender {
+    [WGProgressHUD loadMessage:@"正在发表评论" onView:self.view];
     WGWriteBBSRequest *request = [[WGWriteBBSRequest alloc] initWithContent:self.commentTextView.text toUserId:self.toUserId];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
-        [self back];
+        [WGProgressHUD disappearSuccessMessage:@"发表成功" onView:self.view completBlock:^{
+            [self back];
+        }];
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];

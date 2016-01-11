@@ -10,6 +10,7 @@
 
 @interface WGProgressHUD : NSObject
 
+
 + (void)defaultLoadingOnView:(UIView *)view;
 
 + (void)loadMessage:(NSString *)message onView:(UIView *)view;
@@ -21,5 +22,9 @@
 + (void)disappearFailureMessage:(NSString *)message onView:(UIView *)view;
 
 + (void)dismissOnView:(UIView *)view;
+
++ (void)disappearSuccessMessage:(NSString *)message onView:(UIView *)view completBlock:(void(^)())completion;
+
+
 
 @end
