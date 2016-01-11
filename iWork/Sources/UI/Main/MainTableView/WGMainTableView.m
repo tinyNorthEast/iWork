@@ -71,8 +71,8 @@
 
 - (void)freshDataAtCity:(NSNumber *)areaCode{
     self.areaCode = areaCode;
-    
-    [self.wg_pager triggerRefresh];
+    WGPager *pager = [[WGPager alloc] init];
+    [self requestHuntersWithPage:pager isRefresh:YES];
 }
 
 #pragma mark - Request
@@ -157,10 +157,13 @@
         cell.hunter = aHunter;
     }
     @weakify(self);
-    cell.selectBBS = ^{
+    cell.selectBBS = ^(WGMainCell *cell){
         @strongify(self);
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
-        WGBBSViewController *vc = [sb instantiateInitialViewController];;
+        WGBBSViewController *vc = [sb instantiateInitialViewController];
+        NSIndexPath *indexPath = [self indexPathForCell:(WGMainCell *)[[[cell superview] superview] superview]];
+        WGHunterModel *aHunter = self.hunters[indexPath.row];
+        vc.toUserId = aHunter.userId;
         [[self viewController].navigationController pushViewController:vc animated:YES];
     };
 }

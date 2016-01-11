@@ -9,6 +9,7 @@
 #import "WGInviteCodeController.h"
 
 #import <extobjc.h>
+#import "KxMenu.h"
 
 #import "WGProgressHUD.h"
 #import "UIColor+WGThemeColors.h"
@@ -23,8 +24,8 @@
 //@property (weak, nonatomic) IBOutlet UILabel *code2;
 
 
-@property (weak, nonatomic) IBOutlet UITextField *code1;
-@property (weak, nonatomic) IBOutlet UITextField *code2;
+@property (weak, nonatomic) IBOutlet UILabel *code1;
+@property (weak, nonatomic) IBOutlet UILabel *code2;
 
 
 @end
@@ -105,5 +106,25 @@
 - (IBAction)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+- (IBAction)handleTap:(UIGestureRecognizer *)gesture {
+    UILabel *alabel = (UILabel *)gesture.view;
+    NSArray *menuItems =
+    @[
+      
+      [KxMenuItem menuItem:@"粘贴"
+                     image:nil
+                    target:self
+                    action:@selector(copy:)],
+      ];
+    KxMenuItem *first = menuItems[0];
+    first.foreColor = [UIColor colorWithRed:47/255.0f green:112/255.0f blue:225/255.0f alpha:1.0];
+    first.alignment = NSTextAlignmentCenter;
+    
+    [KxMenu showMenuInView:self.view
+                  fromRect:alabel.frame
+                 menuItems:menuItems];
+    
+}
+
 
 @end

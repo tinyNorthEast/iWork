@@ -14,6 +14,7 @@
 #import "WGCommentModel.h"
 #import "WGBBSCell.h"
 #import "WGGlobal.h"
+#import "WGBBSViewController.h"
 
 @interface WGBBSView()<XXNibBridge,UITableViewDataSource,UITableViewDelegate>
 
@@ -68,7 +69,10 @@
 }
 - (IBAction)checkAllComments:(id)sender {
     if ([self isSignIn]) {
-        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
+        WGBBSViewController *vc = [sb instantiateInitialViewController];
+        vc.toUserId = @(16);
+        [[self viewController].navigationController pushViewController:vc animated:YES];
     }else{
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
         UIViewController *vc = [sb instantiateInitialViewController];

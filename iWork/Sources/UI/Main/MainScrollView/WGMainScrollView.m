@@ -58,7 +58,7 @@
 - (void)moveScrollowViewAthIndex:(NSInteger)aIndex{
     mNeedUseDelegate = NO;
     CGRect vMoveRect = CGRectMake(self.width * aIndex, 0, self.width, self.width);
-    [self scrollRectToVisible:vMoveRect animated:YES];
+    [self scrollRectToVisible:vMoveRect animated:NO];
     mCurrentPage= aIndex;
     if ([_mainScrolldelegate respondsToSelector:@selector(didScrollPageViewChangedPage:)]) {
         [_mainScrolldelegate didScrollPageViewChangedPage:mCurrentPage];

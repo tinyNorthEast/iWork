@@ -128,7 +128,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([self.notif_type integerValue] ==  WGNOTIFICATIONCATEGORY_BBS) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
-        WGBBSViewController *vc = [sb instantiateInitialViewController];;
+        WGBBSViewController *vc = [sb instantiateInitialViewController];
+        vc.toUserId = @(16);
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

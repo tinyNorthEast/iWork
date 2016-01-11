@@ -55,10 +55,11 @@
     self.functionHeight.constant = 100;
     self.resultsHeight.constant = 110;
     self.bbsHeight.constant = 110;
-    
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self requestDetailData];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -69,6 +70,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)shareAction:(id)sender {
+    if ([self isSignIn]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WriteBBS" bundle:nil];
+        WGWriteBBSViewController *vc = [sb instantiateInitialViewController];
+        vc.toUserId = @(16);
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
+    }else{
+        
 
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK" ofType:@"png"];
     
@@ -107,6 +117,7 @@
                                     NSLog(@"分享失败,错误码:%ld,错误描述:%@", (long)[error errorCode], [error errorDescription]);
                                 }
                             }];
+    }
 }
 - (BOOL)isSignIn{
     return ([[WGGlobal sharedInstance] userToken].length>0?YES:NO);

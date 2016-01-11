@@ -55,28 +55,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="您的邀请码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WW-mI-07N">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="您的邀请码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WW-mI-07N">
                                 <rect key="frame" x="118" y="325" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="prv-fp-XhG">
-                                <rect key="frame" x="32" y="371" width="257" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0o-Uz-3OR">
+                                <rect key="frame" x="80" y="418" width="161" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
                                 <connections>
-                                    <outlet property="delegate" destination="2FH-ar-BZ7" id="bgB-Lf-9iS"/>
+                                    <outletCollection property="gestureRecognizers" destination="trI-hh-hBV" appends="YES" id="BUa-oL-wQ6"/>
                                 </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pzR-OQ-BNT">
-                                <rect key="frame" x="32" y="419" width="257" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrO-l5-dnn">
+                                <rect key="frame" x="80" y="367" width="161" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
                                 <connections>
-                                    <outlet property="delegate" destination="2FH-ar-BZ7" id="GRU-Ky-0gg"/>
+                                    <outletCollection property="gestureRecognizers" destination="TsR-vm-smm" appends="YES" id="Wnu-8E-1ZH"/>
                                 </connections>
-                            </textField>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -86,11 +90,21 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="code1" destination="prv-fp-XhG" id="Hxl-JB-5OG"/>
-                        <outlet property="code2" destination="pzR-OQ-BNT" id="CjE-Tb-bqv"/>
+                        <outlet property="code1" destination="zrO-l5-dnn" id="iF2-M8-hgB"/>
+                        <outlet property="code2" destination="P0o-Uz-3OR" id="J4P-Ka-Imc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgs-h1-6aJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TsR-vm-smm">
+                    <connections>
+                        <action selector="handleTap:" destination="2FH-ar-BZ7" id="P5I-pB-coX"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="trI-hh-hBV">
+                    <connections>
+                        <action selector="handleTap:" destination="2FH-ar-BZ7" id="r1V-8o-8lW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="121" y="303"/>
         </scene>

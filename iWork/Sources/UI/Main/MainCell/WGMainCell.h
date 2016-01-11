@@ -14,6 +14,6 @@
 
 @property (nonatomic, strong) WGHunterModel *hunter;
 
-@property (nonatomic, copy) void (^selectBBS)();
+@property (nonatomic, copy) void (^selectBBS)(WGMainCell *cell);
 
 @end

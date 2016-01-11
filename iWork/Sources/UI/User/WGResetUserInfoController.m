@@ -271,7 +271,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         [self callCamera];
-    }else{
+    }else if(buttonIndex == 1){
         [self callPhotoLibary];
     }
 }

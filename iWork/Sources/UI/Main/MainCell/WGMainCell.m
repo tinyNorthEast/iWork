@@ -113,7 +113,7 @@
         [self gotoLoginView];
     }else{
         if (self.selectBBS) {
-            self.selectBBS();
+            self.selectBBS(self);
         }
     }
 }

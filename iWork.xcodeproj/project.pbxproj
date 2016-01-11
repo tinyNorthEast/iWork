@@ -92,6 +92,7 @@
 		B594270A1C2C1FD8008BD92A /* WGResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59427091C2C1FD8008BD92A /* WGResultsView.xib */; };
 		B594270E1C2C2321008BD92A /* WGBBSView.m in Sources */ = {isa = PBXBuildFile; fileRef = B594270D1C2C2321008BD92A /* WGBBSView.m */; };
 		B59427101C2C2334008BD92A /* WGBBSView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B594270F1C2C2334008BD92A /* WGBBSView.xib */; };
+		B5AA30E91C43D8CF002C424B /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AA30E81C43D8CF002C424B /* KxMenu.m */; };
 		B5AAAE401C2D032C008A97E6 /* WGWriteBBSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAAE3F1C2D032C008A97E6 /* WGWriteBBSRequest.m */; };
 		B5AAAE481C2D4994008A97E6 /* BBS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5AAAE471C2D4994008A97E6 /* BBS.xcassets */; };
 		B5BF96CC1BFC862C00A4CFAC /* UIScrollView+WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BF96CB1BFC862C00A4CFAC /* UIScrollView+WGPager.m */; };
@@ -379,6 +380,8 @@
 		B594270C1C2C2321008BD92A /* WGBBSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBBSView.h; sourceTree = "<group>"; };
 		B594270D1C2C2321008BD92A /* WGBBSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBBSView.m; sourceTree = "<group>"; };
 		B594270F1C2C2334008BD92A /* WGBBSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGBBSView.xib; sourceTree = "<group>"; };
+		B5AA30E71C43D8CF002C424B /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		B5AA30E81C43D8CF002C424B /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		B5AAAE3E1C2D032C008A97E6 /* WGWriteBBSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGWriteBBSRequest.h; sourceTree = "<group>"; };
 		B5AAAE3F1C2D032C008A97E6 /* WGWriteBBSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGWriteBBSRequest.m; sourceTree = "<group>"; };
 		B5AAAE471C2D4994008A97E6 /* BBS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BBS.xcassets; sourceTree = "<group>"; };
@@ -952,6 +955,7 @@
 		B54FA8571BF4C4480018B682 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				B5AA30E61C43D8CF002C424B /* KxMenu */,
 				B5F150D11C22E3D900EC9503 /* Tags */,
 				B5FB3D421C0EFB2600B35AB6 /* PickerView */,
 				B5066A021C0C23CE00D87E56 /* PopoverView */,
@@ -1123,6 +1127,15 @@
 				B56320751C34FBB6006FB9EA /* WGBBSCell.xib */,
 			);
 			path = BBS;
+			sourceTree = "<group>";
+		};
+		B5AA30E61C43D8CF002C424B /* KxMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B5AA30E71C43D8CF002C424B /* KxMenu.h */,
+				B5AA30E81C43D8CF002C424B /* KxMenu.m */,
+			);
+			path = KxMenu;
 			sourceTree = "<group>";
 		};
 		B5B94F7A1BFDB2BE00EBCBD3 /* Sign in&Sign up */ = {
@@ -1550,6 +1563,7 @@
 				B54FA7C71BF46AE60018B682 /* Frameworks */,
 				B54FA7C81BF46AE60018B682 /* Resources */,
 				56DE0913C08649A0446A30F0 /* Copy Pods Resources */,
+				54CA698444F025E32B441AE1 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1709,6 +1723,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		54CA698444F025E32B441AE1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		56DE0913C08649A0446A30F0 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1860,6 +1889,7 @@
 				B520B2D11C0B3D5C00CFD6CD /* NSString+WGExtension.m in Sources */,
 				B59426E91C2B8D8D008BD92A /* WGUserInfoRequest.m in Sources */,
 				B5EFC1751C38B71B00F7DA6E /* WGApplyAuthRequest.m in Sources */,
+				B5AA30E91C43D8CF002C424B /* KxMenu.m in Sources */,
 				B56320761C34FBB6006FB9EA /* WGBBSCell.m in Sources */,
 				B5E2F43A1C2A901D005F8BA4 /* DBAccess.m in Sources */,
 				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,
