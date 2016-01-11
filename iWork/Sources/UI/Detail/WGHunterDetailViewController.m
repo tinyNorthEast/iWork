@@ -127,6 +127,7 @@
         WGWriteBBSViewController *vc = [sb instantiateInitialViewController];
         vc.toUserId = self.headerView.infoModel.userId;
         vc.objId = self.headerView.infoModel.objId;
+        vc.naviTitle = @"给顾问留言";
         [self presentViewController:vc animated:YES completion:^{
             
         }];

@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *holderLabel;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (weak, nonatomic) IBOutlet UILabel *textNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -30,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.titleLabel.text = self.naviTitle;
     self.textNumLabel.text = [NSString stringWithFormat:@"可输入%lu字",(unsigned long)TEXTNUM_MAX];
 }
 

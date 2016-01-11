@@ -134,6 +134,7 @@
                         <outlet property="commentTextView" destination="0os-cm-63D" id="NxP-Ws-rNc"/>
                         <outlet property="holderLabel" destination="fcO-nB-XNX" id="KtR-r8-Wcb"/>
                         <outlet property="textNumLabel" destination="4v5-Z9-F0Q" id="LPj-jI-fQ4"/>
+                        <outlet property="titleLabel" destination="WEk-0J-mEp" id="aiI-J7-zz9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hnb-A2-LuI" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -13,4 +13,6 @@
 @property (nonatomic,strong) NSNumber *toUserId;
 @property (nonatomic,strong) NSNumber *objId;
 
+@property (nonatomic, copy) NSString *naviTitle;
+
 @end

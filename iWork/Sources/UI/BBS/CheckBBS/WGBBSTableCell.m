@@ -37,7 +37,7 @@
 
 - (void)setComment:(WGCommentModel *)comment{
     [self.headerImage wg_loadImageFromURL:comment.pic placeholder:[UIImage imageNamed:@"bbs_defaultHeader"]];
-//    self.nameLabel.text = comment.
+    self.nameLabel.text = comment.fromName;
     self.contentLabel.text = comment.content;
     self.timeLabel.text = [[WGDateFormatter sharedInstance] formatTime:comment.create_time];
 }
