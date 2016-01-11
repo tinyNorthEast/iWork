@@ -32,13 +32,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationBarHidden = NO;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationController.navigationBar.backgroundColor = [UIColor blackColor];
     [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UIApplication sharedApplication]  setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     [self fetchNotifications];
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,7 +78,8 @@
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
         }
-            } failure:^(WGBaseModel *baseModel, NSError *error) {
+        
+    } failure:^(WGBaseModel *baseModel, NSError *error) {
         
     }];
 }
@@ -129,7 +133,8 @@
     if ([self.notif_type integerValue] ==  WGNOTIFICATIONCATEGORY_BBS) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
         WGBBSViewController *vc = [sb instantiateInitialViewController];
-        vc.toUserId = @(16);
+        WGNotificationModel *notificationModel = self.notifications[indexPath.row];
+        vc.toUserId = notificationModel.record_id;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

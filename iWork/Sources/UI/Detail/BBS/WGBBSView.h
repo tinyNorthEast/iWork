@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WGBBSView : UIView
-
+@property (nonatomic, strong) NSNumber *objId;
 - (CGFloat)viewHeightbyCommentsArray:(NSArray *)comments;
 
 @end

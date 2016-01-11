@@ -15,12 +15,13 @@
 
 @implementation WGWriteBBSRequest
 
-- (instancetype)initWithContent:(NSString *)content toUserId:(NSNumber *)userId
+- (instancetype)initWithContent:(NSString *)content toUserId:(NSNumber *)userId objId:(NSNumber *)objId
 {
     self = [super init];
     if (self) {
         [self.postParams safeSetValue:content forKey:@"content"];
         [self.postParams safeSetValue:userId forKey:@"c_to_user_id"];
+        [self.postParams safeSetValue:objId forKey:@"c_main_id"];
         [self.postParams safeSetValue:[[WGGlobal sharedInstance] userToken] forKey:@"token"];
         return self;
     }

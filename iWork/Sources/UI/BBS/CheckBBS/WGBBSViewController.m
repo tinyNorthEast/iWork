@@ -28,7 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"评论";
+//    self.title = @"评论";
+    self.navigationController.navigationBarHidden = YES;
     
     [self requestMessages];
 }
@@ -48,7 +49,7 @@
 
 #pragma mark - Request
 - (void)requestMessages{
-    WGGetMessgesRequest *request = [[WGGetMessgesRequest alloc] initWithToUserId:@(16)];
+    WGGetMessgesRequest *request = [[WGGetMessgesRequest alloc] initWithToUserId:self.toUserId];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);

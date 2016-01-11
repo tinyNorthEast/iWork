@@ -10,6 +10,8 @@
 
 @interface WGResultsView : UIView
 
+@property(nonatomic, strong) NSNumber *objId;
+
 - (CGFloat)viewHeightbyResultsArray:(NSArray *)results;
 
 @end

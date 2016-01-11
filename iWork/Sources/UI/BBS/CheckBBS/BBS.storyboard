@@ -70,8 +70,13 @@
                                                         <constraint firstAttribute="width" constant="40" id="QFo-Yq-FPe"/>
                                                         <constraint firstAttribute="height" constant="40" id="jzL-DX-ZIX"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="wg_bgCornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCB-dn-aRB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCB-dn-aRB">
                                                     <rect key="frame" x="56" y="2" width="93" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="93" id="ZdN-75-JX2"/>
@@ -81,9 +86,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015/09/14" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knK-SU-uY0">
-                                                    <rect key="frame" x="244" y="3" width="68" height="14.5"/>
+                                                    <rect key="frame" x="244" y="3" width="68" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="68" id="EjA-PJ-Mmh"/>
+                                                        <constraint firstAttribute="height" constant="15" id="Wjh-m3-TSD"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -103,7 +109,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="X0r-iH-9Hx"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="21" translatesAutoresizingMaskIntoConstraints="NO" id="Wbz-hI-5bJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="21" translatesAutoresizingMaskIntoConstraints="NO" id="Wbz-hI-5bJ">
                                                     <rect key="frame" x="56" y="29.5" width="248" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Z5u-HT-v7D"/>
@@ -114,7 +120,6 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Wbz-hI-5bJ" firstAttribute="top" secondItem="knK-SU-uY0" secondAttribute="bottom" constant="12" id="3hq-NX-hy8"/>
                                                 <constraint firstItem="knK-SU-uY0" firstAttribute="top" secondItem="cqD-et-S3F" secondAttribute="top" constant="3" id="6jQ-lE-bep"/>
                                                 <constraint firstAttribute="trailing" secondItem="Wbz-hI-5bJ" secondAttribute="trailing" constant="16" id="6lJ-nY-3VD"/>
                                                 <constraint firstItem="105-h0-xtg" firstAttribute="top" secondItem="cqD-et-S3F" secondAttribute="top" constant="5" id="9fH-oE-oCx"/>
@@ -158,6 +163,7 @@
                             <constraint firstItem="o1m-HY-7m9" firstAttribute="top" secondItem="iU2-hv-zuI" secondAttribute="bottom" id="v2R-gR-vs8"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="iU2-hv-zuI" id="Fiy-sR-h1i"/>
                     </connections>

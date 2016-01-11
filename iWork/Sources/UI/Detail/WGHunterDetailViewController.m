@@ -70,10 +70,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)shareAction:(id)sender {
-    if ([self isSignIn]) {
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WriteBBS" bundle:nil];
-        WGWriteBBSViewController *vc = [sb instantiateInitialViewController];
-        vc.toUserId = @(16);
+    if (![self isSignIn]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+        UIViewController *vc = [sb instantiateInitialViewController];
         [self presentViewController:vc animated:YES completion:^{
             
         }];
@@ -126,7 +125,8 @@
     if ([self isSignIn]) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WriteBBS" bundle:nil];
         WGWriteBBSViewController *vc = [sb instantiateInitialViewController];
-        vc.toUserId = @(16);
+        vc.toUserId = self.headerView.infoModel.userId;
+        vc.objId = self.headerView.infoModel.objId;
         [self presentViewController:vc animated:YES completion:^{
             
         }];
@@ -175,9 +175,11 @@
             self.functionHeight.constant = [self.functionView viewHeightbyFunctionsArray:infoModel.functionsList];
             
             NSArray *resultsArray = model.data[@"performanceList"];
+            self.resultsView.objId = self.hunterId;
             self.resultsHeight.constant = [self.resultsView viewHeightbyResultsArray:resultsArray];
             
             NSArray *bbsArray = model.data[@"commentList"];
+            self.bbsView.objId = self.hunterId;
             self.bbsHeight.constant = [self.bbsView viewHeightbyCommentsArray:bbsArray];
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];

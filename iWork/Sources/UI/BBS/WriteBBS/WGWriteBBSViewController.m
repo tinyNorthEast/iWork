@@ -48,7 +48,7 @@
 
 - (IBAction)sendComment:(id)sender {
     [WGProgressHUD loadMessage:@"正在发表评论" onView:self.view];
-    WGWriteBBSRequest *request = [[WGWriteBBSRequest alloc] initWithContent:self.commentTextView.text toUserId:self.toUserId];
+    WGWriteBBSRequest *request = [[WGWriteBBSRequest alloc] initWithContent:self.commentTextView.text toUserId:self.toUserId objId:self.objId];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);

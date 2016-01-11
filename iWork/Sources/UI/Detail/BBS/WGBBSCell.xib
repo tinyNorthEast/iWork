@@ -21,6 +21,11 @@
                             <constraint firstAttribute="height" constant="40" id="0XD-UP-nuh"/>
                             <constraint firstAttribute="width" constant="40" id="ha7-lN-87x"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="wg_bgCornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDa-ii-Ldg">
                         <rect key="frame" x="58" y="8" width="96" height="21"/>

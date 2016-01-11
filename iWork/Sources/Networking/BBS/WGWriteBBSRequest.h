@@ -10,6 +10,6 @@
 
 @interface WGWriteBBSRequest : WGBaseRequest
 
-- (instancetype)initWithContent:(NSString *)content toUserId:(NSNumber *)userId;
+- (instancetype)initWithContent:(NSString *)content toUserId:(NSNumber *)userId objId:(NSNumber *)objId;
 
 @end
