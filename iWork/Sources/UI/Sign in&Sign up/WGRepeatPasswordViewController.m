@@ -54,9 +54,10 @@
 }
 #pragma mark - IBACtion
 - (void)back{
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        
+//    }];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 - (IBAction)backAction:(id)sender {
     [self back];

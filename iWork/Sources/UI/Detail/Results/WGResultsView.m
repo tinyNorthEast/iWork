@@ -82,12 +82,12 @@
     if ([WGGlobal sharedInstance].signInfo.role_code.integerValue == UserRole_HR) {
         self.buttonHeight.constant = 45;
         [self.permissionButton setHidden:NO];
-        return 50+height+70;
+        return 40+height+70;
     }
     else{
         self.buttonHeight.constant = 0;
         [self.permissionButton setHidden:YES];
-        return 50+height;
+        return 40+height;
     }
 }
 

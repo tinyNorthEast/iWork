@@ -16,6 +16,7 @@
 #import "WGCommon.h"
 #import "WGNotificationController.h"
 #import "WGGlobal.h"
+#import "UIDevice+WGIdentifier.h"
 
 @interface AppDelegate ()
 
@@ -84,6 +85,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self initSDKWithLaunchOptions:launchOptions];
+    
+    NSString *eqNum = [[UIDevice currentDevice] UniqueGlobalDeviceIdentifier];
+    [[WGGlobal sharedInstance] saveDeviceToken:eqNum];
 
     return YES;
 }
@@ -119,7 +123,7 @@
                             stringByReplacingOccurrencesOfString:@">" withString:@""]
                            stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    [[WGGlobal sharedInstance] saveDeviceToken:pushToken];
+    
     [APService registerDeviceToken:deviceToken];
 }
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{

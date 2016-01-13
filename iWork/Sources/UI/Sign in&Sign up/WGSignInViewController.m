@@ -119,6 +119,19 @@ NSString *PasswordNoneWarning = @"请填写密码";
 -(void)tagsAliasCallback:(int)iResCode tags:(NSSet*)tags alias:(NSString*)alias{
      NSLog(@"-----------alias success----------");
 }
+- (IBAction)forgetPswAction:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+    WGVertifyPhoneViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGVertifyPhoneViewController"];
+    vc.vertifyView = WGVertifyView_GetPassword;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+- (IBAction)gotoSignup:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+    WGVertifyPhoneViewController *vc = [sb instantiateViewControllerWithIdentifier:@"WGVertifyPhoneViewController"];
+    vc.vertifyView = WGVertifyView_SignUp;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 #pragma mark - NSNotification
 - (void)textFieldBeginEditing:(NSNotification *)notification{
     if (self.phoneTextField.text.length >= 11 && self.passwordTextField.text.length>kMIN_PASSWORD_LEGTH){

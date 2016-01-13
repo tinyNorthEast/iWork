@@ -47,7 +47,7 @@
 #pragma mark - IBACtion
 - (IBAction)backAction:(id)sender {
     if (self.vertifyView == WGVertifyView_GetPassword) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }else{
         [self dismissViewControllerAnimated:YES completion:nil];
     }
@@ -111,9 +111,6 @@
         vc.phoneStr = self.phoneTextField.text;
         [self.navigationController pushViewController:vc animated:YES];
     }
-    
-
-    
     
     
     if (![WGValidJudge isValidString:self.phoneTextField.text]) {

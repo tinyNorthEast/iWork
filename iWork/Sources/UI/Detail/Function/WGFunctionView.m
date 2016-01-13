@@ -34,7 +34,7 @@
     }
     self.functionsLabel.text = [array componentsJoinedByString:@"."];
 
-    return self.functionsLabel.height+50;
+    return self.functionsLabel.height+40;
 }
 
 @end

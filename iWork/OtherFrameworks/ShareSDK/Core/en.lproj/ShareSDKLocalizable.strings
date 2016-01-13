@@ -69,7 +69,7 @@
 "ERROR_DESC_ALIPAYSOCIAL_NOT_SUPPORT_MEDIA_TYPE" = "the media-type is not supportted";
 "ERROR_DESC_NO_VALILD_PLATFORM_TO_SHARE" = "There is no valid platform to show.The reason may be that the active platform need app client to share but the iOS device do not have that app client.";
 
-"ShareType_1" = "Sina Weibo";
+"ShareType_1" = "新浪微博";
 "ShareType_2" = "Tencent Weibo";
 "ShareType_5" = "Douban";
 "ShareType_6" = "QZone";
@@ -88,8 +88,8 @@
 "ShareType_19" = "SMS";
 "ShareType_20" = "Print";
 "ShareType_21" = "Copy";
-"ShareType_22" = "Wechat contacts";
-"ShareType_23" = "Wechat moments";
+"ShareType_22" = "微信好友";
+"ShareType_23" = "微信朋友圈";
 "ShareType_24" = "QQ";
 "ShareType_25" = "Instapaper";
 "ShareType_26" = "Pocket";
@@ -121,15 +121,15 @@
 
 "PRINT_JOB_NAME" = "Share";
 
-"WEIXIN_SESSION_NAME" = "WeChat Session";
-"WEIXIN_TIMELINE_NAME" = "WeChat Timeline";
+"WEIXIN_SESSION_NAME" = "微信好友";
+"WEIXIN_TIMELINE_NAME" = "微信朋友圈";
 "WEIXIN_MSG_SEND_SUCCESS" = "Send %@ Success!";
 "WEIXIN_MSG_SEND_FAIL" = "Fail to send %@: %@";
 
 "QQ_MSG_SEND_SUCCESS" = "QQ messages sent successfully";
 "QQ_MSG_SEND_FAIL" = "Failed to send QQ:%@";
 
-"SHARE_VIEW_CANCEL_BUTTON" = "Cancel";
+"SHARE_VIEW_CANCEL_BUTTON" = "取消";
 "SHARE_VIEW_PUBLISH_BUTTON" = "Publish";
 "SHARE_VIEW_MSG_INVALID_CONTENT" = "Please input share content";
 "SHARE_VIEW_MSG_INVALID_CLIENTS" = "Please select the target platform";
@@ -156,8 +156,8 @@
 "ACCOUNT_VIEW_OK_BUTTON" = "OK";
 "ACCOUNT_VIEW_TIPS_SECTION_TITLE" = "Authorization fails, please re-authorization";
 
-"AUTH_VIEW_CANCEL_BUTTON" = "Cancel";
-"AUTH_VIEW_TITLE_1" = "Sina Weibo";
+"AUTH_VIEW_CANCEL_BUTTON" = "取消";
+"AUTH_VIEW_TITLE_1" = "新浪微博";
 "AUTH_VIEW_TITLE_2" = "Tencent Weibo";
 "AUTH_VIEW_TITLE_5" = "Douban";
 "AUTH_VIEW_TITLE_6" = "QZone";

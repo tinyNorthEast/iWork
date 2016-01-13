@@ -20,13 +20,8 @@
 
 @interface WGInviteCodeController ()<UITextFieldDelegate>
 
-//@property (weak, nonatomic) IBOutlet UILabel *code1;
-//@property (weak, nonatomic) IBOutlet UILabel *code2;
-
-
 @property (weak, nonatomic) IBOutlet UILabel *code1;
 @property (weak, nonatomic) IBOutlet UILabel *code2;
-
 
 @end
 
@@ -40,8 +35,6 @@
     self.code1.hidden = YES;
     self.code2.hidden = YES;
     [self getCodesRequest];
-    
-    [self.code1 canPerformAction:@selector(copy) withSender:nil];
 }
 - (BOOL)canBecomeFirstResponder{
     return YES;
@@ -111,7 +104,7 @@
     NSArray *menuItems =
     @[
       
-      [KxMenuItem menuItem:@"粘贴"
+      [KxMenuItem menuItem:@"复制"
                      image:nil
                     target:self
                     action:@selector(copy:)],
