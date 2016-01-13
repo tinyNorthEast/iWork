@@ -112,6 +112,7 @@ NSString *PasswordNoneWarning = @"请填写密码";
                 [WGProgressHUD disappearFailureMessage:model.message onView:self.view];
             }
         } failure:^(WGBaseModel *baseModel, NSError *error) {
+            @strongify(self);
             [WGProgressHUD disappearSuccessMessage:@"登录失败,请检查网络设置" onView:self.view];
         }];
     }

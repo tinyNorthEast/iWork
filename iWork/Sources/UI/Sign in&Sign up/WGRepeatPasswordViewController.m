@@ -54,9 +54,6 @@
 }
 #pragma mark - IBACtion
 - (void)back{
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        
-//    }];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 - (IBAction)backAction:(id)sender {
@@ -77,20 +74,19 @@
     if (self.viewFounction == WGViewFounction_SignUp) {
         [self.signUpInfoDict safeSetValue:[[NSString stringDecodingByMD5:self.passwordTextField.text] lowercaseString] forKey:@"password"];
        
+        [WGProgressHUD defaultLoadingOnView:self.view];
         WGSignUpRequest *request = [[WGSignUpRequest alloc] initWithInfo:self.signUpInfoDict];
          @weakify(self);
         [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
             @strongify(self);
-            WGSignUpRequestModel *model = (WGSignUpRequestModel *)baseModel;
             if (baseModel.infoCode.integerValue == 0) {
-                if ([WGValidJudge isValidString:model.data.token]) {
-                    [[WGGlobal sharedInstance] saveToken:model.data.token];
-                    [self back];
-                }
+                [WGProgressHUD dismissOnView:self.view];
+                [self back];
             }else{
                 [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
             }
         } failure:^(WGBaseModel *baseModel, NSError *error) {
+            @strongify(self);
             [WGProgressHUD disappearFailureMessage:@"注册失败" onView:self.view];
             
         }];
@@ -108,6 +104,7 @@
             }
             
         } failure:^(WGBaseModel *baseModel, NSError *error) {
+            @strongify(self);
             [WGProgressHUD disappearFailureMessage:@"重置密码失败" onView:self.view];
         }];
     }

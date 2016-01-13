@@ -105,11 +105,14 @@
             WGHunterListModel *model = (WGHunterListModel *)baseModel;
             [self.hunters addObjectsFromArray:model.data];
             if (self.hunters.count) {
+                [[WGGlobal sharedInstance] addDefaultImageViewTo:self isHidden:YES];
                 [self reloadData];
             }else{
+                [[WGGlobal sharedInstance] addDefaultImageViewTo:self isHidden:NO];
                 self.wg_pager.referScrollView.footer.hidden = YES;
             }
         }else{
+            [[WGGlobal sharedInstance] addDefaultImageViewTo:self isHidden:NO];
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:[UIApplication sharedApplication].keyWindow];
         }
         if (isRefresh) {
@@ -121,6 +124,8 @@
         
         
     } failure:^(WGBaseModel *baseModel, NSError *error) {
+        @strongify(self);
+        [WGProgressHUD disappearFailureMessage:@"加载失败" onView:self.viewController.view];
         if (isRefresh) {
             [pager finishRefreshWithError:error];
         }else{

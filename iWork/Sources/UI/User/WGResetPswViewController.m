@@ -48,8 +48,12 @@
     }else if(![self.pswField.text isEqualToString:self.confirmPswField.text]){
         [WGProgressHUD disappearFailureMessage:@"新密码不一致" onView:self.view];
     }else{
+        [WGProgressHUD defaultLoadingOnView:self.view];
         WGResetPasswordRequest *requst = [[WGResetPasswordRequest alloc] initWithOldPassword:self.oldPswField.text newPassword:self.pswField.text];
+        @weakify(self);
         [requst requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+            @strongify(self);
+            [WGProgressHUD dismissOnView:self.view];
             if (baseModel.infoCode.integerValue == TokenFailed) {
                 UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
                 UIViewController *vc = [sb instantiateInitialViewController];
@@ -63,7 +67,8 @@
                 [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
             }
         } failure:^(WGBaseModel *baseModel, NSError *error) {
-            
+            @strongify(self);
+            [WGProgressHUD disappearFailureMessage:@"加载失败" onView:self.view];
         }];
     }
 }

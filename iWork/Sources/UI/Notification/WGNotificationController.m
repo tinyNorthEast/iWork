@@ -12,6 +12,7 @@
 #import <XXNibBridge.h>
 
 #import "WGProgressHUD.h"
+#import "WGGlobal.h"
 
 #import "WGNotificationCell.h"
 #import "WGNotificationRequest.h"
@@ -73,14 +74,19 @@
             [self.notifications addObjectsFromArray:model.data];
             if (self.notifications.count) {
                 [self.tableView reloadData];
+                [[WGGlobal sharedInstance] addDefaultImageViewTo:self.view isHidden:YES];
+            }else{
+                [[WGGlobal sharedInstance] addDefaultImageViewTo:self.view isHidden:NO];
             }
 
         }else{
+            [[WGGlobal sharedInstance] addDefaultImageViewTo:self.view isHidden:NO];
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
         }
         
     } failure:^(WGBaseModel *baseModel, NSError *error) {
-        
+        @strongify(self);
+        [WGProgressHUD disappearFailureMessage:@"加载失败" onView:self.view];
     }];
 }
 #pragma mark - Table view data source

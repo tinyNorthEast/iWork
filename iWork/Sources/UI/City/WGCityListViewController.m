@@ -103,7 +103,8 @@ NSString *const CONFIGMODEL_PATH = @"configModel";
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
         }
     } failure:^(WGBaseModel *baseModel, NSError *error) {
-        
+        @strongify(self);
+        [WGProgressHUD disappearFailureMessage:@"加载失败" onView:self.view];
     }];
 }
 

@@ -6,7 +6,7 @@
 //  Copyright © 2015 impetusconsulting. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #import "DBAccessQueue.h"
 #import "SynthesizeSingletonForArc.h"
@@ -35,7 +35,7 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(WGGlobal)
 
 - (void)clearUserInfo;
 
-
+- (void)addDefaultImageViewTo:(UIView *)view isHidden:(BOOL)hidden;
 
 
 

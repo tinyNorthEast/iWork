@@ -196,7 +196,9 @@
     
     [WGProgressHUD loadMessage:@"正在修改个人资料" onView:self.view];
     WGResetUserInfoRequest *request = [[WGResetUserInfoRequest alloc] initWithUserInfo:self.infoDic];
+    @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+        @strongify(self);
         [WGProgressHUD dismissOnView:self.view];
         if (baseModel.infoCode.integerValue == TokenFailed) {
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
@@ -211,7 +213,8 @@
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
         }
     } failure:^(WGBaseModel *baseModel, NSError *error) {
-        
+        @strongify(self);
+        [WGProgressHUD disappearFailureMessage:@"修改失败" onView:self.view];
     }];
 }
 

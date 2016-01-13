@@ -9,6 +9,10 @@
 #import "WGFavoriteListController.h"
 
 #import <XXNibBridge.h>
+#import <extobjc.h>
+
+#import "WGGlobal.h"
+#import "WGProgressHUD.h"
 
 #import "WGFavoriteCell.h"
 #import "WGFavoriteListModel.h"
@@ -47,14 +51,30 @@
 
 #pragma mark - Request
 - (void)requestFavoriteList{
+    [WGProgressHUD defaultLoadingOnView:self.view];
     WGFavoriteListRequest *request = [[WGFavoriteListRequest alloc] initWithFavoritType:self.searchType];
+    @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
-        WGFavoriteListModel *model = (WGFavoriteListModel *)baseModel;
-        [self.favorites addObjectsFromArray:model.data];
-        [self.tableView reloadData];
+        @strongify(self);
+        if (baseModel.infoCode.integerValue == 0) {
+            [WGProgressHUD dismissOnView:self.view];
+            WGFavoriteListModel *model = (WGFavoriteListModel *)baseModel;
+            if (model.data.count) {
+                [[WGGlobal sharedInstance] addDefaultImageViewTo:self.view isHidden:YES];
+                [self.favorites addObjectsFromArray:model.data];
+                [self.tableView reloadData];
+                
+            }else{
+                [[WGGlobal sharedInstance] addDefaultImageViewTo:self.view isHidden:NO];
+            }
+        }else{
+            [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
+            [[WGGlobal sharedInstance] addDefaultImageViewTo:self.view isHidden:NO];
+        }
         
     } failure:^(WGBaseModel *baseModel, NSError *error) {
-        
+        @strongify(self);
+        [WGProgressHUD disappearFailureMessage:@"加载失败" onView:self.view];
     }];
 }
 

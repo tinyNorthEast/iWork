@@ -58,6 +58,8 @@
             [self back];
         }];
     } failure:^(WGBaseModel *baseModel, NSError *error) {
+        @strongify(self);
+        [WGProgressHUD disappearSuccessMessage:@"发表失败,请检查网络设置" onView:self.view];
         
     }];
 }

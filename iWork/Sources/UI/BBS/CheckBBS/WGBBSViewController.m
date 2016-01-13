@@ -65,13 +65,19 @@
             WGBBSListModel *model = (WGBBSListModel *)baseModel;
             
             if (model.data.count) {
+                [[WGGlobal sharedInstance] addDefaultImageViewTo:self.view isHidden:YES];
                 [self.messages addObjectsFromArray:model.data];
                 [self.tableView reloadData];
+            }else{
+                [[WGGlobal sharedInstance] addDefaultImageViewTo:self.view isHidden:NO];
             }
         }else{
+            [[WGGlobal sharedInstance] addDefaultImageViewTo:self.view isHidden:NO];
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
         }
     } failure:^(WGBaseModel *baseModel, NSError *error) {
+        @strongify(self);
+        [WGProgressHUD disappearFailureMessage:@"加载失败" onView:self.view];
         
     }];
 }

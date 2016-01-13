@@ -14,6 +14,7 @@
 #import "DEFileUtil.h"
 #import "DEReflectUtil.h"
 #import "SignHeader.h"
+#import "UIViewAdditions.h"
 
 #import "WGSignInModel.h"
 #import "WGIndustryModel.h"
@@ -22,6 +23,8 @@
 #define kIndustryList @"industrylist"
 
 @interface WGGlobal()
+
+@property (nonatomic, strong) UIImageView *defualtView;
 
 @property(nonatomic,strong)dispatch_queue_t userEspQueue;
 @property(nonatomic,strong)DBAccessQueue *dbUserHandler;
@@ -37,6 +40,18 @@
 
 ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
 
+-(UIImageView *)defualtView{
+    if (!_defualtView) {
+        _defualtView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"default_image"]];
+    }
+    return _defualtView;
+}
+- (void)addDefaultImageViewTo:(UIView *)view isHidden:(BOOL)hidden{
+    [view addSubview:self.defualtView];
+    [self.defualtView setCenter:CGPointMake(view.width/2, view.height/2)];
+    
+    [self.defualtView setHidden:hidden];
+}
 - (NSString *)userToken
 {
     if (_userToken == nil)

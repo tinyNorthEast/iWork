@@ -9,6 +9,7 @@
 #import "WGResultsView.h"
 
 #import <XXNibBridge.h>
+#import <extobjc.h>
 
 #import "WGProgressHUD.h"
 #import "UIViewAdditions.h"
@@ -127,7 +128,10 @@
         }else{
             [WGProgressHUD loadMessage:@"正在帮你申请权限" onView:[self viewController].view];
             WGApplyAuthRequest *request = [[WGApplyAuthRequest alloc] initWithHunterId:self.objId hr_mail:textField.text];
+            
+            @weakify(self);
             [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+                @strongify(self);
                 if (baseModel.infoCode.integerValue == 0) {
                     [WGProgressHUD disappearSuccessMessage:@"发送申请成功" onView:
                      self.viewController.view];
@@ -136,6 +140,8 @@
                     [WGProgressHUD disappearFailureMessage:baseModel.message onView:[self viewController].view];
                 }
             } failure:^(WGBaseModel *baseModel, NSError *error) {
+                @strongify(self);
+                [WGProgressHUD disappearFailureMessage:@"申请失败" onView:[self viewController].view];
                 
             }];
         }
