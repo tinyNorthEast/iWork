@@ -10,6 +10,6 @@
 
 @interface WGBBSView : UIView
 @property (nonatomic, strong) NSNumber *objId;
-- (CGFloat)viewHeightbyCommentsArray:(NSArray *)comments;
+- (CGFloat)viewHeightbyCommentsArray:(NSArray *)comments allCommentsNum:(NSNumber *)commentsNum;
 
 @end

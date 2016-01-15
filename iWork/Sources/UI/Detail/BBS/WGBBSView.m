@@ -19,6 +19,8 @@
 @interface WGBBSView()<XXNibBridge,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonHeight;
+@property (weak, nonatomic) IBOutlet UIButton *bottomButton;
 
 
 @property (nonatomic, copy) NSArray *commentsArray;
@@ -36,16 +38,31 @@
     self.tableView.rowHeight = 70;
 }
 
-- (CGFloat)viewHeightbyCommentsArray:(NSArray *)comments{
+- (CGFloat)viewHeightbyCommentsArray:(NSArray *)comments allCommentsNum:(NSNumber *)commentsNum{
     self.commentsArray = comments;
     [self.tableView reloadData];
-    if (comments.count==0) {
-        return 40+70;
-    }else if (comments.count == 1){
-        return 40+50+70;
-    }else if (comments.count ==2){
-        return 40+50+70*2;
+    if (commentsNum.integerValue>2) {
+        self.buttonHeight.constant = 45;
+        [self.bottomButton setHidden:NO];
+        if (comments.count==0) {
+            return 40+70;
+        }else if (comments.count == 1){
+            return 40+50+70;
+        }else if (comments.count ==2){
+            return 40+50+70*2;
+        }
+    }else{
+        self.buttonHeight.constant = 0;
+        [self.bottomButton setHidden:YES];
+        if (comments.count==0) {
+            return 20+70;
+        }else if (comments.count == 1){
+            return 20+50+70;
+        }else if (comments.count ==2){
+            return 20+50+70*2;
+        }
     }
+    
     return 0;
 }
 

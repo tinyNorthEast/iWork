@@ -61,22 +61,31 @@
     CGRect previousFrame = CGRectZero;
     BOOL gotPreviousFrame = NO;
     for (WGDetailIndustryModel *model in textArray) {
-        CGSize textSize = [model.industryName sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:CGSizeMake(self.frame.size.width, 1500) lineBreakMode:UILineBreakModeWordWrap];
-        textSize.width += HORIZONTAL_PADDING*2;
-        textSize.height += VERTICAL_PADDING*2;
+        
+        NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:FONT_SIZE]};
+        CGRect textSize = [model.industryName boundingRectWithSize:CGSizeMake(self.frame.size.width, MAXFLOAT)
+                                                  options:NSStringDrawingUsesLineFragmentOrigin
+                                               attributes:attributes
+                                                  context:nil];
+//        
+//        
+//        
+//        CGSize textSize = [model.industryName sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:CGSizeMake(self.frame.size.width, 1500) lineBreakMode:UILineBreakModeWordWrap];
+        textSize.size.width += HORIZONTAL_PADDING*2;
+        textSize.size.height += VERTICAL_PADDING*2;
         UILabel *label = nil;
         if (!gotPreviousFrame) {
-            label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width, textSize.height)];
-            totalHeight = textSize.height;
+            label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, textSize.size.width, textSize.size.height)];
+            totalHeight = textSize.size.height;
         } else {
             CGRect newRect = CGRectZero;
-            if (previousFrame.origin.x + previousFrame.size.width + textSize.width + LABEL_MARGIN > self.frame.size.width) {
-                newRect.origin = CGPointMake(0, previousFrame.origin.y + textSize.height + BOTTOM_MARGIN);
-                totalHeight += textSize.height + BOTTOM_MARGIN;
+            if (previousFrame.origin.x + previousFrame.size.width + textSize.size.width + LABEL_MARGIN > self.frame.size.width) {
+                newRect.origin = CGPointMake(0, previousFrame.origin.y + textSize.size.height + BOTTOM_MARGIN);
+                totalHeight += textSize.size.height + BOTTOM_MARGIN;
             } else {
                 newRect.origin = CGPointMake(previousFrame.origin.x + previousFrame.size.width + LABEL_MARGIN, previousFrame.origin.y);
             }
-            newRect.size = textSize;
+            newRect.size = textSize.size;
             label = [[UILabel alloc] initWithFrame:newRect];
         }
         previousFrame = label.frame;

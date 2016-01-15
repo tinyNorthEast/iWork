@@ -117,11 +117,11 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     // Required
-    NSString *tokenStr = [deviceToken description];
-    NSString *pushToken = [[[tokenStr
-                             stringByReplacingOccurrencesOfString:@"<" withString:@""]
-                            stringByReplacingOccurrencesOfString:@">" withString:@""]
-                           stringByReplacingOccurrencesOfString:@" " withString:@""];
+//    NSString *tokenStr = [deviceToken description];
+//    NSString *pushToken = [[[tokenStr
+//                             stringByReplacingOccurrencesOfString:@"<" withString:@""]
+//                            stringByReplacingOccurrencesOfString:@">" withString:@""]
+//                           stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     
     [APService registerDeviceToken:deviceToken];

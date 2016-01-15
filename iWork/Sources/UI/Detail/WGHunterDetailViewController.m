@@ -179,7 +179,7 @@
             
             NSArray *bbsArray = model.data[@"commentList"];
             self.bbsView.objId = self.hunterId;
-            self.bbsHeight.constant = [self.bbsView viewHeightbyCommentsArray:bbsArray];
+            self.bbsHeight.constant = [self.bbsView viewHeightbyCommentsArray:bbsArray allCommentsNum:infoModel.commentCount];
         }else{
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
         }

@@ -127,7 +127,7 @@
 @property (nonatomic,copy)NSArray<Optional,WGDescribeModel> *describeList;
 @property (nonatomic,copy)NSString<Optional> *ranking;
 @property (nonatomic,copy)NSString<Optional> *participated;
-@property (nonatomic,copy)NSString<Optional> *commentCount;
+@property (nonatomic,strong)NSNumber<Optional> *commentCount;
 @property (nonatomic,copy)NSArray<Optional,WGDetailIndustryModel> *industryList;
 @property (nonatomic,copy)NSArray<Optional,WGFunctionModel> *functionsList;
 @property (nonatomic,strong)NSNumber<Optional> *userId;
