@@ -39,6 +39,9 @@
     self.referScrollView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         @strongify(self);
         if (handler) {
+            if (self.currentPageIndex == 0) {
+                self.currentPageIndex = 1;
+            }
             handler(self);
         }
     }];

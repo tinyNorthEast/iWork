@@ -20,7 +20,7 @@
 }
 
 - (NSUInteger)nextPageIndex{
-    return _currentPageIndex+1;
+    return self.currentPageIndex+1;
 }
 
 @end

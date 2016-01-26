@@ -20,7 +20,7 @@
     self = [super init];
     if (self) {
         [self.getParams safeSetValue:[[WGGlobal sharedInstance] userToken] forKey:@"token"];
-        [self.getParams safeSetValue:areaCode forKey:@"areaCode"];
+        [self.getParams safeSetValue:areaCode forKey:@"city"];
         [self.getParams safeSetValue:industryId forKey:@"industryId"];
         [self.getParams safeSetValue:pageNo forKey:@"pageNo"];
         

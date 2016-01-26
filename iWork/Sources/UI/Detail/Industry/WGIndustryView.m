@@ -14,6 +14,8 @@
 
 #import "WGTagList.h"
 
+#import "WGDetailIndustryModel.h"
+
 @interface WGIndustryView()<XXNibBridge>
 @property (strong, nonatomic) WGTagList *tagList;
 @property (weak, nonatomic) IBOutlet UIView *tagsView;
@@ -29,7 +31,11 @@
     [self.tagsView addSubview:self.tagList];
 }
 - (CGFloat)viewHeightbyTagsArray:(NSArray *)tags{
-    return [self.tagList setTags:tags]+50;
+    NSMutableArray *array = [NSMutableArray array];
+    for (WGDetailIndustryModel *aModel in tags) {
+        [array addObject:aModel.industryName];
+    }
+    return [self.tagList setTags:array]+50;
 }
 
 @end

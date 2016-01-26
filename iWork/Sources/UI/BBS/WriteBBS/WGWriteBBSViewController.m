@@ -33,6 +33,8 @@
     
     self.titleLabel.text = self.naviTitle;
     self.textNumLabel.text = [NSString stringWithFormat:@"可输入%lu字",(unsigned long)TEXTNUM_MAX];
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBorad:)];
+    [self.view addGestureRecognizer:gesture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +43,9 @@
 }
 
 #pragma mark - IBAction
+- (void)hideKeyBorad:(UIGestureRecognizer*)gesture{
+    [self.commentTextView resignFirstResponder];
+}
 - (void)back{
     [self dismissViewControllerAnimated:YES completion:nil];
 }

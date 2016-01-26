@@ -89,6 +89,7 @@
     NSNumber *requestPagerNum;
     if (isRefresh) {
         requestPagerNum = @(pager.currentPageIndex);
+        [self.hunters removeAllObjects];
     }else{
         requestPagerNum = @(pager.nextPageIndex);
     }
@@ -101,20 +102,35 @@
         @strongify(self);
         [WGProgressHUD dismissOnView:[UIApplication sharedApplication].keyWindow];
         
+        
+        if (isRefresh) {
+            [self.hunters removeAllObjects];
+        }
         if (baseModel.infoCode.integerValue == 0) {
             WGHunterListModel *model = (WGHunterListModel *)baseModel;
             [self.hunters addObjectsFromArray:model.data];
+            
             if (self.hunters.count) {
                 [[WGGlobal sharedInstance] addDefaultImageViewTo:self isHidden:YES];
-                [self reloadData];
+                
             }else{
                 [[WGGlobal sharedInstance] addDefaultImageViewTo:self isHidden:NO];
                 self.wg_pager.referScrollView.footer.hidden = YES;
             }
+           
         }else{
-            [[WGGlobal sharedInstance] addDefaultImageViewTo:self isHidden:NO];
+            
+            if (self.hunters.count) {
+                [[WGGlobal sharedInstance] addDefaultImageViewTo:self isHidden:YES];
+                
+            }else{
+                [[WGGlobal sharedInstance] addDefaultImageViewTo:self isHidden:NO];
+                self.wg_pager.referScrollView.footer.hidden = YES;
+            }
+            
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:[UIApplication sharedApplication].keyWindow];
         }
+        [self reloadData];
         if (isRefresh) {
             [pager finishRefreshWithError:error];
         }else{

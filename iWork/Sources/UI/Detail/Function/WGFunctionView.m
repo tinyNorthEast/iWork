@@ -12,11 +12,13 @@
 
 #import "UIViewAdditions.h"
 
+#import "WGTagList.h"
 #import "WGFunctionModel.h"
 
 @interface WGFunctionView()<XXNibBridge>
 
-@property (weak, nonatomic) IBOutlet UILabel *functionsLabel;
+@property (strong, nonatomic) WGTagList *tagList;
+@property (weak, nonatomic) IBOutlet UIView *tagsView;
 
 @end
 
@@ -24,6 +26,8 @@
 
 - (void)awakeFromNib{
     [super awakeFromNib];
+    self.tagList = [[WGTagList alloc] initWithFrame:CGRectMake(0, 0, self.tagsView.width, 0.0f)];
+    [self.tagsView addSubview:self.tagList];
 }
 
 - (CGFloat)viewHeightbyFunctionsArray:(NSArray *)functions{
@@ -32,9 +36,10 @@
     for (WGFunctionModel *functionModel in functions) {
         [array addObject:functionModel.functionsName];
     }
-    self.functionsLabel.text = [array componentsJoinedByString:@"."];
-
-    return self.functionsLabel.height+40;
+//    self.functionsLabel.text = [array componentsJoinedByString:@"."];
+//
+//    return self.functionsLabel.height+40;
+    return [self.tagList setTags:array]+50;
 }
 
 @end

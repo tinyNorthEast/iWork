@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -27,44 +26,33 @@
                         <constraint firstAttribute="height" constant="2" id="RGa-qX-aZM"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="21" translatesAutoresizingMaskIntoConstraints="NO" id="8ki-nZ-rlW">
-                    <rect key="frame" x="32" y="40" width="280" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_function" translatesAutoresizingMaskIntoConstraints="NO" id="Dz5-eC-3yO">
-                    <rect key="frame" x="8" y="46" width="16" height="10"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="16" id="Iit-Js-DF3"/>
-                    </constraints>
-                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCU-M8-O5h">
+                    <rect key="frame" x="8" y="46" width="304" height="15"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Dz5-eC-3yO" firstAttribute="centerY" secondItem="8ki-nZ-rlW" secondAttribute="centerY" id="CPp-Pb-Lpo"/>
+                <constraint firstItem="yCU-M8-O5h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="4Eb-2B-Y0s"/>
+                <constraint firstItem="yCU-M8-O5h" firstAttribute="top" secondItem="YNR-6x-H6O" secondAttribute="bottom" constant="12" id="Bok-wT-tbE"/>
                 <constraint firstAttribute="trailing" secondItem="YNR-6x-H6O" secondAttribute="trailing" constant="104" id="DHV-rU-yZt"/>
                 <constraint firstAttribute="trailing" secondItem="Zzb-ca-RpQ" secondAttribute="trailing" constant="126" id="DxW-S2-5Qh"/>
-                <constraint firstItem="8ki-nZ-rlW" firstAttribute="top" secondItem="YNR-6x-H6O" secondAttribute="bottom" constant="6" id="Ipf-sb-g5G"/>
-                <constraint firstItem="Dz5-eC-3yO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="OkQ-ef-zKH"/>
                 <constraint firstItem="YNR-6x-H6O" firstAttribute="top" secondItem="Zzb-ca-RpQ" secondAttribute="bottom" constant="3" id="P1r-oC-Xbu"/>
                 <constraint firstItem="Zzb-ca-RpQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="PeA-ot-ABb"/>
                 <constraint firstItem="Zzb-ca-RpQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="126" id="Tg2-fj-74A"/>
-                <constraint firstItem="8ki-nZ-rlW" firstAttribute="leading" secondItem="Dz5-eC-3yO" secondAttribute="trailing" constant="8" id="TvE-IR-MOD"/>
-                <constraint firstAttribute="bottom" secondItem="8ki-nZ-rlW" secondAttribute="bottom" constant="8" id="je4-3D-HL9"/>
                 <constraint firstItem="YNR-6x-H6O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="104" id="pAs-Sz-SxZ"/>
-                <constraint firstAttribute="trailing" secondItem="8ki-nZ-rlW" secondAttribute="trailing" constant="8" id="vbY-zO-uQN"/>
+                <constraint firstAttribute="bottom" secondItem="yCU-M8-O5h" secondAttribute="bottom" constant="8" id="tuD-t7-k1o"/>
+                <constraint firstAttribute="trailing" secondItem="yCU-M8-O5h" secondAttribute="trailing" constant="8" id="yOL-nm-1IP"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="functionsLabel" destination="8ki-nZ-rlW" id="7eX-hO-8b6"/>
+                <outlet property="tagsView" destination="yCU-M8-O5h" id="pF5-7l-sp6"/>
             </connections>
             <point key="canvasLocation" x="220" y="26.5"/>
         </view>
     </objects>
     <resources>
-        <image name="detail_function" width="16" height="10"/>
         <image name="detail_seperatorline" width="113" height="1"/>
     </resources>
 </document>

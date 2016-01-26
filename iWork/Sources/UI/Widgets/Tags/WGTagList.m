@@ -12,7 +12,7 @@
 
 #import "UIColor+WGThemeColors.h"
 
-#import "WGDetailIndustryModel.h"
+//#import "WGDetailIndustryModel.h"
 
 #define CORNER_RADIUS 10.0f
 #define LABEL_MARGIN 5.0f
@@ -60,10 +60,10 @@
     float totalHeight = 0;
     CGRect previousFrame = CGRectZero;
     BOOL gotPreviousFrame = NO;
-    for (WGDetailIndustryModel *model in textArray) {
+    for (NSString *model in textArray) {
         
         NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:FONT_SIZE]};
-        CGRect textSize = [model.industryName boundingRectWithSize:CGSizeMake(self.frame.size.width, MAXFLOAT)
+        CGRect textSize = [model boundingRectWithSize:CGSizeMake(self.frame.size.width, MAXFLOAT)
                                                   options:NSStringDrawingUsesLineFragmentOrigin
                                                attributes:attributes
                                                   context:nil];
@@ -97,7 +97,7 @@
             [label setBackgroundColor:lblBackgroundColor];
         }
         [label setTextColor:[UIColor wg_themeDarkGrayColor]];
-        [label setText:model.industryName];
+        [label setText:model];
         [label setTextAlignment:NSTextAlignmentCenter];
         [label setShadowOffset:TEXT_SHADOW_OFFSET];
         [label.layer setMasksToBounds:YES];

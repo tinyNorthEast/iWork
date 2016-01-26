@@ -119,7 +119,7 @@
 - (void)clickMenuButtonAtIndex:(NSInteger)index{
     self.currentIndex = index;
     [self.mainScrollView moveScrollowViewAthIndex:index];
-    [self.mainScrollView freshContentTableAtIndex:index atCity:self.selectedCityCode];
+//    [self.mainScrollView freshContentTableAtIndex:index atCity:self.selectedCityCode];
 }
 #pragma mark - WGMainScrollViewDelegate
 - (void)didScrollPageViewChangedPage:(NSInteger)aPage{

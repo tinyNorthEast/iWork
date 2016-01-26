@@ -140,7 +140,7 @@
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
         WGBBSViewController *vc = [sb instantiateInitialViewController];
         WGNotificationModel *notificationModel = self.notifications[indexPath.row];
-        vc.toUserId = notificationModel.record_id;
+        vc.toUserId = notificationModel.user_id;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

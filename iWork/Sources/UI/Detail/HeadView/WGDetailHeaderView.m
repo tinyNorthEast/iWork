@@ -107,7 +107,7 @@
     if ([self isSignIn]) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
         WGBBSViewController *vc = [sb instantiateInitialViewController];
-        vc.toUserId = _infoModel.objId;
+        vc.toUserId = _infoModel.userId;
         [[self viewController].navigationController pushViewController:vc animated:YES];
     }else{
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];

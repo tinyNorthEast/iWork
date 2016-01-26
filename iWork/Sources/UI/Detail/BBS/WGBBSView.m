@@ -39,6 +39,7 @@
 }
 
 - (CGFloat)viewHeightbyCommentsArray:(NSArray *)comments allCommentsNum:(NSNumber *)commentsNum{
+    
     self.commentsArray = comments;
     [self.tableView reloadData];
     if (commentsNum.integerValue>2) {
@@ -57,9 +58,9 @@
         if (comments.count==0) {
             return 20+70;
         }else if (comments.count == 1){
-            return 20+50+70;
+            return 20+50+90;
         }else if (comments.count ==2){
-            return 20+50+70*2;
+            return 20+70+70*2;
         }
     }
     
@@ -88,7 +89,7 @@
     if ([self isSignIn]) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BBS" bundle:nil];
         WGBBSViewController *vc = [sb instantiateInitialViewController];
-        vc.toUserId = self.objId;
+        vc.toUserId = self.userId ;
         [[self viewController].navigationController pushViewController:vc animated:YES];
     }else{
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];

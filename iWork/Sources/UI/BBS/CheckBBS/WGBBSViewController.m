@@ -107,15 +107,18 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([WGGlobal sharedInstance].signInfo.role_code.integerValue == UserRole_Hunter) {
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WriteBBS" bundle:nil];
-        WGWriteBBSViewController *vc = [sb instantiateInitialViewController];
         WGCommentModel *aComment = self.messages[indexPath.row];
-        vc.toUserId = aComment.c_from_id;
-        vc.objId = aComment.c_main_id;
-        vc.naviTitle = @"回复留言";
-        [self presentViewController:vc animated:YES completion:^{
+        if ([[WGGlobal sharedInstance] signInfo].userId.integerValue != aComment.c_from_id.integerValue) {
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"WriteBBS" bundle:nil];
+            WGWriteBBSViewController *vc = [sb instantiateInitialViewController];
             
-        }];
+            vc.toUserId = aComment.c_from_id;
+            vc.objId = aComment.c_main_id;
+            vc.naviTitle = @"回复留言";
+            [self presentViewController:vc animated:YES completion:^{
+                
+            }];
+        }
     }
 }
 

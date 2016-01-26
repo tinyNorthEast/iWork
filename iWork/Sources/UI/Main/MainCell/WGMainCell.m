@@ -61,6 +61,9 @@
     }else if (hunter.ranking.integerValue == 3){
         self.rateImage.image = [UIImage imageNamed:@"main_rank3"];
         self.rateLabel.text = @"人气顾问第三名";
+    }else{
+        self.rateImage.image = nil;
+        self.rateLabel.text = @"";
     }
     
     
