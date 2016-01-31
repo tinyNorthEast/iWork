@@ -93,6 +93,14 @@
 		B594270A1C2C1FD8008BD92A /* WGResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59427091C2C1FD8008BD92A /* WGResultsView.xib */; };
 		B594270E1C2C2321008BD92A /* WGBBSView.m in Sources */ = {isa = PBXBuildFile; fileRef = B594270D1C2C2321008BD92A /* WGBBSView.m */; };
 		B59427101C2C2334008BD92A /* WGBBSView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B594270F1C2C2334008BD92A /* WGBBSView.xib */; };
+		B59F042F1C5DE828003AFC3A /* WGModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B59F042D1C5DE828003AFC3A /* WGModel.xcdatamodeld */; };
+		B59F04341C5DE8EF003AFC3A /* City+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F04311C5DE8EF003AFC3A /* City+CoreDataProperties.m */; };
+		B59F04351C5DE8EF003AFC3A /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F04331C5DE8EF003AFC3A /* City.m */; };
+		B59F043A1C5DE91E003AFC3A /* Industry+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F04371C5DE91E003AFC3A /* Industry+CoreDataProperties.m */; };
+		B59F043B1C5DE91E003AFC3A /* Industry.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F04391C5DE91E003AFC3A /* Industry.m */; };
+		B59F043E1C5DE94F003AFC3A /* WGCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F043D1C5DE94F003AFC3A /* WGCoreDataController.m */; };
+		B59F04411C5DEA40003AFC3A /* WGCityDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F04401C5DEA40003AFC3A /* WGCityDataController.m */; };
+		B59F04441C5DEB1F003AFC3A /* WGIndustryDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F04431C5DEB1F003AFC3A /* WGIndustryDataController.m */; };
 		B5AA30E91C43D8CF002C424B /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AA30E81C43D8CF002C424B /* KxMenu.m */; };
 		B5AAAE401C2D032C008A97E6 /* WGWriteBBSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAAE3F1C2D032C008A97E6 /* WGWriteBBSRequest.m */; };
 		B5AAAE481C2D4994008A97E6 /* BBS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5AAAE471C2D4994008A97E6 /* BBS.xcassets */; };
@@ -378,6 +386,21 @@
 		B594270C1C2C2321008BD92A /* WGBBSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBBSView.h; sourceTree = "<group>"; };
 		B594270D1C2C2321008BD92A /* WGBBSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBBSView.m; sourceTree = "<group>"; };
 		B594270F1C2C2334008BD92A /* WGBBSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WGBBSView.xib; sourceTree = "<group>"; };
+		B59F042E1C5DE828003AFC3A /* WGModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WGModel.xcdatamodel; sourceTree = "<group>"; };
+		B59F04301C5DE8EF003AFC3A /* City+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "City+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B59F04311C5DE8EF003AFC3A /* City+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "City+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B59F04321C5DE8EF003AFC3A /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		B59F04331C5DE8EF003AFC3A /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		B59F04361C5DE91E003AFC3A /* Industry+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Industry+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B59F04371C5DE91E003AFC3A /* Industry+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Industry+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B59F04381C5DE91E003AFC3A /* Industry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Industry.h; sourceTree = "<group>"; };
+		B59F04391C5DE91E003AFC3A /* Industry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Industry.m; sourceTree = "<group>"; };
+		B59F043C1C5DE94F003AFC3A /* WGCoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCoreDataController.h; sourceTree = "<group>"; };
+		B59F043D1C5DE94F003AFC3A /* WGCoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCoreDataController.m; sourceTree = "<group>"; };
+		B59F043F1C5DEA40003AFC3A /* WGCityDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCityDataController.h; sourceTree = "<group>"; };
+		B59F04401C5DEA40003AFC3A /* WGCityDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCityDataController.m; sourceTree = "<group>"; };
+		B59F04421C5DEB1F003AFC3A /* WGIndustryDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGIndustryDataController.h; sourceTree = "<group>"; };
+		B59F04431C5DEB1F003AFC3A /* WGIndustryDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGIndustryDataController.m; sourceTree = "<group>"; };
 		B5A378B41C441740000D7573 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ShareSDKLocalizable.strings"; sourceTree = "<group>"; };
 		B5AA30E71C43D8CF002C424B /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		B5AA30E81C43D8CF002C424B /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
@@ -799,6 +822,7 @@
 		B54FA8051BF46FCD0018B682 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B59F042C1C5DE811003AFC3A /* CacheSave */,
 				B5E2F4331C2A901D005F8BA4 /* DBAccess */,
 				B5FB3D4E1C10344A00B35AB6 /* Main */,
 				B5F150B91C21203400EC9503 /* Detail */,
@@ -1127,6 +1151,28 @@
 				B56320751C34FBB6006FB9EA /* WGBBSCell.xib */,
 			);
 			path = BBS;
+			sourceTree = "<group>";
+		};
+		B59F042C1C5DE811003AFC3A /* CacheSave */ = {
+			isa = PBXGroup;
+			children = (
+				B59F042D1C5DE828003AFC3A /* WGModel.xcdatamodeld */,
+				B59F043C1C5DE94F003AFC3A /* WGCoreDataController.h */,
+				B59F043D1C5DE94F003AFC3A /* WGCoreDataController.m */,
+				B59F04301C5DE8EF003AFC3A /* City+CoreDataProperties.h */,
+				B59F04311C5DE8EF003AFC3A /* City+CoreDataProperties.m */,
+				B59F043F1C5DEA40003AFC3A /* WGCityDataController.h */,
+				B59F04401C5DEA40003AFC3A /* WGCityDataController.m */,
+				B59F04321C5DE8EF003AFC3A /* City.h */,
+				B59F04331C5DE8EF003AFC3A /* City.m */,
+				B59F04361C5DE91E003AFC3A /* Industry+CoreDataProperties.h */,
+				B59F04371C5DE91E003AFC3A /* Industry+CoreDataProperties.m */,
+				B59F04381C5DE91E003AFC3A /* Industry.h */,
+				B59F04391C5DE91E003AFC3A /* Industry.m */,
+				B59F04421C5DEB1F003AFC3A /* WGIndustryDataController.h */,
+				B59F04431C5DEB1F003AFC3A /* WGIndustryDataController.m */,
+			);
+			path = CacheSave;
 			sourceTree = "<group>";
 		};
 		B5AA30E61C43D8CF002C424B /* KxMenu */ = {
@@ -1782,6 +1828,7 @@
 				B5F987991C32F6B500253667 /* WGInviteCodeController.m in Sources */,
 				B5E907BF1C083E6C003AB736 /* WGSignInRequest.m in Sources */,
 				B50C5C061C1159690043C26B /* WGCityListViewController.m in Sources */,
+				B59F04411C5DEA40003AFC3A /* WGCityDataController.m in Sources */,
 				B5F150C81C228B5600EC9503 /* WGDetailHeaderView.m in Sources */,
 				B5548D611C318453007FCF58 /* WGDescribeModel.m in Sources */,
 				B5FB3D4C1C0FEDBF00B35AB6 /* WGMainCell.m in Sources */,
@@ -1859,6 +1906,8 @@
 				B5F9878F1C32E1ED00253667 /* WGNotifiCategoryModel.m in Sources */,
 				B5F150D71C22E63200EC9503 /* WGDetailIndustryModel.m in Sources */,
 				B5E6011C1C03005B00265307 /* WGCustomIBSupports.m in Sources */,
+				B59F04441C5DEB1F003AFC3A /* WGIndustryDataController.m in Sources */,
+				B59F043A1C5DE91E003AFC3A /* Industry+CoreDataProperties.m in Sources */,
 				B5E7E1A31C1927F400BA545E /* WGMainTableView.m in Sources */,
 				B5F150A61C2007ED00EC9503 /* WGHunterModel.m in Sources */,
 				B5D4F40D1C27E8CF007474F0 /* WGWriteBBSViewController.m in Sources */,
@@ -1878,13 +1927,16 @@
 				B5D4F4091C27E546007474F0 /* WGBBSViewController.m in Sources */,
 				B5D4F4121C28259E007474F0 /* NSFileManager+WGFileHelper.m in Sources */,
 				B54FA8521BF4B1960018B682 /* WGURLConfig.m in Sources */,
+				B59F043B1C5DE91E003AFC3A /* Industry.m in Sources */,
 				B5548D641C325F63007FCF58 /* WGFavoriteListRequest.m in Sources */,
+				B59F042F1C5DE828003AFC3A /* WGModel.xcdatamodeld in Sources */,
 				B5FB3D411C0EF57C00B35AB6 /* WGDataAccess.m in Sources */,
 				B53874F51C1EA997002FB222 /* WGUserInfoViewController.m in Sources */,
 				B5F987861C32DA2E00253667 /* WGNotificationCategoryController.m in Sources */,
 				B5E2F43B1C2A901D005F8BA4 /* DBAccessQueue.m in Sources */,
 				B5F987A61C32FB1A00253667 /* WGCodeModel.m in Sources */,
 				B53874FA1C1EAA1A002FB222 /* WGSettingViewController.m in Sources */,
+				B59F04351C5DE8EF003AFC3A /* City.m in Sources */,
 				B5F9879F1C32FA2300253667 /* WGCodeRequest.m in Sources */,
 				B5D4F4001C27E1B3007474F0 /* WGCommentModel.m in Sources */,
 				B520B2D11C0B3D5C00CFD6CD /* NSString+WGExtension.m in Sources */,
@@ -1892,6 +1944,8 @@
 				B5EFC1751C38B71B00F7DA6E /* WGApplyAuthRequest.m in Sources */,
 				B5AA30E91C43D8CF002C424B /* KxMenu.m in Sources */,
 				B56320761C34FBB6006FB9EA /* WGBBSCell.m in Sources */,
+				B59F04341C5DE8EF003AFC3A /* City+CoreDataProperties.m in Sources */,
+				B59F043E1C5DE94F003AFC3A /* WGCoreDataController.m in Sources */,
 				B5E2F43A1C2A901D005F8BA4 /* DBAccess.m in Sources */,
 				B54FA85B1BF4C48D0018B682 /* WGProgressHUD.m in Sources */,
 				B5721E4A1C29ADA5007EE80F /* WGIndustryListRequest.m in Sources */,
@@ -2188,6 +2242,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B59F042D1C5DE828003AFC3A /* WGModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B59F042E1C5DE828003AFC3A /* WGModel.xcdatamodel */,
+			);
+			currentVersion = B59F042E1C5DE828003AFC3A /* WGModel.xcdatamodel */;
+			path = WGModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B54FA7C21BF46AE60018B682 /* Project object */;
 }

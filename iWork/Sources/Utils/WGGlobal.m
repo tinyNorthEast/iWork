@@ -19,6 +19,9 @@
 #import "WGSignInModel.h"
 #import "WGIndustryModel.h"
 #import "WGSignInModel.h"
+#import "WGCityListRequest.h"
+#import "WGIndustryListRequest.h"
+#import "WGMainIndustryListModel.h"
 
 #define kIndustryList @"industrylist"
 
@@ -129,23 +132,19 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
 
 
 
-
-
-
-
-- (NSArray *)industryLists{
-    if (_industryLists == nil)
-    {
-        _industryLists = [WGDataAccess industryListForKey:kIndustryList];
-    }
-    return _industryLists;
-}
-
-- (void)saveIndustryList:(NSArray *)lists{
-    [WGDataAccess industryListSetLists:lists forKey:kIndustryList];
-    _industryLists = lists;
-    
-}
+//- (NSArray *)industryLists{
+//    if (_industryLists == nil)
+//    {
+//        _industryLists = [WGDataAccess industryListForKey:kIndustryList];
+//    }
+//    return _industryLists;
+//}
+//
+//- (void)saveIndustryList:(NSArray *)lists{
+//    [WGDataAccess industryListSetLists:lists forKey:kIndustryList];
+//    _industryLists = lists;
+//    
+//}
 - (void)clearIndustryList{
     [WGDataAccess industryListSetLists:nil forKey:kIndustryList];
     _industryLists = nil;
@@ -157,10 +156,90 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
     }
     return _userEspQueue;
 }
-- (void )getIndustryList:(void (^)(NSMutableArray *array))block{
+
+
+- (WGCityListModel *)cityListModel{
+    if (_cityListModel == nil)
+    {
+        return [self getCacheCityListRequestModelWithCityID:nil];
+    }
+    return _cityListModel;
+}
+- (WGCityListModel *)getCacheCityListRequestModelWithCityID:(NSString*)cityID;
+{
+    id jsonObject = [DEFileUtil getRequestModelCacheObjectWithRequestClass:[WGCityListModel class] key:cityID];
+    WGCityListModel *model = nil;
     
+    if (jsonObject) {
+        model = [[WGCityListModel alloc] initWithDictionary:jsonObject error:nil];
+    }
+    return model;
 }
 
+- (WGMainIndustryListModel *)industryModel{
+    if (_industryModel == nil)
+    {
+        return [self getCacheIndustryListRequestModelWithCityID:nil];
+    }else{
+        [self getIndustryList];
+    }
+    return _industryModel;
+}
+
+- (WGMainIndustryListModel *)getCacheIndustryListRequestModelWithCityID:(NSString*)cityID;
+{
+    id jsonObject = [DEFileUtil getRequestModelCacheObjectWithRequestClass:[WGMainIndustryListModel class] key:cityID];
+    WGMainIndustryListModel *model = nil;
+    
+    if (jsonObject) {
+        model = [[WGMainIndustryListModel alloc] initWithDictionary:jsonObject error:nil];
+    }
+    return model;
+}
+- (NSArray *)getCityList{
+    if (self.cityListModel.data.count){
+        return self.cityListModel.data;
+    }
+    WGCityListRequest *request = [[WGCityListRequest alloc] init];
+    @weakify(self);
+    [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+        @strongify(self);
+        if (baseModel.infoCode.integerValue == 0) {
+            WGCityListModel *model = (WGCityListModel *)baseModel;
+            if (model.data.count) {
+                
+                [DEFileUtil cacheRequestModel:model requestClass:[WGCityListModel class] key:nil];
+                
+                [self.cities addObjectsFromArray:model.data];
+
+            }
+        }else{
+        }
+    } failure:^(WGBaseModel *baseModel, NSError *error) {
+    }];
+    return self.cities;
+}
+
+- (NSArray *)getIndustryList{
+    if (self.industryModel.data.count) {
+        return self.industryModel.data;
+    }
+    WGIndustryListRequest *request = [[WGIndustryListRequest alloc] init];
+    @weakify(self);
+    [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+        @strongify(self);
+        WGMainIndustryListModel *model = (WGMainIndustryListModel *)baseModel;
+        if (model.data) {
+             [DEFileUtil cacheRequestModel:model requestClass:[WGMainIndustryListModel class] key:nil];
+            
+            [self.industryLists addObjectsFromArray:model.data];
+        }
+        
+    } failure:^(WGBaseModel *baseModel, NSError *error) {
+        
+    }];
+    return self.industryLists;
+}
 -(void)insertOrUpdateFlightModel:(WGIndustryModel *)aModel
                          success:(void (^)(WGIndustryModel *model))success
                          failure:(void (^)(DBAccessResultType result))failure{
@@ -189,23 +268,23 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
             }
             else
             {
-                [self getIndustryList:^(NSMutableArray *array) {
-                    
-                    if (array.count >= 10)
-                    {
-                        @weakify(self);
-                        [self saveUserEsp:aModel finished:^(DBAccessResult *result) {
-                            @strongify(self);
-                            [self deleteUserEsp:array.lastObject];
-                        }];
-                    }
-                    else
-                    {
-                        [self saveUserEsp:aModel finished:^(DBAccessResult *result) {
-                            
-                        }];
-                    }
-                }];
+//                [self getIndustryList:^(NSMutableArray *array) {
+//                    
+//                    if (array.count >= 10)
+//                    {
+//                        @weakify(self);
+//                        [self saveUserEsp:aModel finished:^(DBAccessResult *result) {
+//                            @strongify(self);
+//                            [self deleteUserEsp:array.lastObject];
+//                        }];
+//                    }
+//                    else
+//                    {
+//                        [self saveUserEsp:aModel finished:^(DBAccessResult *result) {
+//                            
+//                        }];
+//                    }
+//                }];
             }
             
         });

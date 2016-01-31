@@ -11,6 +11,8 @@
 #import <extobjc.h>
 #import <XXNibBridge.h>
 
+#import "WGProgressHUD.h"
+
 #import "SignHeader.h"
 #import "WGMenuBar.h"
 #import "WGMainScrollView.h"
@@ -21,6 +23,7 @@
 #import "WGIndustryListRequest.h"
 #import "WGMainIndustryListModel.h"
 #import "WGNotificationController.h"
+#import "WGIndustryDataController.h"
 
 @interface WGMainViewController ()<WGMenuBarDelegate,WGMainScrollViewDelegate>
 
@@ -53,22 +56,33 @@
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
+        
         WGMainIndustryListModel *model = (WGMainIndustryListModel *)baseModel;
         [self.menuBar initMenuItems:model.data];
+        
+        [[WGIndustryDataController sharedInstance] insertIndustry:model.data];
+        
         self.menuBar.delegate = self;
         
         [self.mainScrollView initWithViews:model.data];
         self.mainScrollView.mainScrolldelegate = self;
         
-        [[WGGlobal sharedInstance] setIndustryLists:model.data];
-        
         [self.menuBar clickButtonAtIndex:0];
         
     } failure:^(WGBaseModel *baseModel, NSError *error) {
-//        @strongify(self);
-//        [WGProgressHUD disappearFailureMessage:@"加载失败" onView:self.viewController.view];
-        
+        @strongify(self);
+        NSArray *array = [[WGIndustryDataController sharedInstance] fetchIndustry];
+        if (array.count) {
+            [self.menuBar initMenuItems:array];
+            self.menuBar.delegate = self;
+            [self.mainScrollView initWithViews:array];
+            self.mainScrollView.mainScrolldelegate = self;
+            [self.menuBar clickButtonAtIndex:0];
+        }else{
+            [WGProgressHUD disappearFailureMessage:@"无法连接服务器,请检查网络" onView:self.view];
+        }
     }];
+    
 }
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];

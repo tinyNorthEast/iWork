@@ -11,6 +11,9 @@
 #import "DBAccessQueue.h"
 #import "SynthesizeSingletonForArc.h"
 
+#import "WGCityListModel.h"
+#import "WGMainIndustryListModel.h"
+
 @class WGSignInModel;
 @class WGIndustryModel;
 
@@ -22,7 +25,12 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(WGGlobal)
 @property (nonatomic, copy) NSString *userToken;
 @property (nonatomic, copy) NSString *deviceToken;
 @property (nonatomic, copy) NSString *defaultPhone;
-@property (nonatomic, copy) NSArray *industryLists;
+@property (nonatomic, copy) NSMutableArray *industryLists;
+@property (nonatomic, strong) NSMutableArray *cities;
+
+@property (nonatomic, strong) WGCityListModel *cityListModel;
+@property (nonatomic, strong) WGMainIndustryListModel *industryModel;
+
 @property (nonatomic, copy) WGSignInModel *signInfo;
 
 - (void)saveToken:(NSString *)token;
@@ -45,9 +53,9 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(WGGlobal)
 
 
 
+- (NSArray *)getCityList;
 
-
-- (void )getIndustryList:(void (^)(NSMutableArray *array))block;
+- (NSArray *)getIndustryList;
 
 - (void)insertOrUpdateFlightModel:(WGIndustryModel *)aModel
                          success:(void (^)(WGIndustryModel *model))success

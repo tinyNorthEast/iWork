@@ -17,6 +17,7 @@
 #import "WGCityModel.h"
 #import "WGCityListModel.h"
 #import "WGCityListRequest.h"
+#import "WGCityDataController.h"
 
 #define kCacheDirectory [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
 NSString *const CONFIGMODEL_PATH = @"configModel";
@@ -96,11 +97,21 @@ NSString *const CONFIGMODEL_PATH = @"configModel";
         else if (baseModel.infoCode.integerValue == 0) {
             WGCityListModel *model = (WGCityListModel *)baseModel;
             if (model.data.count) {
+    
+                [[WGCityDataController sharedInstance] insertCity:model.data];
+                
                 [self.cityList addObjectsFromArray:model.data];
                 [self.cityTable reloadData];
             }
         }else{
-            [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.view];
+            
+            NSArray *array =  [[WGCityDataController sharedInstance] fetchCitys];
+            if (array.count) {
+                [self.cityList addObjectsFromArray:array];
+                [self.cityTable reloadData];
+            }else{
+                [WGProgressHUD disappearFailureMessage:@"无法连接服务器,请检查网络" onView:self.view];
+            }
         }
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
