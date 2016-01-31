@@ -44,7 +44,14 @@
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
         WGNotifiCategoryListModel *model = (WGNotifiCategoryListModel *)baseModel;
-        if (model.infoCode.integerValue == 0) {
+        if (baseModel.infoCode.integerValue == TokenFailed) {
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
+            UIViewController *vc = [sb instantiateInitialViewController];
+            [self presentViewController:vc animated:YES completion:^{
+                
+            }];
+        }
+        else if (model.infoCode.integerValue == 0) {
             [self setUnreadLabel:model.data];
         }else{
             [WGProgressHUD disappearFailureMessage:model.message onView:self.view];

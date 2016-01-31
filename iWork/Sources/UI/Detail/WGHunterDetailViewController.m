@@ -193,7 +193,7 @@
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1) {
-        [WGTools callPhone:self.headerView.infoModel.phone prompt:NO];
+        [WGTools callPhone:self.headerView.infoModel.phone400 prompt:NO];
     }
 }
 

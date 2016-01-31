@@ -60,12 +60,14 @@
             compayLabel.text = resultModel.companyName;
             compayLabel.font = [UIFont kFontSize14];
             compayLabel.textColor = [UIColor wg_themeDarkGrayColor];
+            compayLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
             [self.resultView addSubview:compayLabel];
             
             UILabel *positionLabel = [[UILabel alloc] initWithFrame:CGRectMake(compayLabel.right, compayLabel.top, (self.resultView.width-10)*1.6/5, 20)];
             positionLabel.font = [UIFont kFontSize14];
             positionLabel.textColor = [UIColor wg_themeDarkGrayColor];
             positionLabel.text = resultModel.position;
+            positionLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
             [self.resultView addSubview:positionLabel];
             
             UILabel *salaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(positionLabel.right, compayLabel.top, (self.resultView.width-10)*1.4/5, 20)];
@@ -73,6 +75,7 @@
             salaryLabel.textColor = [UIColor wg_themeDarkGrayColor];
             salaryLabel.textAlignment = NSTextAlignmentRight;
             salaryLabel.text = [NSString stringWithFormat:@"%@万/年薪",resultModel.annualSalary];
+            salaryLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
             [self.resultView addSubview:salaryLabel];
             
             height += 20*(x+1);

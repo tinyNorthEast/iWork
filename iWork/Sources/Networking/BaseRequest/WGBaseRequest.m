@@ -73,6 +73,7 @@
 - (AFHTTPRequestOperationManager *)manager{
     if (!_manager) {
         _manager = [AFHTTPRequestOperationManager manager];
+        _manager.requestSerializer.timeoutInterval = 30;
         _manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];//[AFJSONResponseSerializer serializer];
         _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html",nil];
     

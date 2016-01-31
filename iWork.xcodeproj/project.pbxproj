@@ -2095,7 +2095,6 @@
 			baseConfigurationReference = 20964DE1405676E81AD62B05 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nanxiang Chen (3EVS9Y6G5D)";
 				ENABLE_BITCODE = NO;
@@ -2127,7 +2126,6 @@
 			baseConfigurationReference = E9D6A9E99C33B8C557D1EA48 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nanxiang Chen (UGPJN94325)";
 				ENABLE_BITCODE = NO;
