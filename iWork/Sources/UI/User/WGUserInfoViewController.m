@@ -32,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *myNotifiLabel;
 
+@property (strong, nonatomic) M13BadgeView *badgeView;
+
 @end
 
 @implementation WGUserInfoViewController
@@ -76,7 +78,11 @@
     WGUserInfoRequest *request = [[WGUserInfoRequest alloc] init];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
+        
         @strongify(self);
+        
+        [self.badgeView removeFromSuperview];
+        
         if (baseModel.infoCode.integerValue == TokenFailed) {
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
             UIViewController *vc = [sb instantiateInitialViewController];
@@ -93,11 +99,11 @@
             [self.headerImage wg_loadImageFromURL:infoModel.pic placeholder:[UIImage imageNamed:@"user_defaultHeader"]];
             [self.nameLabel setText:infoModel.zh_name];
             
-            M13BadgeView *badgeView = [[M13BadgeView alloc] initWithFrame:CGRectMake(self.myNotifiLabel.right, 12, 24.0, 24.0)];
-            [self.myNotifiLabel addSubview:badgeView];
-            badgeView.text = infoModel.noticeCount.stringValue;
-            badgeView.badgeBackgroundColor = [UIColor wg_themeCyanColor];
-            badgeView.hidesWhenZero = YES;
+            self.badgeView = [[M13BadgeView alloc] initWithFrame:CGRectMake(self.myNotifiLabel.right, 12, 24.0, 24.0)];
+            [self.myNotifiLabel addSubview:self.badgeView];
+            self.badgeView.text = infoModel.noticeCount.stringValue;
+            self.badgeView.badgeBackgroundColor = [UIColor wg_themeCyanColor];
+            self.badgeView.hidesWhenZero = YES;
         }   
     } failure:^(WGBaseModel *baseModel, NSError *error) {
         

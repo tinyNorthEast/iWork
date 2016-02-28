@@ -54,6 +54,10 @@
 }
 
 - (IBAction)sendComment:(id)sender {
+    if (self.commentTextView.text.length == 0) {
+        [WGProgressHUD disappearFailureMessage:@"请先填写评论内容" onView:self.view];
+        return;
+    }
     [WGProgressHUD loadMessage:@"正在发表评论" onView:self.view];
     WGWriteBBSRequest *request = [[WGWriteBBSRequest alloc] initWithContent:self.commentTextView.text toUserId:self.toUserId objId:self.objId];
     @weakify(self);

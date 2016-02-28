@@ -61,6 +61,7 @@
         [self.menuBar initMenuItems:model.data];
         
         [[WGIndustryDataController sharedInstance] insertIndustry:model.data];
+        [[WGGlobal sharedInstance] setIndustryLists:model.data];
         
         self.menuBar.delegate = self;
         
@@ -128,6 +129,7 @@
     vc.notif_type = notification.object[@"n_type"];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 
 #pragma mark - WGMenuBarDelegate
 - (void)clickMenuButtonAtIndex:(NSInteger)index{

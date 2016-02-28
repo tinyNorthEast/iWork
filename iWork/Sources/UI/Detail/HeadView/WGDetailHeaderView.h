@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) WGHunterInfoModel *infoModel;
 
+@property (nonatomic, strong) NSIndexPath *currentIndexPath;
+
 @end

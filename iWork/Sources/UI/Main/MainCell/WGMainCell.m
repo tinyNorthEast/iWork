@@ -19,6 +19,7 @@
 #import "UIColor+WGThemeColors.h"
 
 #import "WGGlobal.h"
+#import "WGSignInModel.h"
 #import "WGHunterModel.h"
 #import "WGHunterIndustryModel.h"
 #import "WGAttentionRequest.h"
@@ -31,7 +32,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *rateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *positionLabel;
-@property (weak, nonatomic) IBOutlet UIButton *pariseButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameWidth;
 
@@ -46,6 +46,9 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+    
+    
+    
 }
 - (void)setHunter:(WGHunterModel *)hunter{
     _hunter = hunter;
@@ -124,6 +127,10 @@
     if ([WGGlobal sharedInstance].userToken.length == 0) {
         [self gotoLoginView];
     }else{
+        if ([[WGGlobal sharedInstance] signInfo].userId.integerValue == self.hunter.userId.integerValue){
+            return;
+        }
+            
         BOOL isAttention = self.hunter.isAttention.integerValue;
         
         WGAttentionRequest *request = [[WGAttentionRequest alloc] initAttention:@(!isAttention) toId:self.hunter.userId];
@@ -141,6 +148,12 @@
                 k.keyTimes = @[@(0.0),@(0.5),@(0.8),@(1.0)];
                 k.calculationMode = kCAAnimationLinear;
                 [self.pariseButton.layer addAnimation:k forKey:@"SHOW"];
+                
+                
+                if (self.selectCell) {
+                    self.selectCell(self,!self.hunter.isAttention);
+                }
+                
                 
             }else{
                 [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.viewController.view];

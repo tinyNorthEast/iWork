@@ -25,7 +25,7 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(WGGlobal)
 @property (nonatomic, copy) NSString *userToken;
 @property (nonatomic, copy) NSString *deviceToken;
 @property (nonatomic, copy) NSString *defaultPhone;
-@property (nonatomic, copy) NSMutableArray *industryLists;
+@property (nonatomic, copy) NSArray *industryLists;
 @property (nonatomic, strong) NSMutableArray *cities;
 
 @property (nonatomic, strong) WGCityListModel *cityListModel;

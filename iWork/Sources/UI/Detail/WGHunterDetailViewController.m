@@ -166,6 +166,7 @@
             WGHunterInfoModel *infoModel = [[WGHunterInfoModel alloc] initWithDictionary:model.data[@"headhunterInfo"] error:nil];
             
             self.headerView.infoModel = infoModel;
+            self.headerView.currentIndexPath = self.currentIndexPath;
             
             self.describeHeight.constant = [self.describeView viewHeightbyDescribeArray:infoModel.describeList];
             

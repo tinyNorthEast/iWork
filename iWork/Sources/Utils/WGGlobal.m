@@ -132,19 +132,19 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
 
 
 
-//- (NSArray *)industryLists{
-//    if (_industryLists == nil)
-//    {
-//        _industryLists = [WGDataAccess industryListForKey:kIndustryList];
-//    }
-//    return _industryLists;
-//}
-//
-//- (void)saveIndustryList:(NSArray *)lists{
-//    [WGDataAccess industryListSetLists:lists forKey:kIndustryList];
-//    _industryLists = lists;
-//    
-//}
+- (NSArray *)industryLists{
+    if (_industryLists == nil)
+    {
+        _industryLists = [WGDataAccess industryListForKey:kIndustryList];
+    }
+    return _industryLists;
+}
+
+- (void)saveIndustryList:(NSArray *)lists{
+    [WGDataAccess industryListSetLists:lists forKey:kIndustryList];
+    _industryLists = lists;
+    
+}
 - (void)clearIndustryList{
     [WGDataAccess industryListSetLists:nil forKey:kIndustryList];
     _industryLists = nil;
@@ -220,26 +220,6 @@ ARC_SYNTHESIZE_SINGLETON_FOR_CLASS(WGGlobal)
     return self.cities;
 }
 
-- (NSArray *)getIndustryList{
-    if (self.industryModel.data.count) {
-        return self.industryModel.data;
-    }
-    WGIndustryListRequest *request = [[WGIndustryListRequest alloc] init];
-    @weakify(self);
-    [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
-        @strongify(self);
-        WGMainIndustryListModel *model = (WGMainIndustryListModel *)baseModel;
-        if (model.data) {
-             [DEFileUtil cacheRequestModel:model requestClass:[WGMainIndustryListModel class] key:nil];
-            
-            [self.industryLists addObjectsFromArray:model.data];
-        }
-        
-    } failure:^(WGBaseModel *baseModel, NSError *error) {
-        
-    }];
-    return self.industryLists;
-}
 -(void)insertOrUpdateFlightModel:(WGIndustryModel *)aModel
                          success:(void (^)(WGIndustryModel *model))success
                          failure:(void (^)(DBAccessResultType result))failure{

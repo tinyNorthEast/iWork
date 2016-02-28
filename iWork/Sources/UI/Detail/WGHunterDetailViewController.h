@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSNumber *hunterId;
 
+@property (nonatomic, strong) NSIndexPath *currentIndexPath;
+
 @end

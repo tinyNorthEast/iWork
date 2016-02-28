@@ -133,6 +133,10 @@
     [self back];
 }
 - (IBAction)showExperienceSheet:(id)sender {
+    [self.mailField resignFirstResponder];
+    [self.enNameField resignFirstResponder];
+    [self.companyField resignFirstResponder];
+    
     if (self.experienceField.resignFirstResponder) {
         [self.experienceField resignFirstResponder];
     }
@@ -173,6 +177,10 @@
     }];
     
     [_picker showInView:self.view];
+}
+- (IBAction)tapHeaderView:(id)sender {
+    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从手机相册选择",nil];
+    [as showInView:self.view];
 }
 
 - (IBAction)saveAction:(id)sender {

@@ -58,8 +58,14 @@
             [self requestHuntersWithPage:pager isRefresh:NO];
         }];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changePraiseButton:) name:@"kNotification_Praise" object:nil];
+        
     }
     return self;
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (NSMutableArray *)hunters{
@@ -74,7 +80,17 @@
     WGPager *pager = [[WGPager alloc] init];
     [self requestHuntersWithPage:pager isRefresh:YES];
 }
-
+- (void)changePraiseButton:(NSNotification *)notification{
+    NSIndexPath *indexPath = notification.object;
+    WGMainCell *cell = (WGMainCell *)[self cellForRowAtIndexPath:indexPath];
+    BOOL isAttention = cell.hunter.isAttention.integerValue;
+    if (isAttention) {
+        [cell.pariseButton setImage:[UIImage imageNamed:@"detail_favorite2"] forState:UIControlStateNormal];
+    }else{
+        [cell.pariseButton setImage:[UIImage imageNamed:@"main_favorite"] forState:UIControlStateNormal];
+    }
+    
+}
 #pragma mark - Request
 //根据table tag重找industry id
 - (void)requestHuntersWithPage:(WGPager *)pager isRefresh:(BOOL)isRefresh{
@@ -112,10 +128,14 @@
             
             if (self.hunters.count) {
                 [[WGGlobal sharedInstance] addDefaultImageViewTo:self isHidden:YES];
-                
+                if (self.hunters.count<=2) {
+                    self.wg_pager.referScrollView.footer.hidden = YES;
+                    [self.wg_pager.referScrollView.footer removeFromSuperview];
+                }
             }else{
                 [[WGGlobal sharedInstance] addDefaultImageViewTo:self isHidden:NO];
                 self.wg_pager.referScrollView.footer.hidden = YES;
+                [self.wg_pager.referScrollView.footer removeFromSuperview];
             }
            
         }else{
@@ -126,6 +146,7 @@
             }else{
                 [[WGGlobal sharedInstance] addDefaultImageViewTo:self isHidden:NO];
                 self.wg_pager.referScrollView.footer.hidden = YES;
+                [self.wg_pager.referScrollView.footer removeFromSuperview];
             }
             
             [WGProgressHUD disappearFailureMessage:baseModel.message onView:[UIApplication sharedApplication].keyWindow];
@@ -135,6 +156,7 @@
             [pager finishRefreshWithError:error];
         }else{
             self.wg_pager.referScrollView.footer.hidden = YES;
+            [self.wg_pager.referScrollView.footer removeFromSuperview];
             [pager finishLoadMoreWithError:error];
         }
         
@@ -146,6 +168,7 @@
             [pager finishRefreshWithError:error];
         }else{
             self.wg_pager.referScrollView.footer.hidden = YES;
+            [self.wg_pager.referScrollView.footer removeFromSuperview];
             [pager finishLoadMoreWithError:error];
         }
     }];
@@ -195,6 +218,10 @@
     WGHunterDetailViewController *vc = [sb instantiateInitialViewController];
     WGHunterModel *aHunter = self.hunters[indexPath.row];
     vc.hunterId = aHunter.objId;
+    
+    vc.currentIndexPath = indexPath;
+
+    
     [[self viewController].navigationController pushViewController:vc animated:YES];
 }
 
@@ -211,6 +238,7 @@
 //        [self loadMoreStatus];
     }else{
         self.wg_pager.referScrollView.footer.hidden = YES;
+        [self.wg_pager.referScrollView.footer removeFromSuperview];
     }
 }
 @end

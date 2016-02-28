@@ -16,6 +16,7 @@
 #import "UIImageView+WGHTTP.h"
 
 #import "WGGlobal.h"
+#import "WGSignInModel.h"
 #import "WGHunterInfoModel.h"
 #import "WGHunterDetailViewController.h"
 #import "WGBBSViewController.h"
@@ -46,20 +47,15 @@
 }
 
 #pragma mark - IBAction
-//- (UIViewController *)viewController {
-//    for (UIView* next = [self superview]; next; next = next.superview) {
-//        UIResponder *nextResponder = [next nextResponder];
-//        if ([nextResponder isKindOfClass:[WGHunterDetailViewController class]]) {
-//            return (WGHunterDetailViewController *)nextResponder;
-//        }
-//    }
-//    return nil;
-//}
 - (BOOL)isSignIn{
     return ([[WGGlobal sharedInstance] userToken].length>0?YES:NO);
 }
 - (IBAction)praiseAction:(id)sender {
     if ([self isSignIn]) {
+        if ([[WGGlobal sharedInstance] signInfo].userId.integerValue == self.infoModel.userId.integerValue){
+            return;
+        }
+        
         BOOL isAttention = self.infoModel.isAttention.integerValue;
         
         WGAttentionRequest *request = [[WGAttentionRequest alloc] initAttention:@(!isAttention) toId:self.infoModel.userId];
@@ -80,21 +76,13 @@
                 
             }
             
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"kNotification_Praise" object:self.currentIndexPath];
+            
         } failure:^(WGBaseModel *baseModel, NSError *error) {
 //            @strongify(self);
 //            [WGProgressHUD disappearFailureMessage:@"加载失败" onView:self.view];
             
         }];
-        
-        
-        
-//        [self.praiseButton setImage:[UIImage imageNamed:(self.praiseTag%2==0?@"detail_favorite2":@"detail_favorite1")] forState:UIControlStateNormal];
-//        self.praiseTag++;
-//        CAKeyframeAnimation *k = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-//        k.values = @[@(0.1),@(1.0),@(1.5)];
-//        k.keyTimes = @[@(0.0),@(0.5),@(0.8),@(1.0)];
-//        k.calculationMode = kCAAnimationLinear;
-//        [self.praiseButton.layer addAnimation:k forKey:@"SHOW"];
     }else{
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];
         UIViewController *vc = [sb instantiateInitialViewController];
