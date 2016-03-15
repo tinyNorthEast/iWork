@@ -28,11 +28,15 @@
 @property (nonatomic, assign) NSUInteger praiseTag;
 
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+@property (weak, nonatomic) IBOutlet UIImageView *smallHeaderImage;
 @property (weak, nonatomic) IBOutlet UIImageView *rateImage;
 @property (weak, nonatomic) IBOutlet UILabel *rateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *signatureLabel;
 @property (weak, nonatomic) IBOutlet UILabel *positionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
+@property (weak, nonatomic) IBOutlet UILabel *attentionNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentNumLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameWidth;
 
 @end
@@ -71,7 +75,9 @@
     
     
     [self.headerImage wg_loadImageFromURL:hunter.pic placeholder:[UIImage imageNamed:@"main_defaultHeader"]];
+    [self.smallHeaderImage wg_loadImageFromURL:hunter.smallPic placeholder:[UIImage imageNamed:@"main_defaultHeader"]];
     [self.nameLabel setText:hunter.realName];
+    [self.signatureLabel setText:hunter.signature];
     
     CGSize size = [self.nameLabel.text boundingRectWithSize:CGSizeMake(0, 300) options:NSStringDrawingUsesLineFragmentOrigin
                                                        attributes: @{ NSFontAttributeName:self.nameLabel.font } context: nil].size;
@@ -101,11 +107,14 @@
         [self.pariseButton setImage:[UIImage imageNamed:@"detail_favorite2"] forState:UIControlStateNormal];
     }
     
-    M13BadgeView *badgeView = [[M13BadgeView alloc] initWithFrame:CGRectMake(self.commentButton.right-12, 12, 24.0, 24.0)];
-    [self.commentButton addSubview:badgeView];
-    badgeView.text = self.hunter.commentCount.stringValue;
-    badgeView.badgeBackgroundColor = [UIColor wg_themeCyanColor];
-    badgeView.hidesWhenZero = YES;
+    self.attentionNumLabel.text = [NSString stringWithFormat:@"%@人点赞", self.hunter.attentionCount.stringValue];
+    self.commentNumLabel.text = [NSString stringWithFormat:@"%@人评论", self.hunter.commentCount.stringValue];
+    
+//    M13BadgeView *badgeView = [[M13BadgeView alloc] initWithFrame:CGRectMake(self.commentButton.right-12, 12, 24.0, 24.0)];
+//    [self.commentButton addSubview:badgeView];
+//    badgeView.text = self.hunter.commentCount.stringValue;
+//    badgeView.badgeBackgroundColor = [UIColor wg_themeCyanColor];
+//    badgeView.hidesWhenZero = YES;
 }
 - (void)gotoLoginView{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Sign" bundle:nil];

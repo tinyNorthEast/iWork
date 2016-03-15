@@ -14,6 +14,7 @@
 		B5026D561C3EB4E5004E46FB /* WGSignUpRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5026D551C3EB4E5004E46FB /* WGSignUpRequestModel.m */; };
 		B5026D591C3EB4F7004E46FB /* WGSignUpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5026D581C3EB4F7004E46FB /* WGSignUpModel.m */; };
 		B5026D5B1C41818A004E46FB /* Notification.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5026D5A1C41818A004E46FB /* Notification.xcassets */; };
+		B504854D1C98538100F27A3A /* About.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B504854C1C98538100F27A3A /* About.xcassets */; };
 		B5055BEE1BF9CF33001736AD /* WGPager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055BED1BF9CF33001736AD /* WGPager.m */; };
 		B5055BF41BF9FB5B001736AD /* WGValidJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055BF31BF9FB5B001736AD /* WGValidJudge.m */; };
 		B5055C021BFA02ED001736AD /* WGTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B5055C011BFA02ED001736AD /* WGTools.m */; };
@@ -37,7 +38,6 @@
 		B538756D1C1EF3FD002FB222 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B538756C1C1EF3FD002FB222 /* Detail.storyboard */; };
 		B54FA7E81BF46AE60018B682 /* iWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7E71BF46AE60018B682 /* iWorkTests.m */; };
 		B54FA7F31BF46AE60018B682 /* iWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA7F21BF46AE60018B682 /* iWorkUITests.m */; };
-		B54FA8111BF46FCD0018B682 /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54FA8011BF46FCD0018B682 /* Icon.xcassets */; };
 		B54FA8121BF46FCD0018B682 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA8041BF46FCD0018B682 /* AppDelegate.m */; };
 		B54FA8131BF46FCD0018B682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54FA8091BF46FCD0018B682 /* Main.storyboard */; };
 		B54FA8141BF46FCD0018B682 /* WGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54FA80B1BF46FCD0018B682 /* WGMainViewController.m */; };
@@ -80,6 +80,7 @@
 		B5721E4A1C29ADA5007EE80F /* WGIndustryListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5721E491C29ADA5007EE80F /* WGIndustryListRequest.m */; };
 		B5721E4D1C29AE20007EE80F /* WGMainIndustryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5721E4C1C29AE20007EE80F /* WGMainIndustryListModel.m */; };
 		B577E7A71C4636BE00FB43DC /* Default.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B577E7A61C4636BE00FB43DC /* Default.xcassets */; };
+		B589B5A21C865E7200896743 /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B589B5A11C865E7200896743 /* Icon.xcassets */; };
 		B58DFA8D1C3CD89900130AEF /* WGAttentionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B58DFA8C1C3CD89900130AEF /* WGAttentionRequest.m */; };
 		B58DFA901C3CDD9D00130AEF /* WGUpdateAuthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B58DFA8F1C3CDD9D00130AEF /* WGUpdateAuthRequest.m */; };
 		B59426E91C2B8D8D008BD92A /* WGUserInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B59426E81C2B8D8D008BD92A /* WGUserInfoRequest.m */; };
@@ -240,6 +241,7 @@
 		B5026D571C3EB4F7004E46FB /* WGSignUpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSignUpModel.h; sourceTree = "<group>"; };
 		B5026D581C3EB4F7004E46FB /* WGSignUpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGSignUpModel.m; sourceTree = "<group>"; };
 		B5026D5A1C41818A004E46FB /* Notification.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Notification.xcassets; sourceTree = "<group>"; };
+		B504854C1C98538100F27A3A /* About.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = About.xcassets; sourceTree = "<group>"; };
 		B5055BEC1BF9CF33001736AD /* WGPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPager.h; sourceTree = "<group>"; };
 		B5055BED1BF9CF33001736AD /* WGPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPager.m; sourceTree = "<group>"; };
 		B5055BF21BF9FB5B001736AD /* WGValidJudge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGValidJudge.h; sourceTree = "<group>"; };
@@ -284,7 +286,6 @@
 		B54FA7EE1BF46AE60018B682 /* iWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54FA7F21BF46AE60018B682 /* iWorkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iWorkUITests.m; sourceTree = "<group>"; };
 		B54FA7F41BF46AE60018B682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B54FA8011BF46FCD0018B682 /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
 		B54FA8031BF46FCD0018B682 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B54FA8041BF46FCD0018B682 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B54FA8091BF46FCD0018B682 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -363,6 +364,7 @@
 		B5721E4B1C29AE20007EE80F /* WGMainIndustryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMainIndustryListModel.h; sourceTree = "<group>"; };
 		B5721E4C1C29AE20007EE80F /* WGMainIndustryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMainIndustryListModel.m; sourceTree = "<group>"; };
 		B577E7A61C4636BE00FB43DC /* Default.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Default.xcassets; sourceTree = "<group>"; };
+		B589B5A11C865E7200896743 /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
 		B58DFA8B1C3CD89900130AEF /* WGAttentionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAttentionRequest.h; sourceTree = "<group>"; };
 		B58DFA8C1C3CD89900130AEF /* WGAttentionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAttentionRequest.m; sourceTree = "<group>"; };
 		B58DFA8E1C3CDD9D00130AEF /* WGUpdateAuthRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGUpdateAuthRequest.h; sourceTree = "<group>"; };
@@ -791,8 +793,8 @@
 		B54FA8001BF46FCD0018B682 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B589B5A11C865E7200896743 /* Icon.xcassets */,
 				B54FA82E1BF49DF90018B682 /* Launch.xcassets */,
-				B54FA8011BF46FCD0018B682 /* Icon.xcassets */,
 				B5E6011D1C030ED700265307 /* Sign.xcassets */,
 				B5E6011F1C03179F00265307 /* Navigation.xcassets */,
 				B5E907C61C09A292003AB736 /* Widget.xcassets */,
@@ -802,6 +804,7 @@
 				B5AAAE471C2D4994008A97E6 /* BBS.xcassets */,
 				B5026D5A1C41818A004E46FB /* Notification.xcassets */,
 				B577E7A61C4636BE00FB43DC /* Default.xcassets */,
+				B504854C1C98538100F27A3A /* About.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1724,9 +1727,11 @@
 				B5E7E1A01C19279400BA545E /* WGMainCell.xib in Resources */,
 				B55D122E1C070EAA0035C6B4 /* Resource.bundle in Resources */,
 				B54FA8161BF46FCD0018B682 /* LaunchScreen.storyboard in Resources */,
+				B589B5A21C865E7200896743 /* Icon.xcassets in Resources */,
 				B594270A1C2C1FD8008BD92A /* WGResultsView.xib in Resources */,
 				B5E7E1AE1C19A5E700BA545E /* Main.xcassets in Resources */,
 				B5F150CA1C228B7000EC9503 /* WGDetailHeaderView.xib in Resources */,
+				B504854D1C98538100F27A3A /* About.xcassets in Resources */,
 				B55D122C1C070EAA0035C6B4 /* ShareSDKLocalizable.strings in Resources */,
 				B5E600C61C00245400265307 /* SMS_SDKLocalizable.strings in Resources */,
 				B5D4F3F71C279467007474F0 /* User.xcassets in Resources */,
@@ -1743,7 +1748,6 @@
 				B5E6011E1C030ED700265307 /* Sign.xcassets in Resources */,
 				B55D12021C0702BD0035C6B4 /* Sign.storyboard in Resources */,
 				B5026D5B1C41818A004E46FB /* Notification.xcassets in Resources */,
-				B54FA8111BF46FCD0018B682 /* Icon.xcassets in Resources */,
 				B5E601201C03179F00265307 /* Navigation.xcassets in Resources */,
 				B55D12311C070EAA0035C6B4 /* WeiboSDK.bundle in Resources */,
 				B50C5C081C1159F90043C26B /* City.storyboard in Resources */,
@@ -2095,6 +2099,7 @@
 			baseConfigurationReference = 20964DE1405676E81AD62B05 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -2126,6 +2131,7 @@
 			baseConfigurationReference = E9D6A9E99C33B8C557D1EA48 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;

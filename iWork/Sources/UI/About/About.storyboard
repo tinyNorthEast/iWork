@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="l0w-Zm-0fU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="l0w-Zm-0fU">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--About View Controller-->
@@ -54,36 +55,41 @@
                                 <color key="textColor" red="0.066666666669999999" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dN7-0L-x8D">
-                                <rect key="frame" x="81" y="280" width="158" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="158" id="Uh5-yw-q78"/>
-                                </constraints>
-                                <state key="normal" title="联系电话:13430321812">
-                                    <color key="titleColor" red="0.066666666669999999" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="callAction:" destination="l0w-Zm-0fU" eventType="touchUpInside" id="v0E-mT-970"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wpg-HU-nfq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aboutLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Wpg-HU-nfq">
                                 <rect key="frame" x="100" y="94" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="oBe-lw-uro"/>
                                     <constraint firstAttribute="width" constant="120" id="zyd-1j-loU"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="wg_bgCornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvo-Pa-GeY">
+                                <rect key="frame" x="20" y="280" width="280" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="HNR-ck-Py3"/>
+                                </constraints>
+                                <string key="text">猎赞致力于打造真实、可信赖的猎头行业职业品牌生态圈。靠谱猎头、优秀猎头，尽在猎赞。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.066666666669999999" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Wpg-HU-nfq" firstAttribute="top" secondItem="8It-SW-WWY" secondAttribute="bottom" constant="30" id="1f8-Tt-IXx"/>
                             <constraint firstAttribute="trailing" secondItem="8It-SW-WWY" secondAttribute="trailing" id="8fo-6K-tvG"/>
                             <constraint firstItem="Wpg-HU-nfq" firstAttribute="centerX" secondItem="J4v-XI-4L6" secondAttribute="centerX" id="EOf-aO-fL1"/>
+                            <constraint firstItem="Nvo-Pa-GeY" firstAttribute="top" secondItem="eDD-R1-PMH" secondAttribute="bottom" constant="20" id="IdF-hj-d3W"/>
+                            <constraint firstItem="Nvo-Pa-GeY" firstAttribute="leading" secondItem="J4v-XI-4L6" secondAttribute="leadingMargin" constant="4" id="Qcl-fo-1gg"/>
                             <constraint firstItem="eDD-R1-PMH" firstAttribute="centerX" secondItem="J4v-XI-4L6" secondAttribute="centerX" id="an9-qg-90c"/>
+                            <constraint firstItem="a5X-XN-Dns" firstAttribute="top" secondItem="Nvo-Pa-GeY" secondAttribute="bottom" constant="208" id="dPg-1N-FP2"/>
                             <constraint firstItem="8It-SW-WWY" firstAttribute="top" secondItem="J4v-XI-4L6" secondAttribute="top" id="gdM-hn-NSs"/>
-                            <constraint firstItem="dN7-0L-x8D" firstAttribute="top" secondItem="eDD-R1-PMH" secondAttribute="bottom" constant="20" id="iHO-Av-fou"/>
                             <constraint firstItem="eDD-R1-PMH" firstAttribute="top" secondItem="Wpg-HU-nfq" secondAttribute="bottom" constant="25" id="ia1-xp-3S0"/>
-                            <constraint firstItem="dN7-0L-x8D" firstAttribute="centerX" secondItem="J4v-XI-4L6" secondAttribute="centerX" id="qde-V8-OoM"/>
+                            <constraint firstItem="Nvo-Pa-GeY" firstAttribute="centerX" secondItem="eDD-R1-PMH" secondAttribute="centerX" id="iok-nq-cKn"/>
                             <constraint firstItem="8It-SW-WWY" firstAttribute="leading" secondItem="J4v-XI-4L6" secondAttribute="leading" id="xQe-7i-keb"/>
                         </constraints>
                     </view>
@@ -97,6 +103,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="aboutLogo" width="60" height="60"/>
         <image name="navi_back" width="9" height="19"/>
     </resources>
 </document>

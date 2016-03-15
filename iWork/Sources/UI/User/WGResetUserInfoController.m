@@ -35,7 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headerView;
 @property (weak, nonatomic) IBOutlet UITextField *mailField;
 @property (weak, nonatomic) IBOutlet UITextField *enNameField;
-@property (weak, nonatomic) IBOutlet UITextField *experienceField;
+@property (weak, nonatomic) IBOutlet UILabel *experienceLabel;
 @property (weak, nonatomic) IBOutlet UITextField *companyField;
 
 @end
@@ -49,8 +49,8 @@
     [self.headerView wg_loadImageFromURL:self.userInfoModel.pic placeholder:[UIImage imageNamed:@"user_defaultHeader"]];
     self.mailField.text = self.userInfoModel.mail;
     self.enNameField.text = self.userInfoModel.en_name;
-    self.experienceField.text = [self mappingExperienceId:self.userInfoModel.experience.integerValue];
-    [self.experienceField endEditing:YES];
+    self.experienceLabel.text = [self mappingExperienceId:self.userInfoModel.experience.integerValue];
+    [self.experienceLabel endEditing:YES];
     self.companyField.text = self.userInfoModel.company;
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -137,9 +137,9 @@
     [self.enNameField resignFirstResponder];
     [self.companyField resignFirstResponder];
     
-    if (self.experienceField.resignFirstResponder) {
-        [self.experienceField resignFirstResponder];
-    }
+//    if (self.experienceField.resignFirstResponder) {
+//        [self.experienceField resignFirstResponder];
+//    }
     _picker = [[WGDataPickerView alloc] initWithFrame:self.view.bounds];
     _picker.autoHidden = YES;
     [_picker setSelectIndex:0];
@@ -169,8 +169,8 @@
                 break;
         }
         
-        self.experienceField.text = self.picker.dataArray[selectRow];
-        [self.infoDic setObject:self.experienceField.text forKey:@"experience"];
+        self.experienceLabel.text = self.picker.dataArray[selectRow];
+        [self.infoDic setObject:self.experienceLabel.text forKey:@"experience"];
         
     } cancel:^{
         
@@ -179,6 +179,10 @@
     [_picker showInView:self.view];
 }
 - (IBAction)tapHeaderView:(id)sender {
+    [self.mailField resignFirstResponder];
+    [self.enNameField resignFirstResponder];
+    [self.companyField resignFirstResponder];
+    
     UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从手机相册选择",nil];
     [as showInView:self.view];
 }
@@ -190,8 +194,8 @@
     if (self.enNameField.text.length && ![self.enNameField.text isEqualToString:self.userInfoModel.en_name]) {
         [self.infoDic setObject:self.enNameField.text forKey:@"en_name"];
     }
-    if (self.experienceField.text.length && ![self mappingExperienceStr:self.experienceField.text] == self.userInfoModel.experience.integerValue) {
-        [self.infoDic setObject:self.experienceField.text forKey:@"experience"];
+    if (self.experienceLabel.text.length && ![self mappingExperienceStr:self.experienceLabel.text] == self.userInfoModel.experience.integerValue) {
+        [self.infoDic setObject:self.experienceLabel.text forKey:@"experience"];
     }
     if (self.companyField.text.length && ![self.companyField.text isEqualToString:self.userInfoModel.company]) {
         [self.infoDic setObject:self.companyField.text forKey:@"company"];

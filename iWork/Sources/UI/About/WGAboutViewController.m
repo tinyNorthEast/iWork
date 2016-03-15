@@ -13,6 +13,7 @@
 @interface WGAboutViewController ()<UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @end
 
 @implementation WGAboutViewController
@@ -22,6 +23,7 @@
 
     self.navigationController.navigationBarHidden = YES;
     self.versionLabel.text=[NSString stringWithFormat:@"V%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+    [self.logoImageView setImage:[UIImage imageNamed:@"aboutLogo"]];
 }
 
 - (void)didReceiveMemoryWarning {

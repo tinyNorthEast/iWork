@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2FH-ar-BZ7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2FH-ar-BZ7">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--邀请码-->
@@ -49,31 +49,33 @@
                                     <constraint firstAttribute="bottom" secondItem="4xA-sd-7d7" secondAttribute="bottom" id="ssN-i6-0dl"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="邀请码的说明" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3yu-0f-vwr">
-                                <rect key="frame" x="20" y="96" width="280" height="195"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3yu-0f-vwr">
+                                <rect key="frame" x="20" y="84" width="280" height="195"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="195" id="oN2-pO-5Eb"/>
+                                </constraints>
+                                <string key="text">欢迎您加入猎赞，并感谢您对猎赞的信任与支持。现阶段猎赞仅支持邀请注册，我们为您准备了2个邀请码，您可以发给您值得信赖的猎头朋友，我们诚挚的欢迎您朋友的加入。您的邀请码如下，每个邀请码仅可使用一次。每个邀请码如经有效使用，您将获得星巴克中杯咖啡饮料券一张或￥50元的账户余额，账户余额将可在猎赞即将推出的多项增值服务中直接使用。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="您的邀请码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WW-mI-07N">
-                                <rect key="frame" x="118" y="325" width="85" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的邀请码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WW-mI-07N">
+                                <rect key="frame" x="118" y="329" width="85" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bGd-as-sPn"/>
+                                    <constraint firstAttribute="width" constant="85" id="dTx-yD-ih2"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0o-Uz-3OR">
-                                <rect key="frame" x="80" y="418" width="161" height="21"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrO-l5-dnn">
+                                <rect key="frame" x="80" y="380" width="161" height="21"/>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="trI-hh-hBV" appends="YES" id="BUa-oL-wQ6"/>
-                                </connections>
-                            </label>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrO-l5-dnn">
-                                <rect key="frame" x="80" y="367" width="161" height="21"/>
-                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8dk-IY-CM9"/>
+                                    <constraint firstAttribute="width" constant="161" id="fgC-6H-R4K"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -81,12 +83,35 @@
                                     <outletCollection property="gestureRecognizers" destination="TsR-vm-smm" appends="YES" id="Wnu-8E-1ZH"/>
                                 </connections>
                             </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0o-Uz-3OR">
+                                <rect key="frame" x="80" y="416" width="161" height="21"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="Pq7-nZ-RC2"/>
+                                    <constraint firstAttribute="height" constant="21" id="UgB-BN-bgl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="trI-hh-hBV" appends="YES" id="BUa-oL-wQ6"/>
+                                </connections>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2hL-OL-Bxz" firstAttribute="top" secondItem="2Bc-Ry-UM0" secondAttribute="top" id="0Ue-5q-VUa"/>
                             <constraint firstItem="2hL-OL-Bxz" firstAttribute="leading" secondItem="2Bc-Ry-UM0" secondAttribute="leading" id="CFO-Do-DRT"/>
+                            <constraint firstItem="3yu-0f-vwr" firstAttribute="top" secondItem="2hL-OL-Bxz" secondAttribute="bottom" constant="20" id="Ge1-dx-w3b"/>
+                            <constraint firstItem="0WW-mI-07N" firstAttribute="centerX" secondItem="2Bc-Ry-UM0" secondAttribute="centerX" id="I20-kB-xBD"/>
+                            <constraint firstItem="P0o-Uz-3OR" firstAttribute="centerX" secondItem="2Bc-Ry-UM0" secondAttribute="centerX" id="Jdx-hM-R3C"/>
+                            <constraint firstItem="zrO-l5-dnn" firstAttribute="centerX" secondItem="2Bc-Ry-UM0" secondAttribute="centerX" id="Jxm-Zl-NiY"/>
                             <constraint firstAttribute="trailing" secondItem="2hL-OL-Bxz" secondAttribute="trailing" id="bNO-88-dXG"/>
+                            <constraint firstItem="zrO-l5-dnn" firstAttribute="top" secondItem="0WW-mI-07N" secondAttribute="bottom" constant="30" id="jfT-1c-bWt"/>
+                            <constraint firstItem="3yu-0f-vwr" firstAttribute="leading" secondItem="2Bc-Ry-UM0" secondAttribute="leading" constant="20" id="lov-Uk-aPH"/>
+                            <constraint firstItem="0WW-mI-07N" firstAttribute="top" secondItem="3yu-0f-vwr" secondAttribute="bottom" constant="50" id="nih-IJ-6cQ"/>
+                            <constraint firstItem="P0o-Uz-3OR" firstAttribute="top" secondItem="zrO-l5-dnn" secondAttribute="bottom" constant="15" id="qfx-IV-SAG"/>
+                            <constraint firstAttribute="trailing" secondItem="3yu-0f-vwr" secondAttribute="trailing" constant="20" id="vHX-SS-fEV"/>
                         </constraints>
                     </view>
                     <connections>
