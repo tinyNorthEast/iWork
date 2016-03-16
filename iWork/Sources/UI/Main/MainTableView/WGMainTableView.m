@@ -111,12 +111,12 @@
     }
     
     
-    [WGProgressHUD defaultLoadingOnView:[UIApplication sharedApplication].keyWindow];
+    [WGProgressHUD defaultLoadingOnView:self.viewController.view];
     WGHunterListRequest *request = [[WGHunterListRequest alloc] initWithAreaCode:self.areaCode industryId:industry.objId  pageNo:requestPagerNum];
     @weakify(self);
     [request requestWithSuccess:^(WGBaseModel *baseModel, NSError *error) {
         @strongify(self);
-        [WGProgressHUD dismissOnView:[UIApplication sharedApplication].keyWindow];
+        [WGProgressHUD dismissOnView:self.viewController.view];
         
         
         if (isRefresh) {
@@ -149,7 +149,7 @@
                 [self.wg_pager.referScrollView.footer removeFromSuperview];
             }
             
-            [WGProgressHUD disappearFailureMessage:baseModel.message onView:[UIApplication sharedApplication].keyWindow];
+            [WGProgressHUD disappearFailureMessage:baseModel.message onView:self.viewController.view];
         }
         [self reloadData];
         if (isRefresh) {
