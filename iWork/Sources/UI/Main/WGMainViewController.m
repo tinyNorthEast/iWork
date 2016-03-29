@@ -135,14 +135,14 @@
 - (void)clickMenuButtonAtIndex:(NSInteger)index{
     self.currentIndex = index;
     [self.mainScrollView moveScrollowViewAthIndex:index];
-//    [self.mainScrollView freshContentTableAtIndex:index atCity:self.selectedCityCode];
+    [self.mainScrollView freshContentTableAtIndex:index atCity:self.selectedCityCode];
 }
 #pragma mark - WGMainScrollViewDelegate
 - (void)didScrollPageViewChangedPage:(NSInteger)aPage{
-    self.currentIndex = aPage;
-    [self.menuBar changeButtonStateAtIndex:aPage];
-    //刷新当页数据
-    [self.mainScrollView freshContentTableAtIndex:aPage atCity:self.selectedCityCode];
+//    self.currentIndex = aPage;
+//    [self.menuBar changeButtonStateAtIndex:aPage];
+//    //刷新当页数据
+//    [self.mainScrollView freshContentTableAtIndex:aPage atCity:self.selectedCityCode];
     
 }
 

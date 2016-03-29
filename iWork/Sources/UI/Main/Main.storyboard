@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="yhq-pS-sbu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="yhq-pS-sbu">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--首页-->
@@ -54,12 +53,6 @@
                                             <constraint firstAttribute="bottom" secondItem="cMD-Px-DZm" secondAttribute="bottom" constant="18" id="w1L-J8-Sjg"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5vm-ex-5KE">
-                                        <rect key="frame" x="122" y="36" width="86" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="wMe-Xi-4Ii"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkx-7M-rpX">
                                         <rect key="frame" x="276" y="20" width="44" height="44"/>
                                         <constraints>
@@ -73,12 +66,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="5vm-ex-5KE" firstAttribute="bottom" secondItem="1WP-yc-HGd" secondAttribute="bottomMargin" id="61h-JO-H1h"/>
                                     <constraint firstAttribute="height" constant="64" id="Bzb-VX-Rdz"/>
                                     <constraint firstItem="G7L-jb-ZNT" firstAttribute="top" secondItem="1WP-yc-HGd" secondAttribute="top" constant="20" id="Nt2-df-lqO"/>
-                                    <constraint firstItem="nkx-7M-rpX" firstAttribute="leading" secondItem="5vm-ex-5KE" secondAttribute="trailing" constant="68" id="bOU-mo-lej"/>
                                     <constraint firstItem="nkx-7M-rpX" firstAttribute="top" secondItem="1WP-yc-HGd" secondAttribute="top" constant="20" id="gSh-De-jH9"/>
-                                    <constraint firstItem="5vm-ex-5KE" firstAttribute="leading" secondItem="G7L-jb-ZNT" secondAttribute="trailing" constant="68" id="iV3-0Y-I6a"/>
                                     <constraint firstItem="G7L-jb-ZNT" firstAttribute="leading" secondItem="1WP-yc-HGd" secondAttribute="leading" id="kId-Fv-qY8"/>
                                     <constraint firstAttribute="bottom" secondItem="nkx-7M-rpX" secondAttribute="bottom" id="kKs-6b-joE"/>
                                     <constraint firstAttribute="trailing" secondItem="nkx-7M-rpX" secondAttribute="trailing" id="wDP-wq-LLl"/>
@@ -113,7 +103,7 @@
                                             <outlet property="scrollBar" destination="7sR-l3-hSs" id="Go0-qr-paj"/>
                                         </connections>
                                     </view>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGJ-zu-egh" customClass="WGMainScrollView">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGJ-zu-egh" customClass="WGMainScrollView">
                                         <rect key="frame" x="0.0" y="44" width="320" height="460"/>
                                     </scrollView>
                                 </subviews>
@@ -174,7 +164,6 @@
     </scenes>
     <resources>
         <image name="main_city" width="14" height="7"/>
-        <image name="main_logo" width="96" height="20"/>
         <image name="main_scrollButton" width="46" height="40"/>
         <image name="main_user" width="17" height="19"/>
     </resources>

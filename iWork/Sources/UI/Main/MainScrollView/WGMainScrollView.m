@@ -82,14 +82,14 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    int page = (self.contentOffset.x+self.width/2.0) / self.width;
-    if (mCurrentPage == page) {
-        return;
-    }
-    mCurrentPage= page;
-    if ([_mainScrolldelegate respondsToSelector:@selector(didScrollPageViewChangedPage:)] && mNeedUseDelegate) {
-        [_mainScrolldelegate didScrollPageViewChangedPage:mCurrentPage];
-    }
+//    int page = (self.contentOffset.x+self.width/2.0) / self.width;
+//    if (mCurrentPage == page) {
+//        return;
+//    }
+//    mCurrentPage= page;
+//    if ([_mainScrolldelegate respondsToSelector:@selector(didScrollPageViewChangedPage:)] && mNeedUseDelegate) {
+//        [_mainScrolldelegate didScrollPageViewChangedPage:mCurrentPage];
+//    }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate

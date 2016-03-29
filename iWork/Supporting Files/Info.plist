@@ -69,5 +69,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>CFBundleDisplayName</key>
+	<string>猎赞</string>
 </dict>
 </plist>

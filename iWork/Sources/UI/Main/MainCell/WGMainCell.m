@@ -75,7 +75,7 @@
     
     
     [self.headerImage wg_loadImageFromURL:hunter.pic placeholder:[UIImage imageNamed:@"main_defaultHeader"]];
-    [self.smallHeaderImage wg_loadImageFromURL:hunter.smallPic placeholder:[UIImage imageNamed:@"main_defaultHeader"]];
+    [self.smallHeaderImage wg_loadImageFromURL:hunter.smallPic placeholder:[UIImage imageNamed:@"main_smallHeader"]];
     [self.nameLabel setText:hunter.realName];
     [self.signatureLabel setText:hunter.signature];
     
